@@ -10,12 +10,12 @@
 // ============================================================
 
 const TAB_CONFIG = [
+  { key: 'New',       label: 'NEW' },
   { key: 'Season 01', label: 'SEASON 1' },
   { key: 'Season 02', label: 'SEASON 2' },
   { key: 'Season 03', label: 'SEASON 3' },
   { key: 'Season 04', label: 'SEASON 4' },
   { key: 'Season 05', label: 'SEASON 5' },
-  { key: 'New',       label: 'NEW' },
   { key: 'Explicit',  label: 'EXPLICIT' },
   { key: 'Duet',      label: 'DUET DANCE' },
   { key: 'DLC 01',    label: 'CLUB DLC' },
@@ -24,7 +24,7 @@ const TAB_CONFIG = [
   { key: 'TAG',       label: 'TAG', isPill: true }
 ];
 
-const DEFAULT_TAB = 'Season 01';
+const DEFAULT_TAB = 'New';
 const DEFAULT_SLOT_COUNT = 54;
 const MAX_HISTORY = 50;
 const HANDOFF_KEY = 'p69-handoff-v1';
@@ -597,7 +597,10 @@ function renderSlot(slot) {
   const variants = state.songKeyToTracks.get(songKey) || [];
   const isMulti = variants.length > 1;
   const isComingSoon = slot.released === false || slot.comingSoon === true;
-  const isNew = state.newReleaseSet.has(songKey);
+  // NEW highlight is a cross-tab cue ("this song is new") — meaningless
+  // inside the NEW tab itself where every entry is by definition new.
+  const isNew =
+    state.newReleaseSet.has(songKey) && state.currentTab !== 'New';
   const isExpanded = state.expandedSongKey === songKey && isMulti;
   const isAdded =
     variants.length > 0 && variants.some(v => state.favoritesSet.has(v.trackId));
