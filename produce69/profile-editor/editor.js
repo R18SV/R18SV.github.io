@@ -215,10 +215,13 @@ function renderTabStrip() {
     return;
   }
 
-  // In TAG mode, the strip shows BY ARTIST | BY STAGE | ... | BACK pill.
+  // In TAG mode, the strip shows alternative entry points + BACK pill.
+  // Order mirrors the in-game TAG-mode tab strip.
   const subTabs = [
-    { cat: 'artist', label: 'BY ARTIST' },
-    { cat: 'stage',  label: 'BY STAGE' }
+    { cat: 'most-played', label: 'MOST PLAYED' },
+    { cat: 'recent',      label: 'RECENT' },
+    { cat: 'artist',      label: 'BY ARTIST' },
+    { cat: 'stage',       label: 'BY STAGE' }
   ];
   for (const sub of subTabs) {
     const btn = document.createElement('button');
@@ -308,13 +311,21 @@ function onTagPageClick(direction) {
 }
 
 // Returns the current list being paginated:
-//   - LEVEL1: artists or stages array
+//   - LEVEL1 + artist: artists array
+//   - LEVEL1 + stage: stages array
+//   - LEVEL1 + recent: state.recentSongKeys (MRU order, plugin-capped at 54)
+//   - LEVEL1 + most-played: songKeys sorted by play count desc
 //   - LEVEL2: songKeys filtered by selected artist/stage, sorted
 function currentTagListing() {
   if (state.tagMode === 'TAG_LEVEL1') {
-    return state.tagCategory === 'artist'
-      ? state.catalog.tags.artists
-      : state.catalog.tags.stages;
+    if (state.tagCategory === 'artist') return state.catalog.tags.artists;
+    if (state.tagCategory === 'stage')  return state.catalog.tags.stages;
+    if (state.tagCategory === 'recent') return state.recentSongKeys || [];
+    if (state.tagCategory === 'most-played') {
+      if (!state.mostPlayedPlays) return [];
+      return Object.keys(state.mostPlayedPlays)
+        .sort((a, b) => state.mostPlayedPlays[b] - state.mostPlayedPlays[a]);
+    }
   }
   if (state.tagMode === 'TAG_LEVEL2') {
     return computeLevel2SongKeys(state.tagCategory, state.tagSelection);
@@ -344,12 +355,12 @@ function computeLevel2SongKeys(category, selection) {
 function renderRightPane() {
   const content = document.getElementById('catalog-content');
   if (state.tagMode === 'TAG_LEVEL1') {
-    renderTagLevel1();
-    return;
+    if (state.tagCategory === 'recent') return renderTagRecent();
+    if (state.tagCategory === 'most-played') return renderTagMostPlayed();
+    return renderTagLevel1();
   }
   if (state.tagMode === 'TAG_LEVEL2') {
-    renderTagLevel2();
-    return;
+    return renderTagLevel2();
   }
   const list = state.catalog.lists[state.currentTab];
   if (!list) {
@@ -357,6 +368,85 @@ function renderRightPane() {
     return;
   }
   renderNormalGrid(list);
+}
+
+// Generic flat-song-list renderer used by RECENT and MOST PLAYED. Reuses
+// renderSlot so multi-variant popover, NEW highlight, and ✓ ADDED indicator
+// all carry over. opts.playCounts attaches a [Nx] badge per row.
+function renderTagFlatSongList(songKeys, opts) {
+  opts = opts || {};
+  const content = document.getElementById('catalog-content');
+
+  if (songKeys.length === 0) {
+    content.innerHTML =
+      '<div class="empty-state">' +
+      '<p class="empty-state-title">' + escapeHTML(opts.emptyTitle || 'No data loaded') + '</p>' +
+      '<p class="empty-state-body">' + (opts.emptyBody || '') + '</p>' +
+      '</div>';
+    return;
+  }
+
+  const start = state.tagPage * TAG_PAGE_SIZE;
+  const pageKeys = songKeys.slice(start, start + TAG_PAGE_SIZE);
+  const html = ['<div class="song-grid">'];
+  for (let i = 0; i < TAG_PAGE_SIZE; i++) {
+    const sk = pageKeys[i];
+    if (!sk) {
+      html.push('<div class="slot empty"></div>');
+      continue;
+    }
+    const slot = { idx: 0, songKey: sk, released: true };
+    if (opts.playCounts && opts.playCounts[sk]) {
+      slot.playCount = opts.playCounts[sk];
+    }
+    html.push(renderSlot(slot));
+  }
+  html.push('</div>');
+  html.push(renderPaginationHTML(songKeys.length, state.tagPage));
+  content.innerHTML = html.join('');
+
+  content.querySelectorAll('.slot.song[data-songkey]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      onSongSlotClick(el.dataset.songkey);
+    });
+  });
+  content.querySelectorAll('.variant-popover .vp-row').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      onVariantRowClick(el.dataset.trackid);
+    });
+  });
+  content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
+    btn.addEventListener('click', () => onTagPageClick(btn.dataset.action));
+  });
+}
+
+function renderTagRecent() {
+  renderTagFlatSongList(state.recentSongKeys || [], {
+    emptyTitle: 'No RECENT data loaded',
+    emptyBody:
+      'RECENT is auto-tracked by the plugin as you play tracks in VAM. ' +
+      'To see and edit it here, import a profile saved from VAM via slot 57 ' +
+      '(Profile Export). Until then, this tab is empty.'
+  });
+}
+
+function renderTagMostPlayed() {
+  if (!state.mostPlayedPlays || Object.keys(state.mostPlayedPlays).length === 0) {
+    renderTagFlatSongList([], {
+      emptyTitle: 'No MOST PLAYED data loaded',
+      emptyBody:
+        'MOST PLAYED counts are accumulated by the plugin as you play tracks ' +
+        'in VAM. To see and edit them here, import a profile saved from VAM ' +
+        'via slot 57 (Profile Export). Until then, this tab is empty.'
+    });
+    return;
+  }
+  const sortedKeys = Object.keys(state.mostPlayedPlays).sort(
+    (a, b) => state.mostPlayedPlays[b] - state.mostPlayedPlays[a]
+  );
+  renderTagFlatSongList(sortedKeys, { playCounts: state.mostPlayedPlays });
 }
 
 function renderPaginationHTML(total, page) {
@@ -525,6 +615,9 @@ function renderSlot(slot) {
   const fromTag = slot.from
     ? '<span class="from-tag">[' + escapeHTML(slot.from) + ']</span>'
     : '';
+  const playCountBadge = (slot.playCount && slot.playCount > 0)
+    ? '<span class="play-count">' + slot.playCount + 'x</span>'
+    : '';
   const checkPill = isAdded ? '<span class="check-pill">&#10003; ADDED</span>' : '';
   const label = '<i>' + escapeHTML(songKey) + '</i>';
   const popover = isExpanded ? renderVariantPopover(songKey, variants) : '';
@@ -534,7 +627,7 @@ function renderSlot(slot) {
 
   return (
     '<div class="' + cls + '"' + dataAttr + '>' +
-    label + fromTag + checkPill + popover +
+    label + fromTag + playCountBadge + checkPill + popover +
     '</div>'
   );
 }
