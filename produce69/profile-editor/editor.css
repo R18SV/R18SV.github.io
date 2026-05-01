@@ -84,7 +84,7 @@ body { background: transparent; }
 body {
   font-family: var(--font-ui);
   max-width: 1500px;
-  margin: 2.5rem auto;
+  margin: 4rem auto 3rem;
   padding: 0 1.5rem;
   color: var(--fg);
   background: var(--bg);
