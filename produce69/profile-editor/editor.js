@@ -27,6 +27,7 @@ const TAB_CONFIG = [
 const DEFAULT_TAB = 'Season 01';
 const DEFAULT_SLOT_COUNT = 54;
 const MAX_HISTORY = 50;
+const HANDOFF_KEY = 'p69-handoff-v1';
 
 // ============================================================
 // State
@@ -104,6 +105,7 @@ async function boot() {
     }
     state.catalog = await res.json();
     initIndices();
+    consumeHandoff();
     document.getElementById('loading').classList.add('hidden');
     document.getElementById('editor').classList.remove('hidden');
     renderTabStrip();
@@ -113,6 +115,46 @@ async function boot() {
   } catch (err) {
     showLoadError(err);
   }
+}
+
+// One-shot handoff: when the converter sends the user here via "Open in
+// editor", it writes a JSON payload to localStorage under HANDOFF_KEY.
+// We consume + clear it on boot, prefilling the favorites list and
+// flagging the banner. If handoff payload is malformed, log and ignore.
+function consumeHandoff() {
+  let raw;
+  try {
+    raw = localStorage.getItem(HANDOFF_KEY);
+  } catch (e) {
+    return; // localStorage disabled
+  }
+  if (!raw) return;
+  try {
+    localStorage.removeItem(HANDOFF_KEY);
+  } catch (e) { /* ignore */ }
+  let payload;
+  try {
+    payload = JSON.parse(raw);
+  } catch (e) {
+    console.warn('Handoff payload not valid JSON:', e);
+    return;
+  }
+  if (!payload || !Array.isArray(payload.trackIds)) return;
+  const trackIds = payload.trackIds.filter(id => typeof id === 'string');
+  if (trackIds.length === 0) return;
+  state.favorites = trackIds.slice();
+  state.favoritesSet = new Set(trackIds);
+  showHandoffBanner(trackIds.length, payload.source || 'another tool');
+}
+
+function showHandoffBanner(count, source) {
+  const banner = document.getElementById('handoff-banner');
+  if (!banner) return;
+  const sourceLabel = source === 'converter' ? 'profile converter' : source;
+  document.getElementById('handoff-banner-text').textContent =
+    'Loaded ' + count + ' track' + (count === 1 ? '' : 's') +
+    ' from the ' + sourceLabel + '. Refine your list, then export when ready.';
+  banner.classList.remove('hidden');
 }
 
 function initIndices() {
@@ -363,6 +405,14 @@ function wireGlobalHandlers() {
     renderHistoryIndicator();
     renderFavList();
   });
+
+  // Handoff banner dismiss
+  const banner = document.getElementById('handoff-banner');
+  if (banner) {
+    document.getElementById('handoff-banner-dismiss').addEventListener('click', () => {
+      banner.classList.add('hidden');
+    });
+  }
 
   // Export modal buttons
   document.getElementById('export-with-history-btn').addEventListener('click', () => {

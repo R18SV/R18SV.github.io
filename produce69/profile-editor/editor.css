@@ -92,6 +92,34 @@ h1 {
   font-size: 1.05rem;
 }
 
+/* === Handoff banner (shown after redirect from another tool) === */
+
+.handoff-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  background: #eef4fa;
+  border: 1px solid #b6d4ee;
+  border-left: 3px solid var(--link);
+  border-radius: 4px;
+  color: #1a4d80;
+  font-size: 0.9rem;
+}
+.handoff-banner > span:first-child { flex: 1; }
+.handoff-banner-dismiss {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+}
+.handoff-banner-dismiss:hover { color: var(--fg); background: rgba(0, 0, 0, 0.05); }
+
 /* === Action bar ========================================== */
 
 .action-bar {

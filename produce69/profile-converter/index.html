@@ -148,6 +148,64 @@
       color: var(--muted);
       margin-top: 1rem;
     }
+    .next-step-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 700px) {
+      .next-step-grid { grid-template-columns: 1fr; }
+    }
+    .next-step {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 1rem 1.1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.92rem;
+      color: inherit;
+      line-height: 1.55;
+      transition: background 0.12s, transform 0.05s, box-shadow 0.12s;
+    }
+    .next-step strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+    .next-step .next-step-desc {
+      display: block;
+      color: var(--accent);
+      font-size: 0.88rem;
+    }
+    .next-step.primary-step { border-left: 3px solid var(--link); }
+    .next-step.secondary-step { border-left: 3px solid var(--success-fg); }
+    .next-step:hover {
+      background: #f1f1f1;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+    .next-step.primary-step:hover { background: #eef4fa; }
+    .next-step.secondary-step:hover { background: #e8f5e8; }
+    .next-step:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+    .next-step:active { transform: translateY(1px); }
+    .text-btn {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 3px;
+    }
+    .text-btn:hover { color: var(--fg); background: #f0f0f0; }
     footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
@@ -188,11 +246,22 @@
   </section>
 
   <section id="step-download" class="card hidden">
-    <h2>3. Download the new-format profile</h2>
-    <p>The downloaded file contains <strong>only your favorites</strong>. Importing it via the plugin's <strong>Profile Import</strong> action (slot 56) will replace your favorites; any RECENT or MOST PLAYED data already in the plugin stays untouched.</p>
-    <button id="download-btn">Download .p69save</button>
-    <button id="reset-btn" class="secondary" style="margin-left: 0.5rem;">Convert another file</button>
-    <p class="hint">Save it to <code>Custom/Scripts/Shadow Venom/Produce 69/Saves/</code>, then in VAM open the Produce 69 playlist and click slot 56 (Profile Import).</p>
+    <h2>3. Conversion complete &mdash; what next?</h2>
+    <p>Your favorites are now in the new <code>.p69save</code> format. Pick how you'd like to proceed:</p>
+
+    <div class="next-step-grid">
+      <button type="button" id="download-btn" class="next-step primary-step">
+        <strong>Download .p69save</strong>
+        <span class="next-step-desc">Save the file directly. Drop it into <code>Custom/Scripts/Shadow Venom/Produce 69/Saves/</code> and import via slot 56 in VAM.</span>
+      </button>
+
+      <button type="button" id="open-editor-btn" class="next-step secondary-step">
+        <strong>Open in online editor</strong>
+        <span class="next-step-desc">Refine the list before exporting &mdash; add new songs from the catalog, remove ones you've outgrown, reorder. Importing in VAM leaves RECENT and MOST PLAYED untouched.</span>
+      </button>
+    </div>
+
+    <button id="reset-btn" class="text-btn" style="margin-top: 1rem;">Convert another file</button>
   </section>
 
   <section id="step-error" class="card error hidden">
@@ -224,9 +293,14 @@
       warning: document.getElementById('warning'),
       errorMessage: document.getElementById('error-message'),
       downloadBtn: document.getElementById('download-btn'),
+      openEditorBtn: document.getElementById('open-editor-btn'),
       resetBtn: document.getElementById('reset-btn'),
       retryBtn: document.getElementById('retry-btn'),
     };
+
+    // localStorage key the editor reads on boot to receive a one-shot
+    // handoff payload from the converter.
+    const HANDOFF_KEY = 'p69-handoff-v1';
 
     let extractedTrackIds = [];
 
@@ -255,6 +329,7 @@
       if (file) processFile(file);
     });
     els.downloadBtn.addEventListener('click', triggerDownload);
+    els.openEditorBtn.addEventListener('click', openInEditor);
     els.resetBtn.addEventListener('click', resetFlow);
     els.retryBtn.addEventListener('click', resetFlow);
 
@@ -351,6 +426,23 @@
       els.stepPreview.classList.add('hidden');
       els.stepDownload.classList.add('hidden');
       els.stepError.classList.add('hidden');
+    }
+
+    function openInEditor() {
+      try {
+        const payload = {
+          source: 'converter',
+          createdAt: new Date().toISOString(),
+          trackIds: extractedTrackIds.slice()
+        };
+        localStorage.setItem(HANDOFF_KEY, JSON.stringify(payload));
+      } catch (e) {
+        // localStorage may be disabled (privacy mode etc.) — fall through
+        // and just navigate; editor will show empty list and the user can
+        // re-do the conversion if needed.
+        console.warn('Could not stash handoff in localStorage:', e);
+      }
+      window.location.href = '../profile-editor/';
     }
 
     function triggerDownload() {
