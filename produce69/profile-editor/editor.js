@@ -48,8 +48,21 @@ const state = {
   recentSongKeys: null,         // null | string[]
   mostPlayedPlays: null,        // null | { [songKey: string]: number }
   // Undo: LIFO stack of full state snapshots (favs + history fields).
-  history: []
+  history: [],
+  // TAG mode 3-state machine:
+  //   'NORMAL'      regular filter tab is showing in the right pane
+  //   'TAG_LEVEL1'  artist or stage list (drillable)
+  //   'TAG_LEVEL2'  drilled into a specific artist/stage, showing songs
+  // tagCategory: 'artist' | 'stage' (only meaningful in TAG_LEVEL*)
+  // tagSelection: the picked artist/stage (only meaningful in TAG_LEVEL2)
+  // tagPage: pagination index for the active TAG view
+  tagMode: 'NORMAL',
+  tagCategory: 'artist',
+  tagSelection: null,
+  tagPage: 0
 };
+
+const TAG_PAGE_SIZE = 54;
 
 // ============================================================
 // Utilities
@@ -186,25 +199,142 @@ function showLoadError(err) {
 function renderTabStrip() {
   const strip = document.getElementById('tab-strip');
   strip.innerHTML = '';
-  for (const tab of TAB_CONFIG) {
+
+  if (state.tagMode === 'NORMAL') {
+    for (const tab of TAB_CONFIG) {
+      const btn = document.createElement('button');
+      btn.className =
+        'tab' +
+        (tab.isPill ? ' tag-pill' : '') +
+        (tab.key === state.currentTab ? ' active' : '');
+      btn.textContent = tab.label;
+      btn.dataset.tabKey = tab.key;
+      btn.addEventListener('click', () => onTabClick(tab.key));
+      strip.appendChild(btn);
+    }
+    return;
+  }
+
+  // In TAG mode, the strip shows BY ARTIST | BY STAGE | ... | BACK pill.
+  const subTabs = [
+    { cat: 'artist', label: 'BY ARTIST' },
+    { cat: 'stage',  label: 'BY STAGE' }
+  ];
+  for (const sub of subTabs) {
     const btn = document.createElement('button');
-    btn.className =
-      'tab' +
-      (tab.isPill ? ' tag-pill' : '') +
-      (tab.key === state.currentTab ? ' active' : '');
-    btn.textContent = tab.label;
-    btn.dataset.tabKey = tab.key;
-    btn.addEventListener('click', () => onTabClick(tab.key));
+    btn.className = 'tab' + (state.tagCategory === sub.cat ? ' active' : '');
+    btn.textContent = sub.label;
+    btn.addEventListener('click', () => onTagSubTabClick(sub.cat));
     strip.appendChild(btn);
   }
+  const back = document.createElement('button');
+  back.className = 'tab tag-pill';
+  back.textContent = 'BACK';
+  back.title = state.tagMode === 'TAG_LEVEL2'
+    ? 'Back to ' + (state.tagCategory === 'artist' ? 'BY ARTIST' : 'BY STAGE') + ' list'
+    : 'Exit TAG mode';
+  back.addEventListener('click', onTagBackClick);
+  strip.appendChild(back);
 }
 
 function onTabClick(key) {
-  if (state.currentTab === key) return;
+  if (key === 'TAG') {
+    // Enter TAG mode at LEVEL1, defaulting to BY ARTIST.
+    state.currentTab = 'TAG';
+    state.tagMode = 'TAG_LEVEL1';
+    state.tagCategory = state.tagCategory || 'artist';
+    state.tagSelection = null;
+    state.tagPage = 0;
+    state.expandedSongKey = null;
+    renderTabStrip();
+    renderRightPane();
+    return;
+  }
+  if (state.tagMode === 'NORMAL' && state.currentTab === key) return;
   state.currentTab = key;
+  state.tagMode = 'NORMAL';
+  state.tagSelection = null;
+  state.tagPage = 0;
   state.expandedSongKey = null;
   renderTabStrip();
   renderRightPane();
+}
+
+function onTagSubTabClick(category) {
+  if (state.tagCategory === category && state.tagMode === 'TAG_LEVEL1') return;
+  state.tagCategory = category;
+  state.tagMode = 'TAG_LEVEL1';
+  state.tagSelection = null;
+  state.tagPage = 0;
+  state.expandedSongKey = null;
+  renderTabStrip();
+  renderRightPane();
+}
+
+function onTagBackClick() {
+  if (state.tagMode === 'TAG_LEVEL2') {
+    // Drill back up to LEVEL1
+    state.tagMode = 'TAG_LEVEL1';
+    state.tagSelection = null;
+    state.tagPage = 0;
+  } else {
+    // Exit TAG mode entirely, back to the previous regular tab
+    state.tagMode = 'NORMAL';
+    state.tagSelection = null;
+    state.tagPage = 0;
+    if (state.currentTab === 'TAG') state.currentTab = DEFAULT_TAB;
+  }
+  state.expandedSongKey = null;
+  renderTabStrip();
+  renderRightPane();
+}
+
+function onTagItemClick(item) {
+  state.tagMode = 'TAG_LEVEL2';
+  state.tagSelection = item;
+  state.tagPage = 0;
+  state.expandedSongKey = null;
+  renderTabStrip();
+  renderRightPane();
+}
+
+function onTagPageClick(direction) {
+  const list = currentTagListing();
+  const totalPages = Math.max(1, Math.ceil(list.length / TAG_PAGE_SIZE));
+  if (direction === 'prev' && state.tagPage > 0) state.tagPage--;
+  else if (direction === 'next' && state.tagPage < totalPages - 1) state.tagPage++;
+  state.expandedSongKey = null;
+  renderRightPane();
+}
+
+// Returns the current list being paginated:
+//   - LEVEL1: artists or stages array
+//   - LEVEL2: songKeys filtered by selected artist/stage, sorted
+function currentTagListing() {
+  if (state.tagMode === 'TAG_LEVEL1') {
+    return state.tagCategory === 'artist'
+      ? state.catalog.tags.artists
+      : state.catalog.tags.stages;
+  }
+  if (state.tagMode === 'TAG_LEVEL2') {
+    return computeLevel2SongKeys(state.tagCategory, state.tagSelection);
+  }
+  return [];
+}
+
+function computeLevel2SongKeys(category, selection) {
+  const seen = new Set();
+  for (const t of state.catalog.tracks) {
+    if (category === 'artist') {
+      const sep = t.songKey.indexOf(' - ');
+      if (sep < 0) continue;
+      if (t.songKey.slice(0, sep) !== selection) continue;
+    } else {
+      if (t.stage !== selection) continue;
+    }
+    seen.add(t.songKey);
+  }
+  return Array.from(seen).sort();
 }
 
 // ============================================================
@@ -213,10 +343,12 @@ function onTabClick(key) {
 
 function renderRightPane() {
   const content = document.getElementById('catalog-content');
-  if (state.currentTab === 'TAG') {
-    content.innerHTML =
-      '<p class="placeholder-msg">TAG mode (BY ARTIST / BY STAGE drill-down) ' +
-      'is in the next iteration.</p>';
+  if (state.tagMode === 'TAG_LEVEL1') {
+    renderTagLevel1();
+    return;
+  }
+  if (state.tagMode === 'TAG_LEVEL2') {
+    renderTagLevel2();
     return;
   }
   const list = state.catalog.lists[state.currentTab];
@@ -225,6 +357,109 @@ function renderRightPane() {
     return;
   }
   renderNormalGrid(list);
+}
+
+function renderPaginationHTML(total, page) {
+  const totalPages = Math.max(1, Math.ceil(total / TAG_PAGE_SIZE));
+  if (totalPages <= 1) return '';
+  return (
+    '<div class="pagination">' +
+    '<button data-action="prev"' + (page === 0 ? ' disabled' : '') +
+    '>&lt; PREVIOUS PAGE</button>' +
+    '<span class="page-info">PAGE ' + (page + 1) + ' / ' + totalPages + '</span>' +
+    '<button data-action="next"' + (page >= totalPages - 1 ? ' disabled' : '') +
+    '>NEXT PAGE &gt;</button>' +
+    '</div>'
+  );
+}
+
+function renderTagLevel1() {
+  const content = document.getElementById('catalog-content');
+  const items = currentTagListing();
+  const start = state.tagPage * TAG_PAGE_SIZE;
+  const pageItems = items.slice(start, start + TAG_PAGE_SIZE);
+
+  const html = ['<div class="song-grid">'];
+  for (let i = 0; i < TAG_PAGE_SIZE; i++) {
+    const item = pageItems[i];
+    if (!item) {
+      html.push('<div class="slot empty"></div>');
+      continue;
+    }
+    html.push(
+      '<div class="slot tag-item" data-tag-item="' + escapeHTML(item) + '">' +
+      '<i>' + escapeHTML(item) + '</i>' +
+      '</div>'
+    );
+  }
+  html.push('</div>');
+  html.push(renderPaginationHTML(items.length, state.tagPage));
+  content.innerHTML = html.join('');
+
+  content.querySelectorAll('.slot.tag-item').forEach(el => {
+    el.addEventListener('click', () => onTagItemClick(el.dataset.tagItem));
+  });
+  content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
+    btn.addEventListener('click', () => onTagPageClick(btn.dataset.action));
+  });
+}
+
+function renderTagLevel2() {
+  const content = document.getElementById('catalog-content');
+  const songKeys = currentTagListing();
+  const start = state.tagPage * TAG_PAGE_SIZE;
+  const pageKeys = songKeys.slice(start, start + TAG_PAGE_SIZE);
+
+  // Build pseudo-slot objects so we can reuse renderSlot for consistent UX
+  // (NEW highlight, multi-variant popover, added indicator, etc.)
+  const pseudoSlots = pageKeys.map(sk => ({ idx: 0, songKey: sk, released: true }));
+
+  const headerLabel = state.tagCategory === 'artist' ? 'BY ARTIST' : 'BY STAGE';
+  const html = [];
+  html.push(
+    '<div class="tag-level2-header">' +
+    '<button class="tag-back-link" type="button">&laquo; ' + headerLabel + '</button>' +
+    '<span class="tag-current"><i>' + escapeHTML(state.tagSelection) + '</i></span>' +
+    '<span class="tag-count">' + songKeys.length + ' song' +
+    (songKeys.length === 1 ? '' : 's') + '</span>' +
+    '</div>'
+  );
+
+  html.push('<div class="song-grid">');
+  for (let i = 0; i < TAG_PAGE_SIZE; i++) {
+    const slot = pseudoSlots[i];
+    if (!slot) {
+      html.push('<div class="slot empty"></div>');
+      continue;
+    }
+    html.push(renderSlot(slot));
+  }
+  html.push('</div>');
+  html.push(renderPaginationHTML(songKeys.length, state.tagPage));
+  content.innerHTML = html.join('');
+
+  content.querySelectorAll('.slot.song[data-songkey]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      onSongSlotClick(el.dataset.songkey);
+    });
+  });
+  content.querySelectorAll('.variant-popover .vp-row').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      onVariantRowClick(el.dataset.trackid);
+    });
+  });
+  content.querySelector('.tag-back-link').addEventListener('click', () => {
+    state.tagMode = 'TAG_LEVEL1';
+    state.tagSelection = null;
+    state.tagPage = 0;
+    state.expandedSongKey = null;
+    renderRightPane();
+  });
+  content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
+    btn.addEventListener('click', () => onTagPageClick(btn.dataset.action));
+  });
 }
 
 function renderNormalGrid(list) {

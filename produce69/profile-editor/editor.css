@@ -454,6 +454,51 @@ h1 {
   z-index: 5;
 }
 
+/* === TAG mode: artist/stage list (LEVEL1) =============== */
+
+.slot.tag-item {
+  cursor: pointer;
+  font-style: italic;
+}
+.slot.tag-item:hover { background: var(--hover-bg); }
+
+/* === TAG mode: drilled view header (LEVEL2) ============= */
+
+.tag-level2-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.5rem 0.4rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.6rem;
+}
+.tag-level2-header .tag-back-link {
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+.tag-level2-header .tag-back-link:hover { color: var(--fg); background: var(--hover-bg); }
+.tag-level2-header .tag-current {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: 0.02em;
+}
+.tag-level2-header .tag-count {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 /* === Variant popover (multi-variant inline picker) ====== */
 
 .variant-popover {
