@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Venom</title>
+  <title>Produce 69 &mdash; Shadow Venom</title>
   <style>
     :root {
       --bg: #fafafa;
@@ -11,6 +11,7 @@
       --muted: #888;
       --border: #e0e0e0;
       --accent: #555;
+      --link: #2266aa;
       --card-bg: #fff;
     }
     * { box-sizing: border-box; }
@@ -23,54 +24,53 @@
       background: var(--bg);
       line-height: 1.6;
     }
-    a { color: inherit; text-decoration: none; }
-    header {
-      margin-bottom: 2.5rem;
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 0 0 1.5rem;
     }
+    header { margin-bottom: 2.5rem; }
     h1 {
       font-weight: 300;
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       letter-spacing: 0.04em;
       margin: 0 0 0.25rem;
     }
-    .tagline {
+    .subtitle {
       color: var(--muted);
-      font-size: 1rem;
       margin: 0;
     }
-    .status-banner {
-      padding: 1rem 1.25rem;
-      background: var(--card-bg);
-      border-left: 3px solid #ccc;
-      font-size: 0.9rem;
-      color: var(--accent);
-      margin-bottom: 2rem;
-    }
-    .projects {
+    .tools {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
     }
-    .project-card {
+    .tool-card {
       display: block;
       padding: 1.25rem 1.5rem;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 6px;
+      color: inherit;
       transition: border-color 0.15s;
     }
-    a.project-card:hover {
+    .tool-card:hover {
       border-color: #aaa;
+      text-decoration: none;
     }
-    .project-card.placeholder {
+    .tool-card.placeholder {
       opacity: 0.55;
+      cursor: default;
+      pointer-events: none;
     }
-    .project-card h3 {
+    .tool-card h3 {
       margin: 0 0 0.5rem;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 500;
     }
-    .project-card p {
+    .tool-card p {
       margin: 0 0 0.5rem;
       font-size: 0.95rem;
       color: var(--accent);
@@ -94,31 +94,29 @@
   </style>
 </head>
 <body>
+  <p class="breadcrumb"><a href="../">Shadow Venom</a> &raquo; Produce 69</p>
+
   <header>
-    <h1>Shadow Venom</h1>
-    <p class="tagline">Indie game projects.</p>
+    <h1>Produce 69</h1>
+    <p class="subtitle">Companion tools.</p>
   </header>
 
-  <div class="status-banner">
-    Site is in early development. More project pages and companion tools coming soon.
-  </div>
-
-  <section class="projects">
-    <a href="produce69/" class="project-card">
-      <h3>Produce 69</h3>
-      <p>Idol production simulation.</p>
-      <span class="pill">Companion tools available</span>
+  <section class="tools">
+    <a href="profile-converter/" class="tool-card">
+      <h3>Profile Converter</h3>
+      <p>Convert legacy "My Favorites" data presets into the new <code>.p69save</code> profile format used by the current plugin.</p>
+      <span class="pill">Available</span>
     </a>
 
-    <article class="project-card placeholder">
-      <h3>Casino 69</h3>
-      <p>&mdash;</p>
+    <div class="tool-card placeholder">
+      <h3>Profile Editor</h3>
+      <p>Edit favorites against the current song catalog directly in your browser, without launching VAM.</p>
       <span class="pill">Coming soon</span>
-    </article>
+    </div>
   </section>
 
   <footer>
-    &copy; Shadow Venom
+    <a href="../">&larr; Back to Shadow Venom</a>
   </footer>
 </body>
 </html>
