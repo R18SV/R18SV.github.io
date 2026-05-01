@@ -15,6 +15,19 @@ Future projects added under their own subroute.
 
 Pure static HTML + JavaScript. No build step, no backend. Per-project pages live under their own folder.
 
+## Design principle: tools must work offline
+
+Every tool under a project folder (e.g. `/produce69/profile-converter/`) is built so that the folder can be zipped, shipped to a user, and run by double-clicking `index.html` — no installation, no server, no internet required.
+
+Concretely this means each tool's `index.html`:
+- inlines all HTML, CSS, and JS (no external `<link>` or `<script src>`)
+- depends on system fonts only (no fetched webfonts)
+- makes zero network calls (uses only browser-local APIs like File API)
+- gracefully hides any cross-folder navigation (breadcrumbs, back-links) when run via `file://`
+- ships a plain `README.txt` next to it for users who unzip and look around
+
+Hub pages (`/index.html`, `/produce69/index.html`) are online-only — they exist for navigation between tools and are not meant to be distributed standalone.
+
 ## Local dev
 
 Open `index.html` directly in a browser, or serve via any static file server:

@@ -156,10 +156,11 @@
       font-size: 0.85rem;
       text-align: center;
     }
+    html.offline .offline-hide { display: none; }
   </style>
 </head>
 <body>
-  <p class="breadcrumb">
+  <p class="breadcrumb offline-hide">
     <a href="../../">Shadow Venom</a> &raquo;
     <a href="../">Produce 69</a> &raquo;
     Profile Converter
@@ -200,12 +201,16 @@
     <button id="retry-btn" class="secondary">Try another file</button>
   </section>
 
-  <footer>
+  <footer class="offline-hide">
     <a href="../">&larr; Back to Produce 69</a>
   </footer>
 
   <script>
     'use strict';
+
+    if (location.protocol === 'file:') {
+      document.documentElement.classList.add('offline');
+    }
 
     const els = {
       fileInput: document.getElementById('file-input'),
