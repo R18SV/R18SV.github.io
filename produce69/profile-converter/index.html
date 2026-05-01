@@ -191,6 +191,29 @@
       text-align: center;
     }
     html.offline .offline-hide { display: none; }
+    .rc4-note {
+      margin: 1.5rem 0 1.5rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--gold-bg);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 4px 4px 0;
+      font-size: 0.9rem;
+      color: var(--accent);
+      line-height: 1.55;
+    }
+    .rc4-note strong {
+      font-family: var(--font-display);
+      font-size: 1.05em;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      font-weight: 400;
+    }
+    .rc4-note a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .rc4-note a:hover { color: #e0bb6c; }
     .lang-switcher {
       position: absolute;
       top: 1.25rem;
@@ -239,6 +262,10 @@
     <h1 data-i18n="converter_h1">Bring Your List</h1>
     <p class="subtitle" data-i18n="converter_subtitle">Coming from an older version? Drop your MY FAV here and we'll continue in the collection editor.</p>
   </header>
+
+  <p class="rc4-note" data-i18n-html="converter_rc4_note">
+    If your collection was exported from <strong>RC4</strong> or later, you don't need this &mdash; <a href="../profile-editor/">go straight to the editor</a>.
+  </p>
 
   <section id="step-input" class="card">
     <h2 data-i18n="converter_step_drop_h">Drop your old MY FAV file</h2>

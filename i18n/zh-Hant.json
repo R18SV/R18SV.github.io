@@ -35,6 +35,7 @@
 
     "converter_h1":              "把舊收藏帶過來",
     "converter_subtitle":        "從舊版本來的？把你的「我的收藏」放進來，我們在私藏編輯器裡繼續。",
+    "converter_rc4_note":        "如果你的收藏是從 <strong>RC4</strong> 或更新的版本匯出的，不用轉換 &mdash; <a href=\"../profile-editor/\">直接到私藏編輯器</a>就好。",
     "converter_step_drop_h":     "把舊的「我的收藏」檔案放這裡",
     "converter_step_drop_body":  "找一個名字像 <code>Preset_My Favorites_Data*.vap</code> 的檔案——那才是裝著你歌單的那個。同名的 <em>UI</em> 檔只是按鈕而已，不是這裡要的。",
     "converter_drop_zone_text":  "把檔案拖到這裡，或點擊選擇。",

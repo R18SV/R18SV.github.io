@@ -35,6 +35,7 @@
 
     "converter_h1":              "예전 컬렉션 가져오기",
     "converter_subtitle":        "예전 버전에서 왔어요? 「내 컬렉션」을 여기에 놓고 컬렉션 에디터에서 이어서 해요.",
+    "converter_rc4_note":        "컬렉션이 <strong>RC4</strong> 이후 버전에서 내보낸 거라면 변환은 필요 없어요 &mdash; <a href=\"../profile-editor/\">바로 컬렉션 에디터로</a> 가세요.",
     "converter_step_drop_h":     "예전 「내 컬렉션」 파일을 여기에",
     "converter_step_drop_body":  "<code>Preset_My Favorites_Data*.vap</code> 같은 이름의 파일을 찾아주세요 — 노래가 들어 있는 그 파일이에요. 같은 이름의 <em>UI</em> 파일은 버튼만 있어서, 여기서는 필요 없어요.",
     "converter_drop_zone_text":  "여기에 드롭하거나, 클릭해서 선택.",

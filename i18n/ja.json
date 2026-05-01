@@ -35,6 +35,7 @@
 
     "converter_h1":              "リストを持ってくる",
     "converter_subtitle":        "古いバージョンから来た？「マイコレクション」をここに置いて、コレクションエディターで続きをやりましょう。",
+    "converter_rc4_note":        "コレクションが <strong>RC4</strong> 以降のバージョンから書き出されたものなら、変換は不要 &mdash; <a href=\"../profile-editor/\">そのままコレクションエディターへ</a>どうぞ。",
     "converter_step_drop_h":     "昔の「マイコレクション」ファイルをここに",
     "converter_step_drop_body":  "<code>Preset_My Favorites_Data*.vap</code> みたいな名前のファイルを探してね — それが曲の入っているやつ。同じ名前の <em>UI</em> ファイルはボタンだけだから、ここではいらない。",
     "converter_drop_zone_text":  "ここにドロップ、またはクリックして選択。",

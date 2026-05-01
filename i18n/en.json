@@ -42,6 +42,7 @@
     "_converter": "/produce69/profile-converter/",
     "converter_h1":              "Bring Your List",
     "converter_subtitle":        "Coming from an older version? Drop your MY FAV here and we'll continue in the collection editor.",
+    "converter_rc4_note":        "If your collection was exported from <strong>RC4</strong> or later, you don't need this &mdash; <a href=\"../profile-editor/\">go straight to the editor</a>.",
     "converter_step_drop_h":     "Drop your old MY FAV file",
     "converter_step_drop_body":  "Look for a file named like <code>Preset_My Favorites_Data*.vap</code> — that's the one with your songs in it. The matching <em>UI</em> file is just the buttons, not what you want here.",
     "converter_drop_zone_text":  "Drop file here, or click to browse.",
