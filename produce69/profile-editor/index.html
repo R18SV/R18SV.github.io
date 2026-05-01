@@ -70,24 +70,22 @@
       <p>Loaded from import: <span id="history-summary"></span>.</p>
       <p>How would you like to export?</p>
 
-      <div class="branch warn">
+      <button type="button" id="export-with-history-btn" class="branch warn">
         <strong>Export with history</strong>
-        Importing this file in VAM will <em>overwrite</em> the player's
-        in-game RECENT and MOST PLAYED data. Use this when you intend to
-        restore a full profile snapshot.
-      </div>
+        <span class="branch-desc">Importing this file in VAM will <em>overwrite</em> the player's
+          in-game RECENT and MOST PLAYED data. Use this when you intend to
+          restore a full profile snapshot.</span>
+      </button>
 
-      <div class="branch safe">
+      <button type="button" id="export-favs-only-btn" class="branch safe">
         <strong>Export favorites only</strong>
-        VAM's in-game RECENT and MOST PLAYED stay untouched. Great for
-        building a library of mood-based favorite lists you can swap
-        between without losing your play stats.
-      </div>
+        <span class="branch-desc">VAM's in-game RECENT and MOST PLAYED stay untouched. Great for
+          building a library of mood-based favorite lists you can swap
+          between without losing your play stats.</span>
+      </button>
 
       <div class="modal-actions">
         <button id="export-cancel-btn" class="text-btn">Cancel</button>
-        <button id="export-with-history-btn" class="secondary">Export with history</button>
-        <button id="export-favs-only-btn" class="primary">Export favorites only</button>
       </div>
     </div>
   </div>
