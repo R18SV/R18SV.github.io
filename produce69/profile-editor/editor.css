@@ -67,14 +67,10 @@
   --font-display: 'Bebas Neue', 'Oswald', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* CJK locales: Bebas Neue (Latin) and CJK system-fallback fonts have
-   different visual densities. Earlier we bumped sizes ~20% — that turned
-   out to make CJK *bigger* than the EN baseline. Pulled back to a very
-   conservative shade (~3-5%) on the most-disparate surfaces only; most
-   elements share EN sizing now. The .cjk class on <html> stays as a
-   future hook for font-family swaps if we ever add a CJK display font. */
-html.cjk .tab                              { font-size: 1.12rem; }
-html.cjk .slot                             { font-size: 1.1rem; }
+/* CJK locales: keep sizes equal to the EN baseline. Bebas Neue and CJK
+   system fallbacks render close enough at the same font-size on the
+   surfaces we have. The .cjk class on <html> remains as a hook in case
+   we later load a dedicated CJK display font. */
 
 /* Spotlight goes on html so it always covers the full viewport (body
    has max-width 1500px and would clip the gradient on wide screens).
