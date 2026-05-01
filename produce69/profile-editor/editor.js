@@ -26,6 +26,7 @@ const TAB_CONFIG = [
 
 const DEFAULT_TAB = 'Season 01';
 const DEFAULT_SLOT_COUNT = 54;
+const MAX_HISTORY = 50;
 
 // ============================================================
 // State
@@ -39,7 +40,9 @@ const state = {
   currentTab: DEFAULT_TAB,
   expandedSongKey: null,
   favorites: [],
-  favoritesSet: new Set()
+  favoritesSet: new Set(),
+  // Undo: snapshots of favorites[] taken before each mutation. LIFO stack.
+  history: []
 };
 
 // ============================================================
@@ -339,28 +342,81 @@ function wireGlobalHandlers() {
     .getElementById('import-file-input')
     .addEventListener('change', onImportFileChange);
   document.getElementById('clear-fav-btn').addEventListener('click', onClearAllClick);
+  document.getElementById('undo-btn').addEventListener('click', undo);
+
+  // Ctrl/Cmd+Z = undo. Skip when modifier-Z is in a text input (none here, but
+  // future-proof) or when shift is also held (that's redo on most platforms).
+  document.addEventListener('keydown', e => {
+    if (!(e.ctrlKey || e.metaKey)) return;
+    if (e.shiftKey || e.altKey) return;
+    if (e.key !== 'z' && e.key !== 'Z') return;
+    const tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    e.preventDefault();
+    undo();
+  });
 }
 
 // ============================================================
-// Fav state mutators
+// Fav state mutators (each pushes a history snapshot first)
 // ============================================================
+
+function pushHistory() {
+  state.history.push(state.favorites.slice());
+  if (state.history.length > MAX_HISTORY) state.history.shift();
+}
+
+function undo() {
+  if (state.history.length === 0) return;
+  const prev = state.history.pop();
+  state.favorites = prev;
+  state.favoritesSet = new Set(prev);
+  state.expandedSongKey = null;
+  renderRightPane();
+  renderFavList();
+}
+
+function updateUndoButton() {
+  const btn = document.getElementById('undo-btn');
+  if (!btn) return;
+  btn.disabled = state.history.length === 0;
+  btn.title = state.history.length === 0
+    ? 'Nothing to undo'
+    : 'Undo last change (Ctrl+Z) — ' + state.history.length + ' step' +
+      (state.history.length === 1 ? '' : 's') + ' available';
+}
 
 function addFavorite(trackId) {
   if (state.favoritesSet.has(trackId)) return;
+  pushHistory();
   state.favorites.push(trackId);
   state.favoritesSet.add(trackId);
 }
 
 function removeFavorite(trackId) {
   if (!state.favoritesSet.has(trackId)) return;
+  pushHistory();
   const idx = state.favorites.indexOf(trackId);
   if (idx >= 0) state.favorites.splice(idx, 1);
   state.favoritesSet.delete(trackId);
 }
 
 function clearFavorites() {
+  if (state.favorites.length === 0) return;
+  pushHistory();
   state.favorites = [];
   state.favoritesSet = new Set();
+}
+
+function reorderFavorite(fromIdx, toIdx) {
+  if (fromIdx === toIdx) return;
+  if (fromIdx < 0 || fromIdx >= state.favorites.length) return;
+  if (toIdx < 0 || toIdx > state.favorites.length) return;
+  pushHistory();
+  const [moved] = state.favorites.splice(fromIdx, 1);
+  // If we removed an item before the target, target index shifts left by 1
+  const adjustedTo = fromIdx < toIdx ? toIdx - 1 : toIdx;
+  state.favorites.splice(adjustedTo, 0, moved);
 }
 
 // ============================================================
@@ -374,6 +430,7 @@ function renderFavList() {
   const countEl = document.getElementById('fav-count');
 
   countEl.textContent = state.favorites.length;
+  updateUndoButton();
 
   if (state.favorites.length === 0) {
     list.classList.add('hidden');
@@ -390,7 +447,8 @@ function renderFavList() {
     .map((trackId, idx) => {
       const lbl = formatFavLabel(trackId);
       return (
-        '<li class="fav-row" data-trackid="' + escapeHTML(trackId) + '">' +
+        '<li class="fav-row" data-trackid="' + escapeHTML(trackId) +
+        '" data-idx="' + idx + '" draggable="true">' +
         '<span class="index">' + (idx + 1) + '.</span>' +
         lbl.html +
         '<button class="remove-btn" title="Remove from favorites">&times;</button>' +
@@ -407,6 +465,56 @@ function renderFavList() {
       removeFavorite(trackId);
       renderFavList();
       renderRightPane();
+    });
+  });
+
+  wireDragHandlers(list);
+}
+
+// HTML5 drag-and-drop for fav-list reordering. Each row is draggable;
+// dragover on a row marks it as the drop target; on drop, splice the
+// favorites array to move source to target.
+function wireDragHandlers(listEl) {
+  let dragSrcIdx = null;
+
+  function clearTargets() {
+    listEl.querySelectorAll('.drop-target').forEach(el => el.classList.remove('drop-target'));
+  }
+
+  listEl.querySelectorAll('.fav-row').forEach(row => {
+    row.addEventListener('dragstart', e => {
+      dragSrcIdx = parseInt(row.dataset.idx, 10);
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      // Required for Firefox to actually fire drag events
+      e.dataTransfer.setData('text/plain', String(dragSrcIdx));
+    });
+    row.addEventListener('dragend', () => {
+      row.classList.remove('dragging');
+      clearTargets();
+      dragSrcIdx = null;
+    });
+    row.addEventListener('dragover', e => {
+      if (dragSrcIdx === null) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      const targetIdx = parseInt(row.dataset.idx, 10);
+      if (targetIdx === dragSrcIdx) return;
+      clearTargets();
+      row.classList.add('drop-target');
+    });
+    row.addEventListener('dragleave', () => {
+      row.classList.remove('drop-target');
+    });
+    row.addEventListener('drop', e => {
+      e.preventDefault();
+      if (dragSrcIdx === null) return;
+      const targetIdx = parseInt(row.dataset.idx, 10);
+      reorderFavorite(dragSrcIdx, targetIdx);
+      dragSrcIdx = null;
+      renderFavList();
+      // Catalog "added" markers are unchanged on reorder, no need to
+      // re-render right pane.
     });
   });
 }
@@ -483,6 +591,7 @@ function onImportFileChange(e) {
           return;
         }
       }
+      pushHistory();
       state.favorites = incoming.slice();
       state.favoritesSet = new Set(incoming);
       state.expandedSongKey = null;
