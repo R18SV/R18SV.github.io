@@ -53,7 +53,7 @@
     "editor_loading":            "노래를 불러오는 중…",
     "editor_error_h":            "노래를 불러오지 못했어요",
 
-    "editor_btn_export":         "가져가기",
+    "editor_btn_export":         "내보내기",
     "editor_btn_import":         "가져오기",
     "editor_btn_undo":           "실행 취소",
     "editor_btn_undo_title_empty":"실행 취소할 게 없어요",

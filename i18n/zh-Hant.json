@@ -53,8 +53,8 @@
     "editor_loading":            "翻一翻歌單…",
     "editor_error_h":            "歌單翻不出來",
 
-    "editor_btn_export":         "帶走",
-    "editor_btn_import":         "帶進來",
+    "editor_btn_export":         "匯出",
+    "editor_btn_import":         "匯入",
     "editor_btn_undo":           "撤銷",
     "editor_btn_undo_title_empty":"沒有可撤銷的",
     "editor_btn_undo_title_steps":"撤銷上一步（Ctrl+Z）——可撤銷 {n} 步",

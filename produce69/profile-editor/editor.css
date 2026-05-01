@@ -67,6 +67,25 @@
   --font-display: 'Bebas Neue', 'Oswald', 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* CJK locales: Latin Bebas Neue and CJK system-fallback fonts render at
+   noticeably different visual densities at the same font-size value (CJK
+   strokes look thinner / characters smaller). Bump display surfaces ~15-20%
+   on zh-Hant / ja / ko. Triggered by a `cjk` class on <html>. */
+html.cjk .tab                              { font-size: 1.32rem; }
+html.cjk .slot                             { font-size: 1.22rem; }
+html.cjk .fav-row                          { font-size: 1.18rem; }
+html.cjk .pane-title                       { font-size: 1.4rem; }
+html.cjk .history-indicator                { font-size: 1.05rem; }
+html.cjk .empty-state-title                { font-size: 1.5rem; }
+html.cjk .tag-level2-header .tag-current   { font-size: 1.55rem; }
+html.cjk .tag-level2-header .tag-back-link { font-size: 1.05rem; }
+html.cjk .tag-level2-header .tag-count     { font-size: 1rem; }
+html.cjk .pagination                       { font-size: 1.12rem; }
+html.cjk .pagination .page-info            { font-size: 1rem; }
+html.cjk .slot.header                      { font-size: 1.18rem; }
+html.cjk .variant-popover .vp-title        { font-size: 1.05rem; }
+html.cjk .variant-popover .vp-row          { font-size: 1rem; }
+
 /* Spotlight goes on html so it always covers the full viewport (body
    has max-width 1500px and would clip the gradient on wide screens).
    Background-attachment fixed keeps the lights anchored to viewport. */
@@ -535,12 +554,6 @@ h1 {
 .slot.song.coming-soon {
   color: var(--soft);
   cursor: default;
-}
-.slot.song.coming-soon .coming-soon-tag {
-  font-size: 0.7em;
-  font-style: normal;
-  color: var(--soft);
-  margin-left: 0.4em;
 }
 
 .slot .from-tag {

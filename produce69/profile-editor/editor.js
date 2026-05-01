@@ -29,12 +29,21 @@ async function i18nLoad(lang) {
     i18nDict = await res.json();
     i18nCurrent = lang;
     document.documentElement.lang = lang;
+    applyLangClass();
     try { localStorage.setItem(I18N_KEY_LANG, lang); } catch (e) {}
     return true;
   } catch (e) {
     console.warn('Failed to load language ' + lang + ':', e);
     return false;
   }
+}
+
+// CJK locales render system-fallback CJK glyphs noticeably smaller than the
+// Bebas Neue display font for Latin at the same font-size — toggle a class
+// on <html> so CSS can bump display surfaces (~15-20%) for CJK only.
+function applyLangClass() {
+  const isCjk = i18nCurrent === 'zh-Hant' || i18nCurrent === 'ja' || i18nCurrent === 'ko';
+  document.documentElement.classList.toggle('cjk', isCjk);
 }
 
 async function i18nInitFallback() {
@@ -236,7 +245,12 @@ async function boot() {
     try { savedLang = localStorage.getItem(I18N_KEY_LANG) || I18N_DEFAULT; } catch (e) {}
     if (!I18N_SUPPORTED.find(l => l.code === savedLang)) savedLang = I18N_DEFAULT;
     if (savedLang !== I18N_DEFAULT) await i18nLoad(savedLang);
-    else if (i18nFallback) { i18nDict = i18nFallback; i18nCurrent = 'en'; document.documentElement.lang = 'en'; }
+    else if (i18nFallback) {
+      i18nDict = i18nFallback;
+      i18nCurrent = 'en';
+      document.documentElement.lang = 'en';
+      applyLangClass();
+    }
 
     const res = await fetch('catalog.json');
     if (!res.ok) {
@@ -761,13 +775,11 @@ function renderSlot(slot) {
 
   // Added state is signalled by row bg color (.slot.song.added in CSS),
   // not a text badge — keeps the grid scannable.
-  const comingSoonTag = isComingSoon
-    ? '<span class="coming-soon-tag">' + escapeHTML(t('label_coming_soon')) + '</span>'
-    : '';
-
+  // Coming-soon rows: the gray .soft color + non-clickable cursor already
+  // signal the state; no text suffix needed.
   return (
     '<div class="' + cls + '"' + dataAttr + '>' +
-    label + fromTag + playCountBadge + comingSoonTag + popover +
+    label + fromTag + playCountBadge + popover +
     '</div>'
   );
 }

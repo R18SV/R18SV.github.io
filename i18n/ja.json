@@ -53,8 +53,8 @@
     "editor_loading":            "曲を引っぱり出してます…",
     "editor_error_h":            "曲を引っぱり出せませんでした",
 
-    "editor_btn_export":         "持ち帰る",
-    "editor_btn_import":         "持ってくる",
+    "editor_btn_export":         "エクスポート",
+    "editor_btn_import":         "インポート",
     "editor_btn_undo":           "元に戻す",
     "editor_btn_undo_title_empty":"元に戻すものはありません",
     "editor_btn_undo_title_steps":"前の操作を取り消し（Ctrl+Z）— あと {n} 段階",
