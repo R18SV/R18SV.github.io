@@ -22,12 +22,19 @@
   --pill-hover: #ff5a76;
   --success: #2a7a2a;
   --danger: #c00;
+  /* Typography stacks
+     --font-ui: chrome (buttons, body text, modals, headings)
+     --font-display: game-data display surfaces (slot rows, tab labels,
+       section headers, pagination, fav-list rows). Mirrors the in-game
+       Bebas Neue used in the playlist UI for muscle-memory continuity. */
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Bebas Neue', 'Oswald', 'Helvetica Neue', Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-ui);
   max-width: 1500px;
   margin: 2.5rem auto;
   padding: 0 1.5rem;
@@ -163,14 +170,14 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0.7rem 0.25rem 0.85rem;
+  padding: 0.2rem 0.7rem 0.2rem 0.85rem;
   background: var(--highlight-bg);
   border: 1px solid var(--highlight);
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
   color: var(--highlight);
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 .history-indicator .drop-btn {
@@ -228,9 +235,10 @@ h1 {
 
 .pane-title {
   margin: 0 0 0.75rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -255,8 +263,10 @@ h1 {
   grid-template-columns: 1.5rem 1fr 1.4rem;
   gap: 0.3rem;
   align-items: baseline;
-  padding: 0.25rem 0.4rem;
-  font-size: 0.92rem;
+  padding: 0.2rem 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.015em;
   border-radius: 3px;
   cursor: grab;
   position: relative;
@@ -276,10 +286,12 @@ h1 {
 }
 
 .fav-row .index {
+  font-family: var(--font-ui);
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-align: right;
   font-style: normal;
+  letter-spacing: 0;
   user-select: none;
 }
 
@@ -291,16 +303,20 @@ h1 {
 }
 .fav-row .label.is-missing { color: var(--soft); }
 .fav-row .label .variant-suffix {
-  font-size: 0.78em;
+  font-family: var(--font-display);
+  font-size: 0.82em;
   color: var(--muted);
   font-style: normal;
-  margin-left: 0.2em;
+  margin-left: 0.25em;
+  letter-spacing: 0.04em;
 }
 .fav-row .label .missing-tag {
+  font-family: var(--font-ui);
   font-style: normal;
   font-size: 0.7em;
   color: var(--soft);
   margin-left: 0.3em;
+  letter-spacing: 0;
 }
 
 .fav-row .remove-btn {
@@ -347,10 +363,10 @@ h1 {
 .tab {
   background: transparent;
   border: none;
-  font: inherit;
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   padding: 0.35rem 0.4rem;
   cursor: pointer;
@@ -359,15 +375,15 @@ h1 {
   transition: color 0.1s;
 }
 .tab:hover { color: var(--fg); }
-.tab.active { color: var(--highlight); font-weight: 600; }
+.tab.active { color: var(--highlight); }
 
 .tab.tag-pill {
   background: var(--pill);
   color: var(--pill-fg);
-  padding: 0.35rem 1rem;
+  padding: 0.3rem 1rem;
   border-radius: 999px;
   margin-left: auto;
-  font-weight: 600;
+  letter-spacing: 0.05em;
 }
 .tab.tag-pill:hover { background: var(--pill-hover); color: white; }
 .tab.tag-pill.active { background: var(--pill); color: white; }
@@ -382,8 +398,10 @@ h1 {
 }
 
 .slot {
-  font-size: 0.92rem;
-  padding: 0.25rem 0.4rem;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  letter-spacing: 0.015em;
+  padding: 0.2rem 0.4rem;
   border-radius: 3px;
   display: flex;
   align-items: baseline;
@@ -397,11 +415,12 @@ h1 {
 
 .slot.header {
   color: var(--highlight);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.04em;
   cursor: default;
   padding-top: 0.6rem;
   padding-bottom: 0.2rem;
+  font-size: 1.05rem;
 }
 
 .slot.song:not(.coming-soon):not(.expanded) { cursor: pointer; }
@@ -416,11 +435,12 @@ h1 {
 }
 .slot.song .check-pill {
   margin-left: auto;
-  font-size: 0.7em;
+  font-family: var(--font-display);
+  font-size: 0.78em;
   font-style: normal;
   color: var(--success);
-  letter-spacing: 0.05em;
-  font-weight: 500;
+  letter-spacing: 0.06em;
+  font-weight: 400;
 }
 
 .slot.song.coming-soon {
@@ -436,23 +456,25 @@ h1 {
 }
 
 .slot .from-tag {
-  font-size: 0.7em;
+  font-family: var(--font-display);
+  font-size: 0.78em;
   font-style: normal;
   color: var(--muted);
   margin-left: 0.3em;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 .slot.song.is-new .from-tag {
   color: var(--highlight);
   opacity: 0.85;
 }
 .slot .play-count {
-  font-size: 0.72em;
+  font-family: var(--font-display);
+  font-size: 0.82em;
   font-style: normal;
   color: var(--muted);
   margin-left: 0.35em;
-  letter-spacing: 0.03em;
-  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-weight: 400;
 }
 .slot.song.is-new .play-count { color: var(--highlight); }
 .slot.song.added .play-count { color: var(--success); }
@@ -485,9 +507,9 @@ h1 {
 .tag-level2-header .tag-back-link {
   background: transparent;
   border: none;
-  font: inherit;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
   cursor: pointer;
@@ -497,15 +519,17 @@ h1 {
 .tag-level2-header .tag-back-link:hover { color: var(--fg); background: var(--hover-bg); }
 .tag-level2-header .tag-current {
   flex: 1;
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
   color: var(--fg);
-  letter-spacing: 0.02em;
+  font-style: italic;
 }
 .tag-level2-header .tag-count {
+  font-family: var(--font-display);
   color: var(--muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -528,8 +552,9 @@ h1 {
 }
 
 .variant-popover .vp-title {
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--muted);
   padding: 0.2rem 0.5rem 0.4rem;
@@ -566,6 +591,43 @@ h1 {
   letter-spacing: 0.04em;
 }
 
+/* === Pagination (TAG mode) =============================== */
+
+.pagination {
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+.pagination button {
+  background: transparent;
+  border: none;
+  font: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+}
+.pagination button:hover { color: var(--fg); background: var(--hover-bg); }
+.pagination button:disabled {
+  color: var(--soft);
+  cursor: default;
+  background: transparent;
+}
+.pagination .page-info {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
 /* === Misc =============================================== */
 
 .placeholder-msg {
@@ -581,10 +643,12 @@ h1 {
 }
 .empty-state-title {
   margin: 0 0 0.6rem;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
   color: var(--accent);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 .empty-state-body {
   margin: 0 auto;
