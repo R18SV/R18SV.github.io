@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shadow Venom</title>
+  <title data-i18n="meta_title_hub">Shadow Venom</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script>
+    window.I18N_BASE_PATH = 'i18n/';
+    window.I18N_META_TITLE_KEY = 'meta_title_hub';
+  </script>
+  <script defer src="i18n/i18n.js"></script>
   <style>
     :root {
       --bg:           #110d16;
@@ -134,30 +139,70 @@
       font-size: 0.85rem;
       text-align: center;
     }
+    .lang-switcher {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      display: inline-flex;
+      gap: 0.15rem;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+    }
+    .lang-switcher button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      padding: 0.32rem 0.55rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+    .lang-switcher button:hover {
+      color: var(--fg);
+      border-color: var(--gold-soft);
+    }
+    .lang-switcher button.active {
+      color: var(--gold);
+      border-color: var(--gold-soft);
+      background: var(--gold-bg);
+    }
+    /* CJK locale tweaks (kept conservative — display surfaces only) */
+    html.cjk h1            { font-size: 3rem; letter-spacing: 0.04em; }
+    html.cjk .project-card h3 { font-size: 1.2rem; letter-spacing: 0.02em; }
+    html.cjk .pill,
+    html.cjk .project-card .series-name { font-size: 0.78rem; }
   </style>
 </head>
 <body>
+  <div class="lang-switcher" role="radiogroup" aria-label="Language">
+    <button data-lang="en">EN</button>
+    <button data-lang="ja">日本語</button>
+    <button data-lang="ko">한국어</button>
+    <button data-lang="zh-Hant">繁中</button>
+  </div>
+
   <header>
-    <h1>Shadow Venom</h1>
-    <p class="tagline">Building parallel worlds for VAM.</p>
+    <h1 data-i18n="hub_h1">Shadow Venom</h1>
+    <p class="tagline" data-i18n="hub_tagline">Building parallel worlds for VAM.</p>
   </header>
 
-  <div class="status-banner">
+  <div class="status-banner" data-i18n="hub_status">
     Quietly warming up. More worlds and companion tools &mdash; landing soon.
   </div>
 
   <section class="projects">
     <a href="produce69/" class="project-card">
-      <h3>Produce 69</h3>
-      <p class="series-name">VaM Produce 69 II</p>
-      <p>Idol production stage. Bring your favorites under the spotlight.</p>
-      <span class="pill">Companion tools available</span>
+      <h3 data-i18n="hub_card_p69_h">Produce 69</h3>
+      <p class="series-name" data-i18n="hub_card_p69_series">VaM Produce 69 II</p>
+      <p data-i18n="hub_card_p69_desc">Idol production stage. Bring your favorites under the spotlight.</p>
+      <span class="pill" data-i18n="hub_card_p69_pill">Companion tools available</span>
     </a>
 
     <article class="project-card placeholder">
-      <h3>Casino 69</h3>
+      <h3 data-i18n="hub_card_c69_h">Casino 69</h3>
       <p>&mdash;</p>
-      <span class="pill">Coming soon</span>
+      <span class="pill" data-i18n="hub_card_c69_pill">Coming soon</span>
     </article>
   </section>
 

@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produce 69 &mdash; Shadow Venom</title>
+  <title data-i18n="meta_title_p69">Produce 69 &mdash; Shadow Venom</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script>
+    window.I18N_BASE_PATH = '../i18n/';
+    window.I18N_META_TITLE_KEY = 'meta_title_p69';
+  </script>
+  <script defer src="../i18n/i18n.js"></script>
   <style>
     :root {
       --bg:           #110d16;
@@ -145,33 +150,73 @@
       font-size: 0.85rem;
       text-align: center;
     }
+    .lang-switcher {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      display: inline-flex;
+      gap: 0.15rem;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+    }
+    .lang-switcher button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      padding: 0.32rem 0.55rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+    .lang-switcher button:hover { color: var(--fg); border-color: var(--gold-soft); }
+    .lang-switcher button.active {
+      color: var(--gold);
+      border-color: var(--gold-soft);
+      background: var(--gold-bg);
+    }
+    /* CJK conservative dial-down */
+    html.cjk h1                { font-size: 2.6rem; }
+    html.cjk .tool-card h3     { font-size: 1.2rem; letter-spacing: 0.02em; }
+    html.cjk .pill,
+    html.cjk .series-name      { font-size: 0.78rem; }
   </style>
 </head>
 <body>
-  <p class="breadcrumb"><a href="../">Shadow Venom</a> &raquo; Produce 69</p>
+  <div class="lang-switcher" role="radiogroup" aria-label="Language">
+    <button data-lang="en">EN</button>
+    <button data-lang="ja">日本語</button>
+    <button data-lang="ko">한국어</button>
+    <button data-lang="zh-Hant">繁中</button>
+  </div>
+
+  <p class="breadcrumb">
+    <a href="../" data-i18n="chrome_breadcrumb_sv">Shadow Venom</a> &raquo;
+    <span data-i18n="chrome_breadcrumb_p69">Produce 69</span>
+  </p>
 
   <header>
-    <h1>Produce 69</h1>
-    <p class="series-name">VaM Produce 69 II</p>
-    <p class="subtitle">Tools to take the show home with you.</p>
+    <h1 data-i18n="p69_h1">Produce 69</h1>
+    <p class="series-name" data-i18n="p69_series">VaM Produce 69 II</p>
+    <p class="subtitle" data-i18n="p69_subtitle">Tools to take the show home with you.</p>
   </header>
 
   <section class="tools">
     <a href="profile-converter/" class="tool-card">
-      <h3>Bring Your List</h3>
-      <p>Coming from an older version? Drop your old MY FAV file here &mdash; your songs follow you straight into the collection editor.</p>
-      <span class="pill">Available</span>
+      <h3 data-i18n="p69_card_converter_h">Bring Your List</h3>
+      <p data-i18n="p69_card_converter_desc">Coming from an older version? Drop your old MY FAV file here &mdash; your songs follow you straight into the collection editor.</p>
+      <span class="pill" data-i18n="p69_card_pill_available">Available</span>
     </a>
 
     <a href="profile-editor/" class="tool-card">
-      <h3>Collection</h3>
-      <p>Browse the catalog, pick the songs you'll keep close, and take them back to the show. Build different lists for different nights &mdash; swap them in whenever.</p>
-      <span class="pill">Available</span>
+      <h3 data-i18n="p69_card_editor_h">Collection</h3>
+      <p data-i18n="p69_card_editor_desc">Browse the catalog, pick the songs you'll keep close, and take them back to the show. Build different lists for different nights &mdash; swap them in whenever.</p>
+      <span class="pill" data-i18n="p69_card_pill_available">Available</span>
     </a>
   </section>
 
   <footer>
-    <a href="../">&larr; Back to Shadow Venom</a>
+    <a href="../" data-i18n="chrome_back_to_sv">&larr; Back to Shadow Venom</a>
   </footer>
 </body>
 </html>

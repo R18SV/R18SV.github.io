@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bring Your List &mdash; Produce 69</title>
+  <title data-i18n="meta_title_converter">Bring Your List &mdash; Produce 69</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <script>
+    window.I18N_BASE_PATH = '../../i18n/';
+    window.I18N_META_TITLE_KEY = 'meta_title_converter';
+  </script>
+  <script defer src="../../i18n/i18n.js"></script>
   <style>
     :root {
       --bg:           #110d16;
@@ -156,7 +161,7 @@
     .hint {
       font-size: 0.85rem;
       color: var(--muted);
-      margin-top: 1.75rem;
+      margin-top: 2.5rem;
     }
     .progress-dots {
       display: inline-flex;
@@ -185,43 +190,78 @@
       text-align: center;
     }
     html.offline .offline-hide { display: none; }
+    .lang-switcher {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      display: inline-flex;
+      gap: 0.15rem;
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+    }
+    .lang-switcher button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      padding: 0.32rem 0.55rem;
+      border-radius: 3px;
+      letter-spacing: 0.02em;
+    }
+    .lang-switcher button:hover { color: var(--fg); border-color: var(--gold-soft); }
+    .lang-switcher button.active {
+      color: var(--gold);
+      border-color: var(--gold-soft);
+      background: var(--gold-bg);
+    }
+    /* CJK conservative dial-down */
+    html.cjk h1                  { font-size: 2.05rem; }
+    html.cjk .card h2            { font-size: 1.12rem; }
   </style>
 </head>
 <body>
+  <div class="lang-switcher" role="radiogroup" aria-label="Language">
+    <button data-lang="en">EN</button>
+    <button data-lang="ja">日本語</button>
+    <button data-lang="ko">한국어</button>
+    <button data-lang="zh-Hant">繁中</button>
+  </div>
+
   <p class="breadcrumb offline-hide">
-    <a href="../../">Shadow Venom</a> &raquo;
-    <a href="../">Produce 69</a> &raquo;
-    Bring Your List
+    <a href="../../" data-i18n="chrome_breadcrumb_sv">Shadow Venom</a> &raquo;
+    <a href="../" data-i18n="chrome_breadcrumb_p69">Produce 69</a> &raquo;
+    <span data-i18n="chrome_breadcrumb_converter">Bring Your List</span>
   </p>
 
   <header>
-    <h1>Bring Your List</h1>
-    <p class="subtitle">Coming from an older version? Drop your MY FAV here and we'll continue in the collection editor.</p>
+    <h1 data-i18n="converter_h1">Bring Your List</h1>
+    <p class="subtitle" data-i18n="converter_subtitle">Coming from an older version? Drop your MY FAV here and we'll continue in the collection editor.</p>
   </header>
 
   <section id="step-input" class="card">
-    <h2>Drop your old MY FAV file</h2>
-    <p>Look for a file named like <code>Preset_My Favorites_Data*.vap</code> &mdash; that's the one with your songs in it. The matching <em>UI</em> file is just the buttons, not what you want here.</p>
-    <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Drop file here or click to browse">
-      <p>Drop file here, or click to browse.</p>
+    <h2 data-i18n="converter_step_drop_h">Drop your old MY FAV file</h2>
+    <p data-i18n-html="converter_step_drop_body">Look for a file named like <code>Preset_My Favorites_Data*.vap</code> &mdash; that's the one with your songs in it. The matching <em>UI</em> file is just the buttons, not what you want here.</p>
+    <div id="drop-zone" class="drop-zone" tabindex="0" role="button" data-i18n-title="converter_drop_zone_aria" aria-label="Drop file here or click to browse">
+      <p data-i18n="converter_drop_zone_text">Drop file here, or click to browse.</p>
       <input type="file" id="file-input" accept=".vap,.json" hidden>
     </div>
-    <p class="hint">Your songs will be waiting in the <a href="../profile-editor/">collection editor</a>. Refine the list there, then take them back to the show when you're ready &mdash; or take them back right away if you'd rather not change a thing.</p>
+    <p class="hint" data-i18n-html="converter_hint">Your songs will be waiting in the <a href="../profile-editor/">collection editor</a>. Refine the list there, then take them back to the show when you're ready &mdash; or take them back right away if you'd rather not change a thing.</p>
   </section>
 
   <section id="step-converting" class="card hidden">
-    <h2>Bringing your songs in<span class="progress-dots" aria-hidden="true"><span></span><span></span><span></span></span></h2>
-    <p id="converting-summary">Reading your file.</p>
+    <h2><span data-i18n="converter_converting_h">Bringing your songs in</span><span class="progress-dots" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+    <p id="converting-summary" data-i18n="converter_summary_reading">Reading your file.</p>
   </section>
 
   <section id="step-error" class="card error hidden">
-    <h2>That didn't work</h2>
+    <h2 data-i18n="converter_error_h">That didn't work</h2>
     <p id="error-message"></p>
-    <button id="retry-btn" class="secondary">Try another file</button>
+    <button id="retry-btn" class="secondary" data-i18n="converter_btn_retry">Try another file</button>
   </section>
 
   <footer class="offline-hide">
-    <a href="../">&larr; Back to Produce 69</a>
+    <a href="../" data-i18n="chrome_back_to_p69">&larr; Back to Produce 69</a>
   </footer>
 
   <script>
@@ -331,11 +371,17 @@
       hideAll();
       els.stepConverting.classList.remove('hidden');
       const n = result.trackIds.length;
-      let msg = 'Found ' + n + ' song' + (n === 1 ? '' : 's') + ' in ' + fileName + '.';
+      const t = (window.SVI18n && window.SVI18n.t) || ((k) => k);
+      let msg = t('converter_summary_found', {
+        n: n,
+        s: n === 1 ? '' : 's',
+        file: fileName
+      });
       if (result.declaredCount !== null && result.declaredCount !== n) {
-        msg += ' (File declared ' + result.declaredCount + '; ' + n + ' were non-empty.)';
+        msg += t('converter_summary_declared', { decl: result.declaredCount, n: n });
       }
-      els.convertingSummary.textContent = msg + ' Bringing them in…';
+      msg += t('converter_summary_opening');
+      els.convertingSummary.textContent = msg;
     }
 
     function showError(msg) {
