@@ -48,6 +48,30 @@ const OUTPUT = path.resolve(
   'catalog.json'
 );
 
+// Stage display alias map — mirrors the plugin's `_stageDisplayAlias`
+// (src/PlaylistController.cs). Several technical stage names that the
+// preset-loader uses internally should consolidate under a single
+// display label for the BY STAGE drill list. The plugin applies this
+// at the UI layer at runtime; the slim public catalog applies it at
+// build time so the web editor's stage list matches the in-game UI
+// (34 distinct entries) and the i18n `stages` overlay (which is keyed
+// by display aliases) resolves correctly.
+//
+// Keep in sync with:
+//   - Custom/Scripts/Shadow Venom/Produce 69/STAGE_DISPLAY_ALIAS_NOTE.md
+//   - PlaylistController.cs `_stageDisplayAlias`
+const STAGE_DISPLAY_ALIAS = {
+  'SP 01 Stage':       'Multi Stage',
+  'SP 02 Stage':       'Multi Stage',
+  'SP 03 Stage':       'Multi Stage',
+  'Oriental Stage 01': 'Oriental Stage',
+  'Oriental Stage 06': 'Oriental Stage'
+};
+
+function resolveStageDisplay(s) {
+  return STAGE_DISPLAY_ALIAS[s] || s;
+}
+
 // Filter tabs surfaced in the editor right-pane. Order is the canonical
 // tab order; the UI uses this to drive its tab strip layout. Skip Season 06,
 // Wishbox, and My Favorites (My Favorites is the editor's left pane, not a
@@ -80,7 +104,7 @@ function buildTracks(songsRaw) {
     const variants = song.stagings.map(st => ({
       trackId: st.id,
       songKey: song.songKey,
-      stage: st.stage,
+      stage: resolveStageDisplay(st.stage),
       variantNumber: extractVariantNumber(st.id)
     }));
     variants.sort((a, b) => a.variantNumber - b.variantNumber);
