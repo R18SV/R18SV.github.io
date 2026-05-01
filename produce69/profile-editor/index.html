@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collection &mdash; Produce 69</title>
+  <title data-i18n="meta_title_editor">Collection &mdash; Produce 69</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -11,20 +11,20 @@
 </head>
 <body>
   <p class="breadcrumb">
-    <a href="../../">Shadow Venom</a> &raquo;
-    <a href="../">Produce 69</a> &raquo;
-    Collection
+    <a href="../../" data-i18n="chrome_breadcrumb_sv">Shadow Venom</a> &raquo;
+    <a href="../" data-i18n="chrome_breadcrumb_p69">Produce 69</a> &raquo;
+    <span data-i18n="chrome_breadcrumb_editor">Collection</span>
   </p>
 
   <header>
-    <h1>Collection</h1>
-    <p class="subtitle">Pick the songs you'll keep close. Take them back to the show whenever you're ready.</p>
+    <h1 data-i18n="editor_h1">Collection</h1>
+    <p class="subtitle" data-i18n="editor_subtitle">Pick the songs you'll keep close. Take them back to the show whenever you're ready.</p>
   </header>
 
-  <div id="loading" class="loading">Pulling up the songs&hellip;</div>
+  <div id="loading" class="loading" data-i18n="editor_loading">Pulling up the songs&hellip;</div>
 
   <div id="error" class="error hidden">
-    <h2>Couldn't pull up the songs</h2>
+    <h2 data-i18n="editor_error_h">Couldn't pull up the songs</h2>
     <p id="error-msg"></p>
   </div>
 
@@ -34,27 +34,33 @@
       <button id="handoff-banner-dismiss" class="handoff-banner-dismiss" title="Dismiss">&times;</button>
     </div>
     <div class="action-bar">
-      <button id="export-btn">Export</button>
-      <button id="import-btn" class="secondary">Import</button>
+      <button id="export-btn" data-i18n="editor_btn_export">Export</button>
+      <button id="import-btn" class="secondary" data-i18n="editor_btn_import">Import</button>
       <input type="file" id="import-file-input" accept=".p69save,.json" hidden>
       <span id="history-indicator" class="history-indicator hidden">
         <span id="history-indicator-label">carrying history</span>
-        <button id="history-drop-btn" class="drop-btn" title="Drop the history — your collection stays">&times;</button>
+        <button id="history-drop-btn" class="drop-btn" data-i18n-title="editor_history_drop_title" title="Drop the history — your collection stays">&times;</button>
       </span>
       <span class="spacer"></span>
-      <button id="undo-btn" class="secondary" disabled title="Nothing to undo">Undo</button>
+      <div class="lang-switcher" role="radiogroup" data-i18n-title="lang_switcher_label" aria-label="Language">
+        <button data-lang="en">EN</button>
+        <button data-lang="zh-Hant">繁中</button>
+        <button data-lang="ja">日本語</button>
+        <button data-lang="ko">한국어</button>
+      </div>
+      <button id="undo-btn" class="secondary" disabled data-i18n="editor_btn_undo" data-i18n-title="editor_btn_undo_title_empty" title="Nothing to undo">Undo</button>
     </div>
 
     <div class="two-pane">
       <aside class="left-pane">
-        <h2 class="pane-title">My Collection (<span id="fav-count">0</span>)</h2>
+        <h2 class="pane-title"><span data-i18n="editor_pane_my_collection">My Collection</span> (<span id="fav-count">0</span>)</h2>
         <ul id="fav-list" class="fav-list hidden"></ul>
-        <div id="empty-fav-msg" class="empty-fav-msg">
+        <div id="empty-fav-msg" class="empty-fav-msg" data-i18n-html="editor_empty_collection_html">
           Empty here.<br>
           Load a saved one to edit, or start picking from the catalog &rarr;
         </div>
         <div id="fav-footer" class="fav-footer hidden">
-          <button id="clear-fav-btn" class="text-btn danger">Clear collection</button>
+          <button id="clear-fav-btn" class="text-btn danger" data-i18n="editor_btn_clear">Clear collection</button>
         </div>
       </aside>
 
@@ -66,32 +72,32 @@
   </div>
 
   <footer>
-    <a href="../">&larr; Back to Produce 69</a>
+    <a href="../" data-i18n="chrome_back_to_p69">&larr; Back to Produce 69</a>
   </footer>
 
   <!-- Export modal: shown only when current state carries play history fields -->
   <div id="export-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
     <div class="modal-backdrop"></div>
     <div class="modal-card">
-      <h2 id="export-modal-title">There's history on this list</h2>
-      <p>You brought back: <span id="history-summary"></span>.</p>
-      <p>How would you like to take it back?</p>
+      <h2 id="export-modal-title" data-i18n="modal_export_h">There's history on this list</h2>
+      <p><span data-i18n="modal_export_intro">You brought back: </span><span id="history-summary"></span>.</p>
+      <p data-i18n="modal_export_question">How would you like to take it back?</p>
 
       <button type="button" id="export-with-history-btn" class="branch warn">
-        <strong>Take it all back</strong>
-        <span class="branch-desc">Whatever's currently in the show (RECENT, MOST PLAYED) will be
+        <strong data-i18n="modal_export_with_h">Take it all back</strong>
+        <span class="branch-desc" data-i18n-html="modal_export_with_desc">Whatever's currently in the show (RECENT, MOST PLAYED) will be
           <em>overwritten</em> by what's here. Best for restoring a full snapshot.</span>
       </button>
 
       <button type="button" id="export-favs-only-btn" class="branch safe">
-        <strong>Just the songs</strong>
-        <span class="branch-desc">RECENT and MOST PLAYED in the show stay where they are. Great
+        <strong data-i18n="modal_export_safe_h">Just the songs</strong>
+        <span class="branch-desc" data-i18n-html="modal_export_safe_desc">RECENT and MOST PLAYED in the show stay where they are. Great
           for keeping different lists for different moods &mdash; swap them in
           whenever, without losing what's already counted.</span>
       </button>
 
       <div class="modal-actions">
-        <button id="export-cancel-btn" class="text-btn">Cancel</button>
+        <button id="export-cancel-btn" class="text-btn" data-i18n="modal_btn_cancel">Cancel</button>
       </div>
     </div>
   </div>

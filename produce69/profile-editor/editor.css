@@ -223,6 +223,35 @@ h1 {
 
 .action-bar .spacer { flex: 1; }
 
+/* === Language switcher (right side of action bar) === */
+.lang-switcher {
+  display: inline-flex;
+  gap: 0.15rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  margin-right: 0.4rem;
+}
+.lang-switcher button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  padding: 0.32rem 0.55rem;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.lang-switcher button:hover {
+  color: var(--fg);
+  border-color: var(--gold-soft);
+}
+.lang-switcher button.active {
+  color: var(--gold);
+  border-color: var(--gold-soft);
+  background: var(--gold-bg);
+}
+
 /* History indicator pill — visible only when imported file carried recent /
    mostPlayed fields. Clicking the × drops them; otherwise the user gets the
    same effect by choosing "favorites only" in the export modal. */
@@ -507,8 +536,7 @@ h1 {
   color: var(--soft);
   cursor: default;
 }
-.slot.song.coming-soon::after {
-  content: '(coming soon)';
+.slot.song.coming-soon .coming-soon-tag {
   font-size: 0.7em;
   font-style: normal;
   color: var(--soft);

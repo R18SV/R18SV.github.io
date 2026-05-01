@@ -1,27 +1,143 @@
 'use strict';
 
 /* ============================================================
-   Profile Editor (Goal 2b) — v0.1
+   Profile Editor (Goal 2b)
    Browse the catalog, pick favorites, export .p69save.
    ============================================================ */
+
+// ============================================================
+// i18n
+// ============================================================
+
+const I18N_KEY_LANG = 'p69-lang';
+const I18N_DEFAULT = 'en';
+const I18N_SUPPORTED = [
+  { code: 'en',      name: 'EN' },
+  { code: 'zh-Hant', name: '繁中' },
+  { code: 'ja',      name: '日本語' },
+  { code: 'ko',      name: '한국어' }
+];
+
+let i18nCurrent = I18N_DEFAULT;
+let i18nDict = { ui: {}, stages: {}, track_titles: {}, fontSizes: {} };
+let i18nFallback = null; // EN dict, used when a key is missing from the active lang
+
+async function i18nLoad(lang) {
+  try {
+    const res = await fetch('../../i18n/' + lang + '.json');
+    if (!res.ok) throw new Error('lang fetch failed: ' + res.status);
+    i18nDict = await res.json();
+    i18nCurrent = lang;
+    document.documentElement.lang = lang;
+    try { localStorage.setItem(I18N_KEY_LANG, lang); } catch (e) {}
+    return true;
+  } catch (e) {
+    console.warn('Failed to load language ' + lang + ':', e);
+    return false;
+  }
+}
+
+async function i18nInitFallback() {
+  if (i18nFallback) return;
+  try {
+    const res = await fetch('../../i18n/en.json');
+    if (res.ok) i18nFallback = await res.json();
+  } catch (e) { /* fallback unavailable */ }
+}
+
+function t(key, params) {
+  const ui = (i18nDict && i18nDict.ui) || {};
+  let str = ui[key];
+  if (str === undefined && i18nFallback) {
+    str = ((i18nFallback.ui) || {})[key];
+  }
+  if (str === undefined) str = key;
+  if (params) {
+    for (const k of Object.keys(params)) {
+      str = str.replace(new RegExp('\\{' + k + '\\}', 'g'), params[k]);
+    }
+  }
+  return str;
+}
+
+function tStage(name) {
+  const stages = (i18nDict && i18nDict.stages) || {};
+  return stages[name] || name;
+}
+
+// HANFU DLC track titles in plugin overlays use Unity TMP tags
+// (<size=NN> / <color=#XXX>); strip those for HTML rendering, keep <i>.
+function stripUnityTags(s) {
+  return String(s)
+    .replace(/<size=[^>]*>/gi, '')
+    .replace(/<\/size>/gi, '')
+    .replace(/<color=[^>]*>/gi, '')
+    .replace(/<\/color>/gi, '');
+}
+
+function tTrack(songKey, fallback) {
+  const tracks = (i18nDict && i18nDict.track_titles) || {};
+  const overlay = tracks[songKey];
+  return overlay ? stripUnityTags(overlay) : fallback;
+}
+
+function applyI18nToDOM() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = t(el.dataset.i18n);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.dataset.i18nHtml);
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    el.title = t(el.dataset.i18nTitle);
+  });
+  if (i18nDict && i18nDict.ui && i18nDict.ui.meta_title_editor) {
+    document.title = i18nDict.ui.meta_title_editor;
+  }
+}
+
+async function switchLanguage(lang) {
+  if (lang === i18nCurrent) return;
+  await i18nLoad(lang);
+  applyI18nToDOM();
+  if (state.catalog) {
+    renderTabStrip();
+    renderRightPane();
+    renderFavList();
+  }
+  updateLangSwitcher();
+}
+
+function updateLangSwitcher() {
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === i18nCurrent);
+  });
+}
+
+function setupLangSwitcher() {
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
+  });
+  updateLangSwitcher();
+}
 
 // ============================================================
 // Constants
 // ============================================================
 
 const TAB_CONFIG = [
-  { key: 'New',       label: 'NEW' },
-  { key: 'Season 01', label: 'SEASON 1' },
-  { key: 'Season 02', label: 'SEASON 2' },
-  { key: 'Season 03', label: 'SEASON 3' },
-  { key: 'Season 04', label: 'SEASON 4' },
-  { key: 'Season 05', label: 'SEASON 5' },
-  { key: 'Explicit',  label: 'EXPLICIT' },
-  { key: 'Duet',      label: 'DUET DANCE' },
-  { key: 'DLC 01',    label: 'CLUB DLC' },
-  { key: 'DLC 02',    label: 'HANFU DLC' },
-  { key: 'DLC 03',    label: 'MIKU DLC' },
-  { key: 'TAG',       label: 'TAG', isPill: true }
+  { key: 'New',       i18n: 'tab_new' },
+  { key: 'Season 01', i18n: 'tab_season1' },
+  { key: 'Season 02', i18n: 'tab_season2' },
+  { key: 'Season 03', i18n: 'tab_season3' },
+  { key: 'Season 04', i18n: 'tab_season4' },
+  { key: 'Season 05', i18n: 'tab_season5' },
+  { key: 'Explicit',  i18n: 'tab_explicit' },
+  { key: 'Duet',      i18n: 'tab_duet' },
+  { key: 'DLC 01',    i18n: 'tab_dlc01' },
+  { key: 'DLC 02',    i18n: 'tab_dlc02' },
+  { key: 'DLC 03',    i18n: 'tab_dlc03' },
+  { key: 'TAG',       i18n: 'tab_tag', isPill: true }
 ];
 
 const DEFAULT_TAB = 'New';
@@ -79,29 +195,31 @@ function pad2(n) {
 }
 
 function formatFavLabel(trackId) {
-  const t = state.trackIdToTrack.get(trackId);
-  if (!t) {
+  const tr = state.trackIdToTrack.get(trackId);
+  if (!tr) {
     return {
       html:
         '<span class="label is-missing"><i>' +
         escapeHTML(trackId) +
-        '</i><span class="missing-tag">(not in current set)</span></span>',
+        '</i><span class="missing-tag">' + escapeHTML(t('label_not_in_set')) + '</span></span>',
       isMissing: true
     };
   }
-  const variants = state.songKeyToTracks.get(t.songKey) || [];
+  const variants = state.songKeyToTracks.get(tr.songKey) || [];
   const isMulti = variants.length > 1;
+  // HANFU DLC songs may have a localized track-title overlay; plain songkey otherwise.
+  const localizedTitle = tTrack(tr.songKey, null);
+  const songKeyHtml = localizedTitle
+    ? localizedTitle  // overlay carries its own <i> markup
+    : '<i>' + escapeHTML(tr.songKey) + '</i>';
   let suffix = '';
-  if (isMulti && t.variantNumber > 0) {
-    suffix = '<span class="variant-suffix">[' + pad2(t.variantNumber) + ']</span>';
-  } else if (isMulti && t.variantNumber === 0) {
-    // Multi-variant with descriptive suffix (e.g. "Empire Duet" / "Empire Single").
-    // Disambiguate by trackId so the user can tell rows apart.
-    suffix = '<span class="variant-suffix">(' + escapeHTML(t.trackId) + ')</span>';
+  if (isMulti && tr.variantNumber > 0) {
+    suffix = '<span class="variant-suffix">[' + pad2(tr.variantNumber) + ']</span>';
+  } else if (isMulti && tr.variantNumber === 0) {
+    suffix = '<span class="variant-suffix">(' + escapeHTML(tr.trackId) + ')</span>';
   }
   return {
-    html:
-      '<span class="label"><i>' + escapeHTML(t.songKey) + '</i>' + suffix + '</span>',
+    html: '<span class="label">' + songKeyHtml + suffix + '</span>',
     isMissing: false
   };
 }
@@ -112,6 +230,14 @@ function formatFavLabel(trackId) {
 
 async function boot() {
   try {
+    // Load i18n first so UI strings render correctly on first paint.
+    await i18nInitFallback();
+    let savedLang = I18N_DEFAULT;
+    try { savedLang = localStorage.getItem(I18N_KEY_LANG) || I18N_DEFAULT; } catch (e) {}
+    if (!I18N_SUPPORTED.find(l => l.code === savedLang)) savedLang = I18N_DEFAULT;
+    if (savedLang !== I18N_DEFAULT) await i18nLoad(savedLang);
+    else if (i18nFallback) { i18nDict = i18nFallback; i18nCurrent = 'en'; document.documentElement.lang = 'en'; }
+
     const res = await fetch('catalog.json');
     if (!res.ok) {
       throw new Error('Catalog fetch failed (' + res.status + ' ' + res.statusText + ')');
@@ -121,6 +247,8 @@ async function boot() {
     consumeHandoff();
     document.getElementById('loading').classList.add('hidden');
     document.getElementById('editor').classList.remove('hidden');
+    applyI18nToDOM();
+    setupLangSwitcher();
     renderTabStrip();
     renderRightPane();
     renderFavList();
@@ -164,8 +292,7 @@ function showHandoffBanner(count, source) {
   const banner = document.getElementById('handoff-banner');
   if (!banner) return;
   document.getElementById('handoff-banner-text').textContent =
-    'Brought ' + count + ' song' + (count === 1 ? '' : 's') +
-    ' in for you. Refine, then take them back when you\'re ready.';
+    t('banner_handoff', { n: count, s: count === 1 ? '' : 's' });
   banner.classList.remove('hidden');
 }
 
@@ -187,6 +314,8 @@ function showLoadError(err) {
   document.getElementById('editor').classList.add('hidden');
   const errEl = document.getElementById('error');
   errEl.classList.remove('hidden');
+  // Re-apply localized labels in case the error happens before applyI18nToDOM
+  applyI18nToDOM();
   document.getElementById('error-msg').textContent =
     err && err.message ? err.message : String(err);
 }
@@ -206,7 +335,7 @@ function renderTabStrip() {
         'tab' +
         (tab.isPill ? ' tag-pill' : '') +
         (tab.key === state.currentTab ? ' active' : '');
-      btn.textContent = tab.label;
+      btn.textContent = t(tab.i18n);
       btn.dataset.tabKey = tab.key;
       btn.addEventListener('click', () => onTabClick(tab.key));
       strip.appendChild(btn);
@@ -217,24 +346,28 @@ function renderTabStrip() {
   // In TAG mode, the strip shows alternative entry points + BACK pill.
   // Order mirrors the in-game TAG-mode tab strip.
   const subTabs = [
-    { cat: 'most-played', label: 'MOST PLAYED' },
-    { cat: 'recent',      label: 'RECENT' },
-    { cat: 'artist',      label: 'BY ARTIST' },
-    { cat: 'stage',       label: 'BY STAGE' }
+    { cat: 'most-played', i18n: 'tab_most_played' },
+    { cat: 'recent',      i18n: 'tab_recent' },
+    { cat: 'artist',      i18n: 'tag_by_artist' },
+    { cat: 'stage',       i18n: 'tag_by_stage' }
   ];
   for (const sub of subTabs) {
     const btn = document.createElement('button');
     btn.className = 'tab' + (state.tagCategory === sub.cat ? ' active' : '');
-    btn.textContent = sub.label;
+    btn.textContent = t(sub.i18n);
     btn.addEventListener('click', () => onTagSubTabClick(sub.cat));
     strip.appendChild(btn);
   }
   const back = document.createElement('button');
   back.className = 'tab tag-pill';
-  back.textContent = 'BACK';
-  back.title = state.tagMode === 'TAG_LEVEL2'
-    ? 'Back to ' + (state.tagCategory === 'artist' ? 'BY ARTIST' : 'BY STAGE') + ' list'
-    : 'Exit TAG mode';
+  back.textContent = t('tag_back');
+  if (state.tagMode === 'TAG_LEVEL2') {
+    back.title = state.tagCategory === 'artist'
+      ? t('tag_back_title_l2_artist')
+      : t('tag_back_title_l2_stage');
+  } else {
+    back.title = t('tag_back_title_l1');
+  }
   back.addEventListener('click', onTagBackClick);
   strip.appendChild(back);
 }
@@ -423,21 +556,16 @@ function renderTagFlatSongList(songKeys, opts) {
 
 function renderTagRecent() {
   renderTagFlatSongList(state.recentSongKeys || [], {
-    emptyTitle: 'Nothing yet',
-    emptyBody:
-      'Hm, empty here. Maybe come around more often? Bring back a list saved ' +
-      'from the in-game collection export, and what you\'ve been playing will ' +
-      'show up. Play more with me.'
+    emptyTitle: t('empty_recent_h'),
+    emptyBody:  t('empty_recent_body')
   });
 }
 
 function renderTagMostPlayed() {
   if (!state.mostPlayedPlays || Object.keys(state.mostPlayedPlays).length === 0) {
     renderTagFlatSongList([], {
-      emptyTitle: 'Not counted yet',
-      emptyBody:
-        'Every play, she\'s quietly keeping count. Bring back a list saved from ' +
-        'the in-game collection export to see what you\'ve been playing the most.'
+      emptyTitle: t('empty_most_played_h'),
+      emptyBody:  t('empty_most_played_body')
     });
     return;
   }
@@ -453,10 +581,10 @@ function renderPaginationHTML(total, page) {
   return (
     '<div class="pagination">' +
     '<button data-action="prev"' + (page === 0 ? ' disabled' : '') +
-    '>&lt; PREVIOUS PAGE</button>' +
-    '<span class="page-info">PAGE ' + (page + 1) + ' / ' + totalPages + '</span>' +
+    '>' + escapeHTML(t('page_prev')) + '</button>' +
+    '<span class="page-info">' + escapeHTML(t('page_n_of_total', { n: page + 1, total: totalPages })) + '</span>' +
     '<button data-action="next"' + (page >= totalPages - 1 ? ' disabled' : '') +
-    '>NEXT PAGE &gt;</button>' +
+    '>' + escapeHTML(t('page_next')) + '</button>' +
     '</div>'
   );
 }
@@ -466,6 +594,7 @@ function renderTagLevel1() {
   const items = currentTagListing();
   const start = state.tagPage * TAG_PAGE_SIZE;
   const pageItems = items.slice(start, start + TAG_PAGE_SIZE);
+  const isStage = state.tagCategory === 'stage';
 
   const html = ['<div class="song-grid">'];
   for (let i = 0; i < TAG_PAGE_SIZE; i++) {
@@ -474,9 +603,11 @@ function renderTagLevel1() {
       html.push('<div class="slot empty"></div>');
       continue;
     }
+    // Stages get localized via tStage; artists are proper nouns so left raw.
+    const display = isStage ? tStage(item) : item;
     html.push(
       '<div class="slot tag-item" data-tag-item="' + escapeHTML(item) + '">' +
-      '<i>' + escapeHTML(item) + '</i>' +
+      '<i>' + escapeHTML(display) + '</i>' +
       '</div>'
     );
   }
@@ -502,14 +633,15 @@ function renderTagLevel2() {
   // (NEW highlight, multi-variant popover, added indicator, etc.)
   const pseudoSlots = pageKeys.map(sk => ({ idx: 0, songKey: sk, released: true }));
 
-  const headerLabel = state.tagCategory === 'artist' ? 'BY ARTIST' : 'BY STAGE';
+  const headerLabel = state.tagCategory === 'artist' ? t('tag_by_artist') : t('tag_by_stage');
+  const selectionLabel = state.tagCategory === 'stage' ? tStage(state.tagSelection) : state.tagSelection;
+  const countKey = songKeys.length === 1 ? 'tag_l2_count_singular' : 'tag_l2_count_plural';
   const html = [];
   html.push(
     '<div class="tag-level2-header">' +
-    '<button class="tag-back-link" type="button">&laquo; ' + headerLabel + '</button>' +
-    '<span class="tag-current"><i>' + escapeHTML(state.tagSelection) + '</i></span>' +
-    '<span class="tag-count">' + songKeys.length + ' song' +
-    (songKeys.length === 1 ? '' : 's') + '</span>' +
+    '<button class="tag-back-link" type="button">&laquo; ' + escapeHTML(headerLabel) + '</button>' +
+    '<span class="tag-current"><i>' + escapeHTML(selectionLabel) + '</i></span>' +
+    '<span class="tag-count">' + escapeHTML(t(countKey, { n: songKeys.length })) + '</span>' +
     '</div>'
   );
 
@@ -619,7 +751,9 @@ function renderSlot(slot) {
   const playCountBadge = (slot.playCount && slot.playCount > 0)
     ? '<span class="play-count">' + slot.playCount + 'x</span>'
     : '';
-  const label = '<i>' + escapeHTML(songKey) + '</i>';
+  // HANFU DLC songs get a localized title overlay; otherwise plain songkey.
+  const localizedTitle = tTrack(songKey, null);
+  const label = localizedTitle ? localizedTitle : '<i>' + escapeHTML(songKey) + '</i>';
   const popover = isExpanded ? renderVariantPopover(songKey, variants) : '';
 
   // Coming-soon rows have no songkey data attr (so they don't bind a click).
@@ -627,9 +761,13 @@ function renderSlot(slot) {
 
   // Added state is signalled by row bg color (.slot.song.added in CSS),
   // not a text badge — keeps the grid scannable.
+  const comingSoonTag = isComingSoon
+    ? '<span class="coming-soon-tag">' + escapeHTML(t('label_coming_soon')) + '</span>'
+    : '';
+
   return (
     '<div class="' + cls + '"' + dataAttr + '>' +
-    label + fromTag + playCountBadge + popover +
+    label + fromTag + playCountBadge + comingSoonTag + popover +
     '</div>'
   );
 }
@@ -639,22 +777,21 @@ function renderVariantPopover(songKey, variants) {
   const rows = sorted
     .map(v => {
       const isAdded = state.favoritesSet.has(v.trackId);
+      const stageLabel = tStage(v.stage);
       let lbl;
       if (v.variantNumber > 0) {
         lbl =
           '<span><strong>[' + pad2(v.variantNumber) + ']</strong> ' +
-          '<span class="vp-stage">' + escapeHTML(v.stage) + '</span></span>';
+          '<span class="vp-stage">' + escapeHTML(stageLabel) + '</span></span>';
       } else {
         lbl =
-          '<span><span class="vp-stage">' + escapeHTML(v.stage) + '</span>' +
+          '<span><span class="vp-stage">' + escapeHTML(stageLabel) + '</span>' +
           '<span class="vp-trackid">' + escapeHTML(v.trackId) + '</span></span>';
       }
       const cls = 'vp-row' + (isAdded ? ' added' : '');
-      // Added popover rows use bg tint (.vp-row.added in CSS); not-added
-      // rows show a small "+ Add" affordance.
       const action = isAdded
         ? ''
-        : '<span class="vp-action">+ Add</span>';
+        : '<span class="vp-action">' + escapeHTML(t('popover_add')) + '</span>';
       return (
         '<div class="' + cls + '" data-trackid="' + escapeHTML(v.trackId) + '">' +
         lbl + action + '</div>'
@@ -663,7 +800,7 @@ function renderVariantPopover(songKey, variants) {
     .join('');
   return (
     '<div class="variant-popover">' +
-    '<div class="vp-title">Pick a stage</div>' +
+    '<div class="vp-title">' + escapeHTML(t('popover_pick_stage')) + '</div>' +
     rows +
     '</div>'
   );
@@ -726,12 +863,7 @@ function wireGlobalHandlers() {
   // History indicator: click drop to clear loaded history
   document.getElementById('history-drop-btn').addEventListener('click', () => {
     if (state.recentSongKeys === null && state.mostPlayedPlays === null) return;
-    const ok = confirm(
-      'Drop the history?\n\n' +
-      'After this, what you take back will be just the songs — RECENT and ' +
-      'MOST PLAYED in the show stay where they are. Your collection isn\'t ' +
-      'touched. Undoable.'
-    );
+    const ok = confirm(t('confirm_drop_history'));
     if (!ok) return;
     dropHistory();
     renderHistoryIndicator();
@@ -819,9 +951,11 @@ function updateUndoButton() {
   if (!btn) return;
   btn.disabled = state.history.length === 0;
   btn.title = state.history.length === 0
-    ? 'Nothing to undo'
-    : 'Undo last change (Ctrl+Z) — ' + state.history.length + ' step' +
-      (state.history.length === 1 ? '' : 's') + ' available';
+    ? t('editor_btn_undo_title_empty')
+    : t('editor_btn_undo_title_steps', {
+        n: state.history.length,
+        s: state.history.length === 1 ? '' : 's'
+      });
 }
 
 function addFavorite(trackId) {
@@ -878,10 +1012,13 @@ function renderHistoryIndicator() {
     return;
   }
   const parts = [];
-  if (r) parts.push('RECENT (' + r.length + ')');
-  if (mp) parts.push('MOST PLAYED (' + Object.keys(mp).length + ')');
+  if (r) parts.push(t('editor_history_recent') + ' (' + r.length + ')');
+  if (mp) parts.push(t('editor_history_most_played') + ' (' + Object.keys(mp).length + ')');
   document.getElementById('history-indicator-label').textContent =
-    'carrying history · ' + parts.join(' · ');
+    t('editor_history_pill_prefix') + parts.join(' · ');
+  // Refresh tooltip in case lang changed
+  const dropBtn = document.getElementById('history-drop-btn');
+  if (dropBtn) dropBtn.title = t('editor_history_drop_title');
   ind.classList.remove('hidden');
 }
 
@@ -989,12 +1126,13 @@ function wireDragHandlers(listEl) {
 function onClearAllClick() {
   if (state.favorites.length === 0) return;
   const tail = state.recentSongKeys !== null || state.mostPlayedPlays !== null
-    ? '\n\nThe history riding along stays — drop that separately if you want.'
+    ? t('confirm_clear_history_tail')
     : '';
-  const ok = confirm(
-    'Clear your collection? (' + state.favorites.length +
-    ' song' + (state.favorites.length === 1 ? '' : 's') + ')' + tail
-  );
+  const ok = confirm(t('confirm_clear_h', {
+    n: state.favorites.length,
+    s: state.favorites.length === 1 ? '' : 's',
+    history_tail: tail
+  }));
   if (!ok) return;
   clearFavorites();
   renderFavList();
@@ -1004,7 +1142,7 @@ function onClearAllClick() {
 function onExportClick() {
   const hasHistory = state.recentSongKeys !== null || state.mostPlayedPlays !== null;
   if (state.favorites.length === 0 && !hasHistory) {
-    alert('Nothing to take back yet — pick some songs first.');
+    alert(t('alert_export_empty'));
     return;
   }
   if (hasHistory) {
@@ -1017,13 +1155,14 @@ function onExportClick() {
 function showExportModal() {
   const parts = [];
   if (state.recentSongKeys) {
-    parts.push('<strong>RECENT</strong> (' + state.recentSongKeys.length + ')');
+    parts.push('<strong>' + escapeHTML(t('editor_history_recent')) + '</strong> (' +
+      state.recentSongKeys.length + ')');
   }
   if (state.mostPlayedPlays) {
-    parts.push('<strong>MOST PLAYED</strong> (' +
+    parts.push('<strong>' + escapeHTML(t('editor_history_most_played')) + '</strong> (' +
       Object.keys(state.mostPlayedPlays).length + ')');
   }
-  document.getElementById('history-summary').innerHTML = parts.join(' and ');
+  document.getElementById('history-summary').innerHTML = parts.join(' &middot; ');
   document.getElementById('export-modal').classList.remove('hidden');
 }
 
@@ -1077,12 +1216,10 @@ function onImportFileChange(e) {
     try {
       const data = JSON.parse(reader.result);
       if (!data || typeof data !== 'object') {
-        throw new Error('That file isn\'t the right shape — try a .p69save you exported from the show.');
+        throw new Error(t('alert_import_invalid'));
       }
       if (!data.favorites || !Array.isArray(data.favorites.trackIds)) {
-        throw new Error(
-          'No songs found in that file. Make sure it\'s a .p69save you exported earlier.'
-        );
+        throw new Error(t('alert_import_no_songs'));
       }
       const incomingFavs = data.favorites.trackIds.filter(id => typeof id === 'string');
 
@@ -1106,19 +1243,16 @@ function onImportFileChange(e) {
       }
 
       if (state.favorites.length > 0 || state.recentSongKeys !== null || state.mostPlayedPlays !== null) {
-        const summary =
-          state.favorites.length + ' song' +
-          (state.favorites.length === 1 ? '' : 's') +
-          (state.recentSongKeys ? ' + RECENT (' + state.recentSongKeys.length + ')' : '') +
-          (state.mostPlayedPlays ? ' + MOST PLAYED (' + Object.keys(state.mostPlayedPlays).length + ')' : '');
-        const incomingSummary =
-          incomingFavs.length + ' song' +
-          (incomingFavs.length === 1 ? '' : 's') +
-          (incomingRecent ? ' + RECENT (' + incomingRecent.length + ')' : '') +
-          (incomingMostPlayed ? ' + MOST PLAYED (' + Object.keys(incomingMostPlayed).length + ')' : '');
-        const ok = confirm(
-          'Swap your current (' + summary + ') for what\'s in the file (' + incomingSummary + ')?'
-        );
+        const buildSummary = (favCount, recent, mostPlayed) => {
+          const songWord = favCount === 1 ? t('summary_song_singular') : t('summary_song_plural');
+          let s = favCount + ' ' + songWord;
+          if (recent) s += ' + ' + t('editor_history_recent') + ' (' + recent.length + ')';
+          if (mostPlayed) s += ' + ' + t('editor_history_most_played') + ' (' + Object.keys(mostPlayed).length + ')';
+          return s;
+        };
+        const summary = buildSummary(state.favorites.length, state.recentSongKeys, state.mostPlayedPlays);
+        const incomingSummary = buildSummary(incomingFavs.length, incomingRecent, incomingMostPlayed);
+        const ok = confirm(t('confirm_swap_import', { summary, incoming: incomingSummary }));
         if (!ok) {
           e.target.value = '';
           return;
@@ -1134,10 +1268,10 @@ function onImportFileChange(e) {
       renderFavList();
       renderHistoryIndicator();
     } catch (err) {
-      alert('Couldn\'t bring that in — ' + (err.message || String(err)));
+      alert(t('alert_import_failed', { err: err.message || String(err) }));
     }
   };
-  reader.onerror = () => alert('Couldn\'t read that file.');
+  reader.onerror = () => alert(t('alert_import_read_err'));
   reader.readAsText(file);
   e.target.value = '';
 }
