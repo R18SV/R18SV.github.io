@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow Venom</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #222;
+      --muted: #888;
+      --border: #e0e0e0;
+      --accent: #555;
+      --card-bg: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 880px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    header {
+      margin-bottom: 2.5rem;
+    }
+    h1 {
+      font-weight: 300;
+      font-size: 2.4rem;
+      letter-spacing: 0.04em;
+      margin: 0 0 0.25rem;
+    }
+    .tagline {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 0;
+    }
+    .status-banner {
+      padding: 1rem 1.25rem;
+      background: var(--card-bg);
+      border-left: 3px solid #ccc;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .project-card {
+      padding: 1.25rem 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .project-card.placeholder {
+      opacity: 0.55;
+    }
+    .project-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+    .project-card p {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      color: var(--accent);
+    }
+    .pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shadow Venom</h1>
+    <p class="tagline">Indie game projects.</p>
+  </header>
+
+  <div class="status-banner">
+    Site is in early scaffolding. Project pages and companion tools are being built out.
+  </div>
+
+  <section class="projects">
+    <article class="project-card">
+      <h3>Produce 69</h3>
+      <p>Idol production simulation.</p>
+      <span class="pill">Companion tools in development</span>
+    </article>
+
+    <article class="project-card placeholder">
+      <h3>Casino 69</h3>
+      <p>&mdash;</p>
+      <span class="pill">Coming soon</span>
+    </article>
+  </section>
+
+  <footer>
+    &copy; Shadow Venom
+  </footer>
+</body>
+</html>
