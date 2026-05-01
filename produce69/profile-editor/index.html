@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Editor &mdash; Produce 69</title>
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <p class="breadcrumb">
+    <a href="../../">Shadow Venom</a> &raquo;
+    <a href="../">Produce 69</a> &raquo;
+    Profile Editor
+  </p>
+
+  <header>
+    <h1>Profile Editor</h1>
+    <p class="subtitle">Browse the catalog and pick favorites for your <code>.p69save</code> profile.</p>
+  </header>
+
+  <div id="loading" class="loading">Loading catalog&hellip;</div>
+
+  <div id="error" class="error hidden">
+    <h2>Could not load catalog</h2>
+    <p id="error-msg"></p>
+  </div>
+
+  <div id="editor" class="editor hidden">
+    <div class="action-bar">
+      <button id="export-btn">Export .p69save</button>
+      <button id="import-btn" class="secondary">Import .p69save</button>
+      <input type="file" id="import-file-input" accept=".p69save,.json" hidden>
+      <span class="spacer"></span>
+    </div>
+
+    <div class="two-pane">
+      <aside class="left-pane">
+        <h2 class="pane-title">My Fav (<span id="fav-count">0</span>)</h2>
+        <ul id="fav-list" class="fav-list hidden"></ul>
+        <div id="empty-fav-msg" class="empty-fav-msg">
+          Your list is empty.<br>
+          Pick songs from the catalog &rarr;
+        </div>
+        <div id="fav-footer" class="fav-footer hidden">
+          <button id="clear-fav-btn" class="text-btn danger">Clear all</button>
+        </div>
+      </aside>
+
+      <main class="right-pane">
+        <div id="tab-strip" class="tab-strip"></div>
+        <div id="catalog-content" class="catalog-content"></div>
+      </main>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../">&larr; Back to Produce 69</a>
+  </footer>
+
+  <script src="editor.js"></script>
+</body>
+</html>
