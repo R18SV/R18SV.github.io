@@ -491,18 +491,14 @@ h1 {
   color: var(--highlight);
 }
 
+/* Added state: dark-gold row tint instead of a text badge.
+   Subtle enough to keep the grid scannable, distinctive enough to spot
+   already-picked songs at a glance. Hover deepens the tint slightly. */
 .slot.song.added {
-  /* visual cue: subtle */
+  background: rgba(212, 172, 86, 0.18);
+  box-shadow: inset 2px 0 0 var(--gold-soft);
 }
-.slot.song .check-pill {
-  margin-left: auto;
-  font-family: var(--font-display);
-  font-size: 0.78em;
-  font-style: normal;
-  color: var(--success);
-  letter-spacing: 0.06em;
-  font-weight: 400;
-}
+.slot.song.added:hover { background: rgba(212, 172, 86, 0.28); }
 
 .slot.song.coming-soon {
   color: var(--soft);
@@ -538,7 +534,6 @@ h1 {
   font-weight: 400;
 }
 .slot.song.is-new .play-count { color: var(--highlight); }
-.slot.song.added .play-count { color: var(--success); }
 
 .slot.expanded {
   background: var(--highlight-bg);
@@ -633,11 +628,11 @@ h1 {
 }
 .variant-popover .vp-row:hover { background: var(--hover-bg); }
 
-.variant-popover .vp-row.added { color: var(--muted); }
-.variant-popover .vp-row.added .vp-action {
-  color: var(--success);
-  font-weight: 500;
+.variant-popover .vp-row.added {
+  background: rgba(212, 172, 86, 0.18);
+  box-shadow: inset 2px 0 0 var(--gold-soft);
 }
+.variant-popover .vp-row.added:hover { background: rgba(212, 172, 86, 0.28); }
 
 .variant-popover .vp-row .vp-stage { color: var(--accent); }
 .variant-popover .vp-row .vp-trackid {

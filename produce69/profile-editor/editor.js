@@ -621,16 +621,17 @@ function renderSlot(slot) {
   const playCountBadge = (slot.playCount && slot.playCount > 0)
     ? '<span class="play-count">' + slot.playCount + 'x</span>'
     : '';
-  const checkPill = isAdded ? '<span class="check-pill">&#10003; ADDED</span>' : '';
   const label = '<i>' + escapeHTML(songKey) + '</i>';
   const popover = isExpanded ? renderVariantPopover(songKey, variants) : '';
 
   // Coming-soon rows have no songkey data attr (so they don't bind a click).
   const dataAttr = isComingSoon ? '' : ' data-songkey="' + escapeHTML(songKey) + '"';
 
+  // Added state is signalled by row bg color (.slot.song.added in CSS),
+  // not a text badge — keeps the grid scannable.
   return (
     '<div class="' + cls + '"' + dataAttr + '>' +
-    label + fromTag + playCountBadge + checkPill + popover +
+    label + fromTag + playCountBadge + popover +
     '</div>'
   );
 }
@@ -651,8 +652,10 @@ function renderVariantPopover(songKey, variants) {
           '<span class="vp-trackid">' + escapeHTML(v.trackId) + '</span></span>';
       }
       const cls = 'vp-row' + (isAdded ? ' added' : '');
+      // Added popover rows use bg tint (.vp-row.added in CSS); not-added
+      // rows show a small "+ ADD" affordance.
       const action = isAdded
-        ? '<span class="vp-action">&#10003; ADDED</span>'
+        ? ''
         : '<span class="vp-action">+ ADD</span>';
       return (
         '<div class="' + cls + '" data-trackid="' + escapeHTML(v.trackId) + '">' +
