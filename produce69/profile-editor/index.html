@@ -30,6 +30,10 @@
       <button id="export-btn">Export .p69save</button>
       <button id="import-btn" class="secondary">Import .p69save</button>
       <input type="file" id="import-file-input" accept=".p69save,.json" hidden>
+      <span id="history-indicator" class="history-indicator hidden">
+        <span id="history-indicator-label">play history loaded</span>
+        <button id="history-drop-btn" class="drop-btn" title="Drop loaded history (favorites stay)">&times;</button>
+      </span>
       <span class="spacer"></span>
       <button id="undo-btn" class="secondary" disabled title="Nothing to undo">Undo</button>
     </div>
@@ -43,7 +47,7 @@
           Pick songs from the catalog &rarr;
         </div>
         <div id="fav-footer" class="fav-footer hidden">
-          <button id="clear-fav-btn" class="text-btn danger">Clear all</button>
+          <button id="clear-fav-btn" class="text-btn danger">Clear favorites</button>
         </div>
       </aside>
 
@@ -57,6 +61,36 @@
   <footer>
     <a href="../">&larr; Back to Produce 69</a>
   </footer>
+
+  <!-- Export modal: shown only when current state carries play history fields -->
+  <div id="export-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <h2 id="export-modal-title">Profile contains play history</h2>
+      <p>Loaded from import: <span id="history-summary"></span>.</p>
+      <p>How would you like to export?</p>
+
+      <div class="branch warn">
+        <strong>Export with history</strong>
+        Importing this file in VAM will <em>overwrite</em> the player's
+        in-game RECENT and MOST PLAYED data. Use this when you intend to
+        restore a full profile snapshot.
+      </div>
+
+      <div class="branch safe">
+        <strong>Export favorites only</strong>
+        VAM's in-game RECENT and MOST PLAYED stay untouched. Great for
+        building a library of mood-based favorite lists you can swap
+        between without losing your play stats.
+      </div>
+
+      <div class="modal-actions">
+        <button id="export-cancel-btn" class="text-btn">Cancel</button>
+        <button id="export-with-history-btn" class="secondary">Export with history</button>
+        <button id="export-favs-only-btn" class="primary">Export favorites only</button>
+      </div>
+    </div>
+  </div>
 
   <script src="editor.js"></script>
 </body>

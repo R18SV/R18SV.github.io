@@ -128,6 +128,40 @@ h1 {
 
 .action-bar .spacer { flex: 1; }
 
+/* History indicator pill — visible only when imported file carried recent /
+   mostPlayed fields. Clicking the × drops them; otherwise the user gets the
+   same effect by choosing "favorites only" in the export modal. */
+.history-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.7rem 0.25rem 0.85rem;
+  background: var(--highlight-bg);
+  border: 1px solid var(--highlight);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--highlight);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.history-indicator .drop-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1;
+  border-radius: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.history-indicator .drop-btn:hover { color: var(--danger); background: rgba(0,0,0,0.05); }
+
 .text-btn {
   background: transparent;
   border: none;
@@ -466,3 +500,78 @@ footer {
   font-size: 0.85rem;
   text-align: center;
 }
+
+/* === Export modal ======================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+.modal-card {
+  position: relative;
+  background: var(--card-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.modal-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.modal-card p { margin: 0 0 0.75rem; }
+.modal-card p:last-of-type { margin-bottom: 0; }
+.modal-card .branch {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg);
+  border-left: 3px solid var(--border);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.88rem;
+}
+.modal-card .branch.warn { border-left-color: var(--highlight); }
+.modal-card .branch.safe { border-left-color: var(--success); }
+.modal-card .branch strong { display: block; margin-bottom: 0.15rem; }
+
+.modal-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+.modal-actions button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+.modal-actions .primary {
+  background: var(--link);
+  color: white;
+}
+.modal-actions .primary:hover { background: #1a4d80; }
+.modal-actions .secondary {
+  background: transparent;
+  color: var(--link);
+  border: 1px solid var(--link);
+}
+.modal-actions .secondary:hover { background: #eef4fa; }
+.modal-actions .text-btn { color: var(--muted); }
+.modal-actions .text-btn:hover { background: var(--hover-bg); color: var(--fg); }

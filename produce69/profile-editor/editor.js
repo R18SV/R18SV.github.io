@@ -41,7 +41,12 @@ const state = {
   expandedSongKey: null,
   favorites: [],
   favoritesSet: new Set(),
-  // Undo: snapshots of favorites[] taken before each mutation. LIFO stack.
+  // Pass-through play history loaded from imported profiles.
+  // null = field absent in source (plugin will leave in-game records
+  // untouched on import). non-null = field present, will overwrite.
+  recentSongKeys: null,         // null | string[]
+  mostPlayedPlays: null,        // null | { [songKey: string]: number }
+  // Undo: LIFO stack of full state snapshots (favs + history fields).
   history: []
 };
 
@@ -344,9 +349,45 @@ function wireGlobalHandlers() {
   document.getElementById('clear-fav-btn').addEventListener('click', onClearAllClick);
   document.getElementById('undo-btn').addEventListener('click', undo);
 
-  // Ctrl/Cmd+Z = undo. Skip when modifier-Z is in a text input (none here, but
-  // future-proof) or when shift is also held (that's redo on most platforms).
+  // History indicator: click drop to clear loaded history
+  document.getElementById('history-drop-btn').addEventListener('click', () => {
+    if (state.recentSongKeys === null && state.mostPlayedPlays === null) return;
+    const ok = confirm(
+      'Drop the loaded play history?\n\n' +
+      'After this, exported profiles will leave the player\'s in-game RECENT ' +
+      'and MOST PLAYED untouched (favorites-only export).\n\n' +
+      'Your favorites list is unaffected. This is undoable.'
+    );
+    if (!ok) return;
+    dropHistory();
+    renderHistoryIndicator();
+    renderFavList();
+  });
+
+  // Export modal buttons
+  document.getElementById('export-with-history-btn').addEventListener('click', () => {
+    hideExportModal();
+    doExport(true);
+  });
+  document.getElementById('export-favs-only-btn').addEventListener('click', () => {
+    hideExportModal();
+    doExport(false);
+  });
+  document.getElementById('export-cancel-btn').addEventListener('click', hideExportModal);
+  document.querySelector('#export-modal .modal-backdrop')
+    .addEventListener('click', hideExportModal);
+
   document.addEventListener('keydown', e => {
+    // ESC closes the export modal if open
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('export-modal');
+      if (modal && !modal.classList.contains('hidden')) {
+        hideExportModal();
+        return;
+      }
+    }
+    // Ctrl/Cmd+Z = undo. Skip when focus is in a text input or when Shift is
+    // held (Shift+Ctrl+Z = redo on most platforms; redo not implemented).
     if (!(e.ctrlKey || e.metaKey)) return;
     if (e.shiftKey || e.altKey) return;
     if (e.key !== 'z' && e.key !== 'Z') return;
@@ -361,19 +402,34 @@ function wireGlobalHandlers() {
 // Fav state mutators (each pushes a history snapshot first)
 // ============================================================
 
+function snapshotState() {
+  return {
+    favorites: state.favorites.slice(),
+    recentSongKeys: state.recentSongKeys ? state.recentSongKeys.slice() : null,
+    mostPlayedPlays: state.mostPlayedPlays ? Object.assign({}, state.mostPlayedPlays) : null
+  };
+}
+
+function restoreState(snap) {
+  state.favorites = snap.favorites.slice();
+  state.favoritesSet = new Set(snap.favorites);
+  state.recentSongKeys = snap.recentSongKeys ? snap.recentSongKeys.slice() : null;
+  state.mostPlayedPlays = snap.mostPlayedPlays ? Object.assign({}, snap.mostPlayedPlays) : null;
+}
+
 function pushHistory() {
-  state.history.push(state.favorites.slice());
+  state.history.push(snapshotState());
   if (state.history.length > MAX_HISTORY) state.history.shift();
 }
 
 function undo() {
   if (state.history.length === 0) return;
   const prev = state.history.pop();
-  state.favorites = prev;
-  state.favoritesSet = new Set(prev);
+  restoreState(prev);
   state.expandedSongKey = null;
   renderRightPane();
   renderFavList();
+  renderHistoryIndicator();
 }
 
 function updateUndoButton() {
@@ -408,6 +464,13 @@ function clearFavorites() {
   state.favoritesSet = new Set();
 }
 
+function dropHistory() {
+  if (state.recentSongKeys === null && state.mostPlayedPlays === null) return;
+  pushHistory();
+  state.recentSongKeys = null;
+  state.mostPlayedPlays = null;
+}
+
 function reorderFavorite(fromIdx, toIdx) {
   if (fromIdx === toIdx) return;
   if (fromIdx < 0 || fromIdx >= state.favorites.length) return;
@@ -423,6 +486,23 @@ function reorderFavorite(fromIdx, toIdx) {
 // Render: fav list (left pane)
 // ============================================================
 
+function renderHistoryIndicator() {
+  const ind = document.getElementById('history-indicator');
+  if (!ind) return;
+  const r = state.recentSongKeys;
+  const mp = state.mostPlayedPlays;
+  if (r === null && mp === null) {
+    ind.classList.add('hidden');
+    return;
+  }
+  const parts = [];
+  if (r) parts.push('RECENT (' + r.length + ')');
+  if (mp) parts.push('MOST PLAYED (' + Object.keys(mp).length + ')');
+  document.getElementById('history-indicator-label').textContent =
+    'play history loaded: ' + parts.join(' + ');
+  ind.classList.remove('hidden');
+}
+
 function renderFavList() {
   const list = document.getElementById('fav-list');
   const emptyMsg = document.getElementById('empty-fav-msg');
@@ -431,6 +511,7 @@ function renderFavList() {
 
   countEl.textContent = state.favorites.length;
   updateUndoButton();
+  renderHistoryIndicator();
 
   if (state.favorites.length === 0) {
     list.classList.add('hidden');
@@ -525,9 +606,12 @@ function wireDragHandlers(listEl) {
 
 function onClearAllClick() {
   if (state.favorites.length === 0) return;
+  const tail = state.recentSongKeys !== null || state.mostPlayedPlays !== null
+    ? '\n\nLoaded play history (RECENT / MOST PLAYED) is unaffected — drop it separately via the pill in the action bar.'
+    : '';
   const ok = confirm(
     'Clear all ' + state.favorites.length +
-    ' favorite' + (state.favorites.length === 1 ? '' : 's') + '?'
+    ' favorite' + (state.favorites.length === 1 ? '' : 's') + '?' + tail
   );
   if (!ok) return;
   clearFavorites();
@@ -536,18 +620,58 @@ function onClearAllClick() {
 }
 
 function onExportClick() {
-  if (state.favorites.length === 0) {
-    alert('Your favorites list is empty. Pick some songs first.');
+  const hasHistory = state.recentSongKeys !== null || state.mostPlayedPlays !== null;
+  if (state.favorites.length === 0 && !hasHistory) {
+    alert('Nothing to export — pick some songs first.');
     return;
   }
+  if (hasHistory) {
+    showExportModal();
+  } else {
+    doExport(false);
+  }
+}
+
+function showExportModal() {
+  const parts = [];
+  if (state.recentSongKeys) {
+    parts.push('<strong>RECENT</strong> (' + state.recentSongKeys.length + ' entries)');
+  }
+  if (state.mostPlayedPlays) {
+    parts.push('<strong>MOST PLAYED</strong> (' +
+      Object.keys(state.mostPlayedPlays).length + ' songs)');
+  }
+  document.getElementById('history-summary').innerHTML = parts.join(' and ');
+  document.getElementById('export-modal').classList.remove('hidden');
+}
+
+function hideExportModal() {
+  document.getElementById('export-modal').classList.add('hidden');
+}
+
+function doExport(includeHistory) {
   const profile = {
     version: '1.0',
     exportedAt: new Date().toISOString().replace(/\.\d+Z$/, 'Z'),
     favorites: { trackIds: state.favorites.slice() }
   };
+  if (includeHistory) {
+    if (state.recentSongKeys) {
+      profile.recent = { songKeys: state.recentSongKeys.slice() };
+    }
+    if (state.mostPlayedPlays) {
+      // Schema stores counts as strings (VAM JSON convention)
+      const playsOut = {};
+      for (const k of Object.keys(state.mostPlayedPlays)) {
+        playsOut[k] = String(state.mostPlayedPlays[k]);
+      }
+      profile.mostPlayed = { plays: playsOut };
+    }
+  }
   const json = JSON.stringify(profile, null, 2);
   const today = new Date().toISOString().slice(0, 10);
-  const filename = 'produce69_profile_' + today + '.p69save';
+  const suffix = includeHistory ? '' : '_favs';
+  const filename = 'produce69_profile_' + today + suffix + '.p69save';
   const blob = new Blob([json], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -579,12 +703,41 @@ function onImportFileChange(e) {
           'Make sure you uploaded a .p69save profile (with a "favorites" field).'
         );
       }
-      const incoming = data.favorites.trackIds.filter(id => typeof id === 'string');
-      if (state.favorites.length > 0) {
+      const incomingFavs = data.favorites.trackIds.filter(id => typeof id === 'string');
+
+      // Optional history fields: only adopt them if present AND well-formed.
+      // Keep null when absent so re-export defaults to "favorites only" and
+      // the plugin's partial-patch import leaves in-game RECENT/MOST PLAYED
+      // alone.
+      let incomingRecent = null;
+      if (data.recent && Array.isArray(data.recent.songKeys)) {
+        incomingRecent = data.recent.songKeys.filter(s => typeof s === 'string');
+      }
+      let incomingMostPlayed = null;
+      if (data.mostPlayed && data.mostPlayed.plays && typeof data.mostPlayed.plays === 'object') {
+        incomingMostPlayed = {};
+        for (const k of Object.keys(data.mostPlayed.plays)) {
+          const raw = data.mostPlayed.plays[k];
+          // Schema stores counts as strings (VAM JSON convention); accept numbers too.
+          const n = parseInt(raw, 10);
+          if (Number.isFinite(n) && n > 0) incomingMostPlayed[k] = n;
+        }
+      }
+
+      const hasIncomingHistory = incomingRecent !== null || incomingMostPlayed !== null;
+      if (state.favorites.length > 0 || state.recentSongKeys !== null || state.mostPlayedPlays !== null) {
+        const summary =
+          state.favorites.length + ' favorite' +
+          (state.favorites.length === 1 ? '' : 's') +
+          (state.recentSongKeys ? ' + RECENT (' + state.recentSongKeys.length + ')' : '') +
+          (state.mostPlayedPlays ? ' + MOST PLAYED (' + Object.keys(state.mostPlayedPlays).length + ')' : '');
+        const incomingSummary =
+          incomingFavs.length + ' favorite' +
+          (incomingFavs.length === 1 ? '' : 's') +
+          (incomingRecent ? ' + RECENT (' + incomingRecent.length + ')' : '') +
+          (incomingMostPlayed ? ' + MOST PLAYED (' + Object.keys(incomingMostPlayed).length + ')' : '');
         const ok = confirm(
-          'Replace your current ' + state.favorites.length +
-          ' favorite' + (state.favorites.length === 1 ? '' : 's') +
-          ' with ' + incoming.length + ' from the file?'
+          'Replace current state (' + summary + ') with file contents (' + incomingSummary + ')?'
         );
         if (!ok) {
           e.target.value = '';
@@ -592,11 +745,19 @@ function onImportFileChange(e) {
         }
       }
       pushHistory();
-      state.favorites = incoming.slice();
-      state.favoritesSet = new Set(incoming);
+      state.favorites = incomingFavs.slice();
+      state.favoritesSet = new Set(incomingFavs);
+      state.recentSongKeys = incomingRecent;
+      state.mostPlayedPlays = incomingMostPlayed;
       state.expandedSongKey = null;
       renderRightPane();
       renderFavList();
+      renderHistoryIndicator();
+      if (hasIncomingHistory) {
+        // Surface the implication immediately so user understands what they
+        // just loaded — re-export will, by default, prompt about it.
+        // No modal needed here; the indicator + tooltip carries the message.
+      }
     } catch (err) {
       alert('Could not import: ' + (err.message || String(err)));
     }
