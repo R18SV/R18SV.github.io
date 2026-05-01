@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Editor &mdash; Produce 69</title>
+  <title>Collection &mdash; Produce 69</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -13,18 +13,18 @@
   <p class="breadcrumb">
     <a href="../../">Shadow Venom</a> &raquo;
     <a href="../">Produce 69</a> &raquo;
-    Profile Editor
+    Collection
   </p>
 
   <header>
-    <h1>Profile Editor</h1>
-    <p class="subtitle">Browse the catalog and pick favorites for your <code>.p69save</code> profile.</p>
+    <h1>Collection</h1>
+    <p class="subtitle">Pick the songs you'll keep close. Take them back to the show whenever you're ready.</p>
   </header>
 
-  <div id="loading" class="loading">Loading catalog&hellip;</div>
+  <div id="loading" class="loading">Pulling up the songs&hellip;</div>
 
   <div id="error" class="error hidden">
-    <h2>Could not load catalog</h2>
+    <h2>Couldn't pull up the songs</h2>
     <p id="error-msg"></p>
   </div>
 
@@ -34,12 +34,12 @@
       <button id="handoff-banner-dismiss" class="handoff-banner-dismiss" title="Dismiss">&times;</button>
     </div>
     <div class="action-bar">
-      <button id="export-btn">Export .p69save</button>
-      <button id="import-btn" class="secondary">Import .p69save</button>
+      <button id="export-btn">Export</button>
+      <button id="import-btn" class="secondary">Import</button>
       <input type="file" id="import-file-input" accept=".p69save,.json" hidden>
       <span id="history-indicator" class="history-indicator hidden">
-        <span id="history-indicator-label">play history loaded</span>
-        <button id="history-drop-btn" class="drop-btn" title="Drop loaded history (favorites stay)">&times;</button>
+        <span id="history-indicator-label">carrying history</span>
+        <button id="history-drop-btn" class="drop-btn" title="Drop the history — your collection stays">&times;</button>
       </span>
       <span class="spacer"></span>
       <button id="undo-btn" class="secondary" disabled title="Nothing to undo">Undo</button>
@@ -47,14 +47,14 @@
 
     <div class="two-pane">
       <aside class="left-pane">
-        <h2 class="pane-title">My Fav (<span id="fav-count">0</span>)</h2>
+        <h2 class="pane-title">My Collection (<span id="fav-count">0</span>)</h2>
         <ul id="fav-list" class="fav-list hidden"></ul>
         <div id="empty-fav-msg" class="empty-fav-msg">
-          Your list is empty.<br>
-          Pick songs from the catalog &rarr;
+          Empty here.<br>
+          Load a saved one to edit, or start picking from the catalog &rarr;
         </div>
         <div id="fav-footer" class="fav-footer hidden">
-          <button id="clear-fav-btn" class="text-btn danger">Clear favorites</button>
+          <button id="clear-fav-btn" class="text-btn danger">Clear collection</button>
         </div>
       </aside>
 
@@ -73,22 +73,21 @@
   <div id="export-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
     <div class="modal-backdrop"></div>
     <div class="modal-card">
-      <h2 id="export-modal-title">Profile contains play history</h2>
-      <p>Loaded from import: <span id="history-summary"></span>.</p>
-      <p>How would you like to export?</p>
+      <h2 id="export-modal-title">There's history on this list</h2>
+      <p>You brought back: <span id="history-summary"></span>.</p>
+      <p>How would you like to take it back?</p>
 
       <button type="button" id="export-with-history-btn" class="branch warn">
-        <strong>Export with history</strong>
-        <span class="branch-desc">Importing this file in VAM will <em>overwrite</em> the player's
-          in-game RECENT and MOST PLAYED data. Use this when you intend to
-          restore a full profile snapshot.</span>
+        <strong>Take it all back</strong>
+        <span class="branch-desc">Whatever's currently in the show (RECENT, MOST PLAYED) will be
+          <em>overwritten</em> by what's here. Best for restoring a full snapshot.</span>
       </button>
 
       <button type="button" id="export-favs-only-btn" class="branch safe">
-        <strong>Export favorites only</strong>
-        <span class="branch-desc">VAM's in-game RECENT and MOST PLAYED stay untouched. Great for
-          building a library of mood-based favorite lists you can swap
-          between without losing your play stats.</span>
+        <strong>Just the songs</strong>
+        <span class="branch-desc">RECENT and MOST PLAYED in the show stay where they are. Great
+          for keeping different lists for different moods &mdash; swap them in
+          whenever, without losing what's already counted.</span>
       </button>
 
       <div class="modal-actions">

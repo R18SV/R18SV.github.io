@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Converter &mdash; Produce 69</title>
+  <title>Bring Your List &mdash; Produce 69</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -156,7 +156,7 @@
     .hint {
       font-size: 0.85rem;
       color: var(--muted);
-      margin-top: 1rem;
+      margin-top: 1.75rem;
     }
     .progress-dots {
       display: inline-flex;
@@ -191,31 +191,31 @@
   <p class="breadcrumb offline-hide">
     <a href="../../">Shadow Venom</a> &raquo;
     <a href="../">Produce 69</a> &raquo;
-    Profile Converter
+    Bring Your List
   </p>
 
   <header>
-    <h1>Profile Converter</h1>
-    <p class="subtitle">Convert your legacy <code>My Favorites</code> data preset and continue in the online editor.</p>
+    <h1>Bring Your List</h1>
+    <p class="subtitle">Coming from an older version? Drop your MY FAV here and we'll continue in the collection editor.</p>
   </header>
 
   <section id="step-input" class="card">
-    <h2>Drop your old favorites file</h2>
-    <p>This is the file named like <code>Preset_My Favorites_Data*.vap</code> &mdash; the one that holds your track IDs. (The matching <em>UI</em> file is just buttons and is not what you want here.)</p>
+    <h2>Drop your old MY FAV file</h2>
+    <p>Look for a file named like <code>Preset_My Favorites_Data*.vap</code> &mdash; that's the one with your songs in it. The matching <em>UI</em> file is just the buttons, not what you want here.</p>
     <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Drop file here or click to browse">
       <p>Drop file here, or click to browse.</p>
       <input type="file" id="file-input" accept=".vap,.json" hidden>
     </div>
-    <p class="hint">Once parsed, you'll land in the <a href="../profile-editor/">profile editor</a> with your favorites pre-loaded. Refine the list there, then export when ready &mdash; or export immediately if you don't want to edit.</p>
+    <p class="hint">Your songs will be waiting in the <a href="../profile-editor/">collection editor</a>. Refine the list there, then take them back to the show when you're ready &mdash; or take them back right away if you'd rather not change a thing.</p>
   </section>
 
   <section id="step-converting" class="card hidden">
-    <h2>Opening editor<span class="progress-dots" aria-hidden="true"><span></span><span></span><span></span></span></h2>
+    <h2>Bringing your songs in<span class="progress-dots" aria-hidden="true"><span></span><span></span><span></span></span></h2>
     <p id="converting-summary">Reading your file.</p>
   </section>
 
   <section id="step-error" class="card error hidden">
-    <h2>Something went wrong</h2>
+    <h2>That didn't work</h2>
     <p id="error-message"></p>
     <button id="retry-btn" class="secondary">Try another file</button>
   </section>
@@ -331,11 +331,11 @@
       hideAll();
       els.stepConverting.classList.remove('hidden');
       const n = result.trackIds.length;
-      let msg = 'Found ' + n + ' favorite' + (n === 1 ? '' : 's') + ' in ' + fileName + '.';
+      let msg = 'Found ' + n + ' song' + (n === 1 ? '' : 's') + ' in ' + fileName + '.';
       if (result.declaredCount !== null && result.declaredCount !== n) {
         msg += ' (File declared ' + result.declaredCount + '; ' + n + ' were non-empty.)';
       }
-      els.convertingSummary.textContent = msg + ' Opening editor…';
+      els.convertingSummary.textContent = msg + ' Bringing them in…';
     }
 
     function showError(msg) {

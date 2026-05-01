@@ -85,7 +85,7 @@ function formatFavLabel(trackId) {
       html:
         '<span class="label is-missing"><i>' +
         escapeHTML(trackId) +
-        '</i><span class="missing-tag">(not in catalog)</span></span>',
+        '</i><span class="missing-tag">(not in current set)</span></span>',
       isMissing: true
     };
   }
@@ -163,10 +163,9 @@ function consumeHandoff() {
 function showHandoffBanner(count, source) {
   const banner = document.getElementById('handoff-banner');
   if (!banner) return;
-  const sourceLabel = source === 'converter' ? 'profile converter' : source;
   document.getElementById('handoff-banner-text').textContent =
-    'Loaded ' + count + ' track' + (count === 1 ? '' : 's') +
-    ' from the ' + sourceLabel + '. Refine your list, then export when ready.';
+    'Brought ' + count + ' song' + (count === 1 ? '' : 's') +
+    ' in for you. Refine, then take them back when you\'re ready.';
   banner.classList.remove('hidden');
 }
 
@@ -424,22 +423,21 @@ function renderTagFlatSongList(songKeys, opts) {
 
 function renderTagRecent() {
   renderTagFlatSongList(state.recentSongKeys || [], {
-    emptyTitle: 'No RECENT data loaded',
+    emptyTitle: 'Nothing yet',
     emptyBody:
-      'RECENT is auto-tracked by the plugin as you play tracks in VAM. ' +
-      'To see and edit it here, import a profile saved from VAM via slot 57 ' +
-      '(Profile Export). Until then, this tab is empty.'
+      'Hm, empty here. Maybe come around more often? Bring back a list saved ' +
+      'from the in-game collection export, and what you\'ve been playing will ' +
+      'show up. Play more with me.'
   });
 }
 
 function renderTagMostPlayed() {
   if (!state.mostPlayedPlays || Object.keys(state.mostPlayedPlays).length === 0) {
     renderTagFlatSongList([], {
-      emptyTitle: 'No MOST PLAYED data loaded',
+      emptyTitle: 'Not counted yet',
       emptyBody:
-        'MOST PLAYED counts are accumulated by the plugin as you play tracks ' +
-        'in VAM. To see and edit them here, import a profile saved from VAM ' +
-        'via slot 57 (Profile Export). Until then, this tab is empty.'
+        'Every play, she\'s quietly keeping count. Bring back a list saved from ' +
+        'the in-game collection export to see what you\'ve been playing the most.'
     });
     return;
   }
@@ -653,10 +651,10 @@ function renderVariantPopover(songKey, variants) {
       }
       const cls = 'vp-row' + (isAdded ? ' added' : '');
       // Added popover rows use bg tint (.vp-row.added in CSS); not-added
-      // rows show a small "+ ADD" affordance.
+      // rows show a small "+ Add" affordance.
       const action = isAdded
         ? ''
-        : '<span class="vp-action">+ ADD</span>';
+        : '<span class="vp-action">+ Add</span>';
       return (
         '<div class="' + cls + '" data-trackid="' + escapeHTML(v.trackId) + '">' +
         lbl + action + '</div>'
@@ -665,7 +663,7 @@ function renderVariantPopover(songKey, variants) {
     .join('');
   return (
     '<div class="variant-popover">' +
-    '<div class="vp-title">Choose a variant</div>' +
+    '<div class="vp-title">Pick a stage</div>' +
     rows +
     '</div>'
   );
@@ -729,10 +727,10 @@ function wireGlobalHandlers() {
   document.getElementById('history-drop-btn').addEventListener('click', () => {
     if (state.recentSongKeys === null && state.mostPlayedPlays === null) return;
     const ok = confirm(
-      'Drop the loaded play history?\n\n' +
-      'After this, exported profiles will leave the player\'s in-game RECENT ' +
-      'and MOST PLAYED untouched (favorites-only export).\n\n' +
-      'Your favorites list is unaffected. This is undoable.'
+      'Drop the history?\n\n' +
+      'After this, what you take back will be just the songs — RECENT and ' +
+      'MOST PLAYED in the show stay where they are. Your collection isn\'t ' +
+      'touched. Undoable.'
     );
     if (!ok) return;
     dropHistory();
@@ -883,7 +881,7 @@ function renderHistoryIndicator() {
   if (r) parts.push('RECENT (' + r.length + ')');
   if (mp) parts.push('MOST PLAYED (' + Object.keys(mp).length + ')');
   document.getElementById('history-indicator-label').textContent =
-    'play history loaded: ' + parts.join(' + ');
+    'carrying history · ' + parts.join(' · ');
   ind.classList.remove('hidden');
 }
 
@@ -991,11 +989,11 @@ function wireDragHandlers(listEl) {
 function onClearAllClick() {
   if (state.favorites.length === 0) return;
   const tail = state.recentSongKeys !== null || state.mostPlayedPlays !== null
-    ? '\n\nLoaded play history (RECENT / MOST PLAYED) is unaffected — drop it separately via the pill in the action bar.'
+    ? '\n\nThe history riding along stays — drop that separately if you want.'
     : '';
   const ok = confirm(
-    'Clear all ' + state.favorites.length +
-    ' favorite' + (state.favorites.length === 1 ? '' : 's') + '?' + tail
+    'Clear your collection? (' + state.favorites.length +
+    ' song' + (state.favorites.length === 1 ? '' : 's') + ')' + tail
   );
   if (!ok) return;
   clearFavorites();
@@ -1006,7 +1004,7 @@ function onClearAllClick() {
 function onExportClick() {
   const hasHistory = state.recentSongKeys !== null || state.mostPlayedPlays !== null;
   if (state.favorites.length === 0 && !hasHistory) {
-    alert('Nothing to export — pick some songs first.');
+    alert('Nothing to take back yet — pick some songs first.');
     return;
   }
   if (hasHistory) {
@@ -1019,11 +1017,11 @@ function onExportClick() {
 function showExportModal() {
   const parts = [];
   if (state.recentSongKeys) {
-    parts.push('<strong>RECENT</strong> (' + state.recentSongKeys.length + ' entries)');
+    parts.push('<strong>RECENT</strong> (' + state.recentSongKeys.length + ')');
   }
   if (state.mostPlayedPlays) {
     parts.push('<strong>MOST PLAYED</strong> (' +
-      Object.keys(state.mostPlayedPlays).length + ' songs)');
+      Object.keys(state.mostPlayedPlays).length + ')');
   }
   document.getElementById('history-summary').innerHTML = parts.join(' and ');
   document.getElementById('export-modal').classList.remove('hidden');
@@ -1079,12 +1077,11 @@ function onImportFileChange(e) {
     try {
       const data = JSON.parse(reader.result);
       if (!data || typeof data !== 'object') {
-        throw new Error('File is not a JSON object.');
+        throw new Error('That file isn\'t the right shape — try a .p69save you exported from the show.');
       }
       if (!data.favorites || !Array.isArray(data.favorites.trackIds)) {
         throw new Error(
-          'File does not contain a favorites.trackIds array. ' +
-          'Make sure you uploaded a .p69save profile (with a "favorites" field).'
+          'No songs found in that file. Make sure it\'s a .p69save you exported earlier.'
         );
       }
       const incomingFavs = data.favorites.trackIds.filter(id => typeof id === 'string');
@@ -1108,20 +1105,19 @@ function onImportFileChange(e) {
         }
       }
 
-      const hasIncomingHistory = incomingRecent !== null || incomingMostPlayed !== null;
       if (state.favorites.length > 0 || state.recentSongKeys !== null || state.mostPlayedPlays !== null) {
         const summary =
-          state.favorites.length + ' favorite' +
+          state.favorites.length + ' song' +
           (state.favorites.length === 1 ? '' : 's') +
           (state.recentSongKeys ? ' + RECENT (' + state.recentSongKeys.length + ')' : '') +
           (state.mostPlayedPlays ? ' + MOST PLAYED (' + Object.keys(state.mostPlayedPlays).length + ')' : '');
         const incomingSummary =
-          incomingFavs.length + ' favorite' +
+          incomingFavs.length + ' song' +
           (incomingFavs.length === 1 ? '' : 's') +
           (incomingRecent ? ' + RECENT (' + incomingRecent.length + ')' : '') +
           (incomingMostPlayed ? ' + MOST PLAYED (' + Object.keys(incomingMostPlayed).length + ')' : '');
         const ok = confirm(
-          'Replace current state (' + summary + ') with file contents (' + incomingSummary + ')?'
+          'Swap your current (' + summary + ') for what\'s in the file (' + incomingSummary + ')?'
         );
         if (!ok) {
           e.target.value = '';
@@ -1137,16 +1133,11 @@ function onImportFileChange(e) {
       renderRightPane();
       renderFavList();
       renderHistoryIndicator();
-      if (hasIncomingHistory) {
-        // Surface the implication immediately so user understands what they
-        // just loaded — re-export will, by default, prompt about it.
-        // No modal needed here; the indicator + tooltip carries the message.
-      }
     } catch (err) {
-      alert('Could not import: ' + (err.message || String(err)));
+      alert('Couldn\'t bring that in — ' + (err.message || String(err)));
     }
   };
-  reader.onerror = () => alert('Could not read the file.');
+  reader.onerror = () => alert('Couldn\'t read that file.');
   reader.readAsText(file);
   e.target.value = '';
 }

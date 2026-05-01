@@ -80,6 +80,15 @@
       margin: 0;
       letter-spacing: 0.02em;
     }
+    .series-name {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.4rem;
+      opacity: 0.85;
+    }
     .tools {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -143,19 +152,20 @@
 
   <header>
     <h1>Produce 69</h1>
-    <p class="subtitle">Companion tools.</p>
+    <p class="series-name">VaM Produce 69 II</p>
+    <p class="subtitle">Tools to take the show home with you.</p>
   </header>
 
   <section class="tools">
     <a href="profile-converter/" class="tool-card">
-      <h3>Profile Converter</h3>
-      <p>Have a legacy "My Favorites" data preset (<code>.vap</code>) from the old version? Drop it here to migrate &mdash; you'll land in the editor with your favorites pre-loaded.</p>
+      <h3>Bring Your List</h3>
+      <p>Coming from an older version? Drop your old MY FAV file here &mdash; your songs follow you straight into the collection editor.</p>
       <span class="pill">Available</span>
     </a>
 
     <a href="profile-editor/" class="tool-card">
-      <h3>Profile Editor</h3>
-      <p>Browse the song catalog, pick favorites, and export a <code>.p69save</code>. Build mood-based playlists or refine an imported profile, all in your browser.</p>
+      <h3>Collection</h3>
+      <p>Browse the catalog, pick the songs you'll keep close, and take them back to the show. Build different lists for different nights &mdash; swap them in whenever.</p>
       <span class="pill">Available</span>
     </a>
   </section>
