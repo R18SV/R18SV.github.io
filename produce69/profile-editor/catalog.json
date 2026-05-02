@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-02T23:36:49.403Z",
-  "generatedAt": "2026-05-02T23:36:53Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-05-02T23:48:02.231Z",
+  "generatedAt": "2026-05-02T23:52:40Z",
   "songCount": 242,
   "trackCount": 353,
   "tracks": [
@@ -218,7 +218,8 @@
       "trackId": "First Love EP",
       "songKey": "AFTER SCHOOL - FIRST LOVE",
       "stage": "Strip Club Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "First Love EP"
     },
     {
       "trackId": "Bomb",
@@ -434,7 +435,8 @@
       "trackId": "BLACK DRESS EP",
       "songKey": "CLC - BLACK DRESS",
       "stage": "After The Rain Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Into You EP"
     },
     {
       "trackId": "Devil",
@@ -596,7 +598,8 @@
       "trackId": "CLICK EP",
       "songKey": "GFRIEND - CLICK",
       "stage": "Concert Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "CLICK EP"
     },
     {
       "trackId": "Glass Bead",
@@ -686,7 +689,8 @@
       "trackId": "Holiday EP",
       "songKey": "GIRLS' GENERATION - HOLIDAY",
       "stage": "Carrier Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Supernova Love EP"
     },
     {
       "trackId": "Into The New World",
@@ -746,7 +750,8 @@
       "trackId": "ATHLETIC GIRL EP",
       "songKey": "H1-KEY - ATHLETIC GIRL",
       "stage": "Concert Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Zombie EP"
     },
     {
       "trackId": "Yeah Oh Ahhh",
@@ -1040,19 +1045,22 @@
       "trackId": "Off the Record EP",
       "songKey": "IVE - OFF THE RECORD",
       "stage": "Studio Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "CLICK EP"
     },
     {
       "trackId": "SUMMER FESTA EP",
       "songKey": "IVE - SUMMER FESTA",
       "stage": "Concert Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Into You EP"
     },
     {
       "trackId": "Supernova Love EP",
       "songKey": "IVE - SUPERNOVA LOVE",
       "stage": "Manor Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Supernova Love EP"
     },
     {
       "trackId": "FIESTA",
@@ -1124,7 +1132,8 @@
       "trackId": "Into You EP",
       "songKey": "JUN HYO SEONG - INTO YOU",
       "stage": "Warehouse Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Into You EP"
     },
     {
       "trackId": "Cupid 01",
@@ -1334,7 +1343,8 @@
       "trackId": "Piano Man EP",
       "songKey": "MAMAMOO - PIANO MAN",
       "stage": "Talk Show Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Piano Man EP"
     },
     {
       "trackId": "HANDS UP",
@@ -1532,7 +1542,8 @@
       "trackId": "BOOM EP",
       "songKey": "NMIXX - BOOM",
       "stage": "Jail Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Zombie EP"
     },
     {
       "trackId": "Dice EP",
@@ -1628,7 +1639,8 @@
       "trackId": "Zombie EP",
       "songKey": "PURPLE KISS - ZOMBIE",
       "stage": "Manor Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Zombie EP"
     },
     {
       "trackId": "WHOO",
@@ -1670,7 +1682,8 @@
       "trackId": "Ladies Night EP",
       "songKey": "RED VELVET - LADIES NIGHT",
       "stage": "Talk Show Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Into You EP"
     },
     {
       "trackId": "Monster Duet",
@@ -1802,7 +1815,8 @@
       "trackId": "Twenty Five EP",
       "songKey": "SONGJIEUN - TWENTY FIVE REMIX",
       "stage": "Office Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "First Love EP"
     },
     {
       "trackId": "AGASSY",
@@ -1958,7 +1972,8 @@
       "trackId": "Touchdown EP",
       "songKey": "TWICE - TOUCHDOWN",
       "stage": "BDSM Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Zombie EP"
     },
     {
       "trackId": "Bop Bop",
@@ -1970,7 +1985,8 @@
       "trackId": "Untie EP",
       "songKey": "VIVIZ - UNTIE",
       "stage": "Tunnel Stage",
-      "variantNumber": 0
+      "variantNumber": 0,
+      "hybridSet": "Piano Man EP"
     },
     {
       "trackId": "RENAISSANCE",
@@ -5388,6 +5404,54 @@
     "YENA - CATCH CATCH",
     "花澤 香菜 - RENAI CIRCULATION"
   ],
+  "hybridSets": {
+    "Zombie EP": {
+      "primary": "Zombie EP",
+      "members": [
+        "ATHLETIC GIRL EP",
+        "BOOM EP",
+        "Touchdown EP",
+        "Zombie EP"
+      ]
+    },
+    "Into You EP": {
+      "primary": "Into You EP",
+      "members": [
+        "BLACK DRESS EP",
+        "Into You EP",
+        "Ladies Night EP",
+        "SUMMER FESTA EP"
+      ]
+    },
+    "CLICK EP": {
+      "primary": "CLICK EP",
+      "members": [
+        "CLICK EP",
+        "Off the Record EP"
+      ]
+    },
+    "First Love EP": {
+      "primary": "First Love EP",
+      "members": [
+        "First Love EP",
+        "Twenty Five EP"
+      ]
+    },
+    "Supernova Love EP": {
+      "primary": "Supernova Love EP",
+      "members": [
+        "Holiday EP",
+        "Supernova Love EP"
+      ]
+    },
+    "Piano Man EP": {
+      "primary": "Piano Man EP",
+      "members": [
+        "Piano Man EP",
+        "Untie EP"
+      ]
+    }
+  },
   "tags": {
     "artists": [
       "(G)I-DLE",
