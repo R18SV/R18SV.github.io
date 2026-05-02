@@ -96,17 +96,36 @@ function extractVariantNumber(trackId) {
 }
 
 function buildTracks(songsRaw) {
+  // Build a per-trackId → hybridSetId index from the songs file's hybridSets
+  // top-level map. Tracks belonging to a hybrid set get a `hybridSet` field
+  // on their per-staging record so the editor can group click targets by
+  // hybrid set OR songKey (whichever is present). See produce69_hybrid_multivariant
+  // memory + Web Hybrid Variant Popover handoff.
+  const hybridSets = (songsRaw && songsRaw.hybridSets) || {};
+  const trackIdToHybridSet = new Map();
+  for (const setId of Object.keys(hybridSets)) {
+    const info = hybridSets[setId] || {};
+    for (const memberId of (info.members || [])) {
+      trackIdToHybridSet.set(memberId, setId);
+    }
+  }
+
   const out = [];
   const songKeys = Object.keys(songsRaw.songs).sort();
   for (const songKey of songKeys) {
     const song = songsRaw.songs[songKey];
     if (!Array.isArray(song.stagings)) continue;
-    const variants = song.stagings.map(st => ({
-      trackId: st.id,
-      songKey: song.songKey,
-      stage: resolveStageDisplay(st.stage),
-      variantNumber: extractVariantNumber(st.id)
-    }));
+    const variants = song.stagings.map(st => {
+      const rec = {
+        trackId: st.id,
+        songKey: song.songKey,
+        stage: resolveStageDisplay(st.stage),
+        variantNumber: extractVariantNumber(st.id)
+      };
+      const hs = trackIdToHybridSet.get(st.id);
+      if (hs) rec.hybridSet = hs;
+      return rec;
+    });
     variants.sort((a, b) => a.variantNumber - b.variantNumber);
     out.push(...variants);
   }
@@ -198,6 +217,7 @@ function main() {
     tracks,
     lists,
     newReleaseSet,
+    hybridSets: songsRaw.hybridSets || {},
     tags: { artists, stages }
   };
 
@@ -213,6 +233,7 @@ function main() {
   console.log('NEW set   : ' + newReleaseSet.length + ' songs');
   console.log('Artists   : ' + artists.length);
   console.log('Stages    : ' + stages.length);
+  console.log('HybridSets: ' + Object.keys(catalog.hybridSets).length);
   console.log('Size      : ' + sizeBytes + ' bytes');
 }
 

@@ -313,14 +313,33 @@ function showHandoffBanner(count, source) {
 function initIndices() {
   state.songKeyToTracks = new Map();
   state.trackIdToTrack = new Map();
+  // Click-group index: tracks belonging to a hybrid set (different songKeys
+  // sharing a CO preset, e.g. CLICK EP + Off the Record EP) are grouped
+  // under a single click target. Non-hybrid tracks fall back to songKey
+  // grouping (same-songKey multi-variants like Somehow / Somehow 01).
+  state.clickGroupToTracks = new Map();
   for (const t of state.catalog.tracks) {
     if (!state.songKeyToTracks.has(t.songKey)) {
       state.songKeyToTracks.set(t.songKey, []);
     }
     state.songKeyToTracks.get(t.songKey).push(t);
     state.trackIdToTrack.set(t.trackId, t);
+    const grp = t.hybridSet || t.songKey;
+    if (!state.clickGroupToTracks.has(grp)) {
+      state.clickGroupToTracks.set(grp, []);
+    }
+    state.clickGroupToTracks.get(grp).push(t);
   }
   state.newReleaseSet = new Set(state.catalog.newReleaseSet || []);
+}
+
+// Resolve a slot's songKey to its click-group id (which is either a hybrid
+// set id or the songKey itself). Returns null if the songKey isn't in the
+// catalog (e.g. a hand-edited slot referring to a removed track).
+function getClickGroup(songKey) {
+  const arr = state.songKeyToTracks.get(songKey);
+  if (!arr || arr.length === 0) return null;
+  return arr[0].hybridSet || songKey;
 }
 
 function showLoadError(err) {
@@ -738,14 +757,18 @@ function renderSlot(slot) {
     return '<div class="slot empty"></div>';
   }
   const songKey = slot.songKey;
-  const variants = state.songKeyToTracks.get(songKey) || [];
+  // Resolve to click group (hybrid set OR songKey). Variants come from the
+  // group, not just the songKey — so cross-songKey hybrid EP sets (e.g.
+  // CLICK EP + Off the Record EP) get a unified popover.
+  const clickGroup = getClickGroup(songKey);
+  const variants = (clickGroup && state.clickGroupToTracks.get(clickGroup)) || [];
   const isMulti = variants.length > 1;
   const isComingSoon = slot.released === false || slot.comingSoon === true;
   // NEW highlight is a cross-tab cue ("this song is new") — meaningless
   // inside the NEW tab itself where every entry is by definition new.
   const isNew =
     state.newReleaseSet.has(songKey) && state.currentTab !== 'New';
-  const isExpanded = state.expandedSongKey === songKey && isMulti;
+  const isExpanded = state.expandedSongKey === clickGroup && isMulti;
   const isAdded =
     variants.length > 0 && variants.some(v => state.favoritesSet.has(v.trackId));
 
@@ -785,13 +808,32 @@ function renderSlot(slot) {
 }
 
 function renderVariantPopover(songKey, variants) {
-  const sorted = variants.slice().sort((a, b) => a.variantNumber - b.variantNumber);
+  // Hybrid-set popover differs from same-songKey popover: variants here
+  // belong to multiple songs (different songKeys, e.g. CLICK EP set's
+  // "GFRIEND - CLICK" + "IVE - OFF THE RECORD"), so each row needs to lead
+  // with the song name to disambiguate.
+  const isHybridSet =
+    variants.length > 1 &&
+    variants.some(v => v.songKey !== variants[0].songKey);
+
+  // Sort: same-songKey case stays by variantNumber; hybrid-set case sorts
+  // alphabetically by songKey for predictable order.
+  const sorted = isHybridSet
+    ? variants.slice().sort((a, b) => (a.songKey || '').localeCompare(b.songKey || ''))
+    : variants.slice().sort((a, b) => a.variantNumber - b.variantNumber);
+
   const rows = sorted
     .map(v => {
       const isAdded = state.favoritesSet.has(v.trackId);
       const stageLabel = tStage(v.stage);
       let lbl;
-      if (v.variantNumber > 0) {
+      if (isHybridSet) {
+        // Cross-songKey: lead with song name, then stage as secondary.
+        const songLabel = tTrack(v.songKey, null) || ('<i>' + escapeHTML(v.songKey) + '</i>');
+        lbl =
+          '<span><strong>' + songLabel + '</strong> ' +
+          '<span class="vp-stage">' + escapeHTML(stageLabel) + '</span></span>';
+      } else if (v.variantNumber > 0) {
         lbl =
           '<span><strong>[' + pad2(v.variantNumber) + ']</strong> ' +
           '<span class="vp-stage">' + escapeHTML(stageLabel) + '</span></span>';
@@ -823,7 +865,12 @@ function renderVariantPopover(songKey, variants) {
 // ============================================================
 
 function onSongSlotClick(songKey) {
-  const variants = state.songKeyToTracks.get(songKey) || [];
+  // Resolve to click group (hybrid set takes precedence over songKey).
+  // expandedSongKey state field holds the click group id (legacy name kept
+  // to minimize diff; semantically it's the active group key).
+  const clickGroup = getClickGroup(songKey);
+  if (!clickGroup) return;
+  const variants = state.clickGroupToTracks.get(clickGroup) || [];
   if (variants.length === 0) return;
   if (variants.length === 1) {
     const v = variants[0];
@@ -837,7 +884,7 @@ function onSongSlotClick(songKey) {
     renderFavList();
     return;
   }
-  state.expandedSongKey = state.expandedSongKey === songKey ? null : songKey;
+  state.expandedSongKey = state.expandedSongKey === clickGroup ? null : clickGroup;
   renderRightPane();
 }
 
