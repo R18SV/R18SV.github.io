@@ -1,7 +1,7 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-01T10:37:02.523Z",
-  "generatedAt": "2026-05-01T21:50:11Z",
-  "songCount": 243,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-02T23:36:49.403Z",
+  "generatedAt": "2026-05-02T23:36:53Z",
+  "songCount": 242,
   "trackCount": 353,
   "tracks": [
     {
@@ -1529,12 +1529,6 @@
       "variantNumber": 1
     },
     {
-      "trackId": "Dice",
-      "songKey": "NIMIXX - DICE",
-      "stage": "Manor Stage",
-      "variantNumber": 0
-    },
-    {
       "trackId": "BOOM EP",
       "songKey": "NMIXX - BOOM",
       "stage": "Jail Stage",
@@ -1544,6 +1538,12 @@
       "trackId": "Dice EP",
       "songKey": "NMIXX - DICE",
       "stage": "Hell Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "Dice",
+      "songKey": "NMIXX - DICE",
+      "stage": "Manor Stage",
       "variantNumber": 0
     },
     {
@@ -5470,7 +5470,6 @@
       "NASTY NASTY",
       "NAYEON",
       "NEW JEANS",
-      "NIMIXX",
       "NMIXX",
       "PHAO",
       "PRODUCE 48",
