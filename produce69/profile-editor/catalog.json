@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-03T23:28:45.657Z",
-  "generatedAt": "2026-05-03T23:45:57Z",
-  "songCount": 242,
-  "trackCount": 353,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-08T19:33:46.098Z",
+  "generatedAt": "2026-05-08T19:33:57Z",
+  "songCount": 243,
+  "trackCount": 354,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -110,6 +110,12 @@
       "trackId": "Only Gained Weight",
       "songKey": "4MINUTE - ONLY GAINED WEIGHT",
       "stage": "Subway Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "QIAN DENG YUAN",
+      "songKey": "ACE - WISH OF A THOUSAND LANTERNS",
+      "stage": "Oriental Stage",
       "variantNumber": 0
     },
     {
@@ -4338,9 +4344,9 @@
         },
         {
           "idx": 18,
-          "rawText": "<color=#646464><i>ACE - WISH OF A THOUSAND LANTERNS</i></color>",
+          "rawText": "<i>ACE - WISH OF A THOUSAND LANTERNS</i>",
           "displayName": "ACE - WISH OF A THOUSAND LANTERNS",
-          "released": false,
+          "released": true,
           "songKey": "ACE - WISH OF A THOUSAND LANTERNS"
         },
         {
@@ -5128,6 +5134,11 @@
           "header": "[NEW RELEASE]"
         },
         {
+          "idx": 53,
+          "songKey": "ACE - WISH OF A THOUSAND LANTERNS",
+          "from": "HANFU DLC"
+        },
+        {
           "idx": 3,
           "songKey": "ITZY - IMAGINARY FRIEND",
           "from": "S1"
@@ -5369,6 +5380,7 @@
     "(G)I-DLE - GOOD THING",
     "(G)I-DLE - MONO",
     "(G)I-DLE - TOMBOY",
+    "ACE - WISH OF A THOUSAND LANTERNS",
     "BLACKPINK - HOW YOU LIKE THAT",
     "CHUNG HA - DREAM OF YOU",
     "CHUNGHA - ROLLER COASTER",
@@ -5458,6 +5470,7 @@
       "4 MINUTE",
       "4LADIES",
       "4MINUTE",
+      "ACE",
       "ADO",
       "AESPA",
       "AFTER SCHOOL",
