@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-19T01:48:45.980Z",
-  "generatedAt": "2026-05-19T01:48:48Z",
-  "songCount": 295,
-  "trackCount": 367,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-21T01:52:30.058Z",
+  "generatedAt": "2026-05-21T02:05:21Z",
+  "songCount": 296,
+  "trackCount": 369,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -115,7 +115,7 @@
     {
       "trackId": "QIAN DENG YUAN",
       "songKey": "ACE - WISH OF A THOUSAND LANTERNS",
-      "stage": "Oriental Stage 07",
+      "stage": "Oriental Stage",
       "variantNumber": 0
     },
     {
@@ -817,6 +817,18 @@
       "trackId": "The Chase 01",
       "songKey": "HEARTS2HEARTS - THE CHASE",
       "stage": "Egyptian Stage",
+      "variantNumber": 1
+    },
+    {
+      "trackId": "IM ILL",
+      "songKey": "HELLOVENUS - I'M ILL",
+      "stage": "Studio Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "IM ILL 01",
+      "songKey": "HELLOVENUS - I'M ILL",
+      "stage": "Jail Stage",
       "variantNumber": 1
     },
     {
@@ -1571,7 +1583,7 @@
     {
       "trackId": "ETA 01",
       "songKey": "NEW JEANS - ETA",
-      "stage": "After The Rain Stage",
+      "stage": "Racing Stage",
       "variantNumber": 1
     },
     {
@@ -4185,9 +4197,9 @@
         },
         {
           "idx": 42,
-          "rawText": "<color=#646464><i>HELLOVENUS - I'M ILL</i></color>",
+          "rawText": "<i>HELLOVENUS - I'M ILL</i>",
           "displayName": "HELLOVENUS - I'M ILL",
-          "released": false,
+          "released": true,
           "songKey": "HELLOVENUS - I'M ILL"
         },
         {
@@ -5273,6 +5285,11 @@
           "from": "S5"
         },
         {
+          "idx": 18,
+          "songKey": "BABYMONSTER - PSYCHO",
+          "from": "S5"
+        },
+        {
           "idx": 19,
           "songKey": "HEART2HEARTS - RUDE",
           "from": "S5"
@@ -5305,11 +5322,6 @@
         {
           "idx": 25,
           "songKey": "GARNIDELIA - HYSTERIC BULLET",
-          "from": "S5"
-        },
-        {
-          "idx": 18,
-          "songKey": "BABYMONSTER - PSYCHO",
           "from": "S5"
         },
         {
@@ -5391,38 +5403,37 @@
           "from": "CLUB DLC"
         },
         {
-          "idx": 46,
-          "songKey": "STAYC - TEDDY BEAR",
-          "comingSoon": true,
+          "idx": 52,
+          "songKey": "HELLOVENUS - I'M ILL",
           "from": "CLUB DLC"
         },
         {
-          "idx": 47,
+          "idx": 46,
           "songKey": "KARA - MISTER",
           "from": "CLUB DLC"
         },
         {
-          "idx": 48,
+          "idx": 47,
           "songKey": "GIRL CRUSH - OPPA DO YOU TRUST ME",
           "from": "CLUB DLC"
         },
         {
-          "idx": 49,
+          "idx": 48,
           "songKey": "HELLOVENUS - STICKYSTICKY",
           "from": "CLUB DLC"
         },
         {
-          "idx": 50,
+          "idx": 49,
           "songKey": "CHUNG HA - DREAM OF YOU",
           "from": "CLUB DLC"
         },
         {
-          "idx": 51,
+          "idx": 50,
           "songKey": "T-ARA - BO PEEP",
           "from": "CLUB DLC"
         },
         {
-          "idx": 52,
+          "idx": 51,
           "songKey": "GIRLS' GENERATION - GENIE",
           "from": "CLUB DLC"
         },
@@ -5452,6 +5463,7 @@
     "GIRLS' GENERATION - GENIE",
     "GIRLSET - LITTLE MISS",
     "HEART2HEARTS - RUDE",
+    "HELLOVENUS - I'M ILL",
     "HELLOVENUS - STICKYSTICKY",
     "HWA SA - MARIA",
     "HYOLYN - SAY MY NAME",
@@ -5679,7 +5691,6 @@
       "Office Stage",
       "Orc Camp Stage",
       "Oriental Stage",
-      "Oriental Stage 07",
       "Racing Stage",
       "Savannah Stage",
       "Space Stage",
