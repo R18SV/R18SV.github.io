@@ -48,27 +48,40 @@ const OUTPUT = path.resolve(
   'catalog.json'
 );
 
-// Stage display alias map — mirrors the plugin's `_stageDisplayAlias`
-// (src/PlaylistController.cs). Several technical stage names that the
-// preset-loader uses internally should consolidate under a single
-// display label for the BY STAGE drill list. The plugin applies this
-// at the UI layer at runtime; the slim public catalog applies it at
-// build time so the web editor's stage list matches the in-game UI
-// (34 distinct entries) and the i18n `stages` overlay (which is keyed
-// by display aliases) resolves correctly.
+// Stage display alias resolution — mirrors the plugin's ResolveStageDisplay
+// (src/PlaylistController.cs). Several technical stage names should
+// consolidate under a single display label for the BY STAGE drill list.
+// The plugin applies this at the UI layer at runtime; the slim public
+// catalog applies it at build time so the web editor's stage list matches
+// the in-game UI and the i18n `stages` overlay (which is keyed by display
+// aliases) resolves correctly.
+//
+// Family-pattern rules (auto-consolidate any indexed variant — no map
+// maintenance when new variants are added):
+//   "SP NN Stage"       -> "Multi Stage"     (e.g. SP 01 Stage, SP 02 Stage)
+//   "Oriental Stage NN" -> "Oriental Stage"  (e.g. Oriental Stage 01, 06, 07)
+//
+// STAGE_DISPLAY_ALIAS is a fallback for one-off aliases that don't fit the
+// family rules (currently empty; reserved for future cases).
 //
 // Keep in sync with:
 //   - Custom/Scripts/Shadow Venom/Produce 69/STAGE_DISPLAY_ALIAS_NOTE.md
-//   - PlaylistController.cs `_stageDisplayAlias`
+//   - PlaylistController.cs ResolveStageDisplay
 const STAGE_DISPLAY_ALIAS = {
-  'SP 01 Stage':       'Multi Stage',
-  'SP 02 Stage':       'Multi Stage',
-  'SP 03 Stage':       'Multi Stage',
-  'Oriental Stage 01': 'Oriental Stage',
-  'Oriental Stage 06': 'Oriental Stage'
 };
 
+function isSpStageFamily(s) {
+  return /^SP \d+ Stage$/.test(s);
+}
+
+function isOrientalStageFamily(s) {
+  return /^Oriental Stage \d+$/.test(s);
+}
+
 function resolveStageDisplay(s) {
+  if (!s) return s;
+  if (isSpStageFamily(s)) return 'Multi Stage';
+  if (isOrientalStageFamily(s)) return 'Oriental Stage';
   return STAGE_DISPLAY_ALIAS[s] || s;
 }
 
