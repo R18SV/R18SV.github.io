@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-22T06:20:16.533Z",
-  "generatedAt": "2026-05-22T06:20:18Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-05-22T10:47:52.318Z",
+  "generatedAt": "2026-05-22T10:47:54Z",
   "songCount": 296,
   "trackCount": 371,
   "tracks": [
@@ -434,7 +434,7 @@
     {
       "trackId": "Dream Of You 01",
       "songKey": "CHUNG HA - DREAM OF YOU",
-      "stage": "Concert Stage",
+      "stage": "Studio Stage",
       "variantNumber": 1
     },
     {
