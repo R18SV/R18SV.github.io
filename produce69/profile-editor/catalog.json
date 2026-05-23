@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-22T10:47:52.318Z",
-  "generatedAt": "2026-05-22T10:47:54Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-05-23T05:05:47.967Z",
+  "generatedAt": "2026-05-23T05:05:49Z",
   "songCount": 296,
   "trackCount": 371,
   "tracks": [
@@ -4975,6 +4975,13 @@
           "songKey": "(G)I-DLE - QUEENCARD"
         },
         {
+          "idx": 16,
+          "rawText": "<i>BABYMONSTER - PSYCHO</i>",
+          "displayName": "BABYMONSTER - PSYCHO",
+          "released": true,
+          "songKey": "BABYMONSTER - PSYCHO"
+        },
+        {
           "idx": 17,
           "rawText": "<color=#646464><i>LAYSHA - CHOCOLATE CREAM</i></color>",
           "displayName": "LAYSHA - CHOCOLATE CREAM",
@@ -5067,87 +5074,73 @@
         },
         {
           "idx": 30,
-          "rawText": "<i>T-ARA - NUMBER NINE</i>",
-          "displayName": "T-ARA - NUMBER NINE",
-          "released": true,
-          "songKey": "T-ARA - NUMBER NINE"
-        },
-        {
-          "idx": 31,
           "rawText": "<color=#646464><i>EXID - UP & DOWN</i></color>",
           "displayName": "EXID - UP & DOWN",
           "released": false,
           "songKey": "EXID - UP & DOWN"
         },
         {
-          "idx": 32,
+          "idx": 31,
           "rawText": "<color=#646464><i>96NEKO - 虎視眈々</i></color>",
           "displayName": "96NEKO - 虎視眈々",
           "released": false,
           "songKey": "96NEKO - 虎視眈々"
         },
         {
-          "idx": 33,
+          "idx": 32,
           "rawText": "<color=#646464><i>REOL - ヒビカセ HIBIKASE</i></color>",
           "displayName": "REOL - ヒビカセ HIBIKASE",
           "released": false,
           "songKey": "REOL - ヒビカセ HIBIKASE"
         },
         {
-          "idx": 34,
+          "idx": 33,
           "rawText": "<color=#646464><i>HAM - SO SEXY</i></color>",
           "displayName": "HAM - SO SEXY",
           "released": false,
           "songKey": "HAM - SO SEXY"
         },
         {
-          "idx": 35,
+          "idx": 34,
           "rawText": "<color=#646464><i>PERFUME - HURLY BURLY</i></color>",
           "displayName": "PERFUME - HURLY BURLY",
           "released": false,
           "songKey": "PERFUME - HURLY BURLY"
         },
         {
-          "idx": 36,
+          "idx": 35,
           "rawText": "<color=#646464><i>GARNIDELIA - TOUGEN RENKA</i></color>",
           "displayName": "GARNIDELIA - TOUGEN RENKA",
           "released": false,
           "songKey": "GARNIDELIA - TOUGEN RENKA"
         },
         {
-          "idx": 37,
+          "idx": 36,
           "rawText": "<color=#646464><i>MIKU - TELL YOUR WORLD</i></color>",
           "displayName": "MIKU - TELL YOUR WORLD",
           "released": false,
           "songKey": "MIKU - TELL YOUR WORLD"
         },
         {
-          "idx": 38,
+          "idx": 37,
           "rawText": "<color=#646464><i>RED VELVET - NAUGHTY</i></color>",
           "displayName": "RED VELVET - NAUGHTY",
           "released": false,
           "songKey": "RED VELVET - NAUGHTY"
         },
         {
-          "idx": 39,
+          "idx": 38,
           "rawText": "<color=#646464><i>BIKINI DANCE</i></color>",
           "displayName": "BIKINI DANCE",
           "released": false,
           "songKey": "BIKINI DANCE"
         },
         {
-          "idx": 40,
+          "idx": 39,
           "rawText": "<color=#646464><i>MOMOLAND - BAAM</i></color>",
           "displayName": "MOMOLAND - BAAM",
           "released": false,
           "songKey": "MOMOLAND - BAAM"
-        },
-        {
-          "idx": 16,
-          "rawText": "<i>BABYMONSTER - PSYCHO</i>",
-          "displayName": "BABYMONSTER - PSYCHO",
-          "released": true,
-          "songKey": "BABYMONSTER - PSYCHO"
         }
       ]
     },
