@@ -65,8 +65,10 @@ const OUTPUT = path.resolve(
 // family rules (currently empty; reserved for future cases).
 //
 // Keep in sync with:
-//   - Custom/Scripts/Shadow Venom/Produce 69/STAGE_DISPLAY_ALIAS_NOTE.md
-//   - PlaylistController.cs ResolveStageDisplay
+//   - F:\VAM\Produce69 Plugin Dev\docs\STAGE_DISPLAY_ALIAS_NOTE.md
+//     (moved out of the plugin folder on 2026-05-21 as part of pre-release cleanup;
+//      the plugin itself no longer ships any docs)
+//   - Custom/Scripts/Shadow Venom/Produce 69/src/PlaylistController.cs ResolveStageDisplay
 const STAGE_DISPLAY_ALIAS = {
 };
 
