@@ -1,6 +1,6 @@
 {
   "sourceVersion": "plugin/_songs.json @ 2026-05-25T10:18:36.520Z",
-  "generatedAt": "2026-05-25T10:29:23Z",
+  "generatedAt": "2026-05-25T13:26:35Z",
   "songCount": 297,
   "trackCount": 417,
   "tracks": [
@@ -242,8 +242,7 @@
       "trackId": "First Love EP",
       "songKey": "AFTER SCHOOL - FIRST LOVE",
       "stage": "Strip Club Stage",
-      "variantNumber": 0,
-      "hybridSet": "First Love EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Bomb",
@@ -525,8 +524,7 @@
       "trackId": "BLACK DRESS EP",
       "songKey": "CLC - BLACK DRESS",
       "stage": "After The Rain Stage",
-      "variantNumber": 0,
-      "hybridSet": "Into You EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Devil",
@@ -700,8 +698,7 @@
       "trackId": "CLICK EP",
       "songKey": "GFRIEND - CLICK",
       "stage": "Concert Stage",
-      "variantNumber": 0,
-      "hybridSet": "CLICK EP"
+      "variantNumber": 0
     },
     {
       "trackId": "CROSSROADS",
@@ -809,8 +806,7 @@
       "trackId": "Holiday EP",
       "songKey": "GIRLS' GENERATION - HOLIDAY",
       "stage": "Carrier Stage",
-      "variantNumber": 0,
-      "hybridSet": "Supernova Love EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Into The New World",
@@ -870,8 +866,7 @@
       "trackId": "ATHLETIC GIRL EP",
       "songKey": "H1-KEY - ATHLETIC GIRL",
       "stage": "Concert Stage",
-      "variantNumber": 0,
-      "hybridSet": "Zombie EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Yeah Oh Ahhh",
@@ -1231,22 +1226,19 @@
       "trackId": "Off the Record EP",
       "songKey": "IVE - OFF THE RECORD",
       "stage": "Studio Stage",
-      "variantNumber": 0,
-      "hybridSet": "CLICK EP"
+      "variantNumber": 0
     },
     {
       "trackId": "SUMMER FESTA EP",
       "songKey": "IVE - SUMMER FESTA",
       "stage": "Concert Stage",
-      "variantNumber": 0,
-      "hybridSet": "Into You EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Supernova Love EP",
       "songKey": "IVE - SUPERNOVA LOVE",
       "stage": "Manor Stage",
-      "variantNumber": 0,
-      "hybridSet": "Supernova Love EP"
+      "variantNumber": 0
     },
     {
       "trackId": "FIESTA",
@@ -1354,8 +1346,7 @@
       "trackId": "Into You EP",
       "songKey": "JUN HYO SEONG - INTO YOU",
       "stage": "Warehouse Stage",
-      "variantNumber": 0,
-      "hybridSet": "Into You EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Cupid",
@@ -1613,8 +1604,7 @@
       "trackId": "Piano Man EP",
       "songKey": "MAMAMOO - PIANO MAN",
       "stage": "Talk Show Stage",
-      "variantNumber": 0,
-      "hybridSet": "Piano Man EP"
+      "variantNumber": 0
     },
     {
       "trackId": "BODY",
@@ -1848,8 +1838,7 @@
       "trackId": "BOOM EP",
       "songKey": "NMIXX - BOOM",
       "stage": "Jail Stage",
-      "variantNumber": 0,
-      "hybridSet": "Zombie EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Dice EP",
@@ -1945,8 +1934,7 @@
       "trackId": "Zombie EP",
       "songKey": "PURPLE KISS - ZOMBIE",
       "stage": "Manor Stage",
-      "variantNumber": 0,
-      "hybridSet": "Zombie EP"
+      "variantNumber": 0
     },
     {
       "trackId": "WHOO",
@@ -1994,8 +1982,7 @@
       "trackId": "Ladies Night EP",
       "songKey": "RED VELVET - LADIES NIGHT",
       "stage": "Talk Show Stage",
-      "variantNumber": 0,
-      "hybridSet": "Into You EP"
+      "variantNumber": 0
     },
     {
       "trackId": "Monster Duet",
@@ -2139,8 +2126,7 @@
       "trackId": "Twenty Five EP",
       "songKey": "SONGJIEUN - TWENTY FIVE REMIX",
       "stage": "Office Stage",
-      "variantNumber": 0,
-      "hybridSet": "First Love EP"
+      "variantNumber": 0
     },
     {
       "trackId": "AGASSY",
@@ -2314,8 +2300,7 @@
       "trackId": "Touchdown EP",
       "songKey": "TWICE - TOUCHDOWN",
       "stage": "BDSM Stage",
-      "variantNumber": 0,
-      "hybridSet": "Zombie EP"
+      "variantNumber": 0
     },
     {
       "trackId": "CURIOUS",
@@ -2339,8 +2324,7 @@
       "trackId": "Untie EP",
       "songKey": "VIVIZ - UNTIE",
       "stage": "Tunnel Stage",
-      "variantNumber": 0,
-      "hybridSet": "Piano Man EP"
+      "variantNumber": 0
     },
     {
       "trackId": "PICKY PICKY",
@@ -5479,6 +5463,76 @@
           "displayName": "IVE - SUPERNOVA LOVE",
           "released": true,
           "songKey": "IVE - SUPERNOVA LOVE"
+        },
+        {
+          "idx": 8,
+          "rawText": "<i>H1-KEY - ATHLETIC GIRL</i>",
+          "displayName": "H1-KEY - ATHLETIC GIRL",
+          "released": true,
+          "songKey": "H1-KEY - ATHLETIC GIRL"
+        },
+        {
+          "idx": 9,
+          "rawText": "<i>NMIXX - BOOM</i>",
+          "displayName": "NMIXX - BOOM",
+          "released": true,
+          "songKey": "NMIXX - BOOM"
+        },
+        {
+          "idx": 10,
+          "rawText": "<i>TWICE - TOUCHDOWN</i>",
+          "displayName": "TWICE - TOUCHDOWN",
+          "released": true,
+          "songKey": "TWICE - TOUCHDOWN"
+        },
+        {
+          "idx": 11,
+          "rawText": "<i>CLC - BLACK DRESS</i>",
+          "displayName": "CLC - BLACK DRESS",
+          "released": true,
+          "songKey": "CLC - BLACK DRESS"
+        },
+        {
+          "idx": 12,
+          "rawText": "<i>RED VELVET - LADIES NIGHT</i>",
+          "displayName": "RED VELVET - LADIES NIGHT",
+          "released": true,
+          "songKey": "RED VELVET - LADIES NIGHT"
+        },
+        {
+          "idx": 13,
+          "rawText": "<i>IVE - SUMMER FESTA</i>",
+          "displayName": "IVE - SUMMER FESTA",
+          "released": true,
+          "songKey": "IVE - SUMMER FESTA"
+        },
+        {
+          "idx": 14,
+          "rawText": "<i>GIRLS' GENERATION - HOLIDAY</i>",
+          "displayName": "GIRLS' GENERATION - HOLIDAY",
+          "released": true,
+          "songKey": "GIRLS' GENERATION - HOLIDAY"
+        },
+        {
+          "idx": 15,
+          "rawText": "<i>IVE - OFF THE RECORD</i>",
+          "displayName": "IVE - OFF THE RECORD",
+          "released": true,
+          "songKey": "IVE - OFF THE RECORD"
+        },
+        {
+          "idx": 16,
+          "rawText": "<i>SONGJIEUN - TWENTY FIVE REMIX</i>",
+          "displayName": "SONGJIEUN - TWENTY FIVE REMIX",
+          "released": true,
+          "songKey": "SONGJIEUN - TWENTY FIVE REMIX"
+        },
+        {
+          "idx": 17,
+          "rawText": "<i>VIVIZ - UNTIE</i>",
+          "displayName": "VIVIZ - UNTIE",
+          "released": true,
+          "songKey": "VIVIZ - UNTIE"
         }
       ]
     },
@@ -5727,7 +5781,7 @@
     },
     "RAW": {
       "name": "RAW",
-      "slotCount": 72,
+      "slotCount": 73,
       "slots": [
         {
           "idx": 0,
@@ -5892,10 +5946,10 @@
         },
         {
           "idx": 23,
-          "rawText": "<color=#646464><i>GUMI - 地球最後の告白を</i></color>",
-          "displayName": "GUMI - 地球最後の告白を",
+          "rawText": "<color=#646464><i>GUMI - åœ°çƒæœ€å¾Œã®å‘Šç™½ã‚’</i></color>",
+          "displayName": "GUMI - åœ°çƒæœ€å¾Œã®å‘Šç™½ã‚’",
           "released": false,
-          "songKey": "GUMI - 地球最後の告白を"
+          "songKey": "GUMI - åœ°çƒæœ€å¾Œã®å‘Šç™½ã‚’"
         },
         {
           "idx": 24,
@@ -6004,234 +6058,241 @@
         },
         {
           "idx": 39,
+          "rawText": "<i>KISS OF LIFE - SUGARCOAT</i>",
+          "displayName": "KISS OF LIFE - SUGARCOAT",
+          "released": true,
+          "songKey": "KISS OF LIFE - SUGARCOAT"
+        },
+        {
+          "idx": 40,
           "rawText": "<color=#646464><i>LE SSERAFIM - BLUE FLAME</i></color>",
           "displayName": "LE SSERAFIM - BLUE FLAME",
           "released": false,
           "songKey": "LE SSERAFIM - BLUE FLAME"
         },
         {
-          "idx": 40,
-          "rawText": "<color=#646464><i>LE SSERAFIM - BLUEBEARD’S WIFE</i></color>",
-          "displayName": "LE SSERAFIM - BLUEBEARD’S WIFE",
+          "idx": 41,
+          "rawText": "<color=#646464><i>LE SSERAFIM - BLUEBEARDâ€™S WIFE</i></color>",
+          "displayName": "LE SSERAFIM - BLUEBEARDâ€™S WIFE",
           "released": false,
-          "songKey": "LE SSERAFIM - BLUEBEARD’S WIFE"
+          "songKey": "LE SSERAFIM - BLUEBEARDâ€™S WIFE"
         },
         {
-          "idx": 41,
+          "idx": 42,
           "rawText": "<i>LE SSERAFIM - EASY</i>",
           "displayName": "LE SSERAFIM - EASY",
           "released": true,
           "songKey": "LE SSERAFIM - EASY"
         },
         {
-          "idx": 42,
+          "idx": 43,
           "rawText": "<i>LISA - FUTW</i>",
           "displayName": "LISA - FUTW",
           "released": true,
           "songKey": "LISA - FUTW"
         },
         {
-          "idx": 43,
+          "idx": 44,
           "rawText": "<color=#646464><i>MAMAMOO - STARRY NIGHT</i></color>",
           "displayName": "MAMAMOO - STARRY NIGHT",
           "released": false,
           "songKey": "MAMAMOO - STARRY NIGHT"
         },
         {
-          "idx": 44,
+          "idx": 45,
           "rawText": "<i>MEOVV - BODY</i>",
           "displayName": "MEOVV - BODY",
           "released": true,
           "songKey": "MEOVV - BODY"
         },
         {
-          "idx": 45,
+          "idx": 46,
           "rawText": "<i>MEOVV - BURNING UP</i>",
           "displayName": "MEOVV - BURNING UP",
           "released": true,
           "songKey": "MEOVV - BURNING UP"
         },
         {
-          "idx": 46,
+          "idx": 47,
           "rawText": "<color=#646464><i>MIKU - SWEET DEVIL LIVE</i></color>",
           "displayName": "MIKU - SWEET DEVIL LIVE",
           "released": false,
           "songKey": "MIKU - SWEET DEVIL LIVE"
         },
         {
-          "idx": 47,
+          "idx": 48,
           "rawText": "<i>MINNIE - HER</i>",
           "displayName": "MINNIE - HER",
           "released": true,
           "songKey": "MINNIE - HER"
         },
         {
-          "idx": 48,
+          "idx": 49,
           "rawText": "<i>MYTH & ROID - STYX HELIX</i>",
           "displayName": "MYTH & ROID - STYX HELIX",
           "released": true,
           "songKey": "MYTH & ROID - STYX HELIX"
         },
         {
-          "idx": 49,
+          "idx": 50,
           "rawText": "<i>NEW JEANS - HOW SWEET</i>",
           "displayName": "NEW JEANS - HOW SWEET",
           "released": true,
           "songKey": "NEW JEANS - HOW SWEET"
         },
         {
-          "idx": 50,
+          "idx": 51,
           "rawText": "<i>NMIXX - BLUE VALENTINE</i>",
           "displayName": "NMIXX - BLUE VALENTINE",
           "released": true,
           "songKey": "NMIXX - BLUE VALENTINE"
         },
         {
-          "idx": 51,
+          "idx": 52,
           "rawText": "<color=#646464><i>NSFW - BODY TO BODY</i></color>",
           "displayName": "NSFW - BODY TO BODY",
           "released": false,
           "songKey": "NSFW - BODY TO BODY"
         },
         {
-          "idx": 52,
+          "idx": 53,
           "rawText": "<color=#646464><i>PSY - GENTLEMAN</i></color>",
           "displayName": "PSY - GENTLEMAN",
           "released": false,
           "songKey": "PSY - GENTLEMAN"
         },
         {
-          "idx": 53,
+          "idx": 54,
           "rawText": "<color=#646464><i>RANIA - DR. FEEL GOOD</i></color>",
           "displayName": "RANIA - DR. FEEL GOOD",
           "released": false,
           "songKey": "RANIA - DR. FEEL GOOD"
         },
         {
-          "idx": 54,
+          "idx": 55,
           "rawText": "<i>RED VELVET - AUTOMATIC</i>",
           "displayName": "RED VELVET - AUTOMATIC",
           "released": true,
           "songKey": "RED VELVET - AUTOMATIC"
         },
         {
-          "idx": 55,
+          "idx": 56,
           "rawText": "<color=#646464><i>RED VELVET - PSYCHO</i></color>",
           "displayName": "RED VELVET - PSYCHO",
           "released": false,
           "songKey": "RED VELVET - PSYCHO"
         },
         {
-          "idx": 56,
-          "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD 小鹿亂撞</i></color>",
-          "displayName": "RYAN.B - FEELING GOOD 小鹿亂撞",
+          "idx": 57,
+          "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD å°é¹¿äº‚æ’ž</i></color>",
+          "displayName": "RYAN.B - FEELING GOOD å°é¹¿äº‚æ’ž",
           "released": false,
-          "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞"
+          "songKey": "RYAN.B - FEELING GOOD å°é¹¿äº‚æ’ž"
         },
         {
-          "idx": 57,
+          "idx": 58,
           "rawText": "<i>SEULGI - BABY NOT BABY</i>",
           "displayName": "SEULGI - BABY NOT BABY",
           "released": true,
           "songKey": "SEULGI - BABY NOT BABY"
         },
         {
-          "idx": 58,
+          "idx": 59,
           "rawText": "<i>SHERYL NOME - UNIVERSAL BUNNY</i>",
           "displayName": "SHERYL NOME - UNIVERSAL BUNNY",
           "released": true,
           "songKey": "SHERYL NOME - UNIVERSAL BUNNY"
         },
         {
-          "idx": 59,
+          "idx": 60,
           "rawText": "<color=#646464><i>STELLAR - STING</i></color>",
           "displayName": "STELLAR - STING",
           "released": false,
           "songKey": "STELLAR - STING"
         },
         {
-          "idx": 60,
+          "idx": 61,
           "rawText": "<color=#646464><i>SUNMI - YOU CAN'T SIT WITH US</i></color>",
           "displayName": "SUNMI - YOU CAN'T SIT WITH US",
           "released": false,
           "songKey": "SUNMI - YOU CAN'T SIT WITH US"
         },
         {
-          "idx": 61,
+          "idx": 62,
           "rawText": "<i>T-ARA - WHATS MY NAME</i>",
           "displayName": "T-ARA - WHATS MY NAME",
           "released": true,
           "songKey": "T-ARA - WHATS MY NAME"
         },
         {
-          "idx": 62,
+          "idx": 63,
           "rawText": "<color=#646464><i>TWICE - BREAKTHROUGH</i></color>",
           "displayName": "TWICE - BREAKTHROUGH",
           "released": false,
           "songKey": "TWICE - BREAKTHROUGH"
         },
         {
-          "idx": 63,
+          "idx": 64,
           "rawText": "<color=#646464><i>TWICE - I CAN'T STOP ME</i></color>",
           "displayName": "TWICE - I CAN'T STOP ME",
           "released": false,
           "songKey": "TWICE - I CAN'T STOP ME"
         },
         {
-          "idx": 64,
+          "idx": 65,
           "rawText": "<i>UNIS - CURIOUS</i>",
           "displayName": "UNIS - CURIOUS",
           "released": true,
           "songKey": "UNIS - CURIOUS"
         },
         {
-          "idx": 65,
+          "idx": 66,
           "rawText": "<i>VIVIZ - LA LA LOVE ME</i>",
           "displayName": "VIVIZ - LA LA LOVE ME",
           "released": true,
           "songKey": "VIVIZ - LA LA LOVE ME"
         },
         {
-          "idx": 66,
+          "idx": 67,
           "rawText": "<i>WEKI MEKI - PICKY PICKY</i>",
           "displayName": "WEKI MEKI - PICKY PICKY",
           "released": true,
           "songKey": "WEKI MEKI - PICKY PICKY"
         },
         {
-          "idx": 67,
+          "idx": 68,
           "rawText": "<i>XG - SHOOTING STAR</i>",
           "displayName": "XG - SHOOTING STAR",
           "released": true,
           "songKey": "XG - SHOOTING STAR"
         },
         {
-          "idx": 68,
+          "idx": 69,
           "rawText": "<i>YEJI - AIR</i>",
           "displayName": "YEJI - AIR",
           "released": true,
           "songKey": "YEJI - AIR"
         },
         {
-          "idx": 69,
-          "rawText": "<i>初月 - PHONY</i>",
-          "displayName": "初月 - PHONY",
-          "released": true,
-          "songKey": "初月 - PHONY"
-        },
-        {
           "idx": 70,
-          "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
-          "displayName": "梅とら - MAKES YOU A FIGHTER",
+          "rawText": "<i>åˆæœˆ - PHONY</i>",
+          "displayName": "åˆæœˆ - PHONY",
           "released": true,
-          "songKey": "梅とら - MAKES YOU A FIGHTER"
+          "songKey": "åˆæœˆ - PHONY"
         },
         {
           "idx": 71,
-          "rawText": "<color=#646464><i>祈INORY - PINKIE PROMISE 勾指起誓</i></color>",
-          "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
+          "rawText": "<i>æ¢…ã¨ã‚‰ - MAKES YOU A FIGHTER</i>",
+          "displayName": "æ¢…ã¨ã‚‰ - MAKES YOU A FIGHTER",
+          "released": true,
+          "songKey": "æ¢…ã¨ã‚‰ - MAKES YOU A FIGHTER"
+        },
+        {
+          "idx": 72,
+          "rawText": "<color=#646464><i>ç¥ˆINORY - PINKIE PROMISE å‹¾æŒ‡èµ·èª“</i></color>",
+          "displayName": "ç¥ˆINORY - PINKIE PROMISE å‹¾æŒ‡èµ·èª“",
           "released": false,
-          "songKey": "祈INORY - PINKIE PROMISE 勾指起誓"
+          "songKey": "ç¥ˆINORY - PINKIE PROMISE å‹¾æŒ‡èµ·èª“"
         }
       ]
     }
@@ -6283,54 +6344,6 @@
     "YENA - CATCH CATCH",
     "花澤 香菜 - RENAI CIRCULATION"
   ],
-  "hybridSets": {
-    "Zombie EP": {
-      "primary": "Zombie EP",
-      "members": [
-        "ATHLETIC GIRL EP",
-        "BOOM EP",
-        "Touchdown EP",
-        "Zombie EP"
-      ]
-    },
-    "Into You EP": {
-      "primary": "Into You EP",
-      "members": [
-        "BLACK DRESS EP",
-        "Into You EP",
-        "Ladies Night EP",
-        "SUMMER FESTA EP"
-      ]
-    },
-    "CLICK EP": {
-      "primary": "CLICK EP",
-      "members": [
-        "CLICK EP",
-        "Off the Record EP"
-      ]
-    },
-    "First Love EP": {
-      "primary": "First Love EP",
-      "members": [
-        "First Love EP",
-        "Twenty Five EP"
-      ]
-    },
-    "Supernova Love EP": {
-      "primary": "Supernova Love EP",
-      "members": [
-        "Holiday EP",
-        "Supernova Love EP"
-      ]
-    },
-    "Piano Man EP": {
-      "primary": "Piano Man EP",
-      "members": [
-        "Piano Man EP",
-        "Untie EP"
-      ]
-    }
-  },
   "tags": {
     "artists": [
       "(G)I-DLE",

@@ -122,37 +122,20 @@ function extractVariantNumber(trackId) {
 }
 
 function buildTracks(songsRaw, wipSongKeys) {
-  // Build a per-trackId → hybridSetId index from the songs file's hybridSets
-  // top-level map. Tracks belonging to a hybrid set get a `hybridSet` field
-  // on their per-staging record so the editor can group click targets by
-  // hybrid set OR songKey (whichever is present). See produce69_hybrid_multivariant
-  // memory + Web Hybrid Variant Popover handoff.
-  const hybridSets = (songsRaw && songsRaw.hybridSets) || {};
-  const trackIdToHybridSet = new Map();
-  for (const setId of Object.keys(hybridSets)) {
-    const info = hybridSets[setId] || {};
-    for (const memberId of (info.members || [])) {
-      trackIdToHybridSet.set(memberId, setId);
-    }
-  }
-
+  // (RC5 2026-05-25: hybrid-set indexing retired — hybrid multi-variant
+  //  pattern dissolved upstream. Tracks group by songKey only.)
   const out = [];
   const songKeys = Object.keys(songsRaw.songs).sort();
   for (const songKey of songKeys) {
     if (wipSongKeys && wipSongKeys.has(songKey)) continue;
     const song = songsRaw.songs[songKey];
     if (!Array.isArray(song.stagings)) continue;
-    const variants = song.stagings.map(st => {
-      const rec = {
-        trackId: st.id,
-        songKey: song.songKey,
-        stage: resolveStageDisplay(st.stage),
-        variantNumber: extractVariantNumber(st.id)
-      };
-      const hs = trackIdToHybridSet.get(st.id);
-      if (hs) rec.hybridSet = hs;
-      return rec;
-    });
+    const variants = song.stagings.map(st => ({
+      trackId: st.id,
+      songKey: song.songKey,
+      stage: resolveStageDisplay(st.stage),
+      variantNumber: extractVariantNumber(st.id)
+    }));
     variants.sort((a, b) => a.variantNumber - b.variantNumber);
     out.push(...variants);
   }
@@ -171,7 +154,9 @@ function buildSongKeyToLists(listsDir) {
     if (!entry.endsWith('.list.json')) continue;
     let data;
     try {
-      data = JSON.parse(fs.readFileSync(path.join(listsDir, entry), 'utf-8'));
+      let txt = fs.readFileSync(path.join(listsDir, entry), 'utf-8');
+      if (txt.charCodeAt(0) === 0xFEFF) txt = txt.slice(1);
+      data = JSON.parse(txt);
     } catch (e) {
       console.warn('Failed to parse list file: ' + entry);
       continue;
@@ -210,21 +195,16 @@ function computeWipTrackIds(songsRaw, wipSongKeys) {
   return ids;
 }
 
-function filterHybridSets(hybridSets, wipTrackIds) {
-  const out = {};
-  for (const setId of Object.keys(hybridSets || {})) {
-    const info = hybridSets[setId] || {};
-    const members = (info.members || []).filter(m => !wipTrackIds.has(m));
-    if (members.length === 0) continue;
-    out[setId] = Object.assign({}, info, { members });
-  }
-  return out;
-}
+// (RC5 2026-05-25: filterHybridSets retired — hybrid multi-variant pattern
+//  dissolved upstream. No hybridSets to filter.)
 
 function loadList(listsDir, file) {
   const fullPath = path.join(listsDir, file);
   if (!fs.existsSync(fullPath)) return null;
-  return JSON.parse(fs.readFileSync(fullPath, 'utf-8'));
+  // Strip UTF-8 BOM if present (some list files carry one from PowerShell edits).
+  let txt = fs.readFileSync(fullPath, 'utf-8');
+  if (txt.charCodeAt(0) === 0xFEFF) txt = txt.slice(1);
+  return JSON.parse(txt);
 }
 
 function buildListsBundle(listsDir) {
@@ -306,7 +286,6 @@ function main() {
     .filter(sk => !wipSongKeys.has(sk));
   const artists = deriveArtists(tracks);
   const stages = deriveStages(tracks);
-  const hybridSets = filterHybridSets(songsRaw.hybridSets || {}, wipTrackIds);
 
   const catalog = {
     sourceVersion: 'plugin/_songs.json @ ' + (songsRaw.generatedAt || 'unknown'),
@@ -316,7 +295,6 @@ function main() {
     tracks,
     lists,
     newReleaseSet,
-    hybridSets,
     tags: { artists, stages }
   };
 
@@ -332,7 +310,6 @@ function main() {
   console.log('NEW set   : ' + newReleaseSet.length + ' songs');
   console.log('Artists   : ' + artists.length);
   console.log('Stages    : ' + stages.length);
-  console.log('HybridSets: ' + Object.keys(catalog.hybridSets).length);
   console.log('WIP songs : ' + wipSongKeys.size + ' filtered (' + wipTrackIds.size + ' track variants)');
   console.log('Size      : ' + sizeBytes + ' bytes');
 }

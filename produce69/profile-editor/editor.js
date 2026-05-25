@@ -314,10 +314,11 @@ function showHandoffBanner(count, source) {
 function initIndices() {
   state.songKeyToTracks = new Map();
   state.trackIdToTrack = new Map();
-  // Click-group index: tracks belonging to a hybrid set (different songKeys
-  // sharing a CO preset, e.g. CLICK EP + Off the Record EP) are grouped
-  // under a single click target. Non-hybrid tracks fall back to songKey
-  // grouping (same-songKey multi-variants like Somehow / Somehow 01).
+  // Click-group index: tracks group by songKey (same-songKey multi-variants
+  // like Somehow / Somehow 01 share a click target).
+  // (RC5 2026-05-25: hybrid-set grouping retired — hybrid multi-variant
+  //  pattern dissolved upstream. Sub-variant tracks now have distinct songKeys
+  //  and appear as standalone click targets.)
   state.clickGroupToTracks = new Map();
   for (const t of state.catalog.tracks) {
     if (!state.songKeyToTracks.has(t.songKey)) {
@@ -325,22 +326,21 @@ function initIndices() {
     }
     state.songKeyToTracks.get(t.songKey).push(t);
     state.trackIdToTrack.set(t.trackId, t);
-    const grp = t.hybridSet || t.songKey;
-    if (!state.clickGroupToTracks.has(grp)) {
-      state.clickGroupToTracks.set(grp, []);
+    if (!state.clickGroupToTracks.has(t.songKey)) {
+      state.clickGroupToTracks.set(t.songKey, []);
     }
-    state.clickGroupToTracks.get(grp).push(t);
+    state.clickGroupToTracks.get(t.songKey).push(t);
   }
   state.newReleaseSet = new Set(state.catalog.newReleaseSet || []);
 }
 
-// Resolve a slot's songKey to its click-group id (which is either a hybrid
-// set id or the songKey itself). Returns null if the songKey isn't in the
-// catalog (e.g. a hand-edited slot referring to a removed track).
+// Resolve a slot's songKey to its click-group id (= the songKey itself, post-RC5).
+// Returns null if the songKey isn't in the catalog (e.g. a hand-edited slot
+// referring to a removed track).
 function getClickGroup(songKey) {
   const arr = state.songKeyToTracks.get(songKey);
   if (!arr || arr.length === 0) return null;
-  return arr[0].hybridSet || songKey;
+  return songKey;
 }
 
 function showLoadError(err) {
