@@ -1,6 +1,6 @@
 {
   "sourceVersion": "plugin/_songs.json @ 2026-05-25T10:18:36.520Z",
-  "generatedAt": "2026-05-25T13:26:35Z",
+  "generatedAt": "2026-05-25T14:08:16Z",
   "songCount": 297,
   "trackCount": 417,
   "tracks": [
@@ -5946,10 +5946,10 @@
         },
         {
           "idx": 23,
-          "rawText": "<color=#646464><i>GUMI - åœ°çƒæœ€å¾Œã®å‘Šç™½ã‚’</i></color>",
-          "displayName": "GUMI - åœ°çƒæœ€å¾Œã®å‘Šç™½ã‚’",
+          "rawText": "<color=#646464><i>GUMI - 地球最後の告白を</i></color>",
+          "displayName": "GUMI - 地球最後の告白を",
           "released": false,
-          "songKey": "GUMI - åœ°çƒæœ€å¾Œã®å‘Šç™½ã‚’"
+          "songKey": "GUMI - 地球最後の告白を"
         },
         {
           "idx": 24,
@@ -6072,10 +6072,10 @@
         },
         {
           "idx": 41,
-          "rawText": "<color=#646464><i>LE SSERAFIM - BLUEBEARDâ€™S WIFE</i></color>",
-          "displayName": "LE SSERAFIM - BLUEBEARDâ€™S WIFE",
+          "rawText": "<color=#646464><i>LE SSERAFIM - BLUEBEARD’S WIFE</i></color>",
+          "displayName": "LE SSERAFIM - BLUEBEARD’S WIFE",
           "released": false,
-          "songKey": "LE SSERAFIM - BLUEBEARDâ€™S WIFE"
+          "songKey": "LE SSERAFIM - BLUEBEARD’S WIFE"
         },
         {
           "idx": 42,
@@ -6184,10 +6184,10 @@
         },
         {
           "idx": 57,
-          "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD å°é¹¿äº‚æ’ž</i></color>",
-          "displayName": "RYAN.B - FEELING GOOD å°é¹¿äº‚æ’ž",
+          "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD 小鹿亂撞</i></color>",
+          "displayName": "RYAN.B - FEELING GOOD 小鹿亂撞",
           "released": false,
-          "songKey": "RYAN.B - FEELING GOOD å°é¹¿äº‚æ’ž"
+          "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞"
         },
         {
           "idx": 58,
@@ -6275,24 +6275,24 @@
         },
         {
           "idx": 70,
-          "rawText": "<i>åˆæœˆ - PHONY</i>",
-          "displayName": "åˆæœˆ - PHONY",
+          "rawText": "<i>初月 - PHONY</i>",
+          "displayName": "初月 - PHONY",
           "released": true,
-          "songKey": "åˆæœˆ - PHONY"
+          "songKey": "初月 - PHONY"
         },
         {
           "idx": 71,
-          "rawText": "<i>æ¢…ã¨ã‚‰ - MAKES YOU A FIGHTER</i>",
-          "displayName": "æ¢…ã¨ã‚‰ - MAKES YOU A FIGHTER",
+          "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
+          "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
-          "songKey": "æ¢…ã¨ã‚‰ - MAKES YOU A FIGHTER"
+          "songKey": "梅とら - MAKES YOU A FIGHTER"
         },
         {
           "idx": 72,
-          "rawText": "<color=#646464><i>ç¥ˆINORY - PINKIE PROMISE å‹¾æŒ‡èµ·èª“</i></color>",
-          "displayName": "ç¥ˆINORY - PINKIE PROMISE å‹¾æŒ‡èµ·èª“",
+          "rawText": "<color=#646464><i>祈INORY - PINKIE PROMISE 勾指起誓</i></color>",
+          "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
           "released": false,
-          "songKey": "ç¥ˆINORY - PINKIE PROMISE å‹¾æŒ‡èµ·èª“"
+          "songKey": "祈INORY - PINKIE PROMISE 勾指起誓"
         }
       ]
     }
