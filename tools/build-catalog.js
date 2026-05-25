@@ -87,20 +87,20 @@ function resolveStageDisplay(s) {
   return STAGE_DISPLAY_ALIAS[s] || s;
 }
 
-// Plugin-side hidden lists: TABs the plugin hides from normal players (only
-// reachable via the in-plugin dev dropdown). Tracks whose ENTIRE list
-// membership falls inside this set are WIP — they must NOT leak into the
-// public catalog (TAG drills, song/track indices, hybrid set grouping,
-// newReleaseSet). A track that appears in any non-hidden list (e.g. promoted
-// from Season 06 to Season 01 while keeping the S6 archive entry) is public
-// and stays. Mirror plugin's hardcoded hidden-set; long-term should migrate
-// to a `hidden:true` flag on _index.json so both sides read one source.
-const HIDDEN_LISTS = new Set(['Season 06', 'Season 07', 'Season 08']);
+// RC5 (2026-05-25): RAW list is exposed on the public Web catalog (decision
+// per user 2026-05-25 — Web is the "广而告之" surface). The pre-RC5 plugin
+// HIDDEN_LISTS filter (Season 06/07/08) is retired: those slots have moved
+// to RAW.list.json, and S06/07/08 stay empty as future hidden-list containers.
+// No song is currently filtered out of the public catalog.
+//
+// In-game runtime hides RAW behind a "Show Raw List?" toggle (off by default).
+// Web has no such toggle — RAW is always visible. This asymmetry is
+// intentional: Web is the showcase, in-game is opt-in.
+const HIDDEN_LISTS = new Set();
 
 // Filter tabs surfaced in the editor right-pane. Order is the canonical
-// tab order; the UI uses this to drive its tab strip layout. Skip Season 06,
-// Wishbox, and My Favorites (My Favorites is the editor's left pane, not a
-// browse target).
+// tab order; the UI uses this to drive its tab strip layout. My Favorites is
+// the editor's left pane, not a browse target. RAW appears as the last tab.
 const LIST_FILES = [
   { key: 'Season 01', file: 'Season 01.list.json' },
   { key: 'Season 02', file: 'Season 02.list.json' },
@@ -112,7 +112,8 @@ const LIST_FILES = [
   { key: 'DLC 03',    file: 'DLC 03.list.json' },
   { key: 'Duet',      file: 'Duet.list.json' },
   { key: 'Explicit',  file: 'Explicit.list.json' },
-  { key: 'New',       file: '_new_release.list.json' }
+  { key: 'New',       file: '_new_release.list.json' },
+  { key: 'RAW',       file: 'RAW.list.json' }
 ];
 
 function extractVariantNumber(trackId) {
@@ -159,10 +160,9 @@ function buildTracks(songsRaw, wipSongKeys) {
 }
 
 // Scan ALL list files in listsDir (NOT limited to LIST_FILES whitelist) to
-// build the songKey → Set<listName> reverse index. Required to determine WIP
-// status: a songKey is WIP iff every list it appears in is in HIDDEN_LISTS,
-// which means we MUST see the hidden lists too (S6 etc.) — otherwise we
-// couldn't tell "lives only in S6" from "lives nowhere".
+// build the songKey → Set<listName> reverse index. RC5: HIDDEN_LISTS is now
+// empty so WIP filtering is effectively disabled; the scan + index machinery
+// is retained so we can reintroduce a hide list cheaply in the future.
 function buildSongKeyToLists(listsDir) {
   const out = new Map();
   if (!fs.existsSync(listsDir)) return out;
@@ -293,12 +293,9 @@ function main() {
 
   const songsRaw = JSON.parse(fs.readFileSync(songsPath, 'utf-8'));
 
-  // WIP filter: scan ALL list files (incl. hidden) to compute songKey →
-  // listSet, then derive the WIP songKey set. Anything WIP is removed from
-  // tracks / hybridSets / newReleaseSet so the public catalog never exposes
-  // dev-only songs via TAG drills, search, or any other cross-list surface.
-  // See HIDDEN_LISTS comment above + Plugin_WIP_Repository_Hidden_List_Filter
-  // handoff for the design rationale.
+  // WIP filter: RC5 disables this (HIDDEN_LISTS = empty Set, so wipSongKeys
+  // resolves to {}). RAW is intentionally exposed on Web. Scan kept in place
+  // so a future "hide this list" mechanism just needs to add names to the set.
   const songKeyToLists = buildSongKeyToLists(listsDir);
   const wipSongKeys = computeWipSongKeys(songKeyToLists, HIDDEN_LISTS);
   const wipTrackIds = computeWipTrackIds(songsRaw, wipSongKeys);
