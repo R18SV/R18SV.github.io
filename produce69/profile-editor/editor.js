@@ -181,14 +181,17 @@ const state = {
   //   'TAG_LEVEL2'  drilled into a specific artist/stage, showing songs
   // tagCategory: 'artist' | 'stage' (only meaningful in TAG_LEVEL*)
   // tagSelection: the picked artist/stage (only meaningful in TAG_LEVEL2)
-  // tagPage: pagination index for the active TAG view
+  // currentPage: pagination index, shared across NORMAL (uncapped lists like
+  // RAW) and TAG views; reset to 0 on any mode/tab switch (already wired).
   tagMode: 'NORMAL',
   tagCategory: 'artist',
   tagSelection: null,
-  tagPage: 0
+  currentPage: 0
 };
 
-const TAG_PAGE_SIZE = 54;
+// Universal page size (slots per page) — matches plugin runtime TRACK_SLOT_COUNT
+// so paginated lists (RAW + TAG drills) feel identical across web and in-game.
+const PAGE_SIZE = 54;
 
 // ============================================================
 // Utilities
@@ -413,7 +416,7 @@ function onTabClick(key) {
     state.tagMode = 'TAG_LEVEL1';
     state.tagCategory = state.tagCategory || 'artist';
     state.tagSelection = null;
-    state.tagPage = 0;
+    state.currentPage = 0;
     state.expandedSongKey = null;
     renderTabStrip();
     renderRightPane();
@@ -423,7 +426,7 @@ function onTabClick(key) {
   state.currentTab = key;
   state.tagMode = 'NORMAL';
   state.tagSelection = null;
-  state.tagPage = 0;
+  state.currentPage = 0;
   state.expandedSongKey = null;
   renderTabStrip();
   renderRightPane();
@@ -434,7 +437,7 @@ function onTagSubTabClick(category) {
   state.tagCategory = category;
   state.tagMode = 'TAG_LEVEL1';
   state.tagSelection = null;
-  state.tagPage = 0;
+  state.currentPage = 0;
   state.expandedSongKey = null;
   renderTabStrip();
   renderRightPane();
@@ -445,12 +448,12 @@ function onTagBackClick() {
     // Drill back up to LEVEL1
     state.tagMode = 'TAG_LEVEL1';
     state.tagSelection = null;
-    state.tagPage = 0;
+    state.currentPage = 0;
   } else {
     // Exit TAG mode entirely, back to the previous regular tab
     state.tagMode = 'NORMAL';
     state.tagSelection = null;
-    state.tagPage = 0;
+    state.currentPage = 0;
     if (state.currentTab === 'TAG') state.currentTab = DEFAULT_TAB;
   }
   state.expandedSongKey = null;
@@ -461,19 +464,30 @@ function onTagBackClick() {
 function onTagItemClick(item) {
   state.tagMode = 'TAG_LEVEL2';
   state.tagSelection = item;
-  state.tagPage = 0;
+  state.currentPage = 0;
   state.expandedSongKey = null;
   renderTabStrip();
   renderRightPane();
 }
 
-function onTagPageClick(direction) {
-  const list = currentTagListing();
-  const totalPages = Math.max(1, Math.ceil(list.length / TAG_PAGE_SIZE));
-  if (direction === 'prev' && state.tagPage > 0) state.tagPage--;
-  else if (direction === 'next' && state.tagPage < totalPages - 1) state.tagPage++;
+function onPageClick(direction) {
+  const totalPages = Math.max(1, Math.ceil(currentPaginatedTotal() / PAGE_SIZE));
+  if (direction === 'prev' && state.currentPage > 0) state.currentPage--;
+  else if (direction === 'next' && state.currentPage < totalPages - 1) state.currentPage++;
   state.expandedSongKey = null;
   renderRightPane();
+}
+
+// Total number of paginatable items for the current view. NORMAL mode returns
+// the active list's slotCount (only uncapped lists actually render pagination
+// chrome — see renderNormalGrid); TAG modes delegate to currentTagListing.
+function currentPaginatedTotal() {
+  if (state.tagMode === 'NORMAL') {
+    const list = state.catalog && state.catalog.lists[state.currentTab];
+    if (!list) return 0;
+    return typeof list.slotCount === 'number' ? list.slotCount : DEFAULT_SLOT_COUNT;
+  }
+  return currentTagListing().length;
 }
 
 // Returns the current list being paginated:
@@ -552,10 +566,10 @@ function renderTagFlatSongList(songKeys, opts) {
     return;
   }
 
-  const start = state.tagPage * TAG_PAGE_SIZE;
-  const pageKeys = songKeys.slice(start, start + TAG_PAGE_SIZE);
+  const start = state.currentPage * PAGE_SIZE;
+  const pageKeys = songKeys.slice(start, start + PAGE_SIZE);
   const html = ['<div class="song-grid">'];
-  for (let i = 0; i < TAG_PAGE_SIZE; i++) {
+  for (let i = 0; i < PAGE_SIZE; i++) {
     const sk = pageKeys[i];
     if (!sk) {
       html.push('<div class="slot empty"></div>');
@@ -568,7 +582,7 @@ function renderTagFlatSongList(songKeys, opts) {
     html.push(renderSlot(slot));
   }
   html.push('</div>');
-  html.push(renderPaginationHTML(songKeys.length, state.tagPage));
+  html.push(renderPaginationHTML(songKeys.length, state.currentPage));
   content.innerHTML = html.join('');
 
   content.querySelectorAll('.slot.song[data-songkey]').forEach(el => {
@@ -584,7 +598,7 @@ function renderTagFlatSongList(songKeys, opts) {
     });
   });
   content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
-    btn.addEventListener('click', () => onTagPageClick(btn.dataset.action));
+    btn.addEventListener('click', () => onPageClick(btn.dataset.action));
   });
 }
 
@@ -610,7 +624,7 @@ function renderTagMostPlayed() {
 }
 
 function renderPaginationHTML(total, page) {
-  const totalPages = Math.max(1, Math.ceil(total / TAG_PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
   if (totalPages <= 1) return '';
   return (
     '<div class="pagination">' +
@@ -626,12 +640,12 @@ function renderPaginationHTML(total, page) {
 function renderTagLevel1() {
   const content = document.getElementById('catalog-content');
   const items = currentTagListing();
-  const start = state.tagPage * TAG_PAGE_SIZE;
-  const pageItems = items.slice(start, start + TAG_PAGE_SIZE);
+  const start = state.currentPage * PAGE_SIZE;
+  const pageItems = items.slice(start, start + PAGE_SIZE);
   const isStage = state.tagCategory === 'stage';
 
   const html = ['<div class="song-grid">'];
-  for (let i = 0; i < TAG_PAGE_SIZE; i++) {
+  for (let i = 0; i < PAGE_SIZE; i++) {
     const item = pageItems[i];
     if (!item) {
       html.push('<div class="slot empty"></div>');
@@ -646,22 +660,22 @@ function renderTagLevel1() {
     );
   }
   html.push('</div>');
-  html.push(renderPaginationHTML(items.length, state.tagPage));
+  html.push(renderPaginationHTML(items.length, state.currentPage));
   content.innerHTML = html.join('');
 
   content.querySelectorAll('.slot.tag-item').forEach(el => {
     el.addEventListener('click', () => onTagItemClick(el.dataset.tagItem));
   });
   content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
-    btn.addEventListener('click', () => onTagPageClick(btn.dataset.action));
+    btn.addEventListener('click', () => onPageClick(btn.dataset.action));
   });
 }
 
 function renderTagLevel2() {
   const content = document.getElementById('catalog-content');
   const songKeys = currentTagListing();
-  const start = state.tagPage * TAG_PAGE_SIZE;
-  const pageKeys = songKeys.slice(start, start + TAG_PAGE_SIZE);
+  const start = state.currentPage * PAGE_SIZE;
+  const pageKeys = songKeys.slice(start, start + PAGE_SIZE);
 
   // Build pseudo-slot objects so we can reuse renderSlot for consistent UX
   // (NEW highlight, multi-variant popover, added indicator, etc.)
@@ -680,7 +694,7 @@ function renderTagLevel2() {
   );
 
   html.push('<div class="song-grid">');
-  for (let i = 0; i < TAG_PAGE_SIZE; i++) {
+  for (let i = 0; i < PAGE_SIZE; i++) {
     const slot = pseudoSlots[i];
     if (!slot) {
       html.push('<div class="slot empty"></div>');
@@ -689,7 +703,7 @@ function renderTagLevel2() {
     html.push(renderSlot(slot));
   }
   html.push('</div>');
-  html.push(renderPaginationHTML(songKeys.length, state.tagPage));
+  html.push(renderPaginationHTML(songKeys.length, state.currentPage));
   content.innerHTML = html.join('');
 
   content.querySelectorAll('.slot.song[data-songkey]').forEach(el => {
@@ -707,12 +721,12 @@ function renderTagLevel2() {
   content.querySelector('.tag-back-link').addEventListener('click', () => {
     state.tagMode = 'TAG_LEVEL1';
     state.tagSelection = null;
-    state.tagPage = 0;
+    state.currentPage = 0;
     state.expandedSongKey = null;
     renderRightPane();
   });
   content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
-    btn.addEventListener('click', () => onTagPageClick(btn.dataset.action));
+    btn.addEventListener('click', () => onPageClick(btn.dataset.action));
   });
 }
 
@@ -723,16 +737,38 @@ function renderNormalGrid(list) {
   const slotsByIdx = new Map();
   for (const slot of list.slots) slotsByIdx.set(slot.idx, slot);
 
+  // Uncapped lists (RAW post-RC5; future > PAGE_SIZE lists) paginate by
+  // PAGE_SIZE chunks to match plugin runtime's RenderListSequential pagination.
+  // Capped lists render the full slotCount in one grid (existing behavior).
+  const isPaginated = slotCount > PAGE_SIZE;
+  const totalPages = isPaginated ? Math.ceil(slotCount / PAGE_SIZE) : 1;
+  if (state.currentPage >= totalPages) state.currentPage = totalPages - 1;
+  if (state.currentPage < 0) state.currentPage = 0;
+  const start = isPaginated ? state.currentPage * PAGE_SIZE : 0;
+  const renderCount = isPaginated
+    ? Math.min(PAGE_SIZE, slotCount - start)
+    : slotCount;
+
   const html = ['<div class="song-grid">'];
-  for (let i = 0; i < slotCount; i++) {
-    const slot = slotsByIdx.get(i);
+  for (let i = 0; i < renderCount; i++) {
+    const slot = slotsByIdx.get(start + i);
     if (!slot) {
       html.push('<div class="slot empty"></div>');
       continue;
     }
     html.push(renderSlot(slot));
   }
+  // Pad short final page with empty slots so grid stays PAGE_SIZE-shaped
+  // (mirrors TAG renderers — keeps card sizing visually consistent).
+  if (isPaginated) {
+    for (let i = renderCount; i < PAGE_SIZE; i++) {
+      html.push('<div class="slot empty"></div>');
+    }
+  }
   html.push('</div>');
+  if (isPaginated) {
+    html.push(renderPaginationHTML(slotCount, state.currentPage));
+  }
   content.innerHTML = html.join('');
 
   // Wire clicks (delegated would also work; explicit listeners are clearer here)
@@ -747,6 +783,9 @@ function renderNormalGrid(list) {
       e.stopPropagation();
       onVariantRowClick(el.dataset.trackid);
     });
+  });
+  content.querySelectorAll('.pagination button[data-action]').forEach(btn => {
+    btn.addEventListener('click', () => onPageClick(btn.dataset.action));
   });
 }
 
