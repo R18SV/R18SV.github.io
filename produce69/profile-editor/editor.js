@@ -146,6 +146,7 @@ const TAB_CONFIG = [
   { key: 'DLC 01',    i18n: 'tab_dlc01' },
   { key: 'DLC 02',    i18n: 'tab_dlc02' },
   { key: 'DLC 03',    i18n: 'tab_dlc03' },
+  { key: 'RAW',       i18n: 'tab_raw' },
   { key: 'TAG',       i18n: 'tab_tag', isPill: true }
 ];
 
