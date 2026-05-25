@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-24T11:24:59.470Z",
-  "generatedAt": "2026-05-24T11:25:00Z",
-  "songCount": 296,
-  "trackCount": 371,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-25T10:18:36.520Z",
+  "generatedAt": "2026-05-25T10:21:29Z",
+  "songCount": 297,
+  "trackCount": 417,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -167,6 +167,24 @@
       "variantNumber": 1
     },
     {
+      "trackId": "ILLUSION",
+      "songKey": "AESPA - ILLUSION",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "PINK HOODIE",
+      "songKey": "AESPA - PINK HOODIE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "RICH MAN",
+      "songKey": "AESPA - RICH MAN",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Savage",
       "songKey": "AESPA - SAVAGE",
       "stage": "Subway Stage",
@@ -312,6 +330,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "LOVE ME MORE",
+      "songKey": "APINK - LOVE ME MORE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "NoNoNo",
       "songKey": "APINK - NONONO",
       "stage": "Concert Stage",
@@ -330,6 +354,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "CLICK CLACK",
+      "songKey": "BABYMONSTER - CLICK CLACK",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Drip",
       "songKey": "BABYMONSTER - DRIP",
       "stage": "Concert Stage",
@@ -339,6 +369,12 @@
       "trackId": "Forever",
       "songKey": "BABYMONSTER - FOREVER",
       "stage": "Multi Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "LIKE THAT",
+      "songKey": "BABYMONSTER - LIKE THAT",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -363,6 +399,18 @@
       "trackId": "SHEESH",
       "songKey": "BABYMONSTER - SHEESH",
       "stage": "Hell Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "WE GO UP",
+      "songKey": "BABYMONSTER - WE GO UP",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "BADTITUDE",
+      "songKey": "BADVILLAIN - BADTITUDE",
+      "stage": "Studio Stage",
       "variantNumber": 0
     },
     {
@@ -396,6 +444,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "PLAYING WITH FIRE",
+      "songKey": "BLACKPINK - PLAYING WITH FIRE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "WHISTLE",
       "songKey": "BLACKPINK - WHISTLE",
       "stage": "Jail Stage",
@@ -423,6 +477,12 @@
       "trackId": "SeSeSe Duet",
       "songKey": "CHANESS - SESESE",
       "stage": "Talk Show Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "ALGORITHM",
+      "songKey": "CHUNG HA - ALGORITHM",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -454,6 +514,12 @@
       "songKey": "CHUNG HA - ROLLER COASTER",
       "stage": "Studio Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "HELLO BITCHES",
+      "songKey": "CL - HELLO BITCHES",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "BLACK DRESS EP",
@@ -547,6 +613,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "LA DI DA",
+      "songKey": "EVERGLOW - LA DI DA",
+      "stage": "Cyber Tunnel Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Pirate",
       "songKey": "EVERGLOW - PIRATE",
       "stage": "Hell Stage",
@@ -632,6 +704,12 @@
       "hybridSet": "CLICK EP"
     },
     {
+      "trackId": "CROSSROADS",
+      "songKey": "GFRIEND - CROSSROADS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Glass Bead",
       "songKey": "GFRIEND - GLASS BEAD",
       "stage": "Classroom Stage",
@@ -656,6 +734,12 @@
       "variantNumber": 2
     },
     {
+      "trackId": "Me Gustas Tu",
+      "songKey": "GFRIEND - ME GUSTAS TU",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Sunrise",
       "songKey": "GFRIEND - SUNRISE",
       "stage": "Strip Club Stage",
@@ -666,6 +750,12 @@
       "songKey": "GFRIEND - SUNRISE",
       "stage": "After The Rain Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "DRIVE",
+      "songKey": "GIRL CRUSH - DRIVE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Oppa Single",
@@ -880,6 +970,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "NA",
+      "songKey": "HWA SA - NA",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Daily",
       "songKey": "HYOLYN - DAILY",
       "stage": "Office Stage",
@@ -932,6 +1028,12 @@
       "songKey": "HYOLYN - WAIT",
       "stage": "Cave Brothel Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "H ATTITUDE",
+      "songKey": "HYUNA - ATTITUDE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Bubble Pop",
@@ -1042,6 +1144,18 @@
       "variantNumber": 0
     },
     {
+      "trackId": "I CAKE",
+      "songKey": "ITZY - CAKE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "DALLA DALLA",
+      "songKey": "ITZY - DALLA DALLA",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Imaginary Friend",
       "songKey": "ITZY - IMAGINARY FRIEND",
       "stage": "Mermaid Stage",
@@ -1147,6 +1261,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "BEEP",
+      "songKey": "IZNA - BEEP",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Like Jennie MV",
       "songKey": "JENNIE - LIKE JENNIE",
       "stage": "Destroyer Hangar Stage",
@@ -1193,6 +1313,30 @@
       "songKey": "JENNIE - YOU & ME",
       "stage": "Egyptian Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "ZEN",
+      "songKey": "JENNIE - ZEN",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "KILLING ME GOOD",
+      "songKey": "JIHYO - KILLING ME GOOD",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "EARTHQUAKE",
+      "songKey": "JISOO - EARTHQUAKE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "FLOWER",
+      "songKey": "JISOO - FLOWER",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Good Night Kiss",
@@ -1250,6 +1394,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "K CAKE",
+      "songKey": "KARD - CAKE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Up",
       "songKey": "KARINA - UP",
       "stage": "Manor Stage",
@@ -1268,10 +1418,22 @@
       "variantNumber": 1
     },
     {
+      "trackId": "K TOUCH",
+      "songKey": "KATSEYE - TOUCH",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "MORE 01",
       "songKey": "KDA - MORE",
       "stage": "Carrier Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "404 NEW ERA",
+      "songKey": "KIII KIII - 404 NEW ERA",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Lips Hips Kiss",
@@ -1358,6 +1520,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "EASY",
+      "songKey": "LE SSERAFIM - EASY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Perfect Night",
       "songKey": "LE SSERAFIM - PERFECT NIGHT",
       "stage": "Strip Club Stage",
@@ -1391,6 +1559,12 @@
       "trackId": "ALIEN",
       "songKey": "LEE SUHYUN - ALIEN",
       "stage": "Space Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "FUTW",
+      "songKey": "LISA - FUTW",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1441,6 +1615,18 @@
       "stage": "Talk Show Stage",
       "variantNumber": 0,
       "hybridSet": "Piano Man EP"
+    },
+    {
+      "trackId": "BODY",
+      "songKey": "MEOVV - BODY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "BURNING UP",
+      "songKey": "MEOVV - BURNING UP",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "HANDS UP",
@@ -1521,6 +1707,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "HER",
+      "songKey": "MINNIE - HER",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Bad Girl Good Girl 01",
       "songKey": "MISS A - BAD GIRL GOOD GIRL",
       "stage": "After The Rain Stage",
@@ -1536,6 +1728,12 @@
       "trackId": "Thumbs Up",
       "songKey": "MOMOLAND - THUMBS UP",
       "stage": "Warehouse Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "STYX HELIX",
+      "songKey": "MYTH & ROID - STYX HELIX",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1599,6 +1797,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "HOW SWEET",
+      "songKey": "NEW JEANS - HOW SWEET",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Hype Boy",
       "songKey": "NEW JEANS - HYPE BOY",
       "stage": "Strip Club Stage",
@@ -1633,6 +1837,12 @@
       "songKey": "NEW JEANS - SUPERNATURAL",
       "stage": "Beach Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "BLUE VALENTINE",
+      "songKey": "NMIXX - BLUE VALENTINE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "BOOM EP",
@@ -1769,6 +1979,12 @@
       "variantNumber": 2
     },
     {
+      "trackId": "AUTOMATIC",
+      "songKey": "RED VELVET - AUTOMATIC",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Feel My Rhythm Single",
       "songKey": "RED VELVET - FEEL MY RHYTHM",
       "stage": "Manor Stage",
@@ -1863,6 +2079,18 @@
       "trackId": "28 Reasons",
       "songKey": "SEULGI - 28 REASONS",
       "stage": "Manor Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "BABY NOT BABY",
+      "songKey": "SEULGI - BABY NOT BABY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "UNIVERSAL BUNNY",
+      "songKey": "SHERYL NOME - UNIVERSAL BUNNY",
+      "stage": "Space Stage",
       "variantNumber": 0
     },
     {
@@ -2023,6 +2251,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "WHATS MY NAME",
+      "songKey": "T-ARA - WHATS MY NAME",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "INVU",
       "songKey": "TAEYEON - INVU",
       "stage": "Egyptian Stage",
@@ -2084,9 +2318,21 @@
       "hybridSet": "Zombie EP"
     },
     {
+      "trackId": "CURIOUS",
+      "songKey": "UNIS - CURIOUS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Bop Bop",
       "songKey": "VIVIZ - BOP BOP! + MANIAC",
       "stage": "Strip Club Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "LA LA LOVE ME",
+      "songKey": "VIVIZ - LA LA LOVE ME",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -2095,6 +2341,12 @@
       "stage": "Tunnel Stage",
       "variantNumber": 0,
       "hybridSet": "Piano Man EP"
+    },
+    {
+      "trackId": "PICKY PICKY",
+      "songKey": "WEKI MEKI - PICKY PICKY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "RENAISSANCE",
@@ -2125,6 +2377,18 @@
       "songKey": "XG - HYPNOTIZE",
       "stage": "Cave Playroom Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "SHOOTING STAR",
+      "songKey": "XG - SHOOTING STAR",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "AIR",
+      "songKey": "YEJI - AIR",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Catch Catch",
@@ -2163,6 +2427,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "PHONY",
+      "songKey": "初月 - PHONY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "WXPD Duet",
       "songKey": "劉至佳 - 危險派對 DANGER PARTY",
       "stage": "Cave Brothel Stage",
@@ -2197,6 +2467,12 @@
       "songKey": "梅とら - KILLER B",
       "stage": "BDSM Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "MAKES YOU A FIGHTER",
+      "songKey": "梅とら - MAKES YOU A FIGHTER",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "YQMG",
@@ -5448,6 +5724,516 @@
           "from": "HANFU DLC"
         }
       ]
+    },
+    "RAW": {
+      "name": "RAW",
+      "slotCount": 72,
+      "slots": [
+        {
+          "idx": 0,
+          "rawText": "<i>AESPA - ILLUSION</i>",
+          "displayName": "AESPA - ILLUSION",
+          "released": true,
+          "songKey": "AESPA - ILLUSION"
+        },
+        {
+          "idx": 1,
+          "rawText": "<i>AESPA - PINK HOODIE</i>",
+          "displayName": "AESPA - PINK HOODIE",
+          "released": true,
+          "songKey": "AESPA - PINK HOODIE"
+        },
+        {
+          "idx": 2,
+          "rawText": "<i>AESPA - RICH MAN</i>",
+          "displayName": "AESPA - RICH MAN",
+          "released": true,
+          "songKey": "AESPA - RICH MAN"
+        },
+        {
+          "idx": 3,
+          "rawText": "<color=#646464><i>APINK - COPYCAT</i></color>",
+          "displayName": "APINK - COPYCAT",
+          "released": false,
+          "songKey": "APINK - COPYCAT"
+        },
+        {
+          "idx": 4,
+          "rawText": "<i>APINK - LOVE ME MORE</i>",
+          "displayName": "APINK - LOVE ME MORE",
+          "released": true,
+          "songKey": "APINK - LOVE ME MORE"
+        },
+        {
+          "idx": 5,
+          "rawText": "<i>BABYMONSTER - CLICK CLACK</i>",
+          "displayName": "BABYMONSTER - CLICK CLACK",
+          "released": true,
+          "songKey": "BABYMONSTER - CLICK CLACK"
+        },
+        {
+          "idx": 6,
+          "rawText": "<i>BABYMONSTER - LIKE THAT</i>",
+          "displayName": "BABYMONSTER - LIKE THAT",
+          "released": true,
+          "songKey": "BABYMONSTER - LIKE THAT"
+        },
+        {
+          "idx": 7,
+          "rawText": "<i>BABYMONSTER - WE GO UP</i>",
+          "displayName": "BABYMONSTER - WE GO UP",
+          "released": true,
+          "songKey": "BABYMONSTER - WE GO UP"
+        },
+        {
+          "idx": 8,
+          "rawText": "<i>BADVILLAIN - BADTITUDE</i>",
+          "displayName": "BADVILLAIN - BADTITUDE",
+          "released": true,
+          "songKey": "BADVILLAIN - BADTITUDE"
+        },
+        {
+          "idx": 9,
+          "rawText": "<color=#646464><i>BERRY GOOD - MELLOW MELLOW</i></color>",
+          "displayName": "BERRY GOOD - MELLOW MELLOW",
+          "released": false,
+          "songKey": "BERRY GOOD - MELLOW MELLOW"
+        },
+        {
+          "idx": 10,
+          "rawText": "<i>BLACKPINK - PLAYING WITH FIRE</i>",
+          "displayName": "BLACKPINK - PLAYING WITH FIRE",
+          "released": true,
+          "songKey": "BLACKPINK - PLAYING WITH FIRE"
+        },
+        {
+          "idx": 11,
+          "rawText": "<i>CHUNG HA - ALGORITHM</i>",
+          "displayName": "CHUNG HA - ALGORITHM",
+          "released": true,
+          "songKey": "CHUNG HA - ALGORITHM"
+        },
+        {
+          "idx": 12,
+          "rawText": "<color=#646464><i>CHUNG HA - SPARKING</i></color>",
+          "displayName": "CHUNG HA - SPARKING",
+          "released": false,
+          "songKey": "CHUNG HA - SPARKING"
+        },
+        {
+          "idx": 13,
+          "rawText": "<i>CL - HELLO BITCHES</i>",
+          "displayName": "CL - HELLO BITCHES",
+          "released": true,
+          "songKey": "CL - HELLO BITCHES"
+        },
+        {
+          "idx": 14,
+          "rawText": "<color=#646464><i>DREAMCATCHER - DEJA VU</i></color>",
+          "displayName": "DREAMCATCHER - DEJA VU",
+          "released": false,
+          "songKey": "DREAMCATCHER - DEJA VU"
+        },
+        {
+          "idx": 15,
+          "rawText": "<color=#646464><i>DREAMCATCHER - MAISON</i></color>",
+          "displayName": "DREAMCATCHER - MAISON",
+          "released": false,
+          "songKey": "DREAMCATCHER - MAISON"
+        },
+        {
+          "idx": 16,
+          "rawText": "<color=#646464><i>DREAMCATCHER - PIRI</i></color>",
+          "displayName": "DREAMCATCHER - PIRI",
+          "released": false,
+          "songKey": "DREAMCATCHER - PIRI"
+        },
+        {
+          "idx": 17,
+          "rawText": "<i>EVERGLOW - LA DI DA</i>",
+          "displayName": "EVERGLOW - LA DI DA",
+          "released": true,
+          "songKey": "EVERGLOW - LA DI DA"
+        },
+        {
+          "idx": 18,
+          "rawText": "<color=#646464><i>EXID - PINK HOT</i></color>",
+          "displayName": "EXID - PINK HOT",
+          "released": false,
+          "songKey": "EXID - PINK HOT"
+        },
+        {
+          "idx": 19,
+          "rawText": "<i>GFRIEND - CROSSROADS</i>",
+          "displayName": "GFRIEND - CROSSROADS",
+          "released": true,
+          "songKey": "GFRIEND - CROSSROADS"
+        },
+        {
+          "idx": 20,
+          "rawText": "<i>GFRIEND - ME GUSTAS TU</i>",
+          "displayName": "GFRIEND - ME GUSTAS TU",
+          "released": true,
+          "songKey": "GFRIEND - ME GUSTAS TU"
+        },
+        {
+          "idx": 21,
+          "rawText": "<i>GIRL CRUSH - DRIVE</i>",
+          "displayName": "GIRL CRUSH - DRIVE",
+          "released": true,
+          "songKey": "GIRL CRUSH - DRIVE"
+        },
+        {
+          "idx": 22,
+          "rawText": "<color=#646464><i>GIRLS DAY - EXPECTATION</i></color>",
+          "displayName": "GIRLS DAY - EXPECTATION",
+          "released": false,
+          "songKey": "GIRLS DAY - EXPECTATION"
+        },
+        {
+          "idx": 23,
+          "rawText": "<color=#646464><i>GUMI - 地球最後の告白を</i></color>",
+          "displayName": "GUMI - 地球最後の告白を",
+          "released": false,
+          "songKey": "GUMI - 地球最後の告白を"
+        },
+        {
+          "idx": 24,
+          "rawText": "<i>HWA SA - NA</i>",
+          "displayName": "HWA SA - NA",
+          "released": true,
+          "songKey": "HWA SA - NA"
+        },
+        {
+          "idx": 25,
+          "rawText": "<color=#646464><i>HYO MIN - NICE BODY</i></color>",
+          "displayName": "HYO MIN - NICE BODY",
+          "released": false,
+          "songKey": "HYO MIN - NICE BODY"
+        },
+        {
+          "idx": 26,
+          "rawText": "<i>HYUNA - ATTITUDE</i>",
+          "displayName": "HYUNA - ATTITUDE",
+          "released": true,
+          "songKey": "HYUNA - ATTITUDE"
+        },
+        {
+          "idx": 27,
+          "rawText": "<i>ITZY - CAKE</i>",
+          "displayName": "ITZY - CAKE",
+          "released": true,
+          "songKey": "ITZY - CAKE"
+        },
+        {
+          "idx": 28,
+          "rawText": "<i>ITZY - DALLA DALLA</i>",
+          "displayName": "ITZY - DALLA DALLA",
+          "released": true,
+          "songKey": "ITZY - DALLA DALLA"
+        },
+        {
+          "idx": 29,
+          "rawText": "<i>IZNA - BEEP</i>",
+          "displayName": "IZNA - BEEP",
+          "released": true,
+          "songKey": "IZNA - BEEP"
+        },
+        {
+          "idx": 30,
+          "rawText": "<i>JENNIE - ZEN</i>",
+          "displayName": "JENNIE - ZEN",
+          "released": true,
+          "songKey": "JENNIE - ZEN"
+        },
+        {
+          "idx": 31,
+          "rawText": "<i>JIHYO - KILLING ME GOOD</i>",
+          "displayName": "JIHYO - KILLING ME GOOD",
+          "released": true,
+          "songKey": "JIHYO - KILLING ME GOOD"
+        },
+        {
+          "idx": 32,
+          "rawText": "<i>JISOO - EARTHQUAKE</i>",
+          "displayName": "JISOO - EARTHQUAKE",
+          "released": true,
+          "songKey": "JISOO - EARTHQUAKE"
+        },
+        {
+          "idx": 33,
+          "rawText": "<i>JISOO - FLOWER</i>",
+          "displayName": "JISOO - FLOWER",
+          "released": true,
+          "songKey": "JISOO - FLOWER"
+        },
+        {
+          "idx": 34,
+          "rawText": "<i>KARD - CAKE</i>",
+          "displayName": "KARD - CAKE",
+          "released": true,
+          "songKey": "KARD - CAKE"
+        },
+        {
+          "idx": 35,
+          "rawText": "<i>KATSEYE - TOUCH</i>",
+          "displayName": "KATSEYE - TOUCH",
+          "released": true,
+          "songKey": "KATSEYE - TOUCH"
+        },
+        {
+          "idx": 36,
+          "rawText": "<color=#646464><i>KDA - THE BADDEST</i></color>",
+          "displayName": "KDA - THE BADDEST",
+          "released": false,
+          "songKey": "KDA - THE BADDEST"
+        },
+        {
+          "idx": 37,
+          "rawText": "<i>KIII KIII - 404 NEW ERA</i>",
+          "displayName": "KIII KIII - 404 NEW ERA",
+          "released": true,
+          "songKey": "KIII KIII - 404 NEW ERA"
+        },
+        {
+          "idx": 38,
+          "rawText": "<color=#646464><i>KIM SEJEONG - TOP OR CLIFF</i></color>",
+          "displayName": "KIM SEJEONG - TOP OR CLIFF",
+          "released": false,
+          "songKey": "KIM SEJEONG - TOP OR CLIFF"
+        },
+        {
+          "idx": 39,
+          "rawText": "<color=#646464><i>LE SSERAFIM - BLUE FLAME</i></color>",
+          "displayName": "LE SSERAFIM - BLUE FLAME",
+          "released": false,
+          "songKey": "LE SSERAFIM - BLUE FLAME"
+        },
+        {
+          "idx": 40,
+          "rawText": "<color=#646464><i>LE SSERAFIM - BLUEBEARD’S WIFE</i></color>",
+          "displayName": "LE SSERAFIM - BLUEBEARD’S WIFE",
+          "released": false,
+          "songKey": "LE SSERAFIM - BLUEBEARD’S WIFE"
+        },
+        {
+          "idx": 41,
+          "rawText": "<i>LE SSERAFIM - EASY</i>",
+          "displayName": "LE SSERAFIM - EASY",
+          "released": true,
+          "songKey": "LE SSERAFIM - EASY"
+        },
+        {
+          "idx": 42,
+          "rawText": "<i>LISA - FUTW</i>",
+          "displayName": "LISA - FUTW",
+          "released": true,
+          "songKey": "LISA - FUTW"
+        },
+        {
+          "idx": 43,
+          "rawText": "<color=#646464><i>MAMAMOO - STARRY NIGHT</i></color>",
+          "displayName": "MAMAMOO - STARRY NIGHT",
+          "released": false,
+          "songKey": "MAMAMOO - STARRY NIGHT"
+        },
+        {
+          "idx": 44,
+          "rawText": "<i>MEOVV - BODY</i>",
+          "displayName": "MEOVV - BODY",
+          "released": true,
+          "songKey": "MEOVV - BODY"
+        },
+        {
+          "idx": 45,
+          "rawText": "<i>MEOVV - BURNING UP</i>",
+          "displayName": "MEOVV - BURNING UP",
+          "released": true,
+          "songKey": "MEOVV - BURNING UP"
+        },
+        {
+          "idx": 46,
+          "rawText": "<color=#646464><i>MIKU - SWEET DEVIL LIVE</i></color>",
+          "displayName": "MIKU - SWEET DEVIL LIVE",
+          "released": false,
+          "songKey": "MIKU - SWEET DEVIL LIVE"
+        },
+        {
+          "idx": 47,
+          "rawText": "<i>MINNIE - HER</i>",
+          "displayName": "MINNIE - HER",
+          "released": true,
+          "songKey": "MINNIE - HER"
+        },
+        {
+          "idx": 48,
+          "rawText": "<i>MYTH & ROID - STYX HELIX</i>",
+          "displayName": "MYTH & ROID - STYX HELIX",
+          "released": true,
+          "songKey": "MYTH & ROID - STYX HELIX"
+        },
+        {
+          "idx": 49,
+          "rawText": "<i>NEW JEANS - HOW SWEET</i>",
+          "displayName": "NEW JEANS - HOW SWEET",
+          "released": true,
+          "songKey": "NEW JEANS - HOW SWEET"
+        },
+        {
+          "idx": 50,
+          "rawText": "<i>NMIXX - BLUE VALENTINE</i>",
+          "displayName": "NMIXX - BLUE VALENTINE",
+          "released": true,
+          "songKey": "NMIXX - BLUE VALENTINE"
+        },
+        {
+          "idx": 51,
+          "rawText": "<color=#646464><i>NSFW - BODY TO BODY</i></color>",
+          "displayName": "NSFW - BODY TO BODY",
+          "released": false,
+          "songKey": "NSFW - BODY TO BODY"
+        },
+        {
+          "idx": 52,
+          "rawText": "<color=#646464><i>PSY - GENTLEMAN</i></color>",
+          "displayName": "PSY - GENTLEMAN",
+          "released": false,
+          "songKey": "PSY - GENTLEMAN"
+        },
+        {
+          "idx": 53,
+          "rawText": "<color=#646464><i>RANIA - DR. FEEL GOOD</i></color>",
+          "displayName": "RANIA - DR. FEEL GOOD",
+          "released": false,
+          "songKey": "RANIA - DR. FEEL GOOD"
+        },
+        {
+          "idx": 54,
+          "rawText": "<i>RED VELVET - AUTOMATIC</i>",
+          "displayName": "RED VELVET - AUTOMATIC",
+          "released": true,
+          "songKey": "RED VELVET - AUTOMATIC"
+        },
+        {
+          "idx": 55,
+          "rawText": "<color=#646464><i>RED VELVET - PSYCHO</i></color>",
+          "displayName": "RED VELVET - PSYCHO",
+          "released": false,
+          "songKey": "RED VELVET - PSYCHO"
+        },
+        {
+          "idx": 56,
+          "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD 小鹿亂撞</i></color>",
+          "displayName": "RYAN.B - FEELING GOOD 小鹿亂撞",
+          "released": false,
+          "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞"
+        },
+        {
+          "idx": 57,
+          "rawText": "<i>SEULGI - BABY NOT BABY</i>",
+          "displayName": "SEULGI - BABY NOT BABY",
+          "released": true,
+          "songKey": "SEULGI - BABY NOT BABY"
+        },
+        {
+          "idx": 58,
+          "rawText": "<i>SHERYL NOME - UNIVERSAL BUNNY</i>",
+          "displayName": "SHERYL NOME - UNIVERSAL BUNNY",
+          "released": true,
+          "songKey": "SHERYL NOME - UNIVERSAL BUNNY"
+        },
+        {
+          "idx": 59,
+          "rawText": "<color=#646464><i>STELLAR - STING</i></color>",
+          "displayName": "STELLAR - STING",
+          "released": false,
+          "songKey": "STELLAR - STING"
+        },
+        {
+          "idx": 60,
+          "rawText": "<color=#646464><i>SUNMI - YOU CAN'T SIT WITH US</i></color>",
+          "displayName": "SUNMI - YOU CAN'T SIT WITH US",
+          "released": false,
+          "songKey": "SUNMI - YOU CAN'T SIT WITH US"
+        },
+        {
+          "idx": 61,
+          "rawText": "<i>T-ARA - WHATS MY NAME</i>",
+          "displayName": "T-ARA - WHATS MY NAME",
+          "released": true,
+          "songKey": "T-ARA - WHATS MY NAME"
+        },
+        {
+          "idx": 62,
+          "rawText": "<color=#646464><i>TWICE - BREAKTHROUGH</i></color>",
+          "displayName": "TWICE - BREAKTHROUGH",
+          "released": false,
+          "songKey": "TWICE - BREAKTHROUGH"
+        },
+        {
+          "idx": 63,
+          "rawText": "<color=#646464><i>TWICE - I CAN'T STOP ME</i></color>",
+          "displayName": "TWICE - I CAN'T STOP ME",
+          "released": false,
+          "songKey": "TWICE - I CAN'T STOP ME"
+        },
+        {
+          "idx": 64,
+          "rawText": "<i>UNIS - CURIOUS</i>",
+          "displayName": "UNIS - CURIOUS",
+          "released": true,
+          "songKey": "UNIS - CURIOUS"
+        },
+        {
+          "idx": 65,
+          "rawText": "<i>VIVIZ - LA LA LOVE ME</i>",
+          "displayName": "VIVIZ - LA LA LOVE ME",
+          "released": true,
+          "songKey": "VIVIZ - LA LA LOVE ME"
+        },
+        {
+          "idx": 66,
+          "rawText": "<i>WEKI MEKI - PICKY PICKY</i>",
+          "displayName": "WEKI MEKI - PICKY PICKY",
+          "released": true,
+          "songKey": "WEKI MEKI - PICKY PICKY"
+        },
+        {
+          "idx": 67,
+          "rawText": "<i>XG - SHOOTING STAR</i>",
+          "displayName": "XG - SHOOTING STAR",
+          "released": true,
+          "songKey": "XG - SHOOTING STAR"
+        },
+        {
+          "idx": 68,
+          "rawText": "<i>YEJI - AIR</i>",
+          "displayName": "YEJI - AIR",
+          "released": true,
+          "songKey": "YEJI - AIR"
+        },
+        {
+          "idx": 69,
+          "rawText": "<i>初月 - PHONY</i>",
+          "displayName": "初月 - PHONY",
+          "released": true,
+          "songKey": "初月 - PHONY"
+        },
+        {
+          "idx": 70,
+          "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
+          "displayName": "梅とら - MAKES YOU A FIGHTER",
+          "released": true,
+          "songKey": "梅とら - MAKES YOU A FIGHTER"
+        },
+        {
+          "idx": 71,
+          "rawText": "<color=#646464><i>祈INORY - PINKIE PROMISE 勾指起誓</i></color>",
+          "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
+          "released": false,
+          "songKey": "祈INORY - PINKIE PROMISE 勾指起誓"
+        }
+      ]
     }
   },
   "newReleaseSet": [
@@ -5560,12 +6346,14 @@
       "AOA",
       "APINK",
       "BABYMONSTER",
+      "BADVILLAIN",
       "BIBI",
       "BLACKPINK",
       "BRAVE GIRLS",
       "BROWN EYED GIRLS",
       "CHANESS",
       "CHUNG HA",
+      "CL",
       "CLC",
       "DALSHABET",
       "DHOLIC",
@@ -5604,18 +6392,24 @@
       "IU",
       "IVE",
       "IZ-ONE",
+      "IZNA",
       "JENNIE",
+      "JIHYO",
+      "JISOO",
       "JUN HYO SEONG",
       "KARA",
+      "KARD",
       "KARINA",
       "KATSEYE",
       "KDA",
+      "KIII KIII",
       "KISS OF LIFE",
       "KWON EUN BI",
       "LAYSHA",
       "LE SSERAFIM",
       "LEE HYO RI",
       "LEE SUHYUN",
+      "LISA",
       "LOLUET",
       "LOONA",
       "LOOSSEMBLE",
@@ -5625,6 +6419,7 @@
       "MINNIE",
       "MISS A",
       "MOMOLAND",
+      "MYTH & ROID",
       "NASTY NASTY",
       "NAYEON",
       "NEW JEANS",
@@ -5641,6 +6436,7 @@
       "RYO",
       "SECRET NUMBER",
       "SEULGI",
+      "SHERYL NOME",
       "SISTER",
       "SOMI",
       "SONGJIEUN",
@@ -5652,15 +6448,19 @@
       "TAEYEON",
       "TAHITI",
       "TWICE",
+      "UNIS",
       "VIVIZ",
+      "WEKI MEKI",
       "WJSN",
       "WONDER GIRLS",
       "XG",
+      "YEJI",
       "YENA",
       "YOASOBI",
       "YOOA",
       "八王子P",
       "内田彩",
+      "初月",
       "劉至佳",
       "夏色花梨",
       "柿チョコ",
