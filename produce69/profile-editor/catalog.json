@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-25T10:18:36.520Z",
-  "generatedAt": "2026-05-25T14:08:16Z",
-  "songCount": 297,
-  "trackCount": 417,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-26T08:47:45.764Z",
+  "generatedAt": "2026-05-26T08:47:49Z",
+  "songCount": 298,
+  "trackCount": 418,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -1423,6 +1423,12 @@
     {
       "trackId": "404 NEW ERA",
       "songKey": "KIII KIII - 404 NEW ERA",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "IGLOO",
+      "songKey": "KISS OF LIFE - IGLOO",
       "stage": "Illusion Stage",
       "variantNumber": 0
     },
@@ -5781,7 +5787,7 @@
     },
     "RAW": {
       "name": "RAW",
-      "slotCount": 73,
+      "slotCount": 74,
       "slots": [
         {
           "idx": 0,
@@ -6293,6 +6299,13 @@
           "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
           "released": false,
           "songKey": "祈INORY - PINKIE PROMISE 勾指起誓"
+        },
+        {
+          "idx": 73,
+          "rawText": "<i>KISS OF LIFE - IGLOO</i>",
+          "displayName": "KISS OF LIFE - IGLOO",
+          "released": true,
+          "songKey": "KISS OF LIFE - IGLOO"
         }
       ]
     }
