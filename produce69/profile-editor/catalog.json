@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-26T08:47:45.764Z",
-  "generatedAt": "2026-05-26T08:47:49Z",
-  "songCount": 298,
-  "trackCount": 418,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-26T08:54:44.488Z",
+  "generatedAt": "2026-05-26T08:54:46Z",
+  "songCount": 300,
+  "trackCount": 420,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -416,6 +416,12 @@
       "trackId": "Vengeance",
       "songKey": "BIBI - VENGEANCE",
       "stage": "Hell Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "BOOMBAYAH",
+      "songKey": "BLACKPINK - BOOMBAYAH",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1975,6 +1981,12 @@
     {
       "trackId": "AUTOMATIC",
       "songKey": "RED VELVET - AUTOMATIC",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "COSMIC",
+      "songKey": "RED VELVET - COSMIC",
       "stage": "Illusion Stage",
       "variantNumber": 0
     },
@@ -5787,7 +5799,7 @@
     },
     "RAW": {
       "name": "RAW",
-      "slotCount": 74,
+      "slotCount": 76,
       "slots": [
         {
           "idx": 0,
@@ -6306,6 +6318,20 @@
           "displayName": "KISS OF LIFE - IGLOO",
           "released": true,
           "songKey": "KISS OF LIFE - IGLOO"
+        },
+        {
+          "idx": 74,
+          "rawText": "<i>BLACKPINK - BOOMBAYAH</i>",
+          "displayName": "BLACKPINK - BOOMBAYAH",
+          "released": true,
+          "songKey": "BLACKPINK - BOOMBAYAH"
+        },
+        {
+          "idx": 75,
+          "rawText": "<i>RED VELVET - COSMIC</i>",
+          "displayName": "RED VELVET - COSMIC",
+          "released": true,
+          "songKey": "RED VELVET - COSMIC"
         }
       ]
     }
