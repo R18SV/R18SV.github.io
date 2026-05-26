@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-26T09:25:17.817Z",
-  "generatedAt": "2026-05-26T09:25:19Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-05-26T10:00:39.200Z",
+  "generatedAt": "2026-05-26T10:00:40Z",
   "songCount": 300,
   "trackCount": 420,
   "tracks": [
@@ -6174,153 +6174,146 @@
         },
         {
           "idx": 53,
-          "rawText": "<color=#646464><i>NSFW - BODY TO BODY</i></color>",
-          "displayName": "NSFW - BODY TO BODY",
-          "released": false,
-          "songKey": "NSFW - BODY TO BODY"
-        },
-        {
-          "idx": 54,
           "rawText": "<color=#646464><i>PSY - GENTLEMAN</i></color>",
           "displayName": "PSY - GENTLEMAN",
           "released": false,
           "songKey": "PSY - GENTLEMAN"
         },
         {
-          "idx": 55,
+          "idx": 54,
           "rawText": "<color=#646464><i>RANIA - DR. FEEL GOOD</i></color>",
           "displayName": "RANIA - DR. FEEL GOOD",
           "released": false,
           "songKey": "RANIA - DR. FEEL GOOD"
         },
         {
-          "idx": 56,
+          "idx": 55,
           "rawText": "<i>RED VELVET - AUTOMATIC</i>",
           "displayName": "RED VELVET - AUTOMATIC",
           "released": true,
           "songKey": "RED VELVET - AUTOMATIC"
         },
         {
-          "idx": 57,
+          "idx": 56,
           "rawText": "<i>RED VELVET - COSMIC</i>",
           "displayName": "RED VELVET - COSMIC",
           "released": true,
           "songKey": "RED VELVET - COSMIC"
         },
         {
-          "idx": 58,
+          "idx": 57,
           "rawText": "<color=#646464><i>RED VELVET - PSYCHO</i></color>",
           "displayName": "RED VELVET - PSYCHO",
           "released": false,
           "songKey": "RED VELVET - PSYCHO"
         },
         {
-          "idx": 59,
+          "idx": 58,
           "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD 小鹿亂撞</i></color>",
           "displayName": "RYAN.B - FEELING GOOD 小鹿亂撞",
           "released": false,
           "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞"
         },
         {
-          "idx": 60,
+          "idx": 59,
           "rawText": "<i>SEULGI - BABY NOT BABY</i>",
           "displayName": "SEULGI - BABY NOT BABY",
           "released": true,
           "songKey": "SEULGI - BABY NOT BABY"
         },
         {
-          "idx": 61,
+          "idx": 60,
           "rawText": "<i>SHERYL NOME - UNIVERSAL BUNNY</i>",
           "displayName": "SHERYL NOME - UNIVERSAL BUNNY",
           "released": true,
           "songKey": "SHERYL NOME - UNIVERSAL BUNNY"
         },
         {
-          "idx": 62,
+          "idx": 61,
           "rawText": "<color=#646464><i>STELLAR - STING</i></color>",
           "displayName": "STELLAR - STING",
           "released": false,
           "songKey": "STELLAR - STING"
         },
         {
-          "idx": 63,
+          "idx": 62,
           "rawText": "<color=#646464><i>SUNMI - YOU CAN'T SIT WITH US</i></color>",
           "displayName": "SUNMI - YOU CAN'T SIT WITH US",
           "released": false,
           "songKey": "SUNMI - YOU CAN'T SIT WITH US"
         },
         {
-          "idx": 64,
+          "idx": 63,
           "rawText": "<i>T-ARA - WHATS MY NAME</i>",
           "displayName": "T-ARA - WHATS MY NAME",
           "released": true,
           "songKey": "T-ARA - WHATS MY NAME"
         },
         {
-          "idx": 65,
+          "idx": 64,
           "rawText": "<color=#646464><i>TWICE - BREAKTHROUGH</i></color>",
           "displayName": "TWICE - BREAKTHROUGH",
           "released": false,
           "songKey": "TWICE - BREAKTHROUGH"
         },
         {
-          "idx": 66,
+          "idx": 65,
           "rawText": "<color=#646464><i>TWICE - I CAN'T STOP ME</i></color>",
           "displayName": "TWICE - I CAN'T STOP ME",
           "released": false,
           "songKey": "TWICE - I CAN'T STOP ME"
         },
         {
-          "idx": 67,
+          "idx": 66,
           "rawText": "<i>UNIS - CURIOUS</i>",
           "displayName": "UNIS - CURIOUS",
           "released": true,
           "songKey": "UNIS - CURIOUS"
         },
         {
-          "idx": 68,
+          "idx": 67,
           "rawText": "<i>VIVIZ - LA LA LOVE ME</i>",
           "displayName": "VIVIZ - LA LA LOVE ME",
           "released": true,
           "songKey": "VIVIZ - LA LA LOVE ME"
         },
         {
-          "idx": 69,
+          "idx": 68,
           "rawText": "<i>WEKI MEKI - PICKY PICKY</i>",
           "displayName": "WEKI MEKI - PICKY PICKY",
           "released": true,
           "songKey": "WEKI MEKI - PICKY PICKY"
         },
         {
-          "idx": 70,
+          "idx": 69,
           "rawText": "<i>XG - SHOOTING STAR</i>",
           "displayName": "XG - SHOOTING STAR",
           "released": true,
           "songKey": "XG - SHOOTING STAR"
         },
         {
-          "idx": 71,
+          "idx": 70,
           "rawText": "<i>YEJI - AIR</i>",
           "displayName": "YEJI - AIR",
           "released": true,
           "songKey": "YEJI - AIR"
         },
         {
-          "idx": 72,
+          "idx": 71,
           "rawText": "<i>初月 - PHONY</i>",
           "displayName": "初月 - PHONY",
           "released": true,
           "songKey": "初月 - PHONY"
         },
         {
-          "idx": 73,
+          "idx": 72,
           "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
           "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
           "songKey": "梅とら - MAKES YOU A FIGHTER"
         },
         {
-          "idx": 74,
+          "idx": 73,
           "rawText": "<color=#646464><i>祈INORY - PINKIE PROMISE 勾指起誓</i></color>",
           "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
           "released": false,
