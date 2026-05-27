@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:22:49.307Z",
-  "generatedAt": "2026-05-27T17:22:51Z",
-  "songCount": 303,
-  "trackCount": 423,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:34:05.163Z",
+  "generatedAt": "2026-05-27T17:34:06Z",
+  "songCount": 304,
+  "trackCount": 424,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -2491,6 +2491,12 @@
     {
       "trackId": "MAKES YOU A FIGHTER",
       "songKey": "梅とら - MAKES YOU A FIGHTER",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "PINKIE PROMISE",
+      "songKey": "祈 INORY - PINKIE PROMISE 勾指起誓",
       "stage": "Illusion Stage",
       "variantNumber": 0
     },
@@ -6339,10 +6345,10 @@
         },
         {
           "idx": 74,
-          "rawText": "<color=#646464><i>祈INORY - PINKIE PROMISE 勾指起誓</i></color>",
-          "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
-          "released": false,
-          "songKey": "祈INORY - PINKIE PROMISE 勾指起誓"
+          "rawText": "<i>祈 INORY - PINKIE PROMISE 勾指起誓</i>",
+          "displayName": "祈 INORY - PINKIE PROMISE 勾指起誓",
+          "released": true,
+          "songKey": "祈 INORY - PINKIE PROMISE 勾指起誓"
         }
       ]
     }
