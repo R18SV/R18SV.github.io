@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:52:33.794Z",
-  "generatedAt": "2026-05-27T17:52:35Z",
-  "songCount": 306,
-  "trackCount": 426,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T18:02:14.227Z",
+  "generatedAt": "2026-05-27T18:02:15Z",
+  "songCount": 307,
+  "trackCount": 427,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -2078,6 +2078,12 @@
       "trackId": "On the Ground",
       "songKey": "ROSÉ - ON THE GROUND",
       "stage": "Mermaid Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "FEELING GOOD 小鹿亂撞",
+      "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞",
+      "stage": "Beach Stage",
       "variantNumber": 0
     },
     {
@@ -6252,9 +6258,9 @@
         },
         {
           "idx": 59,
-          "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD 小鹿亂撞</i></color>",
+          "rawText": "<i>RYAN.B - FEELING GOOD 小鹿亂撞</i>",
           "displayName": "RYAN.B - FEELING GOOD 小鹿亂撞",
-          "released": false,
+          "released": true,
           "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞"
         },
         {
@@ -6516,6 +6522,7 @@
       "REOL",
       "RIN",
       "ROSÉ",
+      "RYAN.B",
       "RYO",
       "SECRET NUMBER",
       "SEULGI",
