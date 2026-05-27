@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T16:46:09.170Z",
-  "generatedAt": "2026-05-27T16:46:11Z",
-  "songCount": 302,
-  "trackCount": 422,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:22:49.307Z",
+  "generatedAt": "2026-05-27T17:22:51Z",
+  "songCount": 303,
+  "trackCount": 423,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -986,6 +986,12 @@
       "trackId": "NA",
       "songKey": "HWA SA - NA",
       "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "NICE BODY",
+      "songKey": "HYO MIN - NICE BODY",
+      "stage": "Beach Stage",
       "variantNumber": 0
     },
     {
@@ -6004,9 +6010,9 @@
         },
         {
           "idx": 27,
-          "rawText": "<color=#646464><i>HYO MIN - NICE BODY</i></color>",
+          "rawText": "<i>HYO MIN - NICE BODY</i>",
           "displayName": "HYO MIN - NICE BODY",
-          "released": false,
+          "released": true,
           "songKey": "HYO MIN - NICE BODY"
         },
         {
@@ -6438,6 +6444,7 @@
       "HIMEHINA",
       "HUNTRIX",
       "HWA SA",
+      "HYO MIN",
       "HYOLYN",
       "HYUNA",
       "I-REN",
