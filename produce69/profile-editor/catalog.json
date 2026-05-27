@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:34:05.163Z",
-  "generatedAt": "2026-05-27T17:34:06Z",
-  "songCount": 304,
-  "trackCount": 424,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:44:03.100Z",
+  "generatedAt": "2026-05-27T17:44:04Z",
+  "songCount": 305,
+  "trackCount": 425,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -2211,6 +2211,12 @@
       "songKey": "STELLAR - MARIONETTE",
       "stage": "Jail Stage",
       "variantNumber": 2
+    },
+    {
+      "trackId": "STING",
+      "songKey": "STELLAR - STING",
+      "stage": "Beach Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "MANIAC",
@@ -6261,9 +6267,9 @@
         },
         {
           "idx": 62,
-          "rawText": "<color=#646464><i>STELLAR - STING</i></color>",
+          "rawText": "<i>STELLAR - STING</i>",
           "displayName": "STELLAR - STING",
-          "released": false,
+          "released": true,
           "songKey": "STELLAR - STING"
         },
         {
