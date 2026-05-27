@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T08:43:03.704Z",
-  "generatedAt": "2026-05-27T08:43:05Z",
-  "songCount": 301,
-  "trackCount": 421,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T16:46:09.170Z",
+  "generatedAt": "2026-05-27T16:46:11Z",
+  "songCount": 302,
+  "trackCount": 422,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -315,6 +315,12 @@
       "songKey": "AOA - SHORT HAIR",
       "stage": "Subway Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "COPYCAT",
+      "songKey": "APINK - COPYCAT",
+      "stage": "Beach Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Dumhdurum",
@@ -5830,9 +5836,9 @@
         },
         {
           "idx": 3,
-          "rawText": "<color=#646464><i>APINK - COPYCAT</i></color>",
+          "rawText": "<i>APINK - COPYCAT</i>",
           "displayName": "APINK - COPYCAT",
-          "released": false,
+          "released": true,
           "songKey": "APINK - COPYCAT"
         },
         {
