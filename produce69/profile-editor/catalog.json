@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:44:03.100Z",
-  "generatedAt": "2026-05-27T17:44:04Z",
-  "songCount": 305,
-  "trackCount": 425,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T17:52:33.794Z",
+  "generatedAt": "2026-05-27T17:52:35Z",
+  "songCount": 306,
+  "trackCount": 426,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -416,6 +416,12 @@
       "trackId": "BADTITUDE",
       "songKey": "BADVILLAIN - BADTITUDE",
       "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "MELLOW MELLOW",
+      "songKey": "BERRY GOOD - MELLOW MELLOW",
+      "stage": "Beach Stage",
       "variantNumber": 0
     },
     {
@@ -5896,9 +5902,9 @@
         },
         {
           "idx": 9,
-          "rawText": "<color=#646464><i>BERRY GOOD - MELLOW MELLOW</i></color>",
+          "rawText": "<i>BERRY GOOD - MELLOW MELLOW</i>",
           "displayName": "BERRY GOOD - MELLOW MELLOW",
-          "released": false,
+          "released": true,
           "songKey": "BERRY GOOD - MELLOW MELLOW"
         },
         {
@@ -6422,6 +6428,7 @@
       "APINK",
       "BABYMONSTER",
       "BADVILLAIN",
+      "BERRY GOOD",
       "BIBI",
       "BLACKPINK",
       "BRAVE GIRLS",
