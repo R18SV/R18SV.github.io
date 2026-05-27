@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-26T11:24:21.639Z",
-  "generatedAt": "2026-05-26T11:24:23Z",
-  "songCount": 300,
-  "trackCount": 420,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-27T08:43:03.704Z",
+  "generatedAt": "2026-05-27T08:43:05Z",
+  "songCount": 301,
+  "trackCount": 421,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -409,7 +409,7 @@
     {
       "trackId": "BADTITUDE",
       "songKey": "BADVILLAIN - BADTITUDE",
-      "stage": "Studio Stage",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -739,6 +739,12 @@
     {
       "trackId": "Me Gustas Tu",
       "songKey": "GFRIEND - ME GUSTAS TU",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "SEASON OF MEMORIES",
+      "songKey": "GFRIEND - SEASON OF MEMORIES",
       "stage": "Illusion Stage",
       "variantNumber": 0
     },
@@ -5957,363 +5963,370 @@
         },
         {
           "idx": 22,
+          "rawText": "<i>GFRIEND - SEASON OF MEMORIES</i>",
+          "displayName": "GFRIEND - SEASON OF MEMORIES",
+          "released": true,
+          "songKey": "GFRIEND - SEASON OF MEMORIES"
+        },
+        {
+          "idx": 23,
           "rawText": "<i>GIRL CRUSH - DRIVE</i>",
           "displayName": "GIRL CRUSH - DRIVE",
           "released": true,
           "songKey": "GIRL CRUSH - DRIVE"
         },
         {
-          "idx": 23,
+          "idx": 24,
           "rawText": "<color=#646464><i>GIRLS DAY - EXPECTATION</i></color>",
           "displayName": "GIRLS DAY - EXPECTATION",
           "released": false,
           "songKey": "GIRLS DAY - EXPECTATION"
         },
         {
-          "idx": 24,
+          "idx": 25,
           "rawText": "<color=#646464><i>GUMI - 地球最後の告白を</i></color>",
           "displayName": "GUMI - 地球最後の告白を",
           "released": false,
           "songKey": "GUMI - 地球最後の告白を"
         },
         {
-          "idx": 25,
+          "idx": 26,
           "rawText": "<i>HWA SA - NA</i>",
           "displayName": "HWA SA - NA",
           "released": true,
           "songKey": "HWA SA - NA"
         },
         {
-          "idx": 26,
+          "idx": 27,
           "rawText": "<color=#646464><i>HYO MIN - NICE BODY</i></color>",
           "displayName": "HYO MIN - NICE BODY",
           "released": false,
           "songKey": "HYO MIN - NICE BODY"
         },
         {
-          "idx": 27,
+          "idx": 28,
           "rawText": "<i>HYUNA - ATTITUDE</i>",
           "displayName": "HYUNA - ATTITUDE",
           "released": true,
           "songKey": "HYUNA - ATTITUDE"
         },
         {
-          "idx": 28,
+          "idx": 29,
           "rawText": "<i>ITZY - CAKE</i>",
           "displayName": "ITZY - CAKE",
           "released": true,
           "songKey": "ITZY - CAKE"
         },
         {
-          "idx": 29,
+          "idx": 30,
           "rawText": "<i>ITZY - DALLA DALLA</i>",
           "displayName": "ITZY - DALLA DALLA",
           "released": true,
           "songKey": "ITZY - DALLA DALLA"
         },
         {
-          "idx": 30,
+          "idx": 31,
           "rawText": "<i>IZNA - BEEP</i>",
           "displayName": "IZNA - BEEP",
           "released": true,
           "songKey": "IZNA - BEEP"
         },
         {
-          "idx": 31,
+          "idx": 32,
           "rawText": "<i>JENNIE - ZEN</i>",
           "displayName": "JENNIE - ZEN",
           "released": true,
           "songKey": "JENNIE - ZEN"
         },
         {
-          "idx": 32,
+          "idx": 33,
           "rawText": "<i>JIHYO - KILLING ME GOOD</i>",
           "displayName": "JIHYO - KILLING ME GOOD",
           "released": true,
           "songKey": "JIHYO - KILLING ME GOOD"
         },
         {
-          "idx": 33,
+          "idx": 34,
           "rawText": "<i>JISOO - EARTHQUAKE</i>",
           "displayName": "JISOO - EARTHQUAKE",
           "released": true,
           "songKey": "JISOO - EARTHQUAKE"
         },
         {
-          "idx": 34,
+          "idx": 35,
           "rawText": "<i>JISOO - FLOWER</i>",
           "displayName": "JISOO - FLOWER",
           "released": true,
           "songKey": "JISOO - FLOWER"
         },
         {
-          "idx": 35,
+          "idx": 36,
           "rawText": "<i>KARD - CAKE</i>",
           "displayName": "KARD - CAKE",
           "released": true,
           "songKey": "KARD - CAKE"
         },
         {
-          "idx": 36,
+          "idx": 37,
           "rawText": "<i>KATSEYE - TOUCH</i>",
           "displayName": "KATSEYE - TOUCH",
           "released": true,
           "songKey": "KATSEYE - TOUCH"
         },
         {
-          "idx": 37,
+          "idx": 38,
           "rawText": "<color=#646464><i>KDA - THE BADDEST</i></color>",
           "displayName": "KDA - THE BADDEST",
           "released": false,
           "songKey": "KDA - THE BADDEST"
         },
         {
-          "idx": 38,
+          "idx": 39,
           "rawText": "<i>KIII KIII - 404 NEW ERA</i>",
           "displayName": "KIII KIII - 404 NEW ERA",
           "released": true,
           "songKey": "KIII KIII - 404 NEW ERA"
         },
         {
-          "idx": 39,
+          "idx": 40,
           "rawText": "<color=#646464><i>KIM SEJEONG - TOP OR CLIFF</i></color>",
           "displayName": "KIM SEJEONG - TOP OR CLIFF",
           "released": false,
           "songKey": "KIM SEJEONG - TOP OR CLIFF"
         },
         {
-          "idx": 40,
+          "idx": 41,
           "rawText": "<i>KISS OF LIFE - IGLOO</i>",
           "displayName": "KISS OF LIFE - IGLOO",
           "released": true,
           "songKey": "KISS OF LIFE - IGLOO"
         },
         {
-          "idx": 41,
+          "idx": 42,
           "rawText": "<i>KISS OF LIFE - SUGARCOAT</i>",
           "displayName": "KISS OF LIFE - SUGARCOAT",
           "released": true,
           "songKey": "KISS OF LIFE - SUGARCOAT"
         },
         {
-          "idx": 42,
+          "idx": 43,
           "rawText": "<color=#646464><i>LE SSERAFIM - BLUE FLAME</i></color>",
           "displayName": "LE SSERAFIM - BLUE FLAME",
           "released": false,
           "songKey": "LE SSERAFIM - BLUE FLAME"
         },
         {
-          "idx": 43,
+          "idx": 44,
           "rawText": "<color=#646464><i>LE SSERAFIM - BLUEBEARD’S WIFE</i></color>",
           "displayName": "LE SSERAFIM - BLUEBEARD’S WIFE",
           "released": false,
           "songKey": "LE SSERAFIM - BLUEBEARD’S WIFE"
         },
         {
-          "idx": 44,
+          "idx": 45,
           "rawText": "<i>LE SSERAFIM - EASY</i>",
           "displayName": "LE SSERAFIM - EASY",
           "released": true,
           "songKey": "LE SSERAFIM - EASY"
         },
         {
-          "idx": 45,
+          "idx": 46,
           "rawText": "<i>LISA - FUTW</i>",
           "displayName": "LISA - FUTW",
           "released": true,
           "songKey": "LISA - FUTW"
         },
         {
-          "idx": 46,
+          "idx": 47,
           "rawText": "<color=#646464><i>MAMAMOO - STARRY NIGHT</i></color>",
           "displayName": "MAMAMOO - STARRY NIGHT",
           "released": false,
           "songKey": "MAMAMOO - STARRY NIGHT"
         },
         {
-          "idx": 47,
+          "idx": 48,
           "rawText": "<i>MEOVV - BODY</i>",
           "displayName": "MEOVV - BODY",
           "released": true,
           "songKey": "MEOVV - BODY"
         },
         {
-          "idx": 48,
+          "idx": 49,
           "rawText": "<i>MEOVV - BURNING UP</i>",
           "displayName": "MEOVV - BURNING UP",
           "released": true,
           "songKey": "MEOVV - BURNING UP"
         },
         {
-          "idx": 49,
+          "idx": 50,
           "rawText": "<i>MINNIE - HER</i>",
           "displayName": "MINNIE - HER",
           "released": true,
           "songKey": "MINNIE - HER"
         },
         {
-          "idx": 50,
+          "idx": 51,
           "rawText": "<i>MYTH & ROID - STYX HELIX</i>",
           "displayName": "MYTH & ROID - STYX HELIX",
           "released": true,
           "songKey": "MYTH & ROID - STYX HELIX"
         },
         {
-          "idx": 51,
+          "idx": 52,
           "rawText": "<i>NEW JEANS - HOW SWEET</i>",
           "displayName": "NEW JEANS - HOW SWEET",
           "released": true,
           "songKey": "NEW JEANS - HOW SWEET"
         },
         {
-          "idx": 52,
+          "idx": 53,
           "rawText": "<i>NMIXX - BLUE VALENTINE</i>",
           "displayName": "NMIXX - BLUE VALENTINE",
           "released": true,
           "songKey": "NMIXX - BLUE VALENTINE"
         },
         {
-          "idx": 53,
+          "idx": 54,
           "rawText": "<color=#646464><i>PSY - GENTLEMAN</i></color>",
           "displayName": "PSY - GENTLEMAN",
           "released": false,
           "songKey": "PSY - GENTLEMAN"
         },
         {
-          "idx": 54,
+          "idx": 55,
           "rawText": "<color=#646464><i>RANIA - DR. FEEL GOOD</i></color>",
           "displayName": "RANIA - DR. FEEL GOOD",
           "released": false,
           "songKey": "RANIA - DR. FEEL GOOD"
         },
         {
-          "idx": 55,
+          "idx": 56,
           "rawText": "<i>RED VELVET - AUTOMATIC</i>",
           "displayName": "RED VELVET - AUTOMATIC",
           "released": true,
           "songKey": "RED VELVET - AUTOMATIC"
         },
         {
-          "idx": 56,
+          "idx": 57,
           "rawText": "<i>RED VELVET - COSMIC</i>",
           "displayName": "RED VELVET - COSMIC",
           "released": true,
           "songKey": "RED VELVET - COSMIC"
         },
         {
-          "idx": 57,
+          "idx": 58,
           "rawText": "<color=#646464><i>RED VELVET - PSYCHO</i></color>",
           "displayName": "RED VELVET - PSYCHO",
           "released": false,
           "songKey": "RED VELVET - PSYCHO"
         },
         {
-          "idx": 58,
+          "idx": 59,
           "rawText": "<color=#646464><i>RYAN.B - FEELING GOOD 小鹿亂撞</i></color>",
           "displayName": "RYAN.B - FEELING GOOD 小鹿亂撞",
           "released": false,
           "songKey": "RYAN.B - FEELING GOOD 小鹿亂撞"
         },
         {
-          "idx": 59,
+          "idx": 60,
           "rawText": "<i>SEULGI - BABY NOT BABY</i>",
           "displayName": "SEULGI - BABY NOT BABY",
           "released": true,
           "songKey": "SEULGI - BABY NOT BABY"
         },
         {
-          "idx": 60,
+          "idx": 61,
           "rawText": "<i>SHERYL NOME - UNIVERSAL BUNNY</i>",
           "displayName": "SHERYL NOME - UNIVERSAL BUNNY",
           "released": true,
           "songKey": "SHERYL NOME - UNIVERSAL BUNNY"
         },
         {
-          "idx": 61,
+          "idx": 62,
           "rawText": "<color=#646464><i>STELLAR - STING</i></color>",
           "displayName": "STELLAR - STING",
           "released": false,
           "songKey": "STELLAR - STING"
         },
         {
-          "idx": 62,
+          "idx": 63,
           "rawText": "<color=#646464><i>SUNMI - YOU CAN'T SIT WITH US</i></color>",
           "displayName": "SUNMI - YOU CAN'T SIT WITH US",
           "released": false,
           "songKey": "SUNMI - YOU CAN'T SIT WITH US"
         },
         {
-          "idx": 63,
+          "idx": 64,
           "rawText": "<i>T-ARA - WHATS MY NAME</i>",
           "displayName": "T-ARA - WHATS MY NAME",
           "released": true,
           "songKey": "T-ARA - WHATS MY NAME"
         },
         {
-          "idx": 64,
+          "idx": 65,
           "rawText": "<color=#646464><i>TWICE - BREAKTHROUGH</i></color>",
           "displayName": "TWICE - BREAKTHROUGH",
           "released": false,
           "songKey": "TWICE - BREAKTHROUGH"
         },
         {
-          "idx": 65,
+          "idx": 66,
           "rawText": "<color=#646464><i>TWICE - I CAN'T STOP ME</i></color>",
           "displayName": "TWICE - I CAN'T STOP ME",
           "released": false,
           "songKey": "TWICE - I CAN'T STOP ME"
         },
         {
-          "idx": 66,
+          "idx": 67,
           "rawText": "<i>UNIS - CURIOUS</i>",
           "displayName": "UNIS - CURIOUS",
           "released": true,
           "songKey": "UNIS - CURIOUS"
         },
         {
-          "idx": 67,
+          "idx": 68,
           "rawText": "<i>VIVIZ - LA LA LOVE ME</i>",
           "displayName": "VIVIZ - LA LA LOVE ME",
           "released": true,
           "songKey": "VIVIZ - LA LA LOVE ME"
         },
         {
-          "idx": 68,
+          "idx": 69,
           "rawText": "<i>WEKI MEKI - PICKY PICKY</i>",
           "displayName": "WEKI MEKI - PICKY PICKY",
           "released": true,
           "songKey": "WEKI MEKI - PICKY PICKY"
         },
         {
-          "idx": 69,
+          "idx": 70,
           "rawText": "<i>XG - SHOOTING STAR</i>",
           "displayName": "XG - SHOOTING STAR",
           "released": true,
           "songKey": "XG - SHOOTING STAR"
         },
         {
-          "idx": 70,
+          "idx": 71,
           "rawText": "<i>YEJI - AIR</i>",
           "displayName": "YEJI - AIR",
           "released": true,
           "songKey": "YEJI - AIR"
         },
         {
-          "idx": 71,
+          "idx": 72,
           "rawText": "<i>初月 - PHONY</i>",
           "displayName": "初月 - PHONY",
           "released": true,
           "songKey": "初月 - PHONY"
         },
         {
-          "idx": 72,
+          "idx": 73,
           "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
           "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
           "songKey": "梅とら - MAKES YOU A FIGHTER"
         },
         {
-          "idx": 73,
+          "idx": 74,
           "rawText": "<color=#646464><i>祈INORY - PINKIE PROMISE 勾指起誓</i></color>",
           "displayName": "祈INORY - PINKIE PROMISE 勾指起誓",
           "released": false,
