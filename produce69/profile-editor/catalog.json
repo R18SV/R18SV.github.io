@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-29T10:05:54.609Z",
-  "generatedAt": "2026-05-29T10:05:57Z",
-  "songCount": 308,
-  "trackCount": 428,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-29T11:17:48.011Z",
+  "generatedAt": "2026-05-29T11:17:50Z",
+  "songCount": 313,
+  "trackCount": 433,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -1643,6 +1643,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "STARRY NIGHT",
+      "songKey": "MAMAMOO - STARRY NIGHT",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "BODY",
       "songKey": "MEOVV - BODY",
       "stage": "Illusion Stage",
@@ -2003,6 +2009,12 @@
       "variantNumber": 2
     },
     {
+      "trackId": "DR. FEEL GOOD",
+      "songKey": "RANIA - DR. FEEL GOOD",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "AUTOMATIC",
       "songKey": "RED VELVET - AUTOMATIC",
       "stage": "Illusion Stage",
@@ -2030,6 +2042,12 @@
       "trackId": "Monster Duet",
       "songKey": "RED VELVET - MONSTER",
       "stage": "Hell Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "PSYCHO",
+      "songKey": "RED VELVET - PSYCHO",
+      "stage": "Space Stage",
       "variantNumber": 0
     },
     {
@@ -2237,6 +2255,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "YOU CAN'T SIT WITH US",
+      "songKey": "SUNMI - YOU CAN'T SIT WITH US",
+      "stage": "Space Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "BO PEEP",
       "songKey": "T-ARA - BO PEEP",
       "stage": "Strip Club Stage",
@@ -2324,6 +2348,12 @@
       "trackId": "BREAKTHROUGH",
       "songKey": "TWICE - BREAKTHROUGH",
       "stage": "Space Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "I CAN'T STOP ME",
+      "songKey": "TWICE - I CAN'T STOP ME",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -6180,9 +6210,9 @@
         },
         {
           "idx": 47,
-          "rawText": "<color=#646464><i>MAMAMOO - STARRY NIGHT</i></color>",
+          "rawText": "<i>MAMAMOO - STARRY NIGHT</i>",
           "displayName": "MAMAMOO - STARRY NIGHT",
-          "released": false,
+          "released": true,
           "songKey": "MAMAMOO - STARRY NIGHT"
         },
         {
@@ -6236,9 +6266,9 @@
         },
         {
           "idx": 55,
-          "rawText": "<color=#646464><i>RANIA - DR. FEEL GOOD</i></color>",
+          "rawText": "<i>RANIA - DR. FEEL GOOD</i>",
           "displayName": "RANIA - DR. FEEL GOOD",
-          "released": false,
+          "released": true,
           "songKey": "RANIA - DR. FEEL GOOD"
         },
         {
@@ -6257,9 +6287,9 @@
         },
         {
           "idx": 58,
-          "rawText": "<color=#646464><i>RED VELVET - PSYCHO</i></color>",
+          "rawText": "<i>RED VELVET - PSYCHO</i>",
           "displayName": "RED VELVET - PSYCHO",
-          "released": false,
+          "released": true,
           "songKey": "RED VELVET - PSYCHO"
         },
         {
@@ -6292,9 +6322,9 @@
         },
         {
           "idx": 63,
-          "rawText": "<color=#646464><i>SUNMI - YOU CAN'T SIT WITH US</i></color>",
+          "rawText": "<i>SUNMI - YOU CAN'T SIT WITH US</i>",
           "displayName": "SUNMI - YOU CAN'T SIT WITH US",
-          "released": false,
+          "released": true,
           "songKey": "SUNMI - YOU CAN'T SIT WITH US"
         },
         {
@@ -6313,9 +6343,9 @@
         },
         {
           "idx": 66,
-          "rawText": "<color=#646464><i>TWICE - I CAN'T STOP ME</i></color>",
+          "rawText": "<i>TWICE - I CAN'T STOP ME</i>",
           "displayName": "TWICE - I CAN'T STOP ME",
-          "released": false,
+          "released": true,
           "songKey": "TWICE - I CAN'T STOP ME"
         },
         {
@@ -6524,6 +6554,7 @@
       "PURPLE KISS",
       "RAINBOW",
       "RAINBOW BLAXX",
+      "RANIA",
       "RED VELVET",
       "REOL",
       "RIN",
@@ -6540,6 +6571,7 @@
       "STAYC",
       "STELLAR",
       "STRAY KIDS",
+      "SUNMI",
       "T-ARA",
       "TAEYEON",
       "TAHITI",
