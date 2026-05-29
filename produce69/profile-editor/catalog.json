@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-27T18:16:06.557Z",
-  "generatedAt": "2026-05-27T18:16:07Z",
-  "songCount": 307,
-  "trackCount": 427,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-29T10:05:54.609Z",
+  "generatedAt": "2026-05-29T10:05:57Z",
+  "songCount": 308,
+  "trackCount": 428,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -2319,6 +2319,12 @@
       "songKey": "TWICE - ALCOHOL FREE",
       "stage": "Beach Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "BREAKTHROUGH",
+      "songKey": "TWICE - BREAKTHROUGH",
+      "stage": "Space Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "ONE SPARK",
@@ -6300,9 +6306,9 @@
         },
         {
           "idx": 65,
-          "rawText": "<color=#646464><i>TWICE - BREAKTHROUGH</i></color>",
+          "rawText": "<i>TWICE - BREAKTHROUGH</i>",
           "displayName": "TWICE - BREAKTHROUGH",
-          "released": false,
+          "released": true,
           "songKey": "TWICE - BREAKTHROUGH"
         },
         {
