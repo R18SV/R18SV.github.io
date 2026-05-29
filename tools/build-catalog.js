@@ -87,16 +87,22 @@ function resolveStageDisplay(s) {
   return STAGE_DISPLAY_ALIAS[s] || s;
 }
 
-// RC5 (2026-05-25): RAW list is exposed on the public Web catalog (decision
-// per user 2026-05-25 — Web is the "广而告之" surface). The pre-RC5 plugin
-// HIDDEN_LISTS filter (Season 06/07/08) is retired: those slots have moved
-// to RAW.list.json, and S06/07/08 stay empty as future hidden-list containers.
-// No song is currently filtered out of the public catalog.
+// RC5+ (2026-05-29): RAW list is temporarily HIDDEN from the public Web
+// catalog (user decision — visitor-facing surface should not expose WIP
+// pool yet). Data sync from plugin remains normal: RAW.list.json keeps
+// flowing through Creator → tools, the filter is applied at this build
+// step right before publish. Flip back to `new Set()` to re-expose RAW.
 //
-// In-game runtime hides RAW behind a "Show Raw List?" toggle (off by default).
-// Web has no such toggle — RAW is always visible. This asymmetry is
-// intentional: Web is the showcase, in-game is opt-in.
-const HIDDEN_LISTS = new Set();
+// Effect on output catalog:
+//   - tracks[]:        RAW-only songs dropped (their stagings excluded)
+//   - lists{}:         RAW key omitted entirely (buildListsBundle filter)
+//   - newReleaseSet:   RAW songKeys dropped (defensive, NEW shouldn't list RAW)
+//   - tags.artists:    artists with only RAW songs dropped
+//   - tags.stages:     stages with only RAW songs dropped
+//
+// In-game runtime continues to gate RAW behind `Show Raw List?` toggle
+// (off by default) — see PlaylistController.IsEligibleForRandomPool.
+const HIDDEN_LISTS = new Set(['RAW']);
 
 // Filter tabs surfaced in the editor right-pane. Order is the canonical
 // tab order; the UI uses this to drive its tab strip layout. My Favorites is
@@ -210,7 +216,15 @@ function loadList(listsDir, file) {
 function buildListsBundle(listsDir) {
   const out = {};
   const missing = [];
+  const hidden = [];
   for (const entry of LIST_FILES) {
+    // Drop entire list from the bundle if its name is in HIDDEN_LISTS.
+    // Complements the per-track WIP filter above so the editor never sees
+    // the list as a tab (no chrome leak) — not just empties its content.
+    if (HIDDEN_LISTS.has(entry.key)) {
+      hidden.push(entry.key);
+      continue;
+    }
     const data = loadList(listsDir, entry.file);
     if (!data) {
       missing.push(entry.file);
@@ -224,6 +238,9 @@ function buildListsBundle(listsDir) {
   }
   if (missing.length > 0) {
     console.warn('Missing list files (skipped): ' + missing.join(', '));
+  }
+  if (hidden.length > 0) {
+    console.log('Hidden lists  : ' + hidden.join(', ') + ' (per HIDDEN_LISTS, excluded from bundle)');
   }
   return out;
 }

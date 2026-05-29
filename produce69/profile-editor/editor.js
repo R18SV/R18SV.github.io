@@ -367,6 +367,11 @@ function renderTabStrip() {
 
   if (state.tagMode === 'NORMAL') {
     for (const tab of TAB_CONFIG) {
+      // Defensive: skip any TAB_CONFIG entry whose list isn't in the catalog
+      // bundle. Lets build-catalog.js's HIDDEN_LISTS act as a single source of
+      // truth for hidden lists (currently RAW) — the tab disappears without
+      // any second edit here. TAG pill has no list backing, always shown.
+      if (!tab.isPill && state.catalog && !state.catalog.lists[tab.key]) continue;
       const btn = document.createElement('button');
       btn.className =
         'tab' +
