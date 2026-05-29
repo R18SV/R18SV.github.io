@@ -1,7 +1,7 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-29T16:06:09.656Z",
-  "generatedAt": "2026-05-29T16:06:11Z",
-  "songCount": 327,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-29T17:00:31.526Z",
+  "generatedAt": "2026-05-29T17:00:33Z",
+  "songCount": 341,
   "trackCount": 370,
   "tracks": [
     {
@@ -792,13 +792,13 @@
     },
     {
       "trackId": "RUDE",
-      "songKey": "HEART2HEARTS - RUDE",
+      "songKey": "HEARTS2HEARTS - RUDE",
       "stage": "Times Square Stage",
       "variantNumber": 0
     },
     {
       "trackId": "RUDE 01",
-      "songKey": "HEART2HEARTS - RUDE",
+      "songKey": "HEARTS2HEARTS - RUDE",
       "stage": "Warehouse Stage",
       "variantNumber": 1
     },
@@ -3768,10 +3768,10 @@
       "slots": [
         {
           "idx": 0,
-          "rawText": "<i>HEART2HEARTS - RUDE</i>",
-          "displayName": "HEART2HEARTS - RUDE",
+          "rawText": "<i>HEARTS2HEARTS - RUDE</i>",
+          "displayName": "HEARTS2HEARTS - RUDE",
           "released": true,
-          "songKey": "HEART2HEARTS - RUDE"
+          "songKey": "HEARTS2HEARTS - RUDE"
         },
         {
           "idx": 1,
@@ -5344,7 +5344,7 @@
         },
         {
           "idx": 19,
-          "songKey": "HEART2HEARTS - RUDE",
+          "songKey": "HEARTS2HEARTS - RUDE",
           "from": "S5"
         },
         {
@@ -5515,7 +5515,7 @@
     "GIRL CRUSH - OPPA DO YOU TRUST ME",
     "GIRLS' GENERATION - GENIE",
     "GIRLSET - LITTLE MISS",
-    "HEART2HEARTS - RUDE",
+    "HEARTS2HEARTS - RUDE",
     "HELLOVENUS - I'M ILL",
     "HELLOVENUS - STICKYSTICKY",
     "HWA SA - MARIA",
@@ -5587,7 +5587,6 @@
       "GWSN",
       "H1-KEY",
       "HAL X SUPERCELL",
-      "HEART2HEARTS",
       "HEARTS2HEARTS",
       "HELLOVENUS",
       "HIMEHINA",
