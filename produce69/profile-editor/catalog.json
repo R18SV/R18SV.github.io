@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-30T19:07:34.471Z",
-  "generatedAt": "2026-05-30T19:07:38Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-05-30T19:12:56.246Z",
+  "generatedAt": "2026-05-30T19:12:57Z",
   "songCount": 401,
   "trackCount": 373,
   "tracks": [
@@ -5132,122 +5132,122 @@
       "slots": [
         {
           "idx": 0,
-          "rawText": "<i>MAMAMOO - PIANO MAN</i>",
-          "displayName": "MAMAMOO - PIANO MAN",
-          "released": true,
-          "songKey": "MAMAMOO - PIANO MAN"
-        },
-        {
-          "idx": 1,
-          "rawText": "<i>JUN HYO SEONG - INTO YOU</i>",
-          "displayName": "JUN HYO SEONG - INTO YOU",
-          "released": true,
-          "songKey": "JUN HYO SEONG - INTO YOU"
-        },
-        {
-          "idx": 2,
           "rawText": "<i>AFTER SCHOOL - FIRST LOVE</i>",
           "displayName": "AFTER SCHOOL - FIRST LOVE",
           "released": true,
           "songKey": "AFTER SCHOOL - FIRST LOVE"
         },
         {
-          "idx": 3,
-          "rawText": "<i>ITZY - BOYS LIKE YOU</i>",
-          "displayName": "ITZY - BOYS LIKE YOU",
-          "released": true,
-          "songKey": "ITZY - BOYS LIKE YOU"
-        },
-        {
-          "idx": 4,
-          "rawText": "<i>MOMOLAND - JJAN! KOONG! KWANG!</i>",
-          "displayName": "MOMOLAND - JJAN! KOONG! KWANG!",
-          "released": true,
-          "songKey": "MOMOLAND - JJAN! KOONG! KWANG!"
-        },
-        {
-          "idx": 5,
-          "rawText": "<i>PURPLE KISS - ZOMBIE</i>",
-          "displayName": "PURPLE KISS - ZOMBIE",
-          "released": true,
-          "songKey": "PURPLE KISS - ZOMBIE"
-        },
-        {
-          "idx": 6,
-          "rawText": "<i>GFRIEND - CLICK</i>",
-          "displayName": "GFRIEND - CLICK",
-          "released": true,
-          "songKey": "GFRIEND - CLICK"
-        },
-        {
-          "idx": 7,
-          "rawText": "<i>IVE - SUPERNOVA LOVE</i>",
-          "displayName": "IVE - SUPERNOVA LOVE",
-          "released": true,
-          "songKey": "IVE - SUPERNOVA LOVE"
-        },
-        {
-          "idx": 8,
-          "rawText": "<i>H1-KEY - ATHLETIC GIRL</i>",
-          "displayName": "H1-KEY - ATHLETIC GIRL",
-          "released": true,
-          "songKey": "H1-KEY - ATHLETIC GIRL"
-        },
-        {
-          "idx": 9,
-          "rawText": "<i>NMIXX - BOOM</i>",
-          "displayName": "NMIXX - BOOM",
-          "released": true,
-          "songKey": "NMIXX - BOOM"
-        },
-        {
-          "idx": 10,
-          "rawText": "<i>TWICE - TOUCHDOWN</i>",
-          "displayName": "TWICE - TOUCHDOWN",
-          "released": true,
-          "songKey": "TWICE - TOUCHDOWN"
-        },
-        {
-          "idx": 11,
+          "idx": 1,
           "rawText": "<i>CLC - BLACK DRESS</i>",
           "displayName": "CLC - BLACK DRESS",
           "released": true,
           "songKey": "CLC - BLACK DRESS"
         },
         {
-          "idx": 12,
-          "rawText": "<i>RED VELVET - LADIES NIGHT</i>",
-          "displayName": "RED VELVET - LADIES NIGHT",
+          "idx": 2,
+          "rawText": "<i>GFRIEND - CLICK</i>",
+          "displayName": "GFRIEND - CLICK",
           "released": true,
-          "songKey": "RED VELVET - LADIES NIGHT"
+          "songKey": "GFRIEND - CLICK"
         },
         {
-          "idx": 13,
-          "rawText": "<i>IVE - SUMMER FESTA</i>",
-          "displayName": "IVE - SUMMER FESTA",
-          "released": true,
-          "songKey": "IVE - SUMMER FESTA"
-        },
-        {
-          "idx": 14,
+          "idx": 3,
           "rawText": "<i>GIRLS' GENERATION - HOLIDAY</i>",
           "displayName": "GIRLS' GENERATION - HOLIDAY",
           "released": true,
           "songKey": "GIRLS' GENERATION - HOLIDAY"
         },
         {
-          "idx": 15,
+          "idx": 4,
+          "rawText": "<i>H1-KEY - ATHLETIC GIRL</i>",
+          "displayName": "H1-KEY - ATHLETIC GIRL",
+          "released": true,
+          "songKey": "H1-KEY - ATHLETIC GIRL"
+        },
+        {
+          "idx": 5,
+          "rawText": "<i>ITZY - BOYS LIKE YOU</i>",
+          "displayName": "ITZY - BOYS LIKE YOU",
+          "released": true,
+          "songKey": "ITZY - BOYS LIKE YOU"
+        },
+        {
+          "idx": 6,
           "rawText": "<i>IVE - OFF THE RECORD</i>",
           "displayName": "IVE - OFF THE RECORD",
           "released": true,
           "songKey": "IVE - OFF THE RECORD"
         },
         {
-          "idx": 16,
+          "idx": 7,
+          "rawText": "<i>IVE - SUMMER FESTA</i>",
+          "displayName": "IVE - SUMMER FESTA",
+          "released": true,
+          "songKey": "IVE - SUMMER FESTA"
+        },
+        {
+          "idx": 8,
+          "rawText": "<i>IVE - SUPERNOVA LOVE</i>",
+          "displayName": "IVE - SUPERNOVA LOVE",
+          "released": true,
+          "songKey": "IVE - SUPERNOVA LOVE"
+        },
+        {
+          "idx": 9,
+          "rawText": "<i>JUN HYO SEONG - INTO YOU</i>",
+          "displayName": "JUN HYO SEONG - INTO YOU",
+          "released": true,
+          "songKey": "JUN HYO SEONG - INTO YOU"
+        },
+        {
+          "idx": 10,
+          "rawText": "<i>MAMAMOO - PIANO MAN</i>",
+          "displayName": "MAMAMOO - PIANO MAN",
+          "released": true,
+          "songKey": "MAMAMOO - PIANO MAN"
+        },
+        {
+          "idx": 11,
+          "rawText": "<i>MOMOLAND - JJAN! KOONG! KWANG!</i>",
+          "displayName": "MOMOLAND - JJAN! KOONG! KWANG!",
+          "released": true,
+          "songKey": "MOMOLAND - JJAN! KOONG! KWANG!"
+        },
+        {
+          "idx": 12,
+          "rawText": "<i>NMIXX - BOOM</i>",
+          "displayName": "NMIXX - BOOM",
+          "released": true,
+          "songKey": "NMIXX - BOOM"
+        },
+        {
+          "idx": 13,
+          "rawText": "<i>PURPLE KISS - ZOMBIE</i>",
+          "displayName": "PURPLE KISS - ZOMBIE",
+          "released": true,
+          "songKey": "PURPLE KISS - ZOMBIE"
+        },
+        {
+          "idx": 14,
+          "rawText": "<i>RED VELVET - LADIES NIGHT</i>",
+          "displayName": "RED VELVET - LADIES NIGHT",
+          "released": true,
+          "songKey": "RED VELVET - LADIES NIGHT"
+        },
+        {
+          "idx": 15,
           "rawText": "<i>SONGJIEUN - TWENTY FIVE REMIX</i>",
           "displayName": "SONGJIEUN - TWENTY FIVE REMIX",
           "released": true,
           "songKey": "SONGJIEUN - TWENTY FIVE REMIX"
+        },
+        {
+          "idx": 16,
+          "rawText": "<i>TWICE - TOUCHDOWN</i>",
+          "displayName": "TWICE - TOUCHDOWN",
+          "released": true,
+          "songKey": "TWICE - TOUCHDOWN"
         },
         {
           "idx": 17,
