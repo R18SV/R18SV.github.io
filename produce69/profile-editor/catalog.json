@@ -1,7 +1,7 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-29T21:54:24.175Z",
-  "generatedAt": "2026-05-29T21:54:25Z",
-  "songCount": 378,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-30T10:42:24.673Z",
+  "generatedAt": "2026-05-30T10:42:26Z",
+  "songCount": 388,
   "trackCount": 370,
   "tracks": [
     {
@@ -3734,27 +3734,13 @@
         },
         {
           "idx": 50,
-          "rawText": "<color=#646464><i>ILLIT - LUCKY GIRL SYNDROME</i></color>",
-          "displayName": "ILLIT - LUCKY GIRL SYNDROME",
-          "released": false,
-          "songKey": "ILLIT - LUCKY GIRL SYNDROME"
-        },
-        {
-          "idx": 51,
-          "rawText": "<color=#646464><i>ILLIT - CHERISH MY LOVE</i></color>",
-          "displayName": "ILLIT - CHERISH MY LOVE",
-          "released": false,
-          "songKey": "ILLIT - CHERISH MY LOVE"
-        },
-        {
-          "idx": 52,
           "rawText": "<i>(G)I-DLE - MONO</i>",
           "displayName": "(G)I-DLE - MONO",
           "released": true,
           "songKey": "(G)I-DLE - MONO"
         },
         {
-          "idx": 53,
+          "idx": 51,
           "rawText": "<i>GIRLSET - LITTLE MISS</i>",
           "displayName": "GIRLSET - LITTLE MISS",
           "released": true,
