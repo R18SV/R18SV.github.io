@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-30T19:12:56.246Z",
-  "generatedAt": "2026-05-30T19:12:57Z",
-  "songCount": 401,
-  "trackCount": 373,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-30T19:53:47.052Z",
+  "generatedAt": "2026-05-30T19:53:48Z",
+  "songCount": 403,
+  "trackCount": 374,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -1941,6 +1941,12 @@
       "songKey": "STELLAR - MARIONETTE",
       "stage": "Jail Stage",
       "variantNumber": 2
+    },
+    {
+      "trackId": "VIBRATO Duet",
+      "songKey": "STELLAR - VIBRATO",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "MANIAC",
@@ -5070,59 +5076,59 @@
         },
         {
           "idx": 32,
-          "rawText": "<color=#646464><i>STELLAR - VIBRATO</i></color>",
-          "displayName": "STELLAR - VIBRATO",
-          "released": false,
-          "songKey": "STELLAR - VIBRATO"
-        },
-        {
-          "idx": 33,
           "rawText": "<color=#646464><i>ギガP - DROP POP CANDY</i></color>",
           "displayName": "ギガP - DROP POP CANDY",
           "released": false,
           "songKey": "ギガP - DROP POP CANDY"
         },
         {
-          "idx": 34,
+          "idx": 33,
           "rawText": "<color=#646464><i>ジュビリ - JUBILEE</i></color>",
           "displayName": "ジュビリ - JUBILEE",
           "released": false,
           "songKey": "ジュビリ - JUBILEE"
         },
         {
-          "idx": 35,
+          "idx": 34,
           "rawText": "<i>内田彩 - DIVE TO BLUE</i>",
           "displayName": "内田彩 - DIVE TO BLUE",
           "released": true,
           "songKey": "内田彩 - DIVE TO BLUE"
         },
         {
-          "idx": 36,
+          "idx": 35,
           "rawText": "<i>劉至佳 - 危險派對 DANGER PARTY</i>",
           "displayName": "劉至佳 - 危險派對 DANGER PARTY",
           "released": true,
           "songKey": "劉至佳 - 危險派對 DANGER PARTY"
         },
         {
-          "idx": 37,
+          "idx": 36,
           "rawText": "<i>柿チョコ - KILLER LADY</i>",
           "displayName": "柿チョコ - KILLER LADY",
           "released": true,
           "songKey": "柿チョコ - KILLER LADY"
         },
         {
-          "idx": 38,
+          "idx": 37,
           "rawText": "<i>梅とら - LOVE ME IF YOU CAN</i>",
           "displayName": "梅とら - LOVE ME IF YOU CAN",
           "released": true,
           "songKey": "梅とら - LOVE ME IF YOU CAN"
         },
         {
-          "idx": 39,
+          "idx": 38,
           "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
           "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
           "songKey": "梅とら - MAKES YOU A FIGHTER"
+        },
+        {
+          "idx": 39,
+          "rawText": "<i>STELLAR - VIBRATO</i>",
+          "displayName": "STELLAR - VIBRATO",
+          "released": true,
+          "songKey": "STELLAR - VIBRATO"
         }
       ]
     },
