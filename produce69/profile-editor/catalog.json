@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T13:27:12.048Z",
-  "generatedAt": "2026-05-31T13:27:25Z",
-  "songCount": 405,
-  "trackCount": 376,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T14:14:49.881Z",
+  "generatedAt": "2026-05-31T14:14:51Z",
+  "songCount": 409,
+  "trackCount": 380,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -26,6 +26,12 @@
       "trackId": "MONO",
       "songKey": "(G)I-DLE - MONO",
       "stage": "Multi Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "NXDE",
+      "songKey": "(G)I-DLE - NXDE",
+      "stage": "Strip Club Stage",
       "variantNumber": 0
     },
     {
@@ -1733,6 +1739,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "A",
+      "songKey": "RAINBOW - A",
+      "stage": "Strip Club Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "WHOO",
       "songKey": "RAINBOW - WHOO",
       "stage": "Strip Club Stage",
@@ -1937,6 +1949,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "TEDDY BEAR",
+      "songKey": "STAYC - TEDDY BEAR",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Marionette",
       "songKey": "STELLAR - MARIONETTE",
       "stage": "Illusion Stage",
@@ -2013,6 +2031,12 @@
       "songKey": "T-ARA - NUMBER NINE",
       "stage": "BDSM Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "SUGAR FREE",
+      "songKey": "T-ARA - SUGAR FREE",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Tiamo",
@@ -2468,7 +2492,8 @@
           "rawText": "<color=#646464><i>RAINBOW - A</i></color>",
           "displayName": "RAINBOW - A",
           "released": false,
-          "songKey": "RAINBOW - A"
+          "songKey": "RAINBOW - A",
+          "wipReference": true
         },
         {
           "idx": 29,
@@ -3017,10 +3042,11 @@
         },
         {
           "idx": 52,
-          "rawText": "<color=#646464><i>T-ARA - SUGER FREE</i></color>",
-          "displayName": "T-ARA - SUGER FREE",
+          "rawText": "<color=#646464><i>T-ARA - SUGAR FREE</i></color>",
+          "displayName": "T-ARA - SUGAR FREE",
           "released": false,
-          "songKey": "T-ARA - SUGER FREE"
+          "songKey": "T-ARA - SUGAR FREE",
+          "wipReference": true
         },
         {
           "idx": 53,
@@ -3961,14 +3987,16 @@
           "rawText": "<color=#646464><i>(G)I-DLE - NXDE</i></color>",
           "displayName": "(G)I-DLE - NXDE",
           "released": false,
-          "songKey": "(G)I-DLE - NXDE"
+          "songKey": "(G)I-DLE - NXDE",
+          "wipReference": true
         },
         {
           "idx": 7,
           "rawText": "<i>STAYC - TEDDY BEAR</i>",
           "displayName": "STAYC - TEDDY BEAR",
           "released": false,
-          "songKey": "STAYC - TEDDY BEAR"
+          "songKey": "STAYC - TEDDY BEAR",
+          "wipReference": true
         },
         {
           "idx": 8,
