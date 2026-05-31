@@ -808,7 +808,14 @@ function renderSlot(slot) {
   const clickGroup = getClickGroup(songKey);
   const variants = (clickGroup && state.clickGroupToTracks.get(clickGroup)) || [];
   const isMulti = variants.length > 1;
-  const isComingSoon = slot.released === false || slot.comingSoon === true;
+  // wipReference: slot whose songKey ALSO lives in a hidden list (RAW post-RC5).
+  // Mirrors plugin §46 ShouldGrayAsCrossListRaw — the visible-list slot is a
+  // placeholder/preview, not a release entry, so render same as coming-soon
+  // (gray + non-clickable). Set at catalog build time; see build-catalog.js.
+  const isComingSoon =
+    slot.released === false ||
+    slot.comingSoon === true ||
+    slot.wipReference === true;
   // NEW highlight is a cross-tab cue ("this song is new") — meaningless
   // inside the NEW tab itself where every entry is by definition new.
   const isNew =

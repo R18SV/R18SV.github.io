@@ -1,6 +1,6 @@
 {
   "sourceVersion": "plugin/_songs.json @ 2026-05-31T12:14:09.068Z",
-  "generatedAt": "2026-05-31T12:14:13Z",
+  "generatedAt": "2026-05-31T12:23:21Z",
   "songCount": 404,
   "trackCount": 375,
   "tracks": [
@@ -4980,28 +4980,32 @@
           "rawText": "<i>梅とら - LOVE ME IF YOU CAN</i>",
           "displayName": "梅とら - LOVE ME IF YOU CAN",
           "released": true,
-          "songKey": "梅とら - LOVE ME IF YOU CAN"
+          "songKey": "梅とら - LOVE ME IF YOU CAN",
+          "wipReference": true
         },
         {
           "idx": 18,
           "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
           "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
-          "songKey": "梅とら - MAKES YOU A FIGHTER"
+          "songKey": "梅とら - MAKES YOU A FIGHTER",
+          "wipReference": true
         },
         {
           "idx": 19,
           "rawText": "<i>STELLAR - VIBRATO</i>",
           "displayName": "STELLAR - VIBRATO",
           "released": true,
-          "songKey": "STELLAR - VIBRATO"
+          "songKey": "STELLAR - VIBRATO",
+          "wipReference": true
         },
         {
           "idx": 20,
           "rawText": "<i>HIMEHINA - LADY CRAZY</i>",
           "displayName": "HIMEHINA - LADY CRAZY",
           "released": true,
-          "songKey": "HIMEHINA - LADY CRAZY"
+          "songKey": "HIMEHINA - LADY CRAZY",
+          "wipReference": true
         }
       ]
     },

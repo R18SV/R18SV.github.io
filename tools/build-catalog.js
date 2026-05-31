@@ -191,6 +191,27 @@ function computeWipSongKeys(songKeyToLists, hiddenSet) {
   return wip;
 }
 
+// Songs that appear in at least one hidden list AND at least one visible list
+// (= cross-list WIP, distinct from wipSongKeys which are hidden-list-EXCLUSIVE).
+// These tracks stay in catalog tracks[] (so user favorites of them resolve
+// correctly and TAG drill can surface them as fav-discovery candidates), but
+// their slot in the visible list must render as a gray placeholder per spec §46
+// — the visible-list slot is a preview/placeholder, not a release entry.
+function computeWipCrossListSongKeys(songKeyToLists, hiddenSet) {
+  const set = new Set();
+  for (const [sk, lists] of songKeyToLists) {
+    let hasHidden = false;
+    let hasVisible = false;
+    for (const l of lists) {
+      if (hiddenSet.has(l)) hasHidden = true;
+      else                  hasVisible = true;
+      if (hasHidden && hasVisible) break;
+    }
+    if (hasHidden && hasVisible) set.add(sk);
+  }
+  return set;
+}
+
 function computeWipTrackIds(songsRaw, wipSongKeys) {
   const ids = new Set();
   for (const sk of wipSongKeys) {
@@ -213,10 +234,11 @@ function loadList(listsDir, file) {
   return JSON.parse(txt);
 }
 
-function buildListsBundle(listsDir) {
+function buildListsBundle(listsDir, wipCrossListSongKeys) {
   const out = {};
   const missing = [];
   const hidden = [];
+  let crossListFlagged = 0;
   for (const entry of LIST_FILES) {
     // Drop entire list from the bundle if its name is in HIDDEN_LISTS.
     // Complements the per-track WIP filter above so the editor never sees
@@ -230,10 +252,22 @@ function buildListsBundle(listsDir) {
       missing.push(entry.file);
       continue;
     }
+    const slots = Array.isArray(data.slots) ? data.slots.map(s => {
+      // Mirror plugin §46 ShouldGrayAsCrossListRaw: if this slot's songKey
+      // also lives in a hidden list (RAW), tag the slot so the editor
+      // renders it as a gray placeholder (same treatment as comingSoon).
+      // Slot object is copied (don't mutate the parsed source) and the flag
+      // is only added when truthy so existing slots remain byte-identical.
+      if (wipCrossListSongKeys && s.songKey && wipCrossListSongKeys.has(s.songKey)) {
+        crossListFlagged++;
+        return Object.assign({}, s, { wipReference: true });
+      }
+      return s;
+    }) : [];
     out[entry.key] = {
       name: data.name || entry.key,
       slotCount: typeof data.slotCount === 'number' ? data.slotCount : 54,
-      slots: Array.isArray(data.slots) ? data.slots : []
+      slots: slots
     };
   }
   if (missing.length > 0) {
@@ -241,6 +275,9 @@ function buildListsBundle(listsDir) {
   }
   if (hidden.length > 0) {
     console.log('Hidden lists  : ' + hidden.join(', ') + ' (per HIDDEN_LISTS, excluded from bundle)');
+  }
+  if (crossListFlagged > 0) {
+    console.log('Cross-list WIP: ' + crossListFlagged + ' slot(s) flagged wipReference=true (gray-render in editor)');
   }
   return out;
 }
@@ -296,9 +333,10 @@ function main() {
   const songKeyToLists = buildSongKeyToLists(listsDir);
   const wipSongKeys = computeWipSongKeys(songKeyToLists, HIDDEN_LISTS);
   const wipTrackIds = computeWipTrackIds(songsRaw, wipSongKeys);
+  const wipCrossListSongKeys = computeWipCrossListSongKeys(songKeyToLists, HIDDEN_LISTS);
 
   const tracks = buildTracks(songsRaw, wipSongKeys);
-  const lists = buildListsBundle(listsDir);
+  const lists = buildListsBundle(listsDir, wipCrossListSongKeys);
   const newReleaseSet = deriveNewReleaseSet(lists['New'])
     .filter(sk => !wipSongKeys.has(sk));
   const artists = deriveArtists(tracks);
