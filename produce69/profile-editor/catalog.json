@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T16:59:32.174Z",
-  "generatedAt": "2026-05-31T16:59:34Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T17:04:23.196Z",
+  "generatedAt": "2026-05-31T17:04:24Z",
   "songCount": 441,
   "trackCount": 410,
   "tracks": [
@@ -1633,7 +1633,7 @@
     {
       "trackId": "BAAM",
       "songKey": "MOMOLAND - BAAM",
-      "stage": "Illusion Stage",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -4403,9 +4403,9 @@
         },
         {
           "idx": 36,
-          "rawText": "<color=#646464><i>MOMOLAND - BAAM</i></color>",
+          "rawText": "<i>MOMOLAND - BAAM</i>",
           "displayName": "MOMOLAND - BAAM",
-          "released": false,
+          "released": true,
           "songKey": "MOMOLAND - BAAM",
           "wipReference": true
         },
