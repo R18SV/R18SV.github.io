@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T17:04:23.196Z",
-  "generatedAt": "2026-05-31T17:04:24Z",
-  "songCount": 441,
-  "trackCount": 410,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T17:34:59.745Z",
+  "generatedAt": "2026-05-31T17:35:01Z",
+  "songCount": 443,
+  "trackCount": 413,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -497,6 +497,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "STAY TONIGHT",
+      "songKey": "CHUNG HA - STAY TONIGHT",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "BLACK DRESS EP",
       "songKey": "CLC - BLACK DRESS",
       "stage": "After The Rain Stage",
@@ -662,6 +668,18 @@
       "trackId": "POOKIE",
       "songKey": "FIFTY FIFTY - POOKIE",
       "stage": "Times Square Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "KKILI KKILI Duet",
+      "songKey": "G-REYISH - KKILI KKILI",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "KKILI KKILI Single",
+      "songKey": "G-REYISH - KKILI KKILI",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -2666,7 +2684,8 @@
           "rawText": "<color=#646464><i>CHUNG HA - STAY TONIGHT</i></color>",
           "displayName": "CHUNG HA - STAY TONIGHT",
           "released": false,
-          "songKey": "CHUNG HA - STAY TONIGHT"
+          "songKey": "CHUNG HA - STAY TONIGHT",
+          "wipReference": true
         },
         {
           "idx": 28,
@@ -4478,7 +4497,8 @@
           "rawText": "<color=#646464><i>G-REYISH - KKILI KKILI</i></color>",
           "displayName": "G-REYISH - KKILI KKILI",
           "released": false,
-          "songKey": "G-REYISH - KKILI KKILI"
+          "songKey": "G-REYISH - KKILI KKILI",
+          "wipReference": true
         },
         {
           "idx": 47,
@@ -5102,6 +5122,13 @@
       "slotCount": 54,
       "slots": [
         {
+          "idx": 0,
+          "rawText": "<i>IRONMOUSE - DEVIL</i>",
+          "displayName": "IRONMOUSE - DEVIL",
+          "released": true,
+          "songKey": "IRONMOUSE - DEVIL"
+        },
+        {
           "idx": 1,
           "rawText": "<i>(G)I-DLE - EMPIRE</i>",
           "displayName": "(G)I-DLE - EMPIRE",
@@ -5163,13 +5190,6 @@
           "displayName": "HYUNA - LIP & HIP",
           "released": true,
           "songKey": "HYUNA - LIP & HIP"
-        },
-        {
-          "idx": 0,
-          "rawText": "<i>IRONMOUSE - DEVIL</i>",
-          "displayName": "IRONMOUSE - DEVIL",
-          "released": true,
-          "songKey": "IRONMOUSE - DEVIL"
         },
         {
           "idx": 10,
@@ -5250,6 +5270,14 @@
           "displayName": "HIMEHINA - LADY CRAZY",
           "released": true,
           "songKey": "HIMEHINA - LADY CRAZY",
+          "wipReference": true
+        },
+        {
+          "idx": 21,
+          "rawText": "<i>G-REYISH - KKILI KKILI</i>",
+          "displayName": "G-REYISH - KKILI KKILI",
+          "released": true,
+          "songKey": "G-REYISH - KKILI KKILI",
           "wipReference": true
         }
       ]
@@ -5711,6 +5739,7 @@
       "F(X)",
       "FIESTAR",
       "FIFTY FIFTY",
+      "G-REYISH",
       "GARNIDELIA",
       "GFRIEND",
       "GIRL CRUSH",
