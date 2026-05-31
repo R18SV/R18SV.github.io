@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T17:34:59.745Z",
-  "generatedAt": "2026-05-31T17:35:01Z",
-  "songCount": 443,
-  "trackCount": 413,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T17:54:07.882Z",
+  "generatedAt": "2026-05-31T17:54:09Z",
+  "songCount": 444,
+  "trackCount": 414,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -183,6 +183,12 @@
       "songKey": "AESPA - DRAMA",
       "stage": "Manor Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "A GIRLS",
+      "songKey": "AESPA - GIRLS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "NEXT LEVEL",
@@ -2598,7 +2604,8 @@
           "rawText": "<color=#646464><i>AESPA - GIRLS</i></color>",
           "displayName": "AESPA - GIRLS",
           "released": false,
-          "songKey": "AESPA - GIRLS"
+          "songKey": "AESPA - GIRLS",
+          "wipReference": true
         },
         {
           "idx": 16,
