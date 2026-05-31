@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-30T19:53:47.052Z",
-  "generatedAt": "2026-05-30T19:53:48Z",
-  "songCount": 403,
-  "trackCount": 374,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T00:57:50.668Z",
+  "generatedAt": "2026-05-31T00:57:52Z",
+  "songCount": 404,
+  "trackCount": 375,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -849,6 +849,12 @@
       "songKey": "HELLOVENUS - STICKYSTICKY",
       "stage": "Talk Show Stage",
       "variantNumber": 3
+    },
+    {
+      "trackId": "LADY CRAZY Duet",
+      "songKey": "HIMEHINA - LADY CRAZY",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Heart Pie Dance Hall Duet",
@@ -4851,284 +4857,151 @@
       "slotCount": 54,
       "slots": [
         {
-          "idx": 0,
+          "idx": 1,
           "rawText": "<i>(G)I-DLE - EMPIRE</i>",
           "displayName": "(G)I-DLE - EMPIRE",
           "released": true,
           "songKey": "(G)I-DLE - EMPIRE"
         },
         {
-          "idx": 1,
+          "idx": 2,
           "rawText": "<i>(G)I-DLE - QUEENCARD</i>",
           "displayName": "(G)I-DLE - QUEENCARD",
           "released": true,
           "songKey": "(G)I-DLE - QUEENCARD"
         },
         {
-          "idx": 2,
+          "idx": 3,
           "rawText": "<i>(G)I-DLE - WIFE</i>",
           "displayName": "(G)I-DLE - WIFE",
           "released": true,
           "songKey": "(G)I-DLE - WIFE"
         },
         {
-          "idx": 3,
-          "rawText": "<color=#646464><i>96NEKO - MASKED BITCH</i></color>",
-          "displayName": "96NEKO - MASKED BITCH",
-          "released": false,
-          "songKey": "96NEKO - MASKED BITCH"
-        },
-        {
           "idx": 4,
-          "rawText": "<color=#646464><i>96NEKO - 虎視眈々</i></color>",
-          "displayName": "96NEKO - 虎視眈々",
-          "released": false,
-          "songKey": "96NEKO - 虎視眈々"
-        },
-        {
-          "idx": 5,
           "rawText": "<i>ADO - MIRROR</i>",
           "displayName": "ADO - MIRROR",
           "released": true,
           "songKey": "ADO - MIRROR"
         },
         {
-          "idx": 6,
+          "idx": 5,
           "rawText": "<i>BABYMONSTER - PSYCHO</i>",
           "displayName": "BABYMONSTER - PSYCHO",
           "released": true,
           "songKey": "BABYMONSTER - PSYCHO"
         },
         {
-          "idx": 7,
-          "rawText": "<color=#646464><i>BADKIZ - COME CLOSER</i></color>",
-          "displayName": "BADKIZ - COME CLOSER",
-          "released": false,
-          "songKey": "BADKIZ - COME CLOSER"
-        },
-        {
-          "idx": 8,
-          "rawText": "<color=#646464><i>BIKINI DANCE</i></color>",
-          "displayName": "BIKINI DANCE",
-          "released": false,
-          "songKey": "BIKINI DANCE"
-        },
-        {
-          "idx": 9,
-          "rawText": "<color=#646464><i>BLACKPINK - KILL THIS LOVE</i></color>",
-          "displayName": "BLACKPINK - KILL THIS LOVE",
-          "released": false,
-          "songKey": "BLACKPINK - KILL THIS LOVE"
-        },
-        {
-          "idx": 10,
+          "idx": 6,
           "rawText": "<i>CHANESS - SESESE</i>",
           "displayName": "CHANESS - SESESE",
           "released": true,
           "songKey": "CHANESS - SESESE"
         },
         {
-          "idx": 11,
-          "rawText": "<color=#646464><i>EXID - UP & DOWN</i></color>",
-          "displayName": "EXID - UP & DOWN",
-          "released": false,
-          "songKey": "EXID - UP & DOWN"
-        },
-        {
-          "idx": 12,
-          "rawText": "<color=#646464><i>G-REYISH - KKILI KKILI</i></color>",
-          "displayName": "G-REYISH - KKILI KKILI",
-          "released": false,
-          "songKey": "G-REYISH - KKILI KKILI"
-        },
-        {
-          "idx": 13,
-          "rawText": "<color=#646464><i>GARNIDELIA - TOUGEN RENKA</i></color>",
-          "displayName": "GARNIDELIA - TOUGEN RENKA",
-          "released": false,
-          "songKey": "GARNIDELIA - TOUGEN RENKA"
-        },
-        {
-          "idx": 14,
-          "rawText": "<color=#646464><i>GIRL CRUSH - OPPA DO YOU</i></color>",
-          "displayName": "GIRL CRUSH - OPPA DO YOU",
-          "released": false,
-          "songKey": "GIRL CRUSH - OPPA DO YOU"
-        },
-        {
-          "idx": 15,
+          "idx": 7,
           "rawText": "<i>GIRLS' GENERATION - GEE</i>",
           "displayName": "GIRLS' GENERATION - GEE",
           "released": true,
           "songKey": "GIRLS' GENERATION - GEE"
         },
         {
-          "idx": 16,
-          "rawText": "<color=#646464><i>HAM - SO SEXY</i></color>",
-          "displayName": "HAM - SO SEXY",
-          "released": false,
-          "songKey": "HAM - SO SEXY"
-        },
-        {
-          "idx": 17,
+          "idx": 8,
           "rawText": "<i>HIMEHINA - 愛包ダンスホール</i>",
           "displayName": "HIMEHINA - 愛包ダンスホール",
           "released": true,
           "songKey": "HIMEHINA - 愛包ダンスホール"
         },
         {
-          "idx": 18,
+          "idx": 9,
           "rawText": "<i>HYUNA - LIP & HIP</i>",
           "displayName": "HYUNA - LIP & HIP",
           "released": true,
           "songKey": "HYUNA - LIP & HIP"
         },
         {
-          "idx": 19,
+          "idx": 0,
           "rawText": "<i>IRONMOUSE - DEVIL</i>",
           "displayName": "IRONMOUSE - DEVIL",
           "released": true,
           "songKey": "IRONMOUSE - DEVIL"
         },
         {
-          "idx": 20,
-          "rawText": "<color=#646464><i>LAYSHA - CHOCOLATE CREAM</i></color>",
-          "displayName": "LAYSHA - CHOCOLATE CREAM",
-          "released": false,
-          "songKey": "LAYSHA - CHOCOLATE CREAM"
-        },
-        {
-          "idx": 21,
-          "rawText": "<color=#646464><i>LAYSHA - PINK LABEL</i></color>",
-          "displayName": "LAYSHA - PINK LABEL",
-          "released": false,
-          "songKey": "LAYSHA - PINK LABEL"
-        },
-        {
-          "idx": 22,
+          "idx": 10,
           "rawText": "<i>MIKU - DO RE MI FA MIX</i>",
           "displayName": "MIKU - DO RE MI FA MIX",
           "released": true,
           "songKey": "MIKU - DO RE MI FA MIX"
         },
         {
-          "idx": 23,
-          "rawText": "<color=#646464><i>MIKU - TELL YOUR WORLD</i></color>",
-          "displayName": "MIKU - TELL YOUR WORLD",
-          "released": false,
-          "songKey": "MIKU - TELL YOUR WORLD"
-        },
-        {
-          "idx": 24,
-          "rawText": "<color=#646464><i>MOMOLAND - BAAM</i></color>",
-          "displayName": "MOMOLAND - BAAM",
-          "released": false,
-          "songKey": "MOMOLAND - BAAM"
-        },
-        {
-          "idx": 25,
+          "idx": 11,
           "rawText": "<i>NASTY NASTY - KNOCK</i>",
           "displayName": "NASTY NASTY - KNOCK",
           "released": true,
           "songKey": "NASTY NASTY - KNOCK"
         },
         {
-          "idx": 26,
-          "rawText": "<color=#646464><i>OH MY GIRL - DOLPHIN</i></color>",
-          "displayName": "OH MY GIRL - DOLPHIN",
-          "released": false,
-          "songKey": "OH MY GIRL - DOLPHIN"
-        },
-        {
-          "idx": 27,
-          "rawText": "<color=#646464><i>PERFUME - HURLY BURLY</i></color>",
-          "displayName": "PERFUME - HURLY BURLY",
-          "released": false,
-          "songKey": "PERFUME - HURLY BURLY"
-        },
-        {
-          "idx": 28,
+          "idx": 12,
           "rawText": "<i>PHAO - 2 PHUT HON</i>",
           "displayName": "PHAO - 2 PHUT HON",
           "released": true,
           "songKey": "PHAO - 2 PHUT HON"
         },
         {
-          "idx": 29,
-          "rawText": "<color=#646464><i>RED VELVET - FEEL MY RHYTHM</i></color>",
-          "displayName": "RED VELVET - FEEL MY RHYTHM",
-          "released": false,
-          "songKey": "RED VELVET - FEEL MY RHYTHM"
-        },
-        {
-          "idx": 30,
+          "idx": 13,
           "rawText": "<i>RED VELVET - MONSTER</i>",
           "displayName": "RED VELVET - MONSTER",
           "released": true,
           "songKey": "RED VELVET - MONSTER"
         },
         {
-          "idx": 31,
-          "rawText": "<color=#646464><i>REOL - ヒビカセ HIBIKASE</i></color>",
-          "displayName": "REOL - ヒビカセ HIBIKASE",
-          "released": false,
-          "songKey": "REOL - ヒビカセ HIBIKASE"
-        },
-        {
-          "idx": 32,
-          "rawText": "<color=#646464><i>ギガP - DROP POP CANDY</i></color>",
-          "displayName": "ギガP - DROP POP CANDY",
-          "released": false,
-          "songKey": "ギガP - DROP POP CANDY"
-        },
-        {
-          "idx": 33,
-          "rawText": "<color=#646464><i>ジュビリ - JUBILEE</i></color>",
-          "displayName": "ジュビリ - JUBILEE",
-          "released": false,
-          "songKey": "ジュビリ - JUBILEE"
-        },
-        {
-          "idx": 34,
+          "idx": 14,
           "rawText": "<i>内田彩 - DIVE TO BLUE</i>",
           "displayName": "内田彩 - DIVE TO BLUE",
           "released": true,
           "songKey": "内田彩 - DIVE TO BLUE"
         },
         {
-          "idx": 35,
+          "idx": 15,
           "rawText": "<i>劉至佳 - 危險派對 DANGER PARTY</i>",
           "displayName": "劉至佳 - 危險派對 DANGER PARTY",
           "released": true,
           "songKey": "劉至佳 - 危險派對 DANGER PARTY"
         },
         {
-          "idx": 36,
+          "idx": 16,
           "rawText": "<i>柿チョコ - KILLER LADY</i>",
           "displayName": "柿チョコ - KILLER LADY",
           "released": true,
           "songKey": "柿チョコ - KILLER LADY"
         },
         {
-          "idx": 37,
+          "idx": 17,
           "rawText": "<i>梅とら - LOVE ME IF YOU CAN</i>",
           "displayName": "梅とら - LOVE ME IF YOU CAN",
           "released": true,
           "songKey": "梅とら - LOVE ME IF YOU CAN"
         },
         {
-          "idx": 38,
+          "idx": 18,
           "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
           "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
           "songKey": "梅とら - MAKES YOU A FIGHTER"
         },
         {
-          "idx": 39,
+          "idx": 19,
           "rawText": "<i>STELLAR - VIBRATO</i>",
           "displayName": "STELLAR - VIBRATO",
           "released": true,
           "songKey": "STELLAR - VIBRATO"
+        },
+        {
+          "idx": 20,
+          "rawText": "<i>HIMEHINA - LADY CRAZY</i>",
+          "displayName": "HIMEHINA - LADY CRAZY",
+          "released": true,
+          "songKey": "HIMEHINA - LADY CRAZY"
         }
       ]
     },
