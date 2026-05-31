@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T17:54:07.882Z",
-  "generatedAt": "2026-05-31T17:54:09Z",
-  "songCount": 444,
-  "trackCount": 414,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T19:03:58.131Z",
+  "generatedAt": "2026-05-31T19:03:59Z",
+  "songCount": 449,
+  "trackCount": 419,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -971,6 +971,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "ONE WAY LOVE",
+      "songKey": "HYOLYN - ONE WAY LOVE",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "SAY MY NAME",
       "songKey": "HYOLYN - SAY MY NAME",
       "stage": "Studio Stage",
@@ -1034,6 +1040,12 @@
       "trackId": "RED",
       "songKey": "HYUNA - RED",
       "stage": "Orc Camp Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "ROLL DEEP",
+      "songKey": "HYUNA - ROLL DEEP",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1352,6 +1364,12 @@
       "trackId": "Mister",
       "songKey": "KARA - MISTER",
       "stage": "Warehouse Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "STEP",
+      "songKey": "KARA - STEP",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -2081,6 +2099,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "WHAT YOU WAITING FOR",
+      "songKey": "SOMI - WHAT YOU WAITING FOR",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Twenty Five EP",
       "songKey": "SONGJIEUN - TWENTY FIVE REMIX",
       "stage": "Office Stage",
@@ -2239,6 +2263,12 @@
     {
       "trackId": "FANCY",
       "songKey": "TWICE - FANCY",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "MORE & MORE",
+      "songKey": "TWICE - MORE & MORE",
       "stage": "KISS Stage",
       "variantNumber": 0
     },
@@ -2721,7 +2751,8 @@
           "rawText": "<color=#646464><i>HYOLYN - ONE WAY LOVE</i></color>",
           "displayName": "HYOLYN - ONE WAY LOVE",
           "released": false,
-          "songKey": "HYOLYN - ONE WAY LOVE"
+          "songKey": "HYOLYN - ONE WAY LOVE",
+          "wipReference": true
         },
         {
           "idx": 32,
@@ -4327,7 +4358,8 @@
           "rawText": "<color=#646464><i>SOMI - WHAT YOU WAITING FOR</i></color>",
           "displayName": "SOMI - WHAT YOU WAITING FOR",
           "released": false,
-          "songKey": "SOMI - WHAT YOU WAITING FOR"
+          "songKey": "SOMI - WHAT YOU WAITING FOR",
+          "wipReference": true
         },
         {
           "idx": 22,
@@ -4447,7 +4479,8 @@
           "rawText": "<color=#646464><i>KARA - STEP</i></color>",
           "displayName": "KARA - STEP",
           "released": false,
-          "songKey": "KARA - STEP"
+          "songKey": "KARA - STEP",
+          "wipReference": true
         },
         {
           "idx": 39,
@@ -4490,7 +4523,8 @@
           "rawText": "<color=#646464><i>TWICE - MORE & MORE</i></color>",
           "displayName": "TWICE - MORE & MORE",
           "released": false,
-          "songKey": "TWICE - MORE & MORE"
+          "songKey": "TWICE - MORE & MORE",
+          "wipReference": true
         },
         {
           "idx": 45,
@@ -4527,7 +4561,8 @@
           "rawText": "<color=#646464><i>HYUNA - ROLL DEEP</i></color> ",
           "displayName": "HYUNA - ROLL DEEP",
           "released": false,
-          "songKey": "HYUNA - ROLL DEEP"
+          "songKey": "HYUNA - ROLL DEEP",
+          "wipReference": true
         },
         {
           "idx": 50,
