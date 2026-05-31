@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T14:14:49.881Z",
-  "generatedAt": "2026-05-31T14:14:51Z",
-  "songCount": 409,
-  "trackCount": 380,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T16:59:32.174Z",
+  "generatedAt": "2026-05-31T16:59:34Z",
+  "songCount": 441,
+  "trackCount": 410,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -89,6 +89,18 @@
       "variantNumber": 0
     },
     {
+      "trackId": "MASH UP",
+      "songKey": "2NE1 - MASH UP",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "4 CRAZY",
+      "songKey": "4 MINUTE - CRAZY",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Volume Up",
       "songKey": "4 MINUTE - VOLUME UP",
       "stage": "Space Stage",
@@ -171,6 +183,12 @@
       "songKey": "AESPA - DRAMA",
       "stage": "Manor Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "NEXT LEVEL",
+      "songKey": "AESPA - NEXT LEVEL",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Savage",
@@ -377,9 +395,21 @@
       "variantNumber": 0
     },
     {
+      "trackId": "CRAZY OVER YOU",
+      "songKey": "BLACKPINK - CRAZY OVER YOU",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "DDUDUDDUDU",
       "songKey": "BLACKPINK - DDU-DU DDU",
       "stage": "Concert Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "DON'T KNOW WHAT TO DO",
+      "songKey": "BLACKPINK - DON'T KNOW WHAT TO DO",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -404,6 +434,12 @@
       "trackId": "WHISTLE",
       "songKey": "BLACKPINK - WHISTLE",
       "stage": "Jail Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "FORGIVE ME",
+      "songKey": "BOA - FORGIVE ME",
+      "stage": "Strip Club Stage",
       "variantNumber": 0
     },
     {
@@ -560,6 +596,12 @@
       "trackId": "Addiction",
       "songKey": "EVO+ - [A] DDICTION",
       "stage": "Mermaid Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "AH YEAH",
+      "songKey": "EXID - AH YEAH",
+      "stage": "Strip Club Stage",
       "variantNumber": 0
     },
     {
@@ -989,6 +1031,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "CONQUEROR",
+      "songKey": "IA - CONQUEROR",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Do the Dance",
       "songKey": "ILLIT - DO THE DANCE",
       "stage": "Manor Stage",
@@ -1025,6 +1073,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "DEEP BLUE TOWN",
+      "songKey": "IMARINE - DEEP BLUE TOWN",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "SeaBreeze",
       "songKey": "IMARINE - SEABREEZE",
       "stage": "Mermaid Stage",
@@ -1034,6 +1088,12 @@
       "trackId": "IRON Devil",
       "songKey": "IRONMOUSE - DEVIL",
       "stage": "Manor Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "BLAH BLAH BLAH",
+      "songKey": "ITZY - BLAH BLAH BLAH",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1057,6 +1117,12 @@
     {
       "trackId": "LOCO",
       "songKey": "ITZY - LOCO",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "MAFIA IN THE MORNING",
+      "songKey": "ITZY - MAFIA IN THE MORNING",
       "stage": "Illusion Stage",
       "variantNumber": 0
     },
@@ -1125,6 +1191,12 @@
       "songKey": "IVE - KITSCH",
       "stage": "After The Rain Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "LOVE DIVE + AFTER LIKE",
+      "songKey": "IVE - LOVE DIVE + AFTER LIKE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Off the Record EP",
@@ -1283,6 +1355,18 @@
       "variantNumber": 1
     },
     {
+      "trackId": "POPSTARS",
+      "songKey": "KDA - POPSTARS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "WA DA DA",
+      "songKey": "KEP1ER - WA DA DA",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Lips Hips Kiss",
       "songKey": "KISS OF LIFE - LIPS HIPS KISS",
       "stage": "After The Rain Stage",
@@ -1298,6 +1382,12 @@
       "trackId": "Nothing",
       "songKey": "KISS OF LIFE - NOTHING",
       "stage": "Talk Show Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "SHHH",
+      "songKey": "KISS OF LIFE - SHHH",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -1352,6 +1442,12 @@
       "trackId": "Pink Label Single",
       "songKey": "LAYSHA - PINK LABEL",
       "stage": "Cave Playroom Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "ANTIFRAGILE",
+      "songKey": "LE SSERAFIM - ANTIFRAGILE",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1431,6 +1527,12 @@
       "songKey": "LOOSSEMBLE - TTYL",
       "stage": "Cave Playroom Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "UNO",
+      "songKey": "MADEIN - UNO",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "ILLELLA",
@@ -1529,6 +1631,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "BAAM",
+      "songKey": "MOMOLAND - BAAM",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Jjan Koong Kwang EP",
       "songKey": "MOMOLAND - JJAN! KOONG! KWANG!",
       "stage": "Strip Club Stage",
@@ -1563,6 +1671,12 @@
       "songKey": "NAYEON - POP!",
       "stage": "Times Square Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "ASAP",
+      "songKey": "NEW JEANS - ASAP",
+      "stage": "Strip Club Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Attention",
@@ -1661,9 +1775,21 @@
       "variantNumber": 0
     },
     {
+      "trackId": "LOVE ME LIKE THIS",
+      "songKey": "NMIXX - LOVE ME LIKE THIS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "OO",
       "songKey": "NMIXX - O.O",
       "stage": "Space Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "AIR FORCE ONE",
+      "songKey": "ODD EYE CIRCLE - AIR FORCE ONE",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1775,6 +1901,12 @@
       "variantNumber": 2
     },
     {
+      "trackId": "BAD BOY",
+      "songKey": "RED VELVET - BAD BOY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Feel My Rhythm Single",
       "songKey": "RED VELVET - FEEL MY RHYTHM",
       "stage": "Manor Stage",
@@ -1853,6 +1985,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "MMOOK JJI BBA",
+      "songKey": "SATURDAY - MMOOK JJI BBA",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Got That Boom",
       "songKey": "SECRET NUMBER - GOT THAT BOOM",
       "stage": "Space Stage",
@@ -1899,6 +2037,12 @@
       "songKey": "SISTER - SHAKE IT",
       "stage": "Times Square Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "SPIT IT OUT",
+      "songKey": "SOLAR - SPIT IT OUT",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Fast Forward",
@@ -2069,6 +2213,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "FANCY",
+      "songKey": "TWICE - FANCY",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "ONE SPARK",
       "songKey": "TWICE - ONE SPARK",
       "stage": "Beach Stage",
@@ -2093,6 +2243,18 @@
       "variantNumber": 1
     },
     {
+      "trackId": "TALK THAT TALK",
+      "songKey": "TWICE - TALK THAT TALK",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "THE FEELS",
+      "songKey": "TWICE - THE FEELS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "THIS IS FOR 01",
       "songKey": "TWICE - THIS IS FOR",
       "stage": "After The Rain Stage",
@@ -2114,6 +2276,18 @@
       "trackId": "Untie EP",
       "songKey": "VIVIZ - UNTIE",
       "stage": "Tunnel Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "GISHIN ANKI",
+      "songKey": "VOCALOID - GISHIN ANKI 疑心暗鬼",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "HMPH",
+      "songKey": "WJSN - HMPH!",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -2145,6 +2319,12 @@
       "songKey": "XG - HYPNOTIZE",
       "stage": "Cave Playroom Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "PUPPET SHOW",
+      "songKey": "XG - PUPPET SHOW",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Catch Catch",
@@ -2446,10 +2626,11 @@
         },
         {
           "idx": 22,
-          "rawText": "<color=#646464><i>SATURDAY - MMOOK JJI BBA</i></color>",
+          "rawText": "<i>SATURDAY - MMOOK JJI BBA</i>",
           "displayName": "SATURDAY - MMOOK JJI BBA",
           "released": false,
-          "songKey": "SATURDAY - MMOOK JJI BBA"
+          "songKey": "SATURDAY - MMOOK JJI BBA",
+          "wipReference": true
         },
         {
           "idx": 23,
@@ -2570,7 +2751,8 @@
           "rawText": "<color=#646464><i>IMARINE - DEEP BLUE TOWN</i></color>",
           "displayName": "IMARINE - DEEP BLUE TOWN",
           "released": false,
-          "songKey": "IMARINE - DEEP BLUE TOWN"
+          "songKey": "IMARINE - DEEP BLUE TOWN",
+          "wipReference": true
         },
         {
           "idx": 40,
@@ -2605,7 +2787,8 @@
           "rawText": "<color=#646464><i>XG - PUPPET SHOW</i></color>",
           "displayName": "XG - PUPPET SHOW",
           "released": false,
-          "songKey": "XG - PUPPET SHOW"
+          "songKey": "XG - PUPPET SHOW",
+          "wipReference": true
         },
         {
           "idx": 45,
@@ -2702,7 +2885,8 @@
           "rawText": "<color=#646464><i>KISS OF LIFE - SHHH</i></color>",
           "displayName": "KISS OF LIFE - SHHH",
           "released": false,
-          "songKey": "KISS OF LIFE - SHHH"
+          "songKey": "KISS OF LIFE - SHHH",
+          "wipReference": true
         },
         {
           "idx": 4,
@@ -2758,7 +2942,8 @@
           "rawText": "<color=#646464><i>ODD EYE CIRCLE - AIR FORCE ONE</i></color>",
           "displayName": "ODD EYE CIRCLE - AIR FORCE ONE",
           "released": false,
-          "songKey": "ODD EYE CIRCLE - AIR FORCE ONE"
+          "songKey": "ODD EYE CIRCLE - AIR FORCE ONE",
+          "wipReference": true
         },
         {
           "idx": 12,
@@ -2814,14 +2999,16 @@
           "rawText": "<color=#646464><i>IVE - LOVE DIVE + AFTER LIKE</i></color>",
           "displayName": "IVE - LOVE DIVE + AFTER LIKE",
           "released": false,
-          "songKey": "IVE - LOVE DIVE + AFTER LIKE"
+          "songKey": "IVE - LOVE DIVE + AFTER LIKE",
+          "wipReference": true
         },
         {
           "idx": 20,
           "rawText": "<color=#646464><i>KDA - POPSTARS</i></color>",
           "displayName": "KDA - POPSTARS",
           "released": false,
-          "songKey": "KDA - POPSTARS"
+          "songKey": "KDA - POPSTARS",
+          "wipReference": true
         },
         {
           "idx": 21,
@@ -2863,7 +3050,8 @@
           "rawText": "<color=#646464><i>LE SSERAFIM - ANTIFRAGILE</i></color>",
           "displayName": "LE SSERAFIM - ANTIFRAGILE",
           "released": false,
-          "songKey": "LE SSERAFIM - ANTIFRAGILE"
+          "songKey": "LE SSERAFIM - ANTIFRAGILE",
+          "wipReference": true
         },
         {
           "idx": 27,
@@ -2877,14 +3065,16 @@
           "rawText": "<color=#646464><i>KEP1ER - WA DA DA</i></color>",
           "displayName": "KEP1ER - WA DA DA",
           "released": false,
-          "songKey": "KEP1ER - WA DA DA"
+          "songKey": "KEP1ER - WA DA DA",
+          "wipReference": true
         },
         {
           "idx": 29,
-          "rawText": "<color=#646464><i>BABYMONSTER - 2NE1 MASH UP</i></color>",
-          "displayName": "BABYMONSTER - 2NE1 MASH UP",
+          "rawText": "<color=#646464><i>2NE1 - MASH UP</i></color>",
+          "displayName": "2NE1 - MASH UP",
           "released": false,
-          "songKey": "BABYMONSTER - 2NE1 MASH UP"
+          "songKey": "2NE1 - MASH UP",
+          "wipReference": true
         },
         {
           "idx": 30,
@@ -2898,14 +3088,16 @@
           "rawText": "<color=#646464><i>SOLAR - SPIT IT OUT</i></color>",
           "displayName": "SOLAR - SPIT IT OUT",
           "released": false,
-          "songKey": "SOLAR - SPIT IT OUT"
+          "songKey": "SOLAR - SPIT IT OUT",
+          "wipReference": true
         },
         {
           "idx": 32,
           "rawText": "<color=#646464><i>4 MINUTE - CRAZY</i></color>",
           "displayName": "4 MINUTE - CRAZY",
           "released": false,
-          "songKey": "4 MINUTE - CRAZY"
+          "songKey": "4 MINUTE - CRAZY",
+          "wipReference": true
         },
         {
           "idx": 33,
@@ -2919,14 +3111,16 @@
           "rawText": "<color=#646464><i>BLACKPINK - DON'T KNOW WHAT TO DO</i></color>",
           "displayName": "BLACKPINK - DON'T KNOW WHAT TO DO",
           "released": false,
-          "songKey": "BLACKPINK - DON'T KNOW WHAT TO DO"
+          "songKey": "BLACKPINK - DON'T KNOW WHAT TO DO",
+          "wipReference": true
         },
         {
           "idx": 35,
           "rawText": "<color=#646464><i>BOA - FORGIVE ME</i></color>",
           "displayName": "BOA - FORGIVE ME",
           "released": false,
-          "songKey": "BOA - FORGIVE ME"
+          "songKey": "BOA - FORGIVE ME",
+          "wipReference": true
         },
         {
           "idx": 36,
@@ -2940,35 +3134,40 @@
           "rawText": "<color=#646464><i>TWICE - THE FEELS</i></color>",
           "displayName": "TWICE - THE FEELS",
           "released": false,
-          "songKey": "TWICE - THE FEELS"
+          "songKey": "TWICE - THE FEELS",
+          "wipReference": true
         },
         {
           "idx": 38,
-          "rawText": "<color=#646464><i>VOCALOID - 疑心暗鬼 GISHIN ANKI</i></color>",
-          "displayName": "VOCALOID - 疑心暗鬼 GISHIN ANKI",
+          "rawText": "<color=#646464><i>VOCALOID - GISHIN ANKI 疑心暗鬼</i></color>",
+          "displayName": "VOCALOID - GISHIN ANKI 疑心暗鬼",
           "released": false,
-          "songKey": "VOCALOID - 疑心暗鬼 GISHIN ANKI"
+          "songKey": "VOCALOID - GISHIN ANKI 疑心暗鬼",
+          "wipReference": true
         },
         {
           "idx": 39,
           "rawText": "<color=#646464><i>ITZY - MAFIA IN THE MORNING</i></color>",
           "displayName": "ITZY - MAFIA IN THE MORNING",
           "released": false,
-          "songKey": "ITZY - MAFIA IN THE MORNING"
+          "songKey": "ITZY - MAFIA IN THE MORNING",
+          "wipReference": true
         },
         {
           "idx": 40,
           "rawText": "<color=#646464><i>BLACKPINK - CRAZY OVER YOU</i></color>",
           "displayName": "BLACKPINK - CRAZY OVER YOU",
           "released": false,
-          "songKey": "BLACKPINK - CRAZY OVER YOU"
+          "songKey": "BLACKPINK - CRAZY OVER YOU",
+          "wipReference": true
         },
         {
           "idx": 41,
           "rawText": "<color=#646464><i>ITZY - BLAH BLAH BLAH</i></color>",
           "displayName": "ITZY - BLAH BLAH BLAH",
           "released": false,
-          "songKey": "ITZY - BLAH BLAH BLAH"
+          "songKey": "ITZY - BLAH BLAH BLAH",
+          "wipReference": true
         },
         {
           "idx": 42,
@@ -2982,21 +3181,24 @@
           "rawText": "<color=#646464><i>RED VELVET - BAD BOY</i></color>",
           "displayName": "RED VELVET - BAD BOY",
           "released": false,
-          "songKey": "RED VELVET - BAD BOY"
+          "songKey": "RED VELVET - BAD BOY",
+          "wipReference": true
         },
         {
           "idx": 44,
           "rawText": "<color=#646464><i>NMIXX - LOVE ME LIKE THIS</i></color>",
           "displayName": "NMIXX - LOVE ME LIKE THIS",
           "released": false,
-          "songKey": "NMIXX - LOVE ME LIKE THIS"
+          "songKey": "NMIXX - LOVE ME LIKE THIS",
+          "wipReference": true
         },
         {
           "idx": 45,
           "rawText": "<color=#646464><i>AESPA - NEXT LEVEL</i></color>",
           "displayName": "AESPA - NEXT LEVEL",
           "released": false,
-          "songKey": "AESPA - NEXT LEVEL"
+          "songKey": "AESPA - NEXT LEVEL",
+          "wipReference": true
         },
         {
           "idx": 46,
@@ -3010,7 +3212,8 @@
           "rawText": "<color=#646464><i>TWICE - FANCY</i></color>",
           "displayName": "TWICE - FANCY",
           "released": false,
-          "songKey": "TWICE - FANCY"
+          "songKey": "TWICE - FANCY",
+          "wipReference": true
         },
         {
           "idx": 48,
@@ -3038,7 +3241,8 @@
           "rawText": "<color=#646464><i>MADEIN - UNO</i></color>",
           "displayName": "MADEIN - UNO",
           "released": false,
-          "songKey": "MADEIN - UNO"
+          "songKey": "MADEIN - UNO",
+          "wipReference": true
         },
         {
           "idx": 52,
@@ -3053,7 +3257,8 @@
           "rawText": "<color=#646464><i>IA - CONQUEROR</i></color>",
           "displayName": "IA - CONQUEROR",
           "released": false,
-          "songKey": "IA - CONQUEROR"
+          "songKey": "IA - CONQUEROR",
+          "wipReference": true
         }
       ]
     },
@@ -3945,7 +4150,8 @@
           "rawText": "<color=#646464><i>NEW JEANS - ASAP</i></color>",
           "displayName": "NEW JEANS - ASAP",
           "released": false,
-          "songKey": "NEW JEANS - ASAP"
+          "songKey": "NEW JEANS - ASAP",
+          "wipReference": true
         },
         {
           "idx": 1,
@@ -3966,7 +4172,8 @@
           "rawText": "<color=#646464><i>EXID - AH YEAH</i></color>",
           "displayName": "EXID - AH YEAH",
           "released": false,
-          "songKey": "EXID - AH YEAH"
+          "songKey": "EXID - AH YEAH",
+          "wipReference": true
         },
         {
           "idx": 4,
@@ -4199,7 +4406,8 @@
           "rawText": "<color=#646464><i>MOMOLAND - BAAM</i></color>",
           "displayName": "MOMOLAND - BAAM",
           "released": false,
-          "songKey": "MOMOLAND - BAAM"
+          "songKey": "MOMOLAND - BAAM",
+          "wipReference": true
         },
         {
           "idx": 37,
@@ -4224,10 +4432,11 @@
         },
         {
           "idx": 40,
-          "rawText": "<color=#646464><i>WJSN CHOCOME - HMPH!</i></color>",
-          "displayName": "WJSN CHOCOME - HMPH!",
+          "rawText": "<color=#646464><i>WJSN - HMPH!</i></color>",
+          "displayName": "WJSN - HMPH!",
           "released": false,
-          "songKey": "WJSN CHOCOME - HMPH!"
+          "songKey": "WJSN - HMPH!",
+          "wipReference": true
         },
         {
           "idx": 41,
@@ -4276,7 +4485,8 @@
           "rawText": "<color=#646464><i>TWICE - TALK THAT TALK</i></color>",
           "displayName": "TWICE - TALK THAT TALK",
           "released": false,
-          "songKey": "TWICE - TALK THAT TALK"
+          "songKey": "TWICE - TALK THAT TALK",
+          "wipReference": true
         },
         {
           "idx": 48,
@@ -5470,6 +5680,7 @@
   "tags": {
     "artists": [
       "(G)I-DLE",
+      "2NE1",
       "4 MINUTE",
       "4LADIES",
       "4MINUTE",
@@ -5484,6 +5695,7 @@
       "BABYMONSTER",
       "BIBI",
       "BLACKPINK",
+      "BOA",
       "BRAVE GIRLS",
       "BROWN EYED GIRLS",
       "CHANESS",
@@ -5518,6 +5730,7 @@
       "HYUNA",
       "I-REN",
       "I.O.I",
+      "IA",
       "ILLIT",
       "IMARINE",
       "IRONMOUSE",
@@ -5531,6 +5744,7 @@
       "KARINA",
       "KATSEYE",
       "KDA",
+      "KEP1ER",
       "KISS OF LIFE",
       "KWON EUN BI",
       "LAYSHA",
@@ -5540,6 +5754,7 @@
       "LOLUET",
       "LOONA",
       "LOOSSEMBLE",
+      "MADEIN",
       "MAMAMOO",
       "MEOVV",
       "MIKU",
@@ -5550,6 +5765,7 @@
       "NAYEON",
       "NEW JEANS",
       "NMIXX",
+      "ODD EYE CIRCLE",
       "PHAO",
       "PRODUCE 48",
       "PURPLE KISS",
@@ -5560,9 +5776,11 @@
       "RIN",
       "ROSÉ",
       "RYO",
+      "SATURDAY",
       "SECRET NUMBER",
       "SEULGI",
       "SISTER",
+      "SOLAR",
       "SOMI",
       "SONGJIEUN",
       "SOOJIN",
@@ -5574,6 +5792,7 @@
       "TAHITI",
       "TWICE",
       "VIVIZ",
+      "VOCALOID",
       "WJSN",
       "WONDER GIRLS",
       "XG",
