@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T12:14:09.068Z",
-  "generatedAt": "2026-05-31T12:23:21Z",
-  "songCount": 404,
-  "trackCount": 375,
+  "sourceVersion": "plugin/_songs.json @ 2026-05-31T13:27:12.048Z",
+  "generatedAt": "2026-05-31T13:27:25Z",
+  "songCount": 405,
+  "trackCount": 376,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -1046,6 +1046,12 @@
       "trackId": "Imaginary Friend",
       "songKey": "ITZY - IMAGINARY FRIEND",
       "stage": "Mermaid Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "LOCO",
+      "songKey": "ITZY - LOCO",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -2440,7 +2446,8 @@
           "rawText": "<color=#646464><i>ITZY - LOCO</i></color>",
           "displayName": "ITZY - LOCO",
           "released": false,
-          "songKey": "ITZY - LOCO"
+          "songKey": "ITZY - LOCO",
+          "wipReference": true
         },
         {
           "idx": 26,
