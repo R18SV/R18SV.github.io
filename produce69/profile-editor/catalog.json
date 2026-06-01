@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-06-01T01:59:24.465Z",
-  "generatedAt": "2026-06-01T01:59:25Z",
-  "songCount": 464,
-  "trackCount": 433,
+  "sourceVersion": "plugin/_songs.json @ 2026-06-01T13:11:37.946Z",
+  "generatedAt": "2026-06-01T13:11:39Z",
+  "songCount": 476,
+  "trackCount": 445,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -305,6 +305,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "GOOD LUCK",
+      "songKey": "AOA - GOOD LUCK",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Heart Attack",
       "songKey": "AOA - HEART ATTACK",
       "stage": "Beach Stage",
@@ -362,6 +368,12 @@
       "trackId": "I Dont Know",
       "songKey": "APINK - I DON'T KNOW",
       "stage": "Manor Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "Mr Chu",
+      "songKey": "APINK - MR. CHU",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -458,6 +470,18 @@
       "trackId": "Jump",
       "songKey": "BLACKPINK - JUMP",
       "stage": "Carrier Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "PINK VENOM",
+      "songKey": "BLACKPINK - PINK VENOM",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "PRETTY SAVAGE",
+      "songKey": "BLACKPINK - PRETTY SAVAGE",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -725,6 +749,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "PINK CAT",
+      "songKey": "GARNIDELIA - PINK CAT",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "CLICK EP",
       "songKey": "GFRIEND - CLICK",
       "stage": "Concert Stage",
@@ -933,6 +963,12 @@
       "songKey": "HELLOVENUS - I'M ILL",
       "stage": "Jail Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "MYSTERIOUS",
+      "songKey": "HELLOVENUS - MYSTERIOUS",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "StickySticky",
@@ -1220,6 +1256,12 @@
       "trackId": "RINGO",
       "songKey": "ITZY - RINGO",
       "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "SNEAKERS",
+      "songKey": "ITZY - SNEAKERS",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -1565,6 +1607,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "FEARLESS",
+      "songKey": "LE SSERAFIM - FEARLESS",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Perfect Night",
       "songKey": "LE SSERAFIM - PERFECT NIGHT",
       "stage": "Strip Club Stage",
@@ -1658,6 +1706,12 @@
       "trackId": "Piano Man EP",
       "songKey": "MAMAMOO - PIANO MAN",
       "stage": "Talk Show Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "PANDORA",
+      "songKey": "MAVE - PANDORA",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -2023,6 +2077,12 @@
     {
       "trackId": "BAD BOY",
       "songKey": "RED VELVET - BAD BOY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "CHILL KILL",
+      "songKey": "RED VELVET - CHILL KILL",
       "stage": "Illusion Stage",
       "variantNumber": 0
     },
@@ -2489,6 +2549,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "MANJUSAKA",
+      "songKey": "まふまふ - MANJUSAKA 曼珠沙華",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "GimmeGimme",
       "songKey": "八王子P - GIMME×GIMME",
       "stage": "Jail Stage",
@@ -2522,6 +2588,12 @@
       "trackId": "Killer Lady Single",
       "songKey": "柿チョコ - KILLER LADY",
       "stage": "Manor Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "JEWEL",
+      "songKey": "梅とら - JEWEL",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -2860,7 +2932,8 @@
           "rawText": "<color=#646464><i>MAVE - PANDORA</i></color>",
           "displayName": "MAVE - PANDORA",
           "released": false,
-          "songKey": "MAVE - PANDORA"
+          "songKey": "MAVE - PANDORA",
+          "wipReference": true
         },
         {
           "idx": 35,
@@ -2944,7 +3017,8 @@
           "rawText": "<color=#646464><i>AOA - GOOD LUCK</i></color>",
           "displayName": "AOA - GOOD LUCK",
           "released": false,
-          "songKey": "AOA - GOOD LUCK"
+          "songKey": "AOA - GOOD LUCK",
+          "wipReference": true
         },
         {
           "idx": 46,
@@ -2974,7 +3048,8 @@
           "rawText": "<color=#646464><i>RED VELVET - CHILL KILL</i></color>",
           "displayName": "RED VELVET - CHILL KILL",
           "released": false,
-          "songKey": "RED VELVET - CHILL KILL"
+          "songKey": "RED VELVET - CHILL KILL",
+          "wipReference": true
         },
         {
           "idx": 50,
@@ -4338,7 +4413,8 @@
           "rawText": "<color=#646464><i>APINK - MR. CHU</i></color>",
           "displayName": "APINK - MR. CHU",
           "released": false,
-          "songKey": "APINK - MR. CHU"
+          "songKey": "APINK - MR. CHU",
+          "wipReference": true
         },
         {
           "idx": 6,
@@ -4389,7 +4465,8 @@
           "rawText": "<color=#646464><i>BLACKPINK - PINK VENOM</i></color>",
           "displayName": "BLACKPINK - PINK VENOM",
           "released": false,
-          "songKey": "BLACKPINK - PINK VENOM"
+          "songKey": "BLACKPINK - PINK VENOM",
+          "wipReference": true
         },
         {
           "idx": 13,
@@ -4497,7 +4574,8 @@
           "rawText": "<color=#646464><i>ITZY - SNEAKERS</i></color>",
           "displayName": "ITZY - SNEAKERS",
           "released": false,
-          "songKey": "ITZY - SNEAKERS"
+          "songKey": "ITZY - SNEAKERS",
+          "wipReference": true
         },
         {
           "idx": 28,
@@ -4525,7 +4603,8 @@
           "rawText": "<color=#646464><i>HELLOVENUS - MYSTERIOUS</i></color>",
           "displayName": "HELLOVENUS - MYSTERIOUS",
           "released": false,
-          "songKey": "HELLOVENUS - MYSTERIOUS"
+          "songKey": "HELLOVENUS - MYSTERIOUS",
+          "wipReference": true
         },
         {
           "idx": 32,
@@ -4597,10 +4676,11 @@
         },
         {
           "idx": 41,
-          "rawText": "<color=#646464><i>まふまふ - 曼珠沙華 MANJUSAKA</i></color>",
-          "displayName": "まふまふ - 曼珠沙華 MANJUSAKA",
+          "rawText": "<color=#646464><i>まふまふ - MANJUSAKA 曼珠沙華</i></color>",
+          "displayName": "まふまふ - MANJUSAKA 曼珠沙華",
           "released": false,
-          "songKey": "まふまふ - 曼珠沙華 MANJUSAKA"
+          "songKey": "まふまふ - MANJUSAKA 曼珠沙華",
+          "wipReference": true
         },
         {
           "idx": 42,
@@ -4614,7 +4694,8 @@
           "rawText": "<color=#646464><i>LE SSERAFIM - FEARLESS</i></color>",
           "displayName": "LE SSERAFIM - FEARLESS",
           "released": false,
-          "songKey": "LE SSERAFIM - FEARLESS"
+          "songKey": "LE SSERAFIM - FEARLESS",
+          "wipReference": true
         },
         {
           "idx": 44,
@@ -4629,7 +4710,8 @@
           "rawText": "<color=#646464><i>GARNIDELIA - PINK CAT</i></color>",
           "displayName": "GARNIDELIA - PINK CAT",
           "released": false,
-          "songKey": "GARNIDELIA - PINK CAT"
+          "songKey": "GARNIDELIA - PINK CAT",
+          "wipReference": true
         },
         {
           "idx": 46,
@@ -4652,7 +4734,8 @@
           "rawText": "<color=#646464><i>BLACKPINK - PRETTY SAVAGE</i></color> ",
           "displayName": "BLACKPINK - PRETTY SAVAGE",
           "released": false,
-          "songKey": "BLACKPINK - PRETTY SAVAGE"
+          "songKey": "BLACKPINK - PRETTY SAVAGE",
+          "wipReference": true
         },
         {
           "idx": 49,
@@ -4685,10 +4768,11 @@
         },
         {
           "idx": 53,
-          "rawText": "<color=#646464><i>ENCORE - JEWEL</i></color>",
-          "displayName": "ENCORE - JEWEL",
+          "rawText": "<color=#646464><i>梅とら - JEWEL</i></color>",
+          "displayName": "梅とら - JEWEL",
           "released": false,
-          "songKey": "ENCORE - JEWEL"
+          "songKey": "梅とら - JEWEL",
+          "wipReference": true
         }
       ]
     },
@@ -5927,6 +6011,7 @@
       "LOOSSEMBLE",
       "MADEIN",
       "MAMAMOO",
+      "MAVE",
       "MEOVV",
       "MIKU",
       "MINNIE",
@@ -5970,6 +6055,7 @@
       "YENA",
       "YOASOBI",
       "YOOA",
+      "まふまふ",
       "八王子P",
       "内田彩",
       "劉至佳",
