@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-05-31T21:18:02.875Z",
-  "generatedAt": "2026-05-31T21:18:08Z",
-  "songCount": 449,
-  "trackCount": 419,
+  "sourceVersion": "plugin/_songs.json @ 2026-06-01T01:59:24.465Z",
+  "generatedAt": "2026-06-01T01:59:25Z",
+  "songCount": 464,
+  "trackCount": 433,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -20,6 +20,12 @@
       "trackId": "Good Thing",
       "songKey": "(G)I-DLE - GOOD THING",
       "stage": "Racing Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "LATATA",
+      "songKey": "(G)I-DLE - LATATA",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -281,9 +287,21 @@
       "variantNumber": 1
     },
     {
+      "trackId": "BINGLE BANGLE",
+      "songKey": "AOA - BINGLE BANGLE",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Confused",
       "songKey": "AOA - CONFUSED",
       "stage": "Cave Brothel Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "A EXCUSE ME",
+      "songKey": "AOA - EXCUSE ME",
+      "stage": "KISS Stage",
       "variantNumber": 0
     },
     {
@@ -303,6 +321,12 @@
       "songKey": "AOA - HEART ATTACK",
       "stage": "Talk Show Stage",
       "variantNumber": 2
+    },
+    {
+      "trackId": "LIKE A CAT",
+      "songKey": "AOA - LIKE A CAT",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Miniskirt SP",
@@ -470,6 +494,12 @@
       "trackId": "SeSeSe Duet",
       "songKey": "CHANESS - SESESE",
       "stage": "Talk Show Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "C HANDS UP",
+      "songKey": "CHERRY BULLET - HANDS UP",
+      "stage": "Strip Club Stage",
       "variantNumber": 0
     },
     {
@@ -749,6 +779,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "DARLING",
+      "songKey": "GIRL'S DAY - DARLING",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "I Will Be Yours",
       "songKey": "GIRL'S DAY - I WILL BE YOURS",
       "stage": "Office Stage",
@@ -921,6 +957,12 @@
       "songKey": "HELLOVENUS - STICKYSTICKY",
       "stage": "Talk Show Stage",
       "variantNumber": 3
+    },
+    {
+      "trackId": "WIGGLE WIGGLE",
+      "songKey": "HELLOVENUS - WIGGLE WIGGLE",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "LADY CRAZY Duet",
@@ -1169,6 +1211,18 @@
       "variantNumber": 0
     },
     {
+      "trackId": "NOT SHY",
+      "songKey": "ITZY - NOT SHY",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "RINGO",
+      "songKey": "ITZY - RINGO",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Untouchable",
       "songKey": "ITZY - UNTOUCHABLE",
       "stage": "Warehouse Stage",
@@ -1205,6 +1259,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "BADDIE",
+      "songKey": "IVE - BADDIE",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "BANG BANG",
       "songKey": "IVE - BANG BANG",
       "stage": "Egyptian Stage",
@@ -1238,6 +1298,12 @@
       "trackId": "Off the Record EP",
       "songKey": "IVE - OFF THE RECORD",
       "stage": "Studio Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "ROYAL",
+      "songKey": "IVE - ROYAL",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1535,6 +1601,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "LALISA",
+      "songKey": "LISA - LALISA",
+      "stage": "Egyptian Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "Loveit",
       "songKey": "LOLUET - LOVEIT?",
       "stage": "Egyptian Stage",
@@ -1731,6 +1803,12 @@
       "songKey": "NEW JEANS - ATTENTION",
       "stage": "After The Rain Stage",
       "variantNumber": 1
+    },
+    {
+      "trackId": "COOL WITH YOU",
+      "songKey": "NEW JEANS - COOL WITH YOU",
+      "stage": "KISS Stage",
+      "variantNumber": 0
     },
     {
       "trackId": "Ditto",
@@ -2261,6 +2339,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "CRY FOR ME",
+      "songKey": "TWICE - CRY FOR ME",
+      "stage": "Mermaid Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "FANCY",
       "songKey": "TWICE - FANCY",
       "stage": "KISS Stage",
@@ -2699,7 +2783,8 @@
           "rawText": "<color=#646464><i>(G)I-DLE - LATATA</i></color>",
           "displayName": "(G)I-DLE - LATATA",
           "released": false,
-          "songKey": "(G)I-DLE - LATATA"
+          "songKey": "(G)I-DLE - LATATA",
+          "wipReference": true
         },
         {
           "idx": 25,
@@ -2744,7 +2829,8 @@
           "rawText": "<color=#646464><i>ITZY - RINGO</i></color>",
           "displayName": "ITZY - RINGO",
           "released": false,
-          "songKey": "ITZY - RINGO"
+          "songKey": "ITZY - RINGO",
+          "wipReference": true
         },
         {
           "idx": 31,
@@ -2759,7 +2845,8 @@
           "rawText": "<color=#646464><i>HELLOVENUS - WIGGLE WIGGLE</i></color>",
           "displayName": "HELLOVENUS - WIGGLE WIGGLE",
           "released": false,
-          "songKey": "HELLOVENUS - WIGGLE WIGGLE"
+          "songKey": "HELLOVENUS - WIGGLE WIGGLE",
+          "wipReference": true
         },
         {
           "idx": 33,
@@ -2780,21 +2867,24 @@
           "rawText": "<color=#646464><i>IVE - BADDIE</i></color>",
           "displayName": "IVE - BADDIE",
           "released": false,
-          "songKey": "IVE - BADDIE"
+          "songKey": "IVE - BADDIE",
+          "wipReference": true
         },
         {
           "idx": 36,
           "rawText": "<color=#646464><i>TWICE - CRY FOR ME</i></color>",
           "displayName": "TWICE - CRY FOR ME",
           "released": false,
-          "songKey": "TWICE - CRY FOR ME"
+          "songKey": "TWICE - CRY FOR ME",
+          "wipReference": true
         },
         {
           "idx": 37,
           "rawText": "<color=#646464><i>AOA - LIKE A CAT</i></color>",
           "displayName": "AOA - LIKE A CAT",
           "released": false,
-          "songKey": "AOA - LIKE A CAT"
+          "songKey": "AOA - LIKE A CAT",
+          "wipReference": true
         },
         {
           "idx": 38,
@@ -2816,7 +2906,8 @@
           "rawText": "<color=#646464><i>AOA - EXCUSE ME</i></color>",
           "displayName": "AOA - EXCUSE ME",
           "released": false,
-          "songKey": "AOA - EXCUSE ME"
+          "songKey": "AOA - EXCUSE ME",
+          "wipReference": true
         },
         {
           "idx": 41,
@@ -2837,7 +2928,8 @@
           "rawText": "<color=#646464><i>ITZY - NOT SHY</i></color>",
           "displayName": "ITZY - NOT SHY",
           "released": false,
-          "songKey": "ITZY - NOT SHY"
+          "songKey": "ITZY - NOT SHY",
+          "wipReference": true
         },
         {
           "idx": 44,
@@ -2859,14 +2951,16 @@
           "rawText": "<color=#646464><i>NEW JEANS - COOL WITH YOU</i></color>",
           "displayName": "NEW JEANS - COOL WITH YOU",
           "released": false,
-          "songKey": "NEW JEANS - COOL WITH YOU"
+          "songKey": "NEW JEANS - COOL WITH YOU",
+          "wipReference": true
         },
         {
           "idx": 47,
           "rawText": "<color=#646464><i>IVE - ROYAL</i></color>",
           "displayName": "IVE - ROYAL",
           "released": false,
-          "songKey": "IVE - ROYAL"
+          "songKey": "IVE - ROYAL",
+          "wipReference": true
         },
         {
           "idx": 48,
@@ -4302,7 +4396,8 @@
           "rawText": "<color=#646464><i>GIRL'S DAY - DARLING</i></color>",
           "displayName": "GIRL'S DAY - DARLING",
           "released": false,
-          "songKey": "GIRL'S DAY - DARLING"
+          "songKey": "GIRL'S DAY - DARLING",
+          "wipReference": true
         },
         {
           "idx": 14,
@@ -4337,7 +4432,8 @@
           "rawText": "<color=#646464><i>CHERRY BULLET - HANDS UP</i></color>",
           "displayName": "CHERRY BULLET - HANDS UP",
           "released": false,
-          "songKey": "CHERRY BULLET - HANDS UP"
+          "songKey": "CHERRY BULLET - HANDS UP",
+          "wipReference": true
         },
         {
           "idx": 19,
@@ -4443,7 +4539,8 @@
           "rawText": "<color=#646464><i>LISA - LALISA</i></color>",
           "displayName": "LISA - LALISA",
           "released": false,
-          "songKey": "LISA - LALISA"
+          "songKey": "LISA - LALISA",
+          "wipReference": true
         },
         {
           "idx": 34,
@@ -4472,7 +4569,8 @@
           "rawText": "<color=#646464><i>AOA - BINGLE BANGLE</i></color>",
           "displayName": "AOA - BINGLE BANGLE",
           "released": false,
-          "songKey": "AOA - BINGLE BANGLE"
+          "songKey": "AOA - BINGLE BANGLE",
+          "wipReference": true
         },
         {
           "idx": 38,
@@ -5769,6 +5867,7 @@
       "BRAVE GIRLS",
       "BROWN EYED GIRLS",
       "CHANESS",
+      "CHERRY BULLET",
       "CHUNG HA",
       "CLC",
       "DALSHABET",
@@ -5822,6 +5921,7 @@
       "LE SSERAFIM",
       "LEE HYO RI",
       "LEE SUHYUN",
+      "LISA",
       "LOLUET",
       "LOONA",
       "LOOSSEMBLE",
