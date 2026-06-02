@@ -808,10 +808,11 @@ function renderSlot(slot) {
   const clickGroup = getClickGroup(songKey);
   const variants = (clickGroup && state.clickGroupToTracks.get(clickGroup)) || [];
   const isMulti = variants.length > 1;
-  // wipReference: slot whose songKey ALSO lives in a hidden list (RAW post-RC5).
-  // Mirrors plugin §46 ShouldGrayAsCrossListRaw — the visible-list slot is a
+  // wipReference: slot whose songKey ALSO lives in a WIP list (RAW). Mirrors
+  // plugin §46 ShouldGrayAsCrossListRaw — in a non-RAW list this slot is a
   // placeholder/preview, not a release entry, so render same as coming-soon
-  // (gray + non-clickable). Set at catalog build time; see build-catalog.js.
+  // (gray + non-clickable). The song stays clickable in its own RAW tab.
+  // Set at catalog build time off WIP_LISTS; see build-catalog.js.
   const isComingSoon =
     slot.released === false ||
     slot.comingSoon === true ||

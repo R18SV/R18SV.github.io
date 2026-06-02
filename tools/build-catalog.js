@@ -102,6 +102,19 @@ function resolveStageDisplay(s) {
 // (off by default) — see PlaylistController.IsEligibleForRandomPool.
 const HIDDEN_LISTS = new Set();
 
+// WIP_LISTS — membership here marks a song as "still WIP / preview", which is
+// a SEPARATE axis from HIDDEN_LISTS (tab visibility). A song in a WIP list is:
+//   - fully visible & clickable inside the WIP list's own tab (RAW), but
+//   - rendered as a gray, non-clickable placeholder in every OTHER list it
+//     also appears in (e.g. a track sitting in both RAW and Duet shows gray in
+//     Duet) — same treatment as `comingSoon`. Mirrors the plugin's §46
+//     ShouldGrayAsCrossListRaw ("songKey in _rawSongKeys AND current list ≠
+//     RAW/FAV").
+// These used to coincide with HIDDEN_LISTS while RAW was hidden; RC4a exposes
+// the RAW tab (HIDDEN_LISTS empty) but the cross-list gray rule must still
+// apply, so the WIP axis is now tracked independently here.
+const WIP_LISTS = new Set(['RAW']);
+
 // Filter tabs surfaced in the editor right-pane. Order is the canonical
 // tab order; the UI uses this to drive its tab strip layout. My Favorites is
 // the editor's left pane, not a browse target. RAW appears as the last tab.
@@ -250,13 +263,16 @@ function buildListsBundle(listsDir, wipCrossListSongKeys) {
       missing.push(entry.file);
       continue;
     }
+    // The WIP list's OWN tab (RAW) shows its songs normally/clickable — only
+    // their appearances in OTHER lists gray out. So skip flagging here.
+    const isWipList = WIP_LISTS.has(entry.key);
     const slots = Array.isArray(data.slots) ? data.slots.map(s => {
       // Mirror plugin §46 ShouldGrayAsCrossListRaw: if this slot's songKey
-      // also lives in a hidden list (RAW), tag the slot so the editor
-      // renders it as a gray placeholder (same treatment as comingSoon).
+      // also lives in a WIP list (RAW), tag the slot so the editor renders it
+      // as a gray placeholder (same treatment as comingSoon).
       // Slot object is copied (don't mutate the parsed source) and the flag
       // is only added when truthy so existing slots remain byte-identical.
-      if (wipCrossListSongKeys && s.songKey && wipCrossListSongKeys.has(s.songKey)) {
+      if (!isWipList && wipCrossListSongKeys && s.songKey && wipCrossListSongKeys.has(s.songKey)) {
         crossListFlagged++;
         return Object.assign({}, s, { wipReference: true });
       }
@@ -331,7 +347,9 @@ function main() {
   const songKeyToLists = buildSongKeyToLists(listsDir);
   const wipSongKeys = computeWipSongKeys(songKeyToLists, HIDDEN_LISTS);
   const wipTrackIds = computeWipTrackIds(songsRaw, wipSongKeys);
-  const wipCrossListSongKeys = computeWipCrossListSongKeys(songKeyToLists, HIDDEN_LISTS);
+  // Cross-list gray keys off WIP_LISTS (RAW), NOT HIDDEN_LISTS — RAW songs
+  // appearing in other lists must gray there even though the RAW tab is shown.
+  const wipCrossListSongKeys = computeWipCrossListSongKeys(songKeyToLists, WIP_LISTS);
 
   const tracks = buildTracks(songsRaw, wipSongKeys);
   const lists = buildListsBundle(listsDir, wipCrossListSongKeys);

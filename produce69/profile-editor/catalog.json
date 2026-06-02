@@ -1,6 +1,6 @@
 {
   "sourceVersion": "plugin/_songs.json @ 2026-06-02T17:16:50.548Z",
-  "generatedAt": "2026-06-02T20:10:45Z",
+  "generatedAt": "2026-06-02T20:37:28Z",
   "songCount": 503,
   "trackCount": 626,
   "tracks": [
@@ -3876,7 +3876,8 @@
           "rawText": "<color=#646464><i>AESPA - GIRLS</i></color>",
           "displayName": "AESPA - GIRLS",
           "released": false,
-          "songKey": "AESPA - GIRLS"
+          "songKey": "AESPA - GIRLS",
+          "wipReference": true
         },
         {
           "idx": 16,
@@ -3904,14 +3905,16 @@
           "rawText": "<color=#646464><i>ANDA - TOUCH</i></color>",
           "displayName": "ANDA - TOUCH",
           "released": false,
-          "songKey": "ANDA - TOUCH"
+          "songKey": "ANDA - TOUCH",
+          "wipReference": true
         },
         {
           "idx": 20,
           "rawText": "<color=#646464><i>NEW JEANS - NEW JEANS</i></color>",
           "displayName": "NEW JEANS - NEW JEANS",
           "released": false,
-          "songKey": "NEW JEANS - NEW JEANS"
+          "songKey": "NEW JEANS - NEW JEANS",
+          "wipReference": true
         },
         {
           "idx": 21,
@@ -3925,7 +3928,8 @@
           "rawText": "<i>SATURDAY - MMOOK JJI BBA</i>",
           "displayName": "SATURDAY - MMOOK JJI BBA",
           "released": false,
-          "songKey": "SATURDAY - MMOOK JJI BBA"
+          "songKey": "SATURDAY - MMOOK JJI BBA",
+          "wipReference": true
         },
         {
           "idx": 23,
@@ -3939,14 +3943,16 @@
           "rawText": "<color=#646464><i>(G)I-DLE - LATATA</i></color>",
           "displayName": "(G)I-DLE - LATATA",
           "released": false,
-          "songKey": "(G)I-DLE - LATATA"
+          "songKey": "(G)I-DLE - LATATA",
+          "wipReference": true
         },
         {
           "idx": 25,
           "rawText": "<color=#646464><i>ITZY - LOCO</i></color>",
           "displayName": "ITZY - LOCO",
           "released": false,
-          "songKey": "ITZY - LOCO"
+          "songKey": "ITZY - LOCO",
+          "wipReference": true
         },
         {
           "idx": 26,
@@ -3960,14 +3966,16 @@
           "rawText": "<color=#646464><i>CHUNG HA - STAY TONIGHT</i></color>",
           "displayName": "CHUNG HA - STAY TONIGHT",
           "released": false,
-          "songKey": "CHUNG HA - STAY TONIGHT"
+          "songKey": "CHUNG HA - STAY TONIGHT",
+          "wipReference": true
         },
         {
           "idx": 28,
           "rawText": "<color=#646464><i>RAINBOW - A</i></color>",
           "displayName": "RAINBOW - A",
           "released": false,
-          "songKey": "RAINBOW - A"
+          "songKey": "RAINBOW - A",
+          "wipReference": true
         },
         {
           "idx": 29,
@@ -3981,21 +3989,24 @@
           "rawText": "<color=#646464><i>ITZY - RINGO</i></color>",
           "displayName": "ITZY - RINGO",
           "released": false,
-          "songKey": "ITZY - RINGO"
+          "songKey": "ITZY - RINGO",
+          "wipReference": true
         },
         {
           "idx": 31,
           "rawText": "<color=#646464><i>HYOLYN - ONE WAY LOVE</i></color>",
           "displayName": "HYOLYN - ONE WAY LOVE",
           "released": false,
-          "songKey": "HYOLYN - ONE WAY LOVE"
+          "songKey": "HYOLYN - ONE WAY LOVE",
+          "wipReference": true
         },
         {
           "idx": 32,
           "rawText": "<color=#646464><i>HELLOVENUS - WIGGLE WIGGLE</i></color>",
           "displayName": "HELLOVENUS - WIGGLE WIGGLE",
           "released": false,
-          "songKey": "HELLOVENUS - WIGGLE WIGGLE"
+          "songKey": "HELLOVENUS - WIGGLE WIGGLE",
+          "wipReference": true
         },
         {
           "idx": 33,
@@ -4009,28 +4020,32 @@
           "rawText": "<color=#646464><i>MAVE - PANDORA</i></color>",
           "displayName": "MAVE - PANDORA",
           "released": false,
-          "songKey": "MAVE - PANDORA"
+          "songKey": "MAVE - PANDORA",
+          "wipReference": true
         },
         {
           "idx": 35,
           "rawText": "<color=#646464><i>IVE - BADDIE</i></color>",
           "displayName": "IVE - BADDIE",
           "released": false,
-          "songKey": "IVE - BADDIE"
+          "songKey": "IVE - BADDIE",
+          "wipReference": true
         },
         {
           "idx": 36,
           "rawText": "<color=#646464><i>TWICE - CRY FOR ME</i></color>",
           "displayName": "TWICE - CRY FOR ME",
           "released": false,
-          "songKey": "TWICE - CRY FOR ME"
+          "songKey": "TWICE - CRY FOR ME",
+          "wipReference": true
         },
         {
           "idx": 37,
           "rawText": "<color=#646464><i>AOA - LIKE A CAT</i></color>",
           "displayName": "AOA - LIKE A CAT",
           "released": false,
-          "songKey": "AOA - LIKE A CAT"
+          "songKey": "AOA - LIKE A CAT",
+          "wipReference": true
         },
         {
           "idx": 38,
@@ -4044,14 +4059,16 @@
           "rawText": "<color=#646464><i>IMARINE - DEEP BLUE TOWN</i></color>",
           "displayName": "IMARINE - DEEP BLUE TOWN",
           "released": false,
-          "songKey": "IMARINE - DEEP BLUE TOWN"
+          "songKey": "IMARINE - DEEP BLUE TOWN",
+          "wipReference": true
         },
         {
           "idx": 40,
           "rawText": "<color=#646464><i>AOA - EXCUSE ME</i></color>",
           "displayName": "AOA - EXCUSE ME",
           "released": false,
-          "songKey": "AOA - EXCUSE ME"
+          "songKey": "AOA - EXCUSE ME",
+          "wipReference": true
         },
         {
           "idx": 41,
@@ -4072,35 +4089,40 @@
           "rawText": "<color=#646464><i>ITZY - NOT SHY</i></color>",
           "displayName": "ITZY - NOT SHY",
           "released": false,
-          "songKey": "ITZY - NOT SHY"
+          "songKey": "ITZY - NOT SHY",
+          "wipReference": true
         },
         {
           "idx": 44,
           "rawText": "<color=#646464><i>XG - PUPPET SHOW</i></color>",
           "displayName": "XG - PUPPET SHOW",
           "released": false,
-          "songKey": "XG - PUPPET SHOW"
+          "songKey": "XG - PUPPET SHOW",
+          "wipReference": true
         },
         {
           "idx": 45,
           "rawText": "<color=#646464><i>AOA - GOOD LUCK</i></color>",
           "displayName": "AOA - GOOD LUCK",
           "released": false,
-          "songKey": "AOA - GOOD LUCK"
+          "songKey": "AOA - GOOD LUCK",
+          "wipReference": true
         },
         {
           "idx": 46,
           "rawText": "<color=#646464><i>NEW JEANS - COOL WITH YOU</i></color>",
           "displayName": "NEW JEANS - COOL WITH YOU",
           "released": false,
-          "songKey": "NEW JEANS - COOL WITH YOU"
+          "songKey": "NEW JEANS - COOL WITH YOU",
+          "wipReference": true
         },
         {
           "idx": 47,
           "rawText": "<color=#646464><i>IVE - ROYAL</i></color>",
           "displayName": "IVE - ROYAL",
           "released": false,
-          "songKey": "IVE - ROYAL"
+          "songKey": "IVE - ROYAL",
+          "wipReference": true
         },
         {
           "idx": 48,
@@ -4114,7 +4136,8 @@
           "rawText": "<color=#646464><i>RED VELVET - CHILL KILL</i></color>",
           "displayName": "RED VELVET - CHILL KILL",
           "released": false,
-          "songKey": "RED VELVET - CHILL KILL"
+          "songKey": "RED VELVET - CHILL KILL",
+          "wipReference": true
         },
         {
           "idx": 50,
@@ -4142,7 +4165,8 @@
           "rawText": "<color=#646464><i>FELT - UNDER CLOUD</i></color>",
           "displayName": "FELT - UNDER CLOUD",
           "released": false,
-          "songKey": "FELT - UNDER CLOUD"
+          "songKey": "FELT - UNDER CLOUD",
+          "wipReference": true
         }
       ]
     },
@@ -4176,7 +4200,8 @@
           "rawText": "<color=#646464><i>KISS OF LIFE - SHHH</i></color>",
           "displayName": "KISS OF LIFE - SHHH",
           "released": false,
-          "songKey": "KISS OF LIFE - SHHH"
+          "songKey": "KISS OF LIFE - SHHH",
+          "wipReference": true
         },
         {
           "idx": 4,
@@ -4232,7 +4257,8 @@
           "rawText": "<color=#646464><i>ODD EYE CIRCLE - AIR FORCE ONE</i></color>",
           "displayName": "ODD EYE CIRCLE - AIR FORCE ONE",
           "released": false,
-          "songKey": "ODD EYE CIRCLE - AIR FORCE ONE"
+          "songKey": "ODD EYE CIRCLE - AIR FORCE ONE",
+          "wipReference": true
         },
         {
           "idx": 12,
@@ -4288,14 +4314,16 @@
           "rawText": "<color=#646464><i>IVE - LOVE DIVE + AFTER LIKE</i></color>",
           "displayName": "IVE - LOVE DIVE + AFTER LIKE",
           "released": false,
-          "songKey": "IVE - LOVE DIVE + AFTER LIKE"
+          "songKey": "IVE - LOVE DIVE + AFTER LIKE",
+          "wipReference": true
         },
         {
           "idx": 20,
           "rawText": "<color=#646464><i>KDA - POPSTARS</i></color>",
           "displayName": "KDA - POPSTARS",
           "released": false,
-          "songKey": "KDA - POPSTARS"
+          "songKey": "KDA - POPSTARS",
+          "wipReference": true
         },
         {
           "idx": 21,
@@ -4337,7 +4365,8 @@
           "rawText": "<color=#646464><i>LE SSERAFIM - ANTIFRAGILE</i></color>",
           "displayName": "LE SSERAFIM - ANTIFRAGILE",
           "released": false,
-          "songKey": "LE SSERAFIM - ANTIFRAGILE"
+          "songKey": "LE SSERAFIM - ANTIFRAGILE",
+          "wipReference": true
         },
         {
           "idx": 27,
@@ -4351,35 +4380,40 @@
           "rawText": "<color=#646464><i>KEP1ER - WA DA DA</i></color>",
           "displayName": "KEP1ER - WA DA DA",
           "released": false,
-          "songKey": "KEP1ER - WA DA DA"
+          "songKey": "KEP1ER - WA DA DA",
+          "wipReference": true
         },
         {
           "idx": 29,
           "rawText": "<color=#646464><i>2NE1 - MASH UP</i></color>",
           "displayName": "2NE1 - MASH UP",
           "released": false,
-          "songKey": "2NE1 - MASH UP"
+          "songKey": "2NE1 - MASH UP",
+          "wipReference": true
         },
         {
           "idx": 30,
           "rawText": "<color=#646464><i>LE SSERAFIM - UNFORGIVEN</i></color>",
           "displayName": "LE SSERAFIM - UNFORGIVEN",
           "released": false,
-          "songKey": "LE SSERAFIM - UNFORGIVEN"
+          "songKey": "LE SSERAFIM - UNFORGIVEN",
+          "wipReference": true
         },
         {
           "idx": 31,
           "rawText": "<color=#646464><i>SOLAR - SPIT IT OUT</i></color>",
           "displayName": "SOLAR - SPIT IT OUT",
           "released": false,
-          "songKey": "SOLAR - SPIT IT OUT"
+          "songKey": "SOLAR - SPIT IT OUT",
+          "wipReference": true
         },
         {
           "idx": 32,
           "rawText": "<color=#646464><i>4 MINUTE - CRAZY</i></color>",
           "displayName": "4 MINUTE - CRAZY",
           "released": false,
-          "songKey": "4 MINUTE - CRAZY"
+          "songKey": "4 MINUTE - CRAZY",
+          "wipReference": true
         },
         {
           "idx": 33,
@@ -4393,14 +4427,16 @@
           "rawText": "<color=#646464><i>BLACKPINK - DON'T KNOW WHAT TO DO</i></color>",
           "displayName": "BLACKPINK - DON'T KNOW WHAT TO DO",
           "released": false,
-          "songKey": "BLACKPINK - DON'T KNOW WHAT TO DO"
+          "songKey": "BLACKPINK - DON'T KNOW WHAT TO DO",
+          "wipReference": true
         },
         {
           "idx": 35,
           "rawText": "<color=#646464><i>BOA - FORGIVE ME</i></color>",
           "displayName": "BOA - FORGIVE ME",
           "released": false,
-          "songKey": "BOA - FORGIVE ME"
+          "songKey": "BOA - FORGIVE ME",
+          "wipReference": true
         },
         {
           "idx": 36,
@@ -4414,35 +4450,40 @@
           "rawText": "<color=#646464><i>TWICE - THE FEELS</i></color>",
           "displayName": "TWICE - THE FEELS",
           "released": false,
-          "songKey": "TWICE - THE FEELS"
+          "songKey": "TWICE - THE FEELS",
+          "wipReference": true
         },
         {
           "idx": 38,
           "rawText": "<color=#646464><i>VOCALOID - GISHIN ANKI 疑心暗鬼</i></color>",
           "displayName": "VOCALOID - GISHIN ANKI 疑心暗鬼",
           "released": false,
-          "songKey": "VOCALOID - GISHIN ANKI 疑心暗鬼"
+          "songKey": "VOCALOID - GISHIN ANKI 疑心暗鬼",
+          "wipReference": true
         },
         {
           "idx": 39,
           "rawText": "<color=#646464><i>ITZY - MAFIA IN THE MORNING</i></color>",
           "displayName": "ITZY - MAFIA IN THE MORNING",
           "released": false,
-          "songKey": "ITZY - MAFIA IN THE MORNING"
+          "songKey": "ITZY - MAFIA IN THE MORNING",
+          "wipReference": true
         },
         {
           "idx": 40,
           "rawText": "<color=#646464><i>BLACKPINK - CRAZY OVER YOU</i></color>",
           "displayName": "BLACKPINK - CRAZY OVER YOU",
           "released": false,
-          "songKey": "BLACKPINK - CRAZY OVER YOU"
+          "songKey": "BLACKPINK - CRAZY OVER YOU",
+          "wipReference": true
         },
         {
           "idx": 41,
           "rawText": "<color=#646464><i>ITZY - BLAH BLAH BLAH</i></color>",
           "displayName": "ITZY - BLAH BLAH BLAH",
           "released": false,
-          "songKey": "ITZY - BLAH BLAH BLAH"
+          "songKey": "ITZY - BLAH BLAH BLAH",
+          "wipReference": true
         },
         {
           "idx": 42,
@@ -4456,21 +4497,24 @@
           "rawText": "<color=#646464><i>RED VELVET - BAD BOY</i></color>",
           "displayName": "RED VELVET - BAD BOY",
           "released": false,
-          "songKey": "RED VELVET - BAD BOY"
+          "songKey": "RED VELVET - BAD BOY",
+          "wipReference": true
         },
         {
           "idx": 44,
           "rawText": "<color=#646464><i>NMIXX - LOVE ME LIKE THIS</i></color>",
           "displayName": "NMIXX - LOVE ME LIKE THIS",
           "released": false,
-          "songKey": "NMIXX - LOVE ME LIKE THIS"
+          "songKey": "NMIXX - LOVE ME LIKE THIS",
+          "wipReference": true
         },
         {
           "idx": 45,
           "rawText": "<color=#646464><i>AESPA - NEXT LEVEL</i></color>",
           "displayName": "AESPA - NEXT LEVEL",
           "released": false,
-          "songKey": "AESPA - NEXT LEVEL"
+          "songKey": "AESPA - NEXT LEVEL",
+          "wipReference": true
         },
         {
           "idx": 46,
@@ -4484,7 +4528,8 @@
           "rawText": "<color=#646464><i>TWICE - FANCY</i></color>",
           "displayName": "TWICE - FANCY",
           "released": false,
-          "songKey": "TWICE - FANCY"
+          "songKey": "TWICE - FANCY",
+          "wipReference": true
         },
         {
           "idx": 48,
@@ -4512,21 +4557,24 @@
           "rawText": "<color=#646464><i>MADEIN - UNO</i></color>",
           "displayName": "MADEIN - UNO",
           "released": false,
-          "songKey": "MADEIN - UNO"
+          "songKey": "MADEIN - UNO",
+          "wipReference": true
         },
         {
           "idx": 52,
           "rawText": "<color=#646464><i>T-ARA - SUGAR FREE</i></color>",
           "displayName": "T-ARA - SUGAR FREE",
           "released": false,
-          "songKey": "T-ARA - SUGAR FREE"
+          "songKey": "T-ARA - SUGAR FREE",
+          "wipReference": true
         },
         {
           "idx": 53,
           "rawText": "<color=#646464><i>IA - CONQUEROR</i></color>",
           "displayName": "IA - CONQUEROR",
           "released": false,
-          "songKey": "IA - CONQUEROR"
+          "songKey": "IA - CONQUEROR",
+          "wipReference": true
         }
       ]
     },
@@ -5418,7 +5466,8 @@
           "rawText": "<color=#646464><i>NEW JEANS - ASAP</i></color>",
           "displayName": "NEW JEANS - ASAP",
           "released": false,
-          "songKey": "NEW JEANS - ASAP"
+          "songKey": "NEW JEANS - ASAP",
+          "wipReference": true
         },
         {
           "idx": 1,
@@ -5439,7 +5488,8 @@
           "rawText": "<color=#646464><i>EXID - AH YEAH</i></color>",
           "displayName": "EXID - AH YEAH",
           "released": false,
-          "songKey": "EXID - AH YEAH"
+          "songKey": "EXID - AH YEAH",
+          "wipReference": true
         },
         {
           "idx": 4,
@@ -5453,21 +5503,24 @@
           "rawText": "<color=#646464><i>APINK - MR. CHU</i></color>",
           "displayName": "APINK - MR. CHU",
           "released": false,
-          "songKey": "APINK - MR. CHU"
+          "songKey": "APINK - MR. CHU",
+          "wipReference": true
         },
         {
           "idx": 6,
           "rawText": "<color=#646464><i>(G)I-DLE - NXDE</i></color>",
           "displayName": "(G)I-DLE - NXDE",
           "released": false,
-          "songKey": "(G)I-DLE - NXDE"
+          "songKey": "(G)I-DLE - NXDE",
+          "wipReference": true
         },
         {
           "idx": 7,
           "rawText": "<i>STAYC - TEDDY BEAR</i>",
           "displayName": "STAYC - TEDDY BEAR",
           "released": false,
-          "songKey": "STAYC - TEDDY BEAR"
+          "songKey": "STAYC - TEDDY BEAR",
+          "wipReference": true
         },
         {
           "idx": 8,
@@ -5502,14 +5555,16 @@
           "rawText": "<i>BLACKPINK - PINK VENOM</i>",
           "displayName": "BLACKPINK - PINK VENOM",
           "released": true,
-          "songKey": "BLACKPINK - PINK VENOM"
+          "songKey": "BLACKPINK - PINK VENOM",
+          "wipReference": true
         },
         {
           "idx": 13,
           "rawText": "<color=#646464><i>GIRL'S DAY - DARLING</i></color>",
           "displayName": "GIRL'S DAY - DARLING",
           "released": false,
-          "songKey": "GIRL'S DAY - DARLING"
+          "songKey": "GIRL'S DAY - DARLING",
+          "wipReference": true
         },
         {
           "idx": 14,
@@ -5544,7 +5599,8 @@
           "rawText": "<color=#646464><i>CHERRY BULLET - HANDS UP</i></color>",
           "displayName": "CHERRY BULLET - HANDS UP",
           "released": false,
-          "songKey": "CHERRY BULLET - HANDS UP"
+          "songKey": "CHERRY BULLET - HANDS UP",
+          "wipReference": true
         },
         {
           "idx": 19,
@@ -5565,7 +5621,8 @@
           "rawText": "<color=#646464><i>SOMI - WHAT YOU WAITING FOR</i></color>",
           "displayName": "SOMI - WHAT YOU WAITING FOR",
           "released": false,
-          "songKey": "SOMI - WHAT YOU WAITING FOR"
+          "songKey": "SOMI - WHAT YOU WAITING FOR",
+          "wipReference": true
         },
         {
           "idx": 22,
@@ -5607,7 +5664,8 @@
           "rawText": "<color=#646464><i>ITZY - SNEAKERS</i></color>",
           "displayName": "ITZY - SNEAKERS",
           "released": false,
-          "songKey": "ITZY - SNEAKERS"
+          "songKey": "ITZY - SNEAKERS",
+          "wipReference": true
         },
         {
           "idx": 28,
@@ -5635,7 +5693,8 @@
           "rawText": "<color=#646464><i>HELLOVENUS - MYSTERIOUS</i></color>",
           "displayName": "HELLOVENUS - MYSTERIOUS",
           "released": false,
-          "songKey": "HELLOVENUS - MYSTERIOUS"
+          "songKey": "HELLOVENUS - MYSTERIOUS",
+          "wipReference": true
         },
         {
           "idx": 32,
@@ -5649,7 +5708,8 @@
           "rawText": "<color=#646464><i>LISA - LALISA</i></color>",
           "displayName": "LISA - LALISA",
           "released": false,
-          "songKey": "LISA - LALISA"
+          "songKey": "LISA - LALISA",
+          "wipReference": true
         },
         {
           "idx": 34,
@@ -5670,21 +5730,24 @@
           "rawText": "<i>MOMOLAND - BAAM</i>",
           "displayName": "MOMOLAND - BAAM",
           "released": true,
-          "songKey": "MOMOLAND - BAAM"
+          "songKey": "MOMOLAND - BAAM",
+          "wipReference": true
         },
         {
           "idx": 37,
           "rawText": "<color=#646464><i>AOA - BINGLE BANGLE</i></color>",
           "displayName": "AOA - BINGLE BANGLE",
           "released": false,
-          "songKey": "AOA - BINGLE BANGLE"
+          "songKey": "AOA - BINGLE BANGLE",
+          "wipReference": true
         },
         {
           "idx": 38,
           "rawText": "<color=#646464><i>KARA - STEP</i></color>",
           "displayName": "KARA - STEP",
           "released": false,
-          "songKey": "KARA - STEP"
+          "songKey": "KARA - STEP",
+          "wipReference": true
         },
         {
           "idx": 39,
@@ -5698,14 +5761,16 @@
           "rawText": "<color=#646464><i>WJSN - HMPH!</i></color>",
           "displayName": "WJSN - HMPH!",
           "released": false,
-          "songKey": "WJSN - HMPH!"
+          "songKey": "WJSN - HMPH!",
+          "wipReference": true
         },
         {
           "idx": 41,
           "rawText": "<color=#646464><i>まふまふ - MANJUSAKA 曼珠沙華</i></color>",
           "displayName": "まふまふ - MANJUSAKA 曼珠沙華",
           "released": false,
-          "songKey": "まふまふ - MANJUSAKA 曼珠沙華"
+          "songKey": "まふまふ - MANJUSAKA 曼珠沙華",
+          "wipReference": true
         },
         {
           "idx": 42,
@@ -5719,49 +5784,56 @@
           "rawText": "<color=#646464><i>LE SSERAFIM - FEARLESS</i></color>",
           "displayName": "LE SSERAFIM - FEARLESS",
           "released": false,
-          "songKey": "LE SSERAFIM - FEARLESS"
+          "songKey": "LE SSERAFIM - FEARLESS",
+          "wipReference": true
         },
         {
           "idx": 44,
           "rawText": "<color=#646464><i>TWICE - MORE & MORE</i></color>",
           "displayName": "TWICE - MORE & MORE",
           "released": false,
-          "songKey": "TWICE - MORE & MORE"
+          "songKey": "TWICE - MORE & MORE",
+          "wipReference": true
         },
         {
           "idx": 45,
           "rawText": "<color=#646464><i>GARNIDELIA - PINK CAT</i></color>",
           "displayName": "GARNIDELIA - PINK CAT",
           "released": false,
-          "songKey": "GARNIDELIA - PINK CAT"
+          "songKey": "GARNIDELIA - PINK CAT",
+          "wipReference": true
         },
         {
           "idx": 46,
           "rawText": "<color=#646464><i>G-REYISH - KKILI KKILI</i></color>",
           "displayName": "G-REYISH - KKILI KKILI",
           "released": false,
-          "songKey": "G-REYISH - KKILI KKILI"
+          "songKey": "G-REYISH - KKILI KKILI",
+          "wipReference": true
         },
         {
           "idx": 47,
           "rawText": "<color=#646464><i>TWICE - TALK THAT TALK</i></color>",
           "displayName": "TWICE - TALK THAT TALK",
           "released": false,
-          "songKey": "TWICE - TALK THAT TALK"
+          "songKey": "TWICE - TALK THAT TALK",
+          "wipReference": true
         },
         {
           "idx": 48,
           "rawText": "<color=#646464><i>BLACKPINK - PRETTY SAVAGE</i></color> ",
           "displayName": "BLACKPINK - PRETTY SAVAGE",
           "released": false,
-          "songKey": "BLACKPINK - PRETTY SAVAGE"
+          "songKey": "BLACKPINK - PRETTY SAVAGE",
+          "wipReference": true
         },
         {
           "idx": 49,
           "rawText": "<color=#646464><i>HYUNA - ROLL DEEP</i></color> ",
           "displayName": "HYUNA - ROLL DEEP",
           "released": false,
-          "songKey": "HYUNA - ROLL DEEP"
+          "songKey": "HYUNA - ROLL DEEP",
+          "wipReference": true
         },
         {
           "idx": 50,
@@ -5789,7 +5861,8 @@
           "rawText": "<color=#646464><i>梅とら - JEWEL</i></color>",
           "displayName": "梅とら - JEWEL",
           "released": false,
-          "songKey": "梅とら - JEWEL"
+          "songKey": "梅とら - JEWEL",
+          "wipReference": true
         }
       ]
     },
@@ -6486,35 +6559,40 @@
           "rawText": "<i>梅とら - LOVE ME IF YOU CAN</i>",
           "displayName": "梅とら - LOVE ME IF YOU CAN",
           "released": true,
-          "songKey": "梅とら - LOVE ME IF YOU CAN"
+          "songKey": "梅とら - LOVE ME IF YOU CAN",
+          "wipReference": true
         },
         {
           "idx": 18,
           "rawText": "<i>梅とら - MAKES YOU A FIGHTER</i>",
           "displayName": "梅とら - MAKES YOU A FIGHTER",
           "released": true,
-          "songKey": "梅とら - MAKES YOU A FIGHTER"
+          "songKey": "梅とら - MAKES YOU A FIGHTER",
+          "wipReference": true
         },
         {
           "idx": 19,
           "rawText": "<i>STELLAR - VIBRATO</i>",
           "displayName": "STELLAR - VIBRATO",
           "released": true,
-          "songKey": "STELLAR - VIBRATO"
+          "songKey": "STELLAR - VIBRATO",
+          "wipReference": true
         },
         {
           "idx": 20,
           "rawText": "<i>HIMEHINA - LADY CRAZY</i>",
           "displayName": "HIMEHINA - LADY CRAZY",
           "released": true,
-          "songKey": "HIMEHINA - LADY CRAZY"
+          "songKey": "HIMEHINA - LADY CRAZY",
+          "wipReference": true
         },
         {
           "idx": 21,
           "rawText": "<i>G-REYISH - KKILI KKILI</i>",
           "displayName": "G-REYISH - KKILI KKILI",
           "released": true,
-          "songKey": "G-REYISH - KKILI KKILI"
+          "songKey": "G-REYISH - KKILI KKILI",
+          "wipReference": true
         }
       ]
     },
