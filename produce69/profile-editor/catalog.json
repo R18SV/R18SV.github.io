@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-06-02T00:12:24.134Z",
-  "generatedAt": "2026-06-02T00:12:25Z",
-  "songCount": 498,
-  "trackCount": 447,
+  "sourceVersion": "plugin/_songs.json @ 2026-06-02T15:03:11.013Z",
+  "generatedAt": "2026-06-02T15:03:12Z",
+  "songCount": 503,
+  "trackCount": 449,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -272,6 +272,12 @@
       "trackId": "MikuMambo Miku",
       "songKey": "ALEXTRIP SANDS - ミクマンボ",
       "stage": "Beach Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "A TOUCH",
+      "songKey": "ANDA - TOUCH",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1643,6 +1649,12 @@
       "variantNumber": 0
     },
     {
+      "trackId": "UNFORGIVEN",
+      "songKey": "LE SSERAFIM - UNFORGIVEN",
+      "stage": "KISS Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "U Go Girl",
       "songKey": "LEE HYO RI - U-GO-GIRL",
       "stage": "Concert Stage",
@@ -2831,7 +2843,8 @@
           "rawText": "<color=#646464><i>ANDA - TOUCH</i></color>",
           "displayName": "ANDA - TOUCH",
           "released": false,
-          "songKey": "ANDA - TOUCH"
+          "songKey": "ANDA - TOUCH",
+          "wipReference": true
         },
         {
           "idx": 20,
@@ -3321,7 +3334,8 @@
           "rawText": "<color=#646464><i>LE SSERAFIM - UNFORGIVEN</i></color>",
           "displayName": "LE SSERAFIM - UNFORGIVEN",
           "released": false,
-          "songKey": "LE SSERAFIM - UNFORGIVEN"
+          "songKey": "LE SSERAFIM - UNFORGIVEN",
+          "wipReference": true
         },
         {
           "idx": 31,
@@ -5956,6 +5970,7 @@
       "AFTER SCHOOL",
       "ALEXA",
       "ALEXTRIP SANDS",
+      "ANDA",
       "AOA",
       "APINK",
       "BABYMONSTER",
