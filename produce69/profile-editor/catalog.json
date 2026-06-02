@@ -1,6 +1,6 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-06-02T15:03:11.013Z",
-  "generatedAt": "2026-06-02T15:03:12Z",
+  "sourceVersion": "plugin/_songs.json @ 2026-06-02T17:16:34.846Z",
+  "generatedAt": "2026-06-02T17:16:46Z",
   "songCount": 503,
   "trackCount": 449,
   "tracks": [
@@ -4490,9 +4490,9 @@
         },
         {
           "idx": 12,
-          "rawText": "<color=#646464><i>BLACKPINK - PINK VENOM</i></color>",
+          "rawText": "<i>BLACKPINK - PINK VENOM</i>",
           "displayName": "BLACKPINK - PINK VENOM",
-          "released": false,
+          "released": true,
           "songKey": "BLACKPINK - PINK VENOM",
           "wipReference": true
         },
