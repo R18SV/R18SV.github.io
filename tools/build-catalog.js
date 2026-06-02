@@ -87,22 +87,20 @@ function resolveStageDisplay(s) {
   return STAGE_DISPLAY_ALIAS[s] || s;
 }
 
-// RC5+ (2026-05-29): RAW list is temporarily HIDDEN from the public Web
-// catalog (user decision — visitor-facing surface should not expose WIP
-// pool yet). Data sync from plugin remains normal: RAW.list.json keeps
-// flowing through Creator → tools, the filter is applied at this build
-// step right before publish. Flip back to `new Set()` to re-expose RAW.
+// RC4a (2026-06-02): RAW list is now EXPOSED on the public Web catalog.
+// RC4a unlocks the full 650-track library for users (in-game via the
+// "Preview Unreleased Tracks" toggle), so the Web surface mirrors that —
+// the RAW tab is no longer hidden. Set back to `new Set(['RAW'])` to
+// re-hide it if a future release needs to wall off the WIP pool again.
 //
-// Effect on output catalog:
-//   - tracks[]:        RAW-only songs dropped (their stagings excluded)
-//   - lists{}:         RAW key omitted entirely (buildListsBundle filter)
-//   - newReleaseSet:   RAW songKeys dropped (defensive, NEW shouldn't list RAW)
-//   - tags.artists:    artists with only RAW songs dropped
-//   - tags.stages:     stages with only RAW songs dropped
+// History: RAW was temporarily hidden 2026-05-29 (RC5 WIP-pool decision).
+// Data sync from plugin was unaffected then and remains unaffected now:
+// RAW.list.json keeps flowing through Creator → tools; this build-step
+// filter is the single source of truth for which lists reach the Web.
 //
-// In-game runtime continues to gate RAW behind `Show Raw List?` toggle
+// In-game runtime continues to gate RAW behind the `Show Raw List?` toggle
 // (off by default) — see PlaylistController.IsEligibleForRandomPool.
-const HIDDEN_LISTS = new Set(['RAW']);
+const HIDDEN_LISTS = new Set();
 
 // Filter tabs surfaced in the editor right-pane. Order is the canonical
 // tab order; the UI uses this to drive its tab strip layout. My Favorites is
