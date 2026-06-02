@@ -1,8 +1,8 @@
 {
-  "sourceVersion": "plugin/_songs.json @ 2026-06-01T13:11:37.946Z",
-  "generatedAt": "2026-06-01T13:11:39Z",
-  "songCount": 476,
-  "trackCount": 445,
+  "sourceVersion": "plugin/_songs.json @ 2026-06-02T00:12:24.134Z",
+  "generatedAt": "2026-06-02T00:12:25Z",
+  "songCount": 498,
+  "trackCount": 447,
   "tracks": [
     {
       "trackId": "Empire Duet",
@@ -704,6 +704,12 @@
       "trackId": "Hot Summer",
       "songKey": "F(X) - HOT SUMMER",
       "stage": "Beach Stage",
+      "variantNumber": 0
+    },
+    {
+      "trackId": "UNDER CLOUD",
+      "songKey": "FELT - UNDER CLOUD",
+      "stage": "Illusion Stage",
       "variantNumber": 0
     },
     {
@@ -1901,6 +1907,12 @@
       "variantNumber": 1
     },
     {
+      "trackId": "NEW JEANS",
+      "songKey": "NEW JEANS - NEW JEANS",
+      "stage": "Illusion Stage",
+      "variantNumber": 0
+    },
+    {
       "trackId": "OMG",
       "songKey": "NEW JEANS - OMG",
       "stage": "Classroom Stage",
@@ -2826,7 +2838,8 @@
           "rawText": "<color=#646464><i>NEW JEANS - NEW JEANS</i></color>",
           "displayName": "NEW JEANS - NEW JEANS",
           "released": false,
-          "songKey": "NEW JEANS - NEW JEANS"
+          "songKey": "NEW JEANS - NEW JEANS",
+          "wipReference": true
         },
         {
           "idx": 21,
@@ -3074,10 +3087,11 @@
         },
         {
           "idx": 53,
-          "rawText": "<color=#646464><i>UNDER CLOUD</i></color>",
-          "displayName": "UNDER CLOUD",
+          "rawText": "<color=#646464><i>FELT - UNDER CLOUD</i></color>",
+          "displayName": "FELT - UNDER CLOUD",
           "released": false,
-          "songKey": "UNDER CLOUD"
+          "songKey": "FELT - UNDER CLOUD",
+          "wipReference": true
         }
       ]
     },
@@ -5962,6 +5976,7 @@
       "EVO+",
       "EXID",
       "F(X)",
+      "FELT",
       "FIESTAR",
       "FIFTY FIFTY",
       "G-REYISH",
