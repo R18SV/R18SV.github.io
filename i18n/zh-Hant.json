@@ -60,6 +60,11 @@
     "editor_btn_undo_title_empty":"沒有可撤銷的",
     "editor_btn_undo_title_steps":"撤銷上一步（Ctrl+Z）——可撤銷 {n} 步",
     "editor_btn_clear":          "清空收藏",
+    "editor_sort_label":         "排序：",
+    "editor_btn_sort_stage":     "依舞台",
+    "editor_btn_sort_stage_title":"依舞台場景分組，再依歌手排序",
+    "editor_btn_sort_artist":    "依歌手",
+    "editor_btn_sort_artist_title":"依歌手名稱 A–Z 重新排序",
 
     "editor_history_pill_prefix":"附帶播放紀錄 · ",
     "editor_history_recent":     "最近播放",

@@ -447,7 +447,20 @@ h1 {
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.fav-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+.fav-sort-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-right: 0.1rem;
 }
 
 /* === Right pane: tab strip ============================== */

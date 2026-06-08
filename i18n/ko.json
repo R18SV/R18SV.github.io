@@ -60,6 +60,11 @@
     "editor_btn_undo_title_empty":"실행 취소할 게 없어요",
     "editor_btn_undo_title_steps":"이전 단계로 (Ctrl+Z) — {n}단계 남음",
     "editor_btn_clear":          "컬렉션 비우기",
+    "editor_sort_label":         "정렬:",
+    "editor_btn_sort_stage":     "스테이지순",
+    "editor_btn_sort_stage_title":"스테이지별로 묶고 아티스트순으로 정렬",
+    "editor_btn_sort_artist":    "아티스트순",
+    "editor_btn_sort_artist_title":"아티스트명 A–Z 순으로 재정렬",
 
     "editor_history_pill_prefix":"기록 동행 중 · ",
     "editor_history_recent":     "최근",

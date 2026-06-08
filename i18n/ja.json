@@ -60,6 +60,11 @@
     "editor_btn_undo_title_empty":"元に戻すものはありません",
     "editor_btn_undo_title_steps":"前の操作を取り消し（Ctrl+Z）— あと {n} 段階",
     "editor_btn_clear":          "コレクションを空に",
+    "editor_sort_label":         "並び替え：",
+    "editor_btn_sort_stage":     "ステージ順",
+    "editor_btn_sort_stage_title":"ステージごとにまとめ、アーティスト順に並べ替え",
+    "editor_btn_sort_artist":    "アーティスト順",
+    "editor_btn_sort_artist_title":"アーティスト名 A–Z で並べ替え",
 
     "editor_history_pill_prefix":"履歴を持参中 · ",
     "editor_history_recent":     "最近",

@@ -68,6 +68,11 @@
     "editor_btn_undo_title_empty":"Nothing to undo",
     "editor_btn_undo_title_steps":"Undo last change (Ctrl+Z) — {n} step{s} available",
     "editor_btn_clear":          "Clear collection",
+    "editor_sort_label":         "Sort:",
+    "editor_btn_sort_stage":     "By stage",
+    "editor_btn_sort_stage_title":"Group your collection by stage, then artist",
+    "editor_btn_sort_artist":    "By artist",
+    "editor_btn_sort_artist_title":"Reorder your collection A–Z by artist",
 
     "editor_history_pill_prefix":"carrying history · ",
     "editor_history_recent":     "RECENT",

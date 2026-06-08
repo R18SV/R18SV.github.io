@@ -970,6 +970,14 @@ function wireGlobalHandlers() {
     .getElementById('import-file-input')
     .addEventListener('change', onImportFileChange);
   document.getElementById('clear-fav-btn').addEventListener('click', onClearAllClick);
+  document.getElementById('sort-stage-btn').addEventListener('click', () => {
+    sortFavorites('stage');
+    renderFavList();
+  });
+  document.getElementById('sort-artist-btn').addEventListener('click', () => {
+    sortFavorites('artist');
+    renderFavList();
+  });
   document.getElementById('undo-btn').addEventListener('click', undo);
 
   // History indicator: click drop to clear loaded history
@@ -1108,6 +1116,51 @@ function reorderFavorite(fromIdx, toIdx) {
   // If we removed an item before the target, target index shifts left by 1
   const adjustedTo = fromIdx < toIdx ? toIdx - 1 : toIdx;
   state.favorites.splice(adjustedTo, 0, moved);
+}
+
+// Sort keys for a trackId. Artist is the songKey prefix before " - " (same
+// extraction the TAG mode uses). Stage is the track's display-name stage,
+// matching the alphabetical order of the TAG > stage drill. Unknown trackIds
+// sort to the end so they never silently vanish mid-list.
+function favSortKey(trackId) {
+  const tr = state.trackIdToTrack.get(trackId);
+  if (!tr) return { artist: '￿', stage: '￿', songKey: trackId, variant: 0 };
+  const sk = tr.songKey || '';
+  const sep = sk.indexOf(' - ');
+  return {
+    artist: sep >= 0 ? sk.slice(0, sep) : sk,
+    stage: tr.stage || '￿',
+    songKey: sk,
+    variant: tr.variantNumber || 0
+  };
+}
+
+// Reorder the favorites in place. mode 'stage' groups by stage environment
+// then artist/title; mode 'artist' is a flat A–Z by artist then title. Stable
+// (original index breaks ties) and a no-op when the order is already correct,
+// so it won't pollute undo history with empty steps.
+function sortFavorites(mode) {
+  if (state.favorites.length < 2) return;
+  const decorated = state.favorites.map((id, i) => ({ id, i, k: favSortKey(id) }));
+  decorated.sort((a, b) => {
+    let r;
+    if (mode === 'stage') {
+      r = a.k.stage.localeCompare(b.k.stage);
+      if (r) return r;
+    }
+    r = a.k.artist.localeCompare(b.k.artist);
+    if (r) return r;
+    r = a.k.songKey.localeCompare(b.k.songKey);
+    if (r) return r;
+    r = a.k.variant - b.k.variant;
+    if (r) return r;
+    return a.i - b.i;
+  });
+  const next = decorated.map(d => d.id);
+  const changed = next.some((id, j) => id !== state.favorites[j]);
+  if (!changed) return;
+  pushHistory();
+  state.favorites = next;
 }
 
 // ============================================================
